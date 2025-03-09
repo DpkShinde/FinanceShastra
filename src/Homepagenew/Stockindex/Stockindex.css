@@ -11,9 +11,9 @@
 }
 .pagination-containerrindex {
   display: flex;
-  gap: 850px;
+  gap: 820px;
   align-items: center;
-margin-left: 300px;
+margin-left: 10px;
 margin-top: 15px;
 margin-bottom: 30px;
 }

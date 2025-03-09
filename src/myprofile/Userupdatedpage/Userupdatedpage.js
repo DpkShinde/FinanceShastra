@@ -13,7 +13,7 @@ const UserDetailsupdate = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const {user} = useContext(UserProfileContext)
+  const {userEmail} = useContext(UserProfileContext)
 
   // Initial state (can be overwritten by updated data passed through location.state)
   const [emaillocal, setEmail]= useState('')
@@ -65,6 +65,8 @@ const UserDetailsupdate = () => {
       setShowPopupforLogin(true)
     }else{
       const localStore= localStorage.getItem("user")
+      const localtoken= localStorage.getItem('token')
+      console.log('token: ', localtoken)
       const parsed = (JSON.parse(localStore))
       console.log(parsed.email)
       setEmail(parsed.email)
@@ -74,9 +76,17 @@ const UserDetailsupdate = () => {
     }));
 
     const fetchfunc= async ()=>{
-      const url= `${API_BASE_URL}/userdetails?email=${parsed.email}`
+      const url= `${API_BASE_URL}/userdetails`
+      //const url= 'http://localhost:3000/userdetails'
+      const options={
+        method: "GET",
+        headers: {
+          "Content-Type": 'application/json',
+          "Authorization": `Bearer ${localtoken}`
+        }
+      }
       
-      const response= await fetch(url)
+      const response= await fetch(url, options)
       console.log(response)
       if (response.ok=== true){
         const data= await response.json()

@@ -5,24 +5,28 @@
     font-family: 'calibri';
     background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgb(205, 202, 202);
+    
+    margin-bottom: 70px;
     font-family: 'calibri';
+   
   }
   
   .sectorTableHeadingniffty50 {
     font-size: 20px;
     font-weight: bold;
     color: #333;
-    margin-left: 400px;
+    margin-left: 350px;
     margin-top: 250px;
     font-family: 'calibri';
+    margin-bottom: 30px;
   }
   
   
   .sectorTableniffty50 {
     width: 100%;
     border-collapse: collapse;
+  
   }
   
   

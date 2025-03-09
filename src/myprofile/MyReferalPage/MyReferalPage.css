@@ -293,13 +293,14 @@ background: linear-gradient(90deg, #24b676, #238486); /* Gradient text */
     gap: 8px; /* Space between text and icon */
     background-color: #24b676;
     color: white;
-    padding: 10px 20px;
+    padding: 7px 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     margin-left: 410px;
+    margin-bottom: 10px;
 }
 
 .myreferalpagesss-partner-benefitsrefer-button:hover {
@@ -420,7 +421,7 @@ background: linear-gradient(90deg, #24b676, #238486); /* Gradient text */
     gap: 8px;
     background-color: #24b676;
     color: white;
-    padding: 10px 20px;
+    padding: 7px 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -478,13 +479,14 @@ background: linear-gradient(90deg, #24b676, #238486); /* Gradient text */
     gap: 8px;
     background-color: #24b676;
     color: white;
-    padding: 10px 20px;
+    padding: 7px 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    margin-left: 800px;
+    margin-left: 1000px;
+    margin-bottom: 10px;
   }
   
   .refer-now-button:hover {

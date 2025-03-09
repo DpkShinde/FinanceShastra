@@ -75,7 +75,7 @@
 }
 .searchdarkicon {
     position: absolute;
-    left: 985px; /* Position on the left side inside input */
+    left: 1018px; /* Position on the left side inside input */
     top: 55%;
     transform: translateY(-50%);
     color: #ffff;

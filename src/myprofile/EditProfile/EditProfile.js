@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaRegEdit } from "react-icons/fa";
 import Navbar from "../../Navbar/Navbar";
 import "./EditProfile.css";
+import { FaTimes } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
@@ -30,6 +31,7 @@ const EditProfile = () => {
     pincode: personalDetails.pincode ,
     industry: professionalDetails.industry,
     income: professionalDetails.income,
+ 
   });
 
   const [errors, setErrors] = useState({}); // For validation errors
@@ -144,18 +146,14 @@ const navigate = useNavigate();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: "Please enter a valid email address.",
-      }));
+      setErrors((prev) => ({ ...prev, email: "Please enter a valid email" }));
     } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: "",
-      }));
+      setErrors((prev) => ({ ...prev, email: "" }));
     }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -194,8 +192,40 @@ const navigate = useNavigate();
   const [otpStep, setOtpStep] = useState(false);
   const [otp, setOtp] = useState("");
   const [showPopupp, setShowPopupp] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
 
+
+  const [isVerified, setIsVerified] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [showVerificationPopup, setShowVerificationPopup] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showEmailSuccessPopup, setShowEmailSuccessPopup] = useState(false);
+
+  
+ 
+  const [isOtpValid, setIsOtpValid] = useState(null);
+
+  const handleEmailPopupClose = () => {
+    setShowEmailSuccessPopup(false);
+  };
+  const handleEmailVerifyClick = () => {
+    if (!formData.email || errors.email) {
+      return; // Don't show popup if email is invalid
+    }
+    setShowVerificationPopup(true);
+  };
+  
+  const handleOtpSubmit = () => {
+    if (otp.length !== 6) {
+      setIsOtpValid(false);
+      return;
+    }
+    setIsOtpValid(true);
+    setShowVerificationPopup(false);
+    setShowPopupp(true); // ✅ Show success popup
+  };
+  
+  
   // Regex for phone number validation
   const phoneRegex = /^[0-9]{10}$/;
 
@@ -262,22 +292,11 @@ const navigate = useNavigate();
       setIsModalOpen(false); // Close modal
     }
   };
-  const handleOtpSubmit = () => {
-    if (otp !== "1234") {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        otp: "Invalid OTP. Please try again.",
-      }));
-    } else {
-      setShowPopupp(true); // Show success popup
-      setShowPopup(false); // Close OTP popup
-      setOtpStep(false); // Reset OTP step
-      setIsVerified(true); // Mark as verified
-    }
-  };
+ 
   const handlePopupClosee = () => {
     setShowPopupp(false);
   };
+  
 
   const popupStyles = {
     overlay: {
@@ -328,7 +347,7 @@ const navigate = useNavigate();
     },
 
   };
-  const [isEmailVerified, setIsEmailVerified] = useState(false); // Email verification status
+  
   const [showVerifiedPopup, setShowVerifiedPopup] = useState(false); // Control verified success popup
   const handleSendOtpClick = () => {
     // Validate the email first
@@ -352,9 +371,8 @@ const navigate = useNavigate();
 
 
   const handleVerifiedPopupClose = () => setShowVerifiedPopup(false);
-  const handleEmailVerifyClick = () => {
-    setIsModalOpen(true); // Open the modal to initiate email verification
-  };
+ 
+  
 
   const SuccessModal = ({ onClose }) => {
     return (
@@ -429,7 +447,16 @@ const navigate = useNavigate();
 
   // Get cities for the selected state
   const cities = stateCityMapping[formData.state] || [];
-
+  const maskEmail = (email) => {
+    if (!email) return "your email"; // Default text if email is missing
+  
+    const [name, domain] = email.split("@");
+    if (!domain) return email; // Handle invalid email cases
+  
+    const maskedName = name.slice(0, 3) + "********"; // Keep first 3 characters, mask the rest
+    return `${maskedName}@${domain}`;
+  };
+  
 
   return (
     <div className="profilepage-container">
@@ -568,70 +595,54 @@ const navigate = useNavigate();
           </div>
 
           {/* Modal for Editing Email */}
-          {isModalOpen && (
-            <div className="modal-overlay">
-              <div className="modal-content">
-                <h3>Account Verification</h3>
-                <p>Enter the email ID to update your account details:</p>
-                <input
-                  type="email"
-                  value={newEmail}
-                  onChange={(e) => setNewEmail(e.target.value)}
-                  placeholder="Enter new email address"
-                  className="modal-input"
-                />
-                {errors.email && <span className="error-text">{errors.email}</span>}
+      {/* Verification Popup */}
+{showVerificationPopup && (
+  <div className="verification-popupemailll">
+    <div className="popup-header">
+      <h3>Account Verification</h3>
+      <FaTimes className="close-icon" onClick={() => setShowVerificationPopup(false)} />
+    </div>
+    <p>Enter the confirmation code from the email.</p>
+    <input
+      type="text"
+      value={otp}
+      onChange={(e) => setOtp(e.target.value)}
+      className="otp-inputemailll"
+    />
+    {isOtpValid === false && <p className="error-text">Invalid OTP</p>}
+    <button
+      className="submit-btnemailll"
+      style={{ backgroundColor: otp.length === 6 ? "#24b676" : "gray" }}
+      onClick={handleOtpSubmit}
+      disabled={otp.length !== 6}
+    >
+      Submit
+    </button>
+  </div>
+)}
 
-                {!otpStep ? (
-                  <div className="modal-buttons">
-                    <button onClick={handleSendOtpClick} className="save-button">
-                      Send OTP
-                    </button>
-                    <button onClick={toggleModal} className="cancel-button">
-                      Cancel
-                    </button>
-                  </div>
-                ) : (
-                  <div>
-                    <p>Enter the OTP sent to your email:</p>
-                    <input
-                      type="text"
-                      maxLength="6"
-                      value={otp}
-                      onChange={(e) => setOtp(e.target.value)}
-                      placeholder="Enter OTP"
-                      className={`otp-input ${errors.otp ? "error-border" : ""}`}
+{/* Email Verification Success Popup */}
+{/* Email Verification Success Popup */}
+{showEmailSuccessPopup && (
+  <div className="email-success-popup-overlay">
+    <div className="email-success-popup">
+      <button className="email-success-popup-close" onClick={handleEmailPopupClose}>
+        &times;
+      </button>
+      <div className="email-success-popup-content">
+        <div className="email-success-popup-icon">✔</div>
+        <h3>Email Verified Successfully!</h3>
+        <p>
+          You have successfully verified your email using OTP sent on{" "}
+          <strong>{maskEmail(formData.email)}</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+)}
 
-                    />
-                    <button onClick={handleOtpSubmitemail} className="save-button">
-                      Submit
-                    </button>
-                  </div>
-
-                )}
-                {errors.otp && <span className="error-text">{errors.otp}</span>}
-              </div>
-            </div>
-          )}
-
-          {/* Verification Success Popup */}
-          {showVerifiedPopup && (
-            <div style={popupStyles.overlay}>
-              <div style={popupStyles.popup}>
-                <button style={popupStyles.close} onClick={handleVerifiedPopupClose}>
-                  &times;
-                </button>
-                <div style={popupStyles.content}>
-                  <div style={popupStyles.icon}>✔</div>
-                  <h3>Email verified successfully!</h3>
-                  <p>
-                    You have successfully verified your email <strong>{formData.email}</strong>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+    </div>
+  
 
 
         <div className="profile-roww">
@@ -742,9 +753,12 @@ const navigate = useNavigate();
                   <div style={popupStyles.icon}>✔</div>
                   <h3>Mobile number verified successfully!</h3>
                   <p>
-                    You have successfully verified your mobile number using OTP sent on{" "}
-                    <strong>91********{formData.phoneNumber.slice(-2)}</strong>.
-                  </p>
+  You have successfully verified your mobile number using OTP sent on{" "}
+  <strong>
+    91********{formData.phoneNumber ? formData.phoneNumber.slice(-2) : "XX"}
+  </strong>.
+</p>
+
                 </div>
               </div>
             </div>

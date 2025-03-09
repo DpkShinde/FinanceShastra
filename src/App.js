@@ -270,6 +270,8 @@ import AddTransactiongold from "./Portfoilo/Addtransactiongold/Addtransactiongol
 import ContactUsnew from "./Contactusssnewlall/ContactUsnew/ContactUsnew";
 import ContactCards from "./Contactusssnewlall/ContactCards/ContactCards";
 import StocksSmartSIPPS from "./Landingpages/StocksSmartSIPPS/StocksSmartSIPPS";
+import DashboardLayout from "./DashboardLayout/DashboardLayout";
+import Dashboardall from "./Homepagenew/Dashboardall/Dashboardall";
 
 function App() {
   return (  
@@ -650,7 +652,9 @@ function App() {
       <Route path="/contactUsnew" element={<ContactUsnew/>}/>
       <Route path="/contactCards" element={<ContactCards/>}/> 
       <Route path="/stocksSmartSIPPS" element={<StocksSmartSIPPS/>}/>
-      
+      <Route path="/dashboardall" element={< Dashboardall/>}/>
+     
+    
 
 
 

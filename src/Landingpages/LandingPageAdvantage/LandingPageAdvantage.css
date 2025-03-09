@@ -47,6 +47,26 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+
+
+
+
+  .landingpageadvantagedarkcontainer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'calibri';
+    background-color: #292F42;
+    margin-left: -14px;
+    width: 104%;
+  }
+  
+  .landingpageadvantagedarktitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffff;
+    margin-bottom: 20px;
+  }
   /* Tablet View - max-width: 768px */
 @media (max-width: 768px) {
   .landingpageadvantage-grid {

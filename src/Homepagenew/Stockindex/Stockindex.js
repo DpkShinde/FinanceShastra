@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Stockindex.css'
 import { PiCaretUpDownFill } from "react-icons/pi";
 import icon1 from '../../assest/it.svg';
@@ -9,6 +9,8 @@ import icon5 from '../../assest/finance.svg';
 import icon6 from '../../assest/l.svg';
 import icon7 from '../../assest/message.svg';
 import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie'
+import { API_BASE_URL } from "../../config";
 // Data for the cards and table
 const DashboardPagetable = [
   { id: 1, sector: "IT", stocks: 60, value: "₹1,02,580.30", change: "6.8%", changeType: "up" },
@@ -20,108 +22,69 @@ const DashboardPagetable = [
   { id: 7, sector: "Telecommunication", stocks: 24, value: "₹72,586.42", change: "4.2%", changeType: "down" },
 ];
 
-const DashboardtableData = [
-    {
-        id: 1,
-        company: "Bajaj Auto Ltd",
-        ltp: 8878.5,
-        change: "1.14%",
-        marketCap: "₹2,45,134.70 Cr",
-        index: "Nifty 50",
-        high: 12740.0,
-        low: 6370.05,
-        sector: "Automobile",
-        pe: 19.8,
-      },
-      {
-        id: 2,
-        company: "Cipla Ltd",
-        ltp: 1490.55,
-        change: "1.00%",
-        marketCap: "₹1,19,176.30 Cr",
-        high: 1702.05,
-        low: 1231.85,
-        index: "Nifty 50",
-        sector: "Pharmaceuticals",
-        pe: 27.28,
-      },
-      {
-        id: 3,
-        company: "Trent Ltd",
-        ltp: 7063.7,
-        change: "0.81%",
-        marketCap: "₹2,49,095.40 Cr",
-        high: 8345.0,
-        index: "Nifty Next 50",
-        low: 2940.75,
-        sector: "Retail",
-        pe: 16.16,
-      },
-      {
-        id: 4,
-        company: "ITC",
-        ltp: 476.95,
-        change: "-0.31%",
-        marketCap: "₹5,98,426.10 Cr",
-        index: "Nifty 200",
-        high: 528.5,
-        low: 399.35,
-        sector: "FMCG",
-        pe: 0.0,
-      },
-      {
-        id: 5,
-        company: "Hindustan Unilever Ltd",
-        ltp: 2332.75,
-        change: "-0.12%",
-        marketCap: "₹5,48,759.80 Cr",
-        high: 3035.0,
-        low: 2172.05,
-        index: "Nifty 200",
-        sector: "FMCG",
-        pe: 194.57,
-      },
-      {
-        id: 6,
-        company: "Infosys Ltd",
-        ltp: 1907.4,
-        change: "0.90%",
-        marketCap: "₹7,92,663.30 Cr",
-        high: 2006.45,
-        low: 1358.35,
-        index: "Nifty 200",
-        sector: "IT",
-        pe: 107.83,
-      },
-];
 
 const Dashboardstockindex = () => {
   const [sortConfig, setSortConfig] = useState({ key: "", direction: "asc" });
   const navigate = useNavigate();
 
+  const [allStocks, setAllStocks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-   const uniqueDashboardtableData = DashboardtableData.filter(
-      (item, index, self) => index === self.findIndex((t) => t.id === item.id)
-    );
-  
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5; // Number of items per page
-  
-    // Calculate total pages
-    const totalPages = Math.ceil(uniqueDashboardtableData.length / itemsPerPage);
-  
-    // Pagination logic
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  
-  
-    // Handle page changes
-    const handlePageChange = (pageNumber) => {
-      if (pageNumber >= 1 && pageNumber <= totalPages) {
-        setCurrentPage(pageNumber);
+  // Function to fetch data from the backend
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const token = Cookies.get("jwtToken");
+      const response = await fetch(`${API_BASE_URL}/stocksScreener/stockIndex`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
       }
-    };
- 
+      const data = await response.json();
+      console.log(data);
+      setAllStocks(data)
+      setError(null); // Clear any previous error
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Fetch data when the component mounts
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+  const uniqueDashboardtableData = allStocks.filter(
+    (item, index, self) => index === self.findIndex((t) => t.id === item.id)
+  );
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5; // Number of items per page
+
+  // Calculate total pages
+  const totalPages = Math.ceil(uniqueDashboardtableData.length / itemsPerPage);
+
+  // Pagination logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+
+
+  // Handle page changes
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
 
   // Sort function
   const handleSort = (column) => {
@@ -132,7 +95,7 @@ const Dashboardstockindex = () => {
     setSortConfig({ key: column, direction });
   };
 
-  const sortedData = [...DashboardtableData].sort((a, b) => {
+  const sortedData = [...allStocks].sort((a, b) => {
     if (sortConfig.key) {
       const aValue = a[sortConfig.key];
       const bValue = b[sortConfig.key];
@@ -163,14 +126,9 @@ const Dashboardstockindex = () => {
   const currentStocks = sortedData.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div className="DashboardMainPagetable-containerr">
-      <div className="DashboardMainPagetable-headerrindex">
-        <button className="DashboardMainPagetable-tab"  onClick={() => navigate("/home")}>Stock Sector</button>
-        <button className="DashboardMainPagetable-tab active">Stock Index</button>
-        <button className="DashboardMainPagetable-tab" onClick={() => navigate("/calenderchartmain")}>Stock Calendar</button>
-        <button className="DashboardMainPagetable-tab"  onClick={() => navigate("/stockanalystall")}>Stock Analyst</button>
-      </div>
-      <div className="DashboardMainPagetable-cardss">
+    <div className="DashboardMainPagetable-container">
+     
+      <div className="DashboardMainPagetable-cards">
   {DashboardPagetable.map((card) => (
     <div  key={card.id}
     className={`DashboardMainPagetable-card ${card.id === 7 ? "custom-card-size" : ""}`}>
@@ -266,8 +224,8 @@ const Dashboardstockindex = () => {
 </div>
 
 
-<div className="DashboardMainPagetable-table-containerr">
-            <table className="DashboardMainPagetable-tableee">
+<div className="DashboardMainPagetable-table-containerer">
+            <table className="DashboardMainPagetable-table">
         <thead>
           <tr>
             <th>Company</th>
@@ -300,45 +258,44 @@ const Dashboardstockindex = () => {
   {renderSortIcon("pe")}
 </th>
 
-            <th>Clarification</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentStocks.map((row) => (
-            <tr key={row.id}>
-              <td>{row.company}</td>
-              <td>{row.ltp}</td>
-              <td
-                 style={{
-                  color: row.change.includes("-") ? "red" : "#24b676", // Red for negative, green for positive
-                  // Optional: Make it bold
-              }}
-              >
-                {row.change}
-              </td>
-              <td>{row.marketCap}</td>
-              <td>{row.high}</td>
-              <td>{row.low}</td>
-              <td>{row.index}</td>
-              <td>{row.pe}</td>
-              <td>
-                <a href="#" className="clarification-link">
-                  Know more
-                </a>
-              </td>
+              <th>Clarification</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {currentStocks.map((row) => (
+              <tr key={row.id}>
+                <td>{row.company}</td>
+                <td>{row.ltp_inr}</td>
+                <td
+                  style={{
+                    color: row.change_percent < 0 ? "red" : "#24b676", // Red for negative, green for positive
+                    // Optional: Make it bold
+                  }}
+                >
+                  {row.change_percent}
+                </td>
+                <td>{row.market_cap_cr}</td>
+                <td>{row.High_52W_INR}</td>
+                <td>{row.Low_52W_INR}</td>
+                <td>{row.stock_index}</td>
+                <td>{row.pe}</td>
+                <td>
+                  <a href="#" className="clarification-link">
+                    Know more
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-         {/* Pagination Section */}
-         <div className="pagination-containerrindex">
+      {/* Pagination Section */}
+      <div className="pagination-containerrindex">
         <div className="pagination-info">
-          {`Showing ${indexOfFirstItem + 1} to ${
-            indexOfLastItem > uniqueDashboardtableData.length
+          {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem > uniqueDashboardtableData.length
               ? uniqueDashboardtableData.length
               : indexOfLastItem
-          } of ${uniqueDashboardtableData.length} records`}
+            } of ${uniqueDashboardtableData.length} records`}
         </div>
         <div className="pagination-slider">
           <button
@@ -351,9 +308,8 @@ const Dashboardstockindex = () => {
           {Array.from({ length: totalPages }, (_, i) => (
             <button
               key={i + 1}
-              className={`pagination-button ${
-                currentPage === i + 1 ? "active-page" : ""
-              }`}
+              className={`pagination-button ${currentPage === i + 1 ? "active-page" : ""
+                }`}
               onClick={() => handlePageChange(i + 1)}
             >
               {i + 1}

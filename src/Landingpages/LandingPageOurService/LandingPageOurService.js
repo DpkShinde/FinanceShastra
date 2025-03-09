@@ -1,4 +1,7 @@
-import React from "react";
+import React, {
+ 
+  useContext,
+} from "react"
 import "./LandingPageOurService.css";
 import landingimg2 from '../../assest/landingimg2.1.jpeg';
 import landingimg3 from '../../assest/landingimg2.2.jpeg';
@@ -6,14 +9,16 @@ import landingimg4 from '../../assest/landingimg3.2.jpeg';
 import landingimg5 from '../../assest/landingimg3.1.png';
 import imgicon1 from '../../assest/landingimgicon1.png';
 import imgicon2 from '../../assest/landingimgicon2.png';
+import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 
 const LandingPageOurService = () => {
+   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   return (
-    <div className="landingpageourservice-container">
-      <h2 className="landingpageourservice-heading">Our Services</h2>
+    <div className={darkMode ? "landingpageourservicedarkcontainer" :"landingpageourservice-container"}>
+      <h2 className={darkMode ? "landingpageourservicedarkheading" :"landingpageourservice-heading"}>Our Services</h2>
 
  {/* Stock Research Section */}
-<div className="landingpageourservice-section">
+ <div className={darkMode ? "landingpageourservicedarksection" :"landingpageourservice-section"}>
   <div className="landingpageourservice-images-overlap">
     <img
       src={landingimg2}
@@ -27,7 +32,7 @@ const LandingPageOurService = () => {
     />
   </div>
   <div className="landingpageourservice-text">
-    <h3 className="landingpageourservice-subheading">
+    <h3 className={darkMode ? "landingpageourservicedarksubheading" :"landingpageourservice-subheading"}>
       Stock Research and Recommendations
     </h3>
     <img 
@@ -35,7 +40,7 @@ const LandingPageOurService = () => {
       alt="Stock Research" 
       className="landingpageourservice-image"
     />
-    <ul className="landingpageourservice-list">
+    <ul className={darkMode ? "landingpageourservicedarklist" :"landingpageourservice-list"}>
       <li>
         <strong>StockSIP:</strong> Systematic Investment Planning for individual stocks.
       </li>
@@ -54,10 +59,10 @@ const LandingPageOurService = () => {
 
 
       {/* Educational Resources Section */}
-      <div className="landingpageourservice-section">
+      <div className={darkMode ? "landingpageourservicedarksection" :"landingpageourservice-section"}>
      
         <div className="landingpageourservice-text">
-          <h3 className="landingpageourservice-subheadingg">
+          <h3 className={darkMode ? "landingpageourservicedarksubheadingg" :"landingpageourservice-subheadingg"}>
             Educational Resources
           </h3>
           <img 
@@ -65,7 +70,7 @@ const LandingPageOurService = () => {
       alt="Stock Research" 
       className="landingpageourservicee-image"
     />
-          <ul className="landingpageourservice-listt">
+          <ul className={darkMode ? "landingpageourservicedarklistt" :"landingpageourservice-listt"}>
             <li>
               <strong>Market Insights:</strong> Daily updates on stock market trends and analysis.
             </li>

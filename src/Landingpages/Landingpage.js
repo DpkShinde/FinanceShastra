@@ -9,6 +9,7 @@ import LandingAboutPage from "./LandingAboutPage/LandingAboutPage";
 import FooterForAllPage from "../FooterForAllPage/FooterForAllPage";
 import Landingnavbar from "./Landingnavbar/Landingnavbar";
 import PopupUnlockLandingPage from "./PopupUnlockLandingPage/PopupUnlockLandingPage";
+import Cookies from 'js-cookie';
 
 const LandingPage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -16,10 +17,11 @@ const LandingPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 180000); // Show after 3 minutes (180,000 ms)
-  
+    }, 3000); // Show after 5 seconds (5000 ms)
+
     return () => clearTimeout(timer);
   }, []);
+
   
   return (
     <div>

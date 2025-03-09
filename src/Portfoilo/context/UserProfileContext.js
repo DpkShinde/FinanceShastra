@@ -8,6 +8,7 @@ export const UserProfileProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [userEmail, setEmail]= useState("")
 
   const fetchUser = async () => {
     setLoading(true);
@@ -27,6 +28,7 @@ export const UserProfileProvider = ({ children }) => {
       if (!response.ok) throw new Error("Failed to fetch user");
       const data = await response.json();
       console.log(data);
+      setEmail(data[0]?.email)
       setUser(data[0]?.name || "Unknown User");
     } catch (err) {
       setError(err.message);
@@ -40,7 +42,7 @@ export const UserProfileProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserProfileContext.Provider value={{ user, loading, error }}>
+    <UserProfileContext.Provider value={{ user, userEmail, loading, error }}>
       {children}
     </UserProfileContext.Provider>
   );

@@ -132,7 +132,7 @@
   }
   
   .refermoreprofilepages-floating-input input {
-    width: 100%;
+ 
     padding: 10px;
     padding-left: 20px; /* Extra padding for icons */
     font-size: 14px;
@@ -203,7 +203,9 @@
   .refermoreprofilepages-remove-button:hover {
     color: #e60000;
   }
-  
+  .error-messagerefer{
+    color: red;
+  }
   /* Submit Button */
   .refermoreprofilepages-submit-button {
     display: block;
@@ -227,8 +229,8 @@
     background-color: #F5F4FA; /* Light background */
     border-radius: 10px;
     box-shadow: 0 4px 6px #DBD7F1;
-    width: 1227px;
-    margin-left: 100px;
+    width:100%;
+    align-items: center;
   }
   
   .refermoreprofilepagess-email-templateh3 {

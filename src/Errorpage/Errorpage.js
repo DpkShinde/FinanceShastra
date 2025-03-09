@@ -16,7 +16,7 @@ const Errorpage = () => {
                 className="error-image"
               />
             </div>
-            <p className="error-message">"Oops! We can't seem to find the page you're looking for."</p>
+            <p className="messagepageerror-message">"Oops! We can't seem to find the page you're looking for."</p>
             <button
               className="errorhomepage-button"
               onClick={() => (window.location.href = "/")}

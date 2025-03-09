@@ -1,21 +1,26 @@
-import React from "react";
+import React, {
+ 
+  useContext,
+} from "react"
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import "./LandingPagePremiumElite.css";
+import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 
 
 const LandingPagePremiumElite = () => {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
    const navigate = useNavigate(); // Hook for navigation
   return (
-    <div className="landingpagepremiumelite-container">
-      <h2 className="landingpagepremiumelite-heading">
+    <div className={darkMode ? "landingpagepremiumelite-darkcontainer" :"landingpagepremiumelite-container"}>
+      <h2 className={darkMode ? "landingpagepremiumelite-darkheading" :"landingpagepremiumelite-heading"}>
         Find the plan that works best for you and start your trading journey today!
       </h2>
-      <div className="most-popular-landingpagepremiumelitecontainer">
+      <div className={darkMode ? "most-popular-landingpagepremiumelitedarkcontainer" :"most-popular-landingpagepremiumelitecontainer"}>
   <h2 className="most-popular-textt">Most Popular!</h2>
   <div className="landingpagepremiumelite-plans">
-  <div className="landingpagepremiumelite-card">
+  <div className={darkMode ? "landingpagepremiumelite-darkcard" :"landingpagepremiumelite-card"}>
   <h3 className="landingpagepremiumelite-plan-title">Premium</h3>
   <p className="landingpagepremiumelite-plan-description">
     Invest smarter, invest confidently with the Premium Plan!
@@ -25,19 +30,19 @@ const LandingPagePremiumElite = () => {
     {/* Price */}
     <div className="landingpagepremiumelite-price">
       <span className="landingpagepremiumelite-price-amount">₹7,999/</span>
-      <span className="landingpagepremiumelite-year">Year</span>
-      <span className="landingpagepremiumelite-original-price">  ₹19,999/-</span><br/>
-      <span className="landingpagepremiumelite-discount">You save</span>
+      <span className={darkMode ? "landingpagepremiumelite-darkyear" :"landingpagepremiumelite-year"}>Year</span>
+      <span className={darkMode ? "landingpagepremiumelite-original-darkprice" :"landingpagepremiumelite-original-price"}>  ₹19,999/-</span><br/>
+      <span className={darkMode ? "landingpagepremiumelite-darkdiscount" :"landingpagepremiumelite-discount"}>You save</span>
       <span className="landingpagepremiumelitediscountt">₹12,000 (60%)</span>
-      <span className="landingpagepremiumelitediscounttt">a year</span>
+      <span className={darkMode ? "landingpagepremiumelitedarkdiscounttt" :"landingpagepremiumelitediscounttt"}>a year</span>
     </div>
 
    
 
     {/* Features */}
     <div className="landingpagepremiumelite-features">
-      <div className="landingpagepremiumelite-column">
-        <h4 className='plan-featuressssh4'> <FontAwesomeIcon icon={faCircleCheck} />Features:</h4>
+      <div className={darkMode ? "landingpagepremiumelite-darkcolumn" :"landingpagepremiumelite-column"}>
+        <h4 className={darkMode ? "plan-darkfeaturessssh4" :'plan-featuressssh4'}> <FontAwesomeIcon icon={faCircleCheck} />Features:</h4>
         <ul>
           <li>
             <strong>150 Stock Recommendations:</strong> Expert recommendations on 150 stocks to optimize your portfolio.
@@ -59,8 +64,8 @@ const LandingPagePremiumElite = () => {
           </li>
         </ul>
       </div>
-      <div className="landingpagepremiumelite-columnn">
-      <h4 className='plan-featuresssh4'> <FontAwesomeIcon icon={faCircleCheck} />Additional Benefits:</h4>
+      <div className={darkMode ? "landingpagepremiumelite-darkcolumnn" :"landingpagepremiumelite-columnn"}>
+      <h4 className={darkMode ? "plan-darkfeaturesssh4" :'plan-featuresssh4'}> <FontAwesomeIcon icon={faCircleCheck} />Additional Benefits:</h4>
             <ul>
               <li>
                 <strong>Stock Research:</strong> Receive Buy/Sell/Hold recommendations on all listed stocks, backed by deep, data-driven research.
@@ -88,7 +93,7 @@ const LandingPagePremiumElite = () => {
       </div>
 
      
-      <div className="landingpageelite-card">
+      <div className={darkMode ? "landingpageelite-darkcard" :"landingpageelite-card"}>
         <h3 className="landingpagepremiumelite-plan-title">Elite</h3>
         <p className="landingpagepremiumelite-plan-description">
           Empower your investment journey with the Elite Plan!
@@ -96,16 +101,16 @@ const LandingPagePremiumElite = () => {
         <div className="landingpagepremiumelite-content-row">
         <div className="landingpagepremiumelite-price">
         <span className="landingpagepremiumelite-price-amount">₹2,999/</span>
-        <span className="landingpagepremiumelite-year">Year</span>
-      <span className="landingpagepremiumelite-original-price">  ₹8,999/-</span><br/>
-      <span className="landingpagepremiumelite-discount">You save</span>
+        <span className={darkMode ? "landingpagepremiumelite-darkyear" :"landingpagepremiumelite-year"}>Year</span>
+      <span className={darkMode ? "landingpagepremiumelite-original-darkprice" :"landingpagepremiumelite-original-price"}>  ₹8,999/-</span><br/>
+      <span className={darkMode ? "landingpagepremiumelite-darkdiscount" :"landingpagepremiumelite-discount"}>You save</span>
       <span className="landingpagepremiumelitediscountt">₹6,000 (68%)</span>
-      <span className="landingpagepremiumelitediscounttt">a year</span>
+      <span className={darkMode ? "landingpagepremiumelitedarkdiscounttt" :"landingpagepremiumelitediscounttt"}>a year</span>
     </div>
         
     <div className="landingpagepremiumelite-features">
-      <div className="landingpagepremiumelite-column">
-        <h4 className='plan-featuressssh4'> <FontAwesomeIcon icon={faCircleCheck} />Features:</h4>
+      <div className={darkMode ? "landingpagepremiumelite-darkcolumn" :"landingpagepremiumelite-column"}>
+        <h4 className={darkMode ? "plan-darkfeaturessssh4" :'plan-featuressssh4'}> <FontAwesomeIcon icon={faCircleCheck} />Features:</h4>
             <ul>
               <li>
                 <strong>50 Stock Recommendations:</strong> Expert recommendations to build a focused and profitable portfolio.
@@ -121,8 +126,8 @@ const LandingPagePremiumElite = () => {
               </li>
             </ul>
           </div>
-          <div className="landingpagepremiumelite-columnn">
-      <h4 className='plan-featuresssh4'> <FontAwesomeIcon icon={faCircleCheck} />Additional Benefits:</h4>
+          <div className={darkMode ? "landingpagepremiumelite-darkcolumnn" :"landingpagepremiumelite-columnn"}>
+      <h4 className={darkMode ? "plan-darkfeaturesssh4" :'plan-featuresssh4'}> <FontAwesomeIcon icon={faCircleCheck} />Additional Benefits:</h4>
             <ul>
               <li>
                 <strong>Stock of the Month:</strong> One carefully selected stock handpicked by our Investment Committee every month.
@@ -137,7 +142,7 @@ const LandingPagePremiumElite = () => {
           </div>
         </div>
         </div>
-        <button className="landingpageelite-button"onClick={() => navigate("/halfyearlySubscriptionPages")}>Continue</button>
+        <button className={darkMode ? "landingpageelitedarkbutton" :"landingpageelite-button"}onClick={() => navigate("/halfyearlySubscriptionPages")}>Continue</button>
       </div>
     </div>
      

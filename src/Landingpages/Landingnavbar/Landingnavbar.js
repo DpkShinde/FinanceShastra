@@ -11,11 +11,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchData } from "../../Store/Slices/searchDataSlice";
 import { debounce } from "lodash";
+import Cookies from 'js-cookie';
 
 import logo from "../../assest/Logo design (1).png";
 import Darkmodelogo from "../../assest/navlogo.png";
 import "./Landingnavbar.css";
 import { API_BASE_URL } from "../../config";
+import { faBullseye } from "@fortawesome/free-solid-svg-icons";
 
 // Dropdown menu components
 const StockDropdownMenu = () => (
@@ -264,6 +266,7 @@ const Landingnavbar = () => {
   
   const [searchInputText, setSearchInputText] = useState("");
   const [filterData, setFilterData] = useState([]);
+  const [isLogedin, setIsLogedin]= useState(false)
 
   // Refs for handling click outside
   const dropdownRefs = {
@@ -327,8 +330,22 @@ const Landingnavbar = () => {
     [getDataFromStore]
   );
 
+  const onLogout= ()=>{
+    localStorage.removeItem('user')
+    localStorage.removeItem("token")
+    
+    Cookies.remove('user')
+    Cookies.remove('jwtToken')
+    setIsLogedin(false)
+    navigate('/login')
+  }
+
   // Get all data on component mount
   useEffect(() => {
+    const token = Cookies.get("jwtToken");
+    if (token) {
+      setIsLogedin(true)
+    }
     getAllData();
   }, []);
 
@@ -436,8 +453,15 @@ const Landingnavbar = () => {
             style={darkMode ? { color: "white" } : {}} 
           />
         </div>
-
+        {isLogedin? 
         <div className="landingnavbar-icons">
+        <button 
+            className="landingnavbar-buttonlogin-button" 
+            onClick={onLogout}
+          >
+            Log out
+          </button>
+        </div> : <div className="landingnavbar-icons">
           <VscBell className="landingnavbaricon bell-icon" />
           <button 
             className="landingnavbar-buttonregister-button" 
@@ -452,6 +476,8 @@ const Landingnavbar = () => {
             Log in
           </button>
         </div>
+        }
+        
       </nav>
 
       <ul className="footer-nav">

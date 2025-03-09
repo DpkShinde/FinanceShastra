@@ -161,21 +161,38 @@ const Stockcalender = () => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
-
+  
     if (start && end) {
       filterDataByDate(start, end);
     } else {
-      setSortedData(allStocks);
+      setSortedData(allStocks); // Reset full data agar range clear ho
     }
-  }, [allStocks]);
+  });
+  
 
-  const filterDataByDate = useCallback((startDate, endDate) => {
+  const filterDataByDate = (startDate, endDate) => {
+    if (!startDate || !endDate) {
+      setSortedData(allStocks); // Reset full data agar range na ho
+      return;
+    }
+  
+    // Convert dates properly & remove time for accurate comparison
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    start.setHours(0, 0, 0, 0);
+    end.setHours(23, 59, 59, 999); // Include full end date
+  
     const filteredData = allStocks.filter((row) => {
-      const rowDate = new Date(row.date);
-      return rowDate >= startDate && rowDate <= endDate;
+      const rowDate = new Date(row.event_date); // Convert to Date object
+      rowDate.setHours(0, 0, 0, 0); // Normalize data
+  
+      return rowDate >= start && rowDate <= end;
     });
+  
     setSortedData(filteredData);
-  }, [allStocks]);
+  };
+  
+  
 
   // Memoized page change handler
   const handlePageChange = useCallback((pageNumber) => {
@@ -192,64 +209,59 @@ const Stockcalender = () => {
 
   return (
     <div className="DashboardMainPagetable-container">
-      <div className="DashboardMainPagetable-headercalculator">
-        <button className="DashboardMainPagetable-tab" onClick={() => navigate("/home")}>Stock Sector</button>
-        <button
-          className="DashboardMainPagetable-tab"
-          onClick={() => navigate("/stockindexall")}
-        >
-          Stock Index
-        </button>
-        <button className="DashboardMainPagetable-tab active" onClick={() => navigate("/calenderchartmain")}>Stock Calendar</button>
-        <button className="DashboardMainPagetable-tab" onClick={() => navigate("/stockanalystall")}>Stock Analyst</button>
-      </div>
+      
       <div className="earnings-insight-learn-wrapperr">
 
 
-        <div className="earnings-insight-learn-controls">
-          <div className="earnings-insight-learn-header-row">
-            <div className="earningquterlyrowalll">
-              <div className="earnings-insight-learn-tabs">
-                {["Yesterday", "Today", "Tomorrow", "This Week", "Next Week"].map((tab) => (
-                  <button
-                    key={tab}
-                    className={`earnings-insight-learn-tab-button ${selectedEarningsTab === tab ? "active" : ""
-                      }`}
-                    onClick={() => handleEarningsTabChange(tab)}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-              <div >
-                <div className="earnings-insight-learn-date-picker">
-                  <div className="dateinsighttt">
-                    <label htmlFor="dateRange" className="date-picker-label">Select Date Range: </label>
-                    <div className="calendar-icon" onClick={() => setCalendarOpen(!calendarOpen)} >
-                      <FaRegCalendarAlt />
+            <div className="earnings-insight-learn-controls">
+                <div className="earnings-insight-learn-header-row">
+                    <div className="earningquterlyrowalll">
+                    <div className="earnings-insight-learn-tabs">
+  {["Yesterday", "Today", "Tomorrow", "This Week", "Next Week"].map((tab) => (
+    <button
+      key={tab}
+      className={`earnings-insight-learn-tab-button ${
+        selectedEarningsTab === tab ? "active" : ""
+      }`}
+      onClick={() => handleEarningsTabChange(tab)}
+    >
+      {tab}
+    </button>
+  ))}
+</div>
+<div >
+                    <div className="earnings-insight-learn-date-picker">
+                    <div className="dateinsighttt">
+  <label htmlFor="dateRange" className="date-picker-label">
+    Select Date Range:
+  </label>
+  <div className="calendar-icon" onClick={() => setCalendarOpen(true)}>
+    <FaRegCalendarAlt />
+  </div>
+</div>
+{calendarOpen && (
+  <ReactDatePicker
+  selected={startDate}
+  onChange={handleDateChange}
+  startDate={startDate}
+  endDate={endDate}
+  selectsRange
+  inline
+  dateFormat="yyyy-MM-dd"
+  onClickOutside={() => setCalendarOpen(false)} // Close calendar when clicking outside
+/>
+
+)}
+
+                        </div>
+                     
+                    
                     </div>
-                  </div>
-                  {calendarOpen && (
-                    <ReactDatePicker
-                      selected={startDate}
-                      onChange={handleDateChange}
-                      startDate={startDate}
-                      endDate={endDate}
-                      selectsRange
-                      inline
-                      dateFormat="yyyy-MM-dd"
-                      onClick={() => setCalendarOpen(false)} // Close the calendar when clicking outside
-                    />
-                  )}
+                    
+          
                 </div>
-
-
-              </div>
-
-
             </div>
-          </div>
-          <div className="DashboardMainPagetable-table-container">
+            <div className="DashboardMainPagetable-table-container">
             <table className="DashboardMainPagetable-tablee">
               <thead>
                 <tr>
@@ -366,7 +378,7 @@ const Stockcalender = () => {
           </div>
 
         </div>
-        <Navbar />
+        
       </div>
     </div>
 

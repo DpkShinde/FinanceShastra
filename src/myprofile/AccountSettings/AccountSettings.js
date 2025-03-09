@@ -3,6 +3,8 @@ import './AccountSettings.css';
 
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 const AccountSettings = () => {
   const [passwordData, setPasswordData] = useState({
@@ -81,7 +83,7 @@ const AccountSettings = () => {
   };
   const navigate = useNavigate();
   return (
-    
+    <div>
     <div className="profilesettingpassword-container">
       <h1 className="profilepage-titlee">Password & Security</h1>
       <div className="profilepage-tabsss">
@@ -128,60 +130,91 @@ const AccountSettings = () => {
         <form>
           {/* Current Password */}
           <div className="profilesettingpassword-form-group">
-            <label>Current Password*</label>
-            <div className="profilesettingpassword-password-field">
-              <input
-                type={showPasswords.currentPassword ? "text" : "password"}
-                name="currentPassword"
-                placeholder="Enter your current password"
-                value={passwordData.currentPassword}
-                onChange={handlePasswordChange}
-                className={errors.currentPassword ? "error" : ""}
-              />
-              <span onClick={() => togglePasswordVisibility("currentPassword")}>
-                
-              </span>
-            </div>
-            {errors.currentPassword && <div className="error-message">{errors.currentPassword}</div>}
-          </div>
+  <label>Current Password*</label>
+  <div className="profilesettingpassword-password-field">
+    <input
+      type={showPasswords.currentPassword ? "text" : "password"}
+      name="currentPassword"
+      placeholder="Enter your current password"
+      value={passwordData.currentPassword}
+      onChange={handlePasswordChange}
+      className={errors.currentPassword ? "error" : ""}
+    />
+    <span
+      className="toggle-passwordprofilll"
+      onClick={() => togglePasswordVisibility("currentPassword")}
+      style={{
+        cursor: "pointer",
+        position: "absolute",
+        right: "395px",
+        top: "50%",
+        transform: "translateY(-50%)",
+      }}
+    >
+      {showPasswords.currentPassword ?  <FaEye size={20}/>: <FaEyeSlash size={20} /> }
+    </span>
+  </div>
+  {errors.currentPassword && <div className="error-message">{errors.currentPassword}</div>}
+</div>
 
           {/* New Password */}
           <div className="profilesettingpassword-form-group">
-            <label>New Password*</label>
-            <div className="profilesettingpassword-password-field">
-              <input
-                type={showPasswords.newPassword ? "text" : "password"}
-                name="newPassword"
-                placeholder="Enter your new password"
-                value={passwordData.newPassword}
-                onChange={handlePasswordChange}
-                className={errors.newPassword ? "error" : ""}
-              />
-              <span onClick={() => togglePasswordVisibility("newPassword")}>
-               
-              </span>
-            </div>
-            {errors.newPassword && <div className="error-message">{errors.newPassword}</div>}
-          </div>
+  <label>New Password*</label>
+  <div className="profilesettingpassword-password-field">
+    <input
+      type={showPasswords.newPassword ? "text" : "password"}
+      name="newPassword"
+      placeholder="Enter your new password"
+      value={passwordData.newPassword}
+      onChange={handlePasswordChange}
+      className={errors.newPassword ? "error" : ""}
+    />
+    <span
+      className="toggle-passwordprofilll"
+      onClick={() => togglePasswordVisibility("newPassword")}
+      style={{
+        cursor: "pointer",
+        position: "absolute",
+        right: "395px",
+        top: "50%",
+        transform: "translateY(-50%)",
+      }}
+    >
+      {showPasswords.newPassword ? <FaEye size={20}/>: <FaEyeSlash size={20} />}
+    </span>
+  </div>
+  {errors.newPassword && <div className="error-message">{errors.newPassword}</div>}
+</div>
+
 
           {/* Confirm New Password */}
           <div className="profilesettingpassword-form-group">
-            <label>Confirm New Password*</label>
-            <div className="profilesettingpassword-password-field">
-              <input
-                type={showPasswords.confirmPassword ? "text" : "password"}
-                name="confirmPassword"
-                placeholder="Enter your confirm new password"
-                value={passwordData.confirmPassword}
-                onChange={handlePasswordChange}
-                className={errors.confirmPassword ? "error" : ""}
-              />
-              <span onClick={() => togglePasswordVisibility("confirmPassword")}>
-              
-              </span>
-            </div>
-            {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
-          </div>
+  <label>Confirm New Password*</label>
+  <div className="profilesettingpassword-password-field">
+    <input
+      type={showPasswords.confirmPassword ? "text" : "password"}
+      name="confirmPassword"
+      placeholder="Enter your confirm new password"
+      value={passwordData.confirmPassword}
+      onChange={handlePasswordChange}
+      className={errors.confirmPassword ? "error" : ""}
+    />
+    <span
+      className="toggle-passwordprofilll"
+      onClick={() => togglePasswordVisibility("confirmPassword")}
+      style={{
+        cursor: "pointer",
+        position: "absolute",
+        right: "395px",
+        top: "50%",
+        transform: "translateY(-50%)",
+      }}
+    >
+      {showPasswords.confirmPassword ? <FaEye size={20}/>: <FaEyeSlash size={20} />}
+    </span>
+  </div>
+  {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
+</div>
 
           {/* Password Rules */}
           <div className="profilesettingpassword-password-rules">
@@ -199,7 +232,13 @@ const AccountSettings = () => {
             <button type="button" onClick={handleSavePassword}>
               Save & Update
             </button>
-            <button type="button">Cancel</button>
+            <button
+  type="button"
+  onClick={() => setPasswordData({ currentPassword: "", newPassword: "", confirmPassword: "" })}
+>
+  Cancel
+</button>
+
           </div>
         </form>
       </section>
@@ -208,7 +247,7 @@ const AccountSettings = () => {
       <section className="profilesettingpassword-linked-accounts-section">
         <h2>Linked Social Accounts</h2>
         <p>
-          This section shows the social accounts linked to your profile. If you'd like, you can disconnect them and log in with your email and password.
+          This section shows the social accounts linked to your profile. If you'd like, you can disconnect them and log in with your email <br/>and password.
         </p>
         {linkedAccounts.map((account) => (
           <div key={account.platform} className="profilesettingpassword-linked-account">
@@ -243,7 +282,8 @@ const AccountSettings = () => {
     
       <Navbar/>
     </div>
-
+    <FooterForAllPage/>
+    </div>
   );
 };
 

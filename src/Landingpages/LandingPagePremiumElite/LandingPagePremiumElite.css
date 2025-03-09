@@ -345,6 +345,261 @@
     font-size: 1.1rem; /* Adjust the size of the icon */
     margin-left: 210px;
   }
+
+
+
+
+
+
+
+
+
+  .landingpagepremiumelite-darkcontainer {
+    font-family:'calibri';
+    padding: 40px;
+    text-align: center;
+    background-color: #292F42;
+    margin-left: -10px;
+    width: 100%;
+     
+   
+    
+  }
+  
+  
+  /* Styling for individual cards */
+  .landingpagepremiumelite-darkcard {
+    background: #212639;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 95%; /* Width of each card */
+    max-width: 1100px; /* Prevent the card from becoming too wide */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    height: 310px;
+    margin-top: -20px;
+  }
+  .landingpageelite-darkcard{
+    background: #212639;
+    border: 3px solid #a4d8c1;
+    border-radius: 8px;
+    width: 97%; /* Width of each card */
+    max-width: 1170px; /* Prevent the card from becoming too wide */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    height: 310px;
+    margin-top: -20px;
+    margin-left: 140px;
+  }
+  
+  
+  
+  /* Price section styling */
+  .landingpagepremiumelite-darkprice {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 15px 0;
+    color: #ffff;
+  }
+  
+  
+  .landingpagepremiumelite-darkyear{
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffff;
+  }
+  .landingpagepremiumelite-original-darkprice {
+    flex: 1; /* Allow it to occupy its share of space */
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #ffff;
+    margin-left: 10px;
+    background-color: #212639;
+    
+  }
+  
+  .landingpagepremiumelite-darkdiscount {
+    flex: 1; /* Same size as price */
+  font-size: 14px;
+    color: #ffff;
+    font-weight: 600;
+    margin-left: 30px;
+   
+  }
+  
+  .landingpagepremiumelitedarkdiscounttt{
+    font-size: 14px;
+    color: #ffff;
+    font-weight: 600;
+    margin-left: 5px;
+  
+  }
+  
+  .landingpagepremiumelite-darkcolumn {
+    margin-top: 10px;
+  
+  }
+  .landingpagepremiumelite-darkcolumnn{
+    margin-top: 10px;
+  }
+  .landingpagepremiumelite-darkcolumnn h4 {
+    margin-bottom: 10px;
+    color: #ffff;
+    font-size: 16px;
+    margin-top: -80px;
+  }
+  .landingpagepremiumelite-darkcolumnn ul {
+    list-style-type:disc;
+    padding-left: 0;
+    color: #24b676;
+  
+    
+  }
+  .landingpagepremiumelite-darkcolumnn ul li {
+    margin-bottom: 8px;
+    width: 70%;
+    margin-left: 120px;
+    font-size: 12px;
+    color: #ffff;
+   
+  }
+  
+  .landingpagepremiumelite-darkcolumnn li strong {
+    color: #24b676;
+    font-weight: 600;
+  }
+  
+  .landingpagepremiumelite-darkcolumn h4 {
+    margin-bottom: 10px;
+    color: #ffff;
+    font-size: 16px;
+    margin-top: -80px;
+    margin-left: 220px;
+  }
+  
+  .landingpagepremiumelite-darkcolumn ul {
+    list-style-type:disc;
+    padding-left: 0;
+    color: #24b676;
+  
+    
+  }
+  
+  .landingpagepremiumelite-darkcolumn ul li {
+    margin-bottom: 8px;
+    width: 70%;
+    margin-left: 230px;
+    font-size: 12px;
+    color: #ffff;
+   
+  }
+  
+  .landingpagepremiumelite-darkcolumn li strong {
+    color: #24b676;
+    font-weight: 600;
+  }
+  
+  
+  .landingpagepremiumelite-darkcard h3 {
+    font-size: 25px;
+    color: #24b676;
+    margin-top: -10px;
+    font-weight: 600;
+    border-bottom: 2px solid #898989; /* Reduced thickness */
+    width: 400px;
+    
+  }
+  .landingpageelite-darkcard h3 {
+    font-size: 25px;
+    color: #24b676;
+    margin-top: -10px;
+    font-weight: 600;
+    border-bottom: 2px solid #898989; /* Reduced thickness */
+    width: 400px;
+    
+  }
+  
+  
+  
+  .landingpagepremiumelite-darkcard ul {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .landingpageelitedarkbutton{
+    background: #212639;
+    border: 1px solid #24b676;
+    color: #24b676;
+    padding: 7px 40px;
+   
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 14px;
+    width: 22%;
+    margin-top: 50px;
+    font-weight: 600;
+    margin-left: 440px;
+  }
+  .landingpageelitedarkbutton:hover {
+    background: #24b676;
+    color: #ffff;
+  }
+  .most-popular-landingpagepremiumelitedarkcontainer{
+    background: linear-gradient(90deg, #24b676, #238486);
+    border-radius:35px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for spacing */
+    text-align: center; /* Center align the text */
+    margin: 0 auto 15px; /* Center the container and add spacing below */
+    color: #fff; /* White text */
+   
+    
+    width: 80%; /* Decrease width */
+    height: 100px; /* Adjust the value as needed */
+    min-height: 400px; /* For flexibility */
+    box-shadow: 0 4px 8px #24b676;
+    margin-left: 140px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+  }
+  .plan-darkfeaturesssh4 {
+    font-size: 1.2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    color: #ffff; /* Set text color */
+    display: flex; /* Align text and icon horizontally */
+    align-items: center; /* Center the icon vertically with the text */
+    gap: 0.5rem; /* Space between the text and icon */
+  margin-top: 10px;
+    padding: 0; /* Remove padding if any */
+    margin-left: 100px;
+    
+  
+  }
+  .plan-darkfeaturessssh4{
+    font-size: 1.2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    color: #ffff; /* Set text color */
+    display: flex; /* Align text and icon horizontally */
+    align-items: center; /* Center the icon vertically with the text */
+    gap: 0.5rem; /* Space between the text and icon */
+  margin-top: 10px;
+    padding: 0; /* Remove padding if any */
+    margin-left: 50px;
+  }
+  .plan-darkfeaturessssh4 .fa-circle-darkcheck {
+    color: #ffff; /* Green color for the check circle */
+    font-size: 1.1rem; /* Adjust the size of the icon */
+    margin-left: 160px;
+  }
+  .landingpagepremiumelite-darkheading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffff;
+  }
+  
   /* Responsive adjustments */
 @media (max-width: 768px) {
   .landingpagepremiumelite-plans {

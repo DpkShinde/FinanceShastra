@@ -1,12 +1,14 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState,useContext } from "react";
 import "./LandingPageUnlockInvest.css";
 import landingimg1 from "../../assest/landingimg1.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchData } from "../../Store/Slices/searchDataSlice";
 import { debounce } from "lodash";
 import { API_BASE_URL } from "../../config";
+import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 
 const LandingPageUnlockInvest = () => {
+    const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const [searchInputText, setSearchInputText] = useState("");
   const [filterData, setFilterData] = useState([]);
 
@@ -74,7 +76,7 @@ const LandingPageUnlockInvest = () => {
   }, [searchInputText, debounceSearch]);
 
   return (
-    <div className="landingpageunlockinvest-container">
+    <div className={darkMode ? "landingpageunlockinvestdarkcontainer" :"landingpageunlockinvest-container"}>
       <div className="landingpageunlockinvest-background">
         {/* Left Side Content */}
         <div className="landingpageunlockinvest-content">
@@ -86,7 +88,7 @@ const LandingPageUnlockInvest = () => {
               <input
                 type="text"
                 placeholder="Search for Stocks, Mutual..."
-                className="landingpageunlockinvest-input"
+                className={darkMode ? "landingpageunlockinvestdarkinput" :"landingpageunlockinvest-input"}
                 onChange={(e) => setSearchInputText(e.target.value)}
               />
               {/* to display result */}
@@ -118,7 +120,7 @@ const LandingPageUnlockInvest = () => {
           <img
             src={landingimg1}
             alt="Finance Chart Illustration"
-            className="landingpageunlockinvest-image"
+           className={darkMode ? "landingpageunlockinvestdarkimage" :"landingpageunlockinvest-image"}
           />
         </div>
       </div>

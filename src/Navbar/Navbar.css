@@ -2,6 +2,10 @@
 .portfolio-dropdown {
   position: relative; /* Makes the dropdown position relative to this element */
 }
+.butn{
+  background-color: transparent;
+  border: none;
+}
 a span {
   text-decoration: none; /* This will remove the underline from the span inside the link */
 }
@@ -238,7 +242,7 @@ a span {
   padding: 5px;
   border: 1px solid #333;
   border-radius: 5px;
-  width: 90%; /* Makes inputs take full width of their label container */
+ 
   box-sizing: border-box;  
 
 }
@@ -515,19 +519,20 @@ a span {
   color: #24b676;
 }
 
-.dropdown-content {
+.dropdown-contentnoti {
   position: absolute;
  left: -350px;
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 8px;
-  width: 450px;
+  width: 420px;
   max-height: 500px;
   overflow-y: auto;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
   margin-top: 10px;
   padding: 15px;
+  overflow-x: hidden;
 }
 
 .notification-card {
@@ -539,6 +544,7 @@ a span {
   margin-bottom: 10px;
   padding: 10px;
   transition: box-shadow 0.3s ease;
+  width: 390px;
 }
 
 .notification-card:hover {
@@ -725,7 +731,7 @@ a span {
     color: #24b676;
   }
   
-  .dropdown-content {
+  .dropdown-contentnoti {
     position: absolute;
    
     background-color: #fff;
@@ -928,7 +934,7 @@ a span {
     color: #24b676;
   }
   
-  .dropdown-content {
+  .dropdown-contentnoti {
     position: absolute;
 
     background-color: #fff;
@@ -1234,11 +1240,11 @@ a span {
 }
 
 .navbar-search input {
-  padding: 10px 12px 6px 30px; /* Add padding to make space for the icon */
+  padding: 10px 2px 6px 30px; /* Add padding to make space for the icon */
   border-radius: 6px;
   border: 1px solid #333333;
   font-size: 12px;
-  width: 220px; /* Adjust as needed */
+  width: 94%; /* Adjust as needed */
   height: 35px;
 }
 

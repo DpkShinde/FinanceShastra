@@ -196,7 +196,7 @@ const ReferMoreProfilePages = () => {
             onChange={(event) => handleInputChange(index, event)}
           />
           {input.touched && validationResults.firstName && (
-            <p className="error-message">{validationResults.firstName}</p>
+            <p className="error-messagerefer">{validationResults.firstName}</p>
           )}
         </div>
 
@@ -213,7 +213,7 @@ const ReferMoreProfilePages = () => {
             onChange={(event) => handleInputChange(index, event)}
           />
           {input.touched && validationResults.lastName && (
-            <p className="error-message">{validationResults.lastName}</p>
+            <p className="error-messagerefer">{validationResults.lastName}</p>
           )}
         </div>
 
@@ -230,7 +230,7 @@ const ReferMoreProfilePages = () => {
             onChange={(event) => handleInputChange(index, event)}
           />
           {input.touched && validationResults.mobileNumber && (
-            <p className="error-message">{validationResults.mobileNumber}</p>
+            <p className="error-messagerefer">{validationResults.mobileNumber}</p>
           )}
         </div>
 
@@ -247,7 +247,7 @@ const ReferMoreProfilePages = () => {
             onChange={(event) => handleInputChange(index, event)}
           />
           {input.touched && validationResults.email && (
-            <p className="error-message">{validationResults.email}</p>
+            <p className="error-messagerefer">{validationResults.email}</p>
           )}
         </div>
 

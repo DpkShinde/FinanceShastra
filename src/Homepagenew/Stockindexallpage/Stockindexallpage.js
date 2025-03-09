@@ -1,26 +1,85 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { UserProfileContext } from '../../Portfoilo/context/UserProfileContext';
+import { useNavigate } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
+import itiimg from '../../../src/assest/iti.png';
+
 import Sidebar from '../../Sidebar/Sidebar'
 import Navbar from '../../Navbar/Navbar';
 import Watchlistdashboardmain from '../Watchlistdashboardmain/Watchlistdashboardmain';
-import Dashboardstockindex from '../Stockindex/Stockindex';
-import itiimg from '../../../src/assest/iti.png';
-import FooterForhomeAllPage from '../../Footerhomeeepage/Footerhomeeepage';
+import DashboardMainPagetable from '../DashboardMainPagetable/DashboardMainPagetable';
 import FooterForAllPage from '../../FooterForAllPage/FooterForAllPage';
-
+import FooterForhomeAllPage from '../../Footerhomeeepage/Footerhomeeepage';
+import { API_BASE_URL } from '../../config';
+import Cookies from "js-cookie";
+import Dashboardstockindex from '../Stockindex/Stockindex';
 
 
 
 
 const Stockindexall = ({children}) => {
-   
   const [timeRange, setTimeRange] = useState('1D');
   const [financialData, setFinancialData] = useState({
     price: "₹127.89",
     percentage: "+0.85%",
     lastUpdated: "05 Dec, 2024",
   });
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [myInvestment, setMyInvestment] = useState(0);
+  const [latestValue, setLatestValue] = useState(0);
+  const [percentChange, setPercentChange] = useState(0);
+
+  const { user } = useContext(UserProfileContext)
+
+  const navigate = useNavigate();
+
+  const fetchData = async () => {
+      try {
+        setLoading(true);
+        const token = Cookies.get("jwtToken");
+        if (!token) {
+          alert("Session expired, Please login again.");
+          setLoading(false);
+          navigate("/login")
+          return;
+        }
+  
+        const response = await fetch(`${API_BASE_URL}/myportfolio/allocationChart`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+  
+        const data = await response.json();
+        console.log("API Data:", data);
+  
+        if (data.length > 0) {
+          setMyInvestment(data[0].total_investment || 0);
+          setLatestValue(data[0].latest_value || 0);
+          const change = ((data[0].latest_value - data[0].total_investment)/data[0].total_investment)*100 || 0
+          setPercentChange(change)
+        } else {
+          setError("No portfolio data found.");
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    // Fetch data when the component mounts
+    useEffect(() => {
+      fetchData();
+    }, []);
 
   // Simulate financial data updates every 5 seconds
   useEffect(() => {
@@ -41,22 +100,22 @@ const Stockindexall = ({children}) => {
         percentage: `${newPercentage > 0 ? "+" : ""}${newPercentage}%`, // Adds "+" for positive percentages
         lastUpdated: newLastUpdated, // Updates with the latest timestamp
       });
-      }, 5000); // Update every 5 seconds
-      
-      return () => clearInterval(interval); // Cleanup interval on component unmount
-      }, []); // Dependency array ensures this effect runs once on mount
-      
+    }, 5000); // Update every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []); // Dependency array ensures this effect runs once on mount
+
 
   // Chart data for different time ranges
   const chartDataByRange = {
-    '1D': [ 3000, 6000,2000, 12000, 4000, 10000],
-    '5D':  [ 3000, 6000, 9000,0, 12000, 15000],
-    '1M': [ 3500, 6000, 3,9000, 12000, 15000],
-    '6M': [6000,0, 3000,  9000, 12000, 15000],
-    '1Y': [6000, 3000, 0, 9000,  15000,12000],
-    '3Y':  [6000, 9000,0, 3000, 12000, 15000],
-    '5Y': [9000,0, 3000, 6000, 15000,12000,],
-    'Max': [15000,703, 3000, 6000, 9000, 12000],
+    '1D': [3000, 6000, 2000, 12000, 4000, 10000],
+    '5D': [3000, 6000, 9000, 0, 12000, 15000],
+    '1M': [3500, 6000, 3, 9000, 12000, 15000],
+    '6M': [6000, 0, 3000, 9000, 12000, 15000],
+    '1Y': [6000, 3000, 0, 9000, 15000, 12000],
+    '3Y': [6000, 9000, 0, 3000, 12000, 15000],
+    '5Y': [9000, 0, 3000, 6000, 15000, 12000,],
+    'Max': [15000, 703, 3000, 6000, 9000, 12000],
   };
 
   const chartData = {
@@ -73,6 +132,8 @@ const Stockindexall = ({children}) => {
       },
     ],
   };
+  //const percentageChange = "+21.32%";
+  const isPositiveChange = percentChange >= 0;
 
   const chartOptions = {
     responsive: true,
@@ -94,103 +155,115 @@ const Stockindexall = ({children}) => {
     },
   };
 
-  const totalInvestment = "₹12,63,583.90";
-  const percentageChange = "+21.32%";
-  const isPositiveChange = percentageChange.startsWith("+");
-
-
-
   return (
-     <div className='allheadd'>
-         <div className='hompagetopdata'>
-      <div>
+    <div>
+    <div className='allheadd'>
+      <div className='hompagetopdata'>
+   <div>
       <h1 className='headernifty50000'>Welcome back, William</h1>
-          <p className='headerdashboardmain'>Track your finance and achieve your financial goals.</p>
-          </div>
-          <div className="homepagenewdata-card">
-          <div className='homepageamountdata'>
-               <div className="homepagenewdata-title">Total Investment<br/>
-             
-               <div className='homepagenewdata-amount' >{totalInvestment}</div>
-               </div>
-               <div
-                   className={`homepagenewdata-change ${
-                       isPositiveChange
-                           ? "homepagenewdata-positive"
-                           : "homepagenewdata-negative"
-                   }`}
-               >
-                   {isPositiveChange ? "▲" : "▼"} {percentageChange}
-               </div>
-               </div>
-           </div>
-           </div>
-   
-         <div className="dataquatallnifty">
+       <p className='headerdashboardmain'>Track your finance and achieve your financial goals.</p>
+       </div>
+       <div className="homepagenewdata-card">
+       <div className='homepageamountdata'>
+            <div className="homepagenewdata-title">Total Investment<br/>
+          
+            <div className='homepagenewdata-amount' >{(myInvestment - 0).toLocaleString()}</div>
+            </div>
+            <div
+                className={`homepagenewdata-change ${
+                    isPositiveChange
+                        ? "homepagenewdata-positive"
+                        : "homepagenewdata-negative"
+                }`}
+            >
+                {isPositiveChange ? "▲" : "▼"} {percentChange}
+            </div>
+            </div>
+        </div>
+        </div>
+
+      <div className="dataquatallnifty">
+      
+        <div className="portfoliomutual-containerrniftydashboard">
          
-           <div className="portfoliomutual-containerrniftydashboard">
-            
-             <div className="portfoliomutual-card">
-               <div className='itidata'>
-               <div className='alldatagraphtop'>
-             <div>
-                           <h3 className="portfoliomutual-titleport">Portfolio Value</h3>
-                           <p className="portfoliomutual-value">₹4,05,924.60</p>
-                           <p className="portfoliomutual-profit">
-                               Your profit is <span>₹8,42,685.42</span>
-                           </p>
-                       </div>
-                       <div>
-                           <h3 className="portfoliomutual-titleport">Avg. Monthly Grow</h3>
-                           <p className="portfoliomutual-value">~4.32%</p>
-                           <p className="portfoliomutual-profitt">
-                           ~₹20,365.75
-                           </p>
-                       </div>
-                       </div>
-                       <div className='bestprofitdata'>
-                           <h3 className="portfoliomutual-titleport">Best Profit Stock</h3>
-                           <h3 className="portfoliomutual-valuee">
-       <img src={itiimg} alt="ITI Ltd." className="portfolio-logo" /> ITI Ltd.
-   </h3>
-   </div>
-                       </div>
-               {/* Time Range Selector */}
-               <div className="time-rangemutual-selectorrniftydashboard">
-                 {['1D', '5D', '1M', '6M', '1Y', '3Y', '5Y', 'Max'].map((range) => (
-                   <button
-                     key={range}
-                     className={`time-rangemutual-button ${range === timeRange ? 'active' : ''}`}
-   
-                     onClick={() => setTimeRange(range)} // Update selected range
-                   >
-                     {range}
-                   </button>
-                 ))}
-               </div>
-              
+          <div className="portfoliomutual-card">
+            <div className='itidata'>
+            <div className='alldatagraphtop'>
+          <div>
+                        <h3 className="portfoliomutual-titleport">Portfolio Value</h3>
+                        <p className="portfoliomutual-value">₹4,05,924.60</p>
+                        <p className="portfoliomutual-profit">
+                            Your profit is <span>₹8,42,685.42</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="portfoliomutual-titleport">Avg. Monthly Grow</h3>
+                        <p className="portfoliomutual-value">~4.32%</p>
+                        <p className="portfoliomutual-profitt">
+                        ~₹20,365.75
+                        </p>
+                    </div>
+                    </div>
+                    <div className='bestprofitdata'>
+                        <h3 className="portfoliomutual-titleport">Best Profit Stock</h3>
+                        <h3 className="portfoliomutual-valuee">
+    <img src={itiimg} alt="ITI Ltd." className="portfolio-logo" /> ITI Ltd.
+</h3>
+</div>
+                    </div>
+            {/* Time Range Selector */}
+            <div className="time-rangemutual-selectorrniftydashboard">
+              {['1D', '5D', '1M', '6M', '1Y', '3Y', '5Y', 'Max'].map((range) => (
+                <button
+                  key={range}
+                  className={`time-rangemutual-button ${range === timeRange ? 'active' : ''}`}
+
+                  onClick={() => setTimeRange(range)} // Update selected range
+                >
+                  {range}
+                </button>
+              ))}
+            </div>
+           
             {/* Line Chart */}
             <div className="chartmutual-containerrdashboard">
               <Line data={chartData} options={chartOptions} />
             </div>
           </div>
         </div>
-        <div className="datadisstock">
-  <Sidebar />
+        <div className="datadisstockdashhh">
+ 
   <div className="main-content">
     <Navbar />
     <Watchlistdashboardmain />
   </div>
 </div>
+
       </div>
+        <div className="DashboardMainPagetable-headerrindexx">
+              <button className="DashboardMainPagetable-tab "onClick={() => navigate("/home")}>Stock Sector</button>
+              <button
+            className="DashboardMainPagetable-tab active"
+            onClick={() => navigate("/stockindexall")}
+          >
+            Stock Index
+          </button>
+              <button className="DashboardMainPagetable-tab"
+               onClick={() => navigate("/calenderchartmain")}>Stock Calendar</button>
+              <button className="DashboardMainPagetable-tab"  onClick={() => navigate("/stockanalystall")}>Stock Analyst</button>
+            </div>
       <Dashboardstockindex/>
-      <div className="layout">
+  
+    </div>
+
+    <div className="layout">
       <Sidebar />
       <div className="main-contentover">
         <div className="contentover">{children}</div>
         <FooterForAllPage />
       </div>
     </div>
+   
     </div>
   );
 };

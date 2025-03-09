@@ -19,6 +19,8 @@
 
 
 
+
+
 /* Search results dropdown */
 .landingpageunlockinvest-searchbar div {
   position: absolute;
@@ -145,6 +147,57 @@
 .landingpageunlockinvest-image {
   width: 100%;
   max-width: 500px;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+.landingpageunlockinvestdarkcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  /* Full-screen height */
+  background: url('../../assest/landinginvestbackgroundimg.png') no-repeat center center;
+  background-size: cover;
+  /* Ensures full coverage of the background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Calibri';
+  width: 102%;
+  margin-top: 70px;
+  margin-left: -10px;
+
+}
+
+
+.landingpageunlockinvestdarkinput {
+  width: 180%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 10px;
+  margin-right: 50px;
+  margin-top: 20px;
+  background-color: #5D5D5D;
+  color: #FFFFFF;
+}
+.landingpageunlockinvestdarkinput::placeholder {
+  color: white;
+  opacity: 1; /* Ensures full visibility in some browsers */
+}
+
+
+
+.landingpageunlockinvestdarkimage {
+  width: 100%;
+  max-width: 490px;
   object-fit: cover;
 }
 

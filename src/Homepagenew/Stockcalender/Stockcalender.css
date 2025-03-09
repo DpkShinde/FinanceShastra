@@ -11,10 +11,10 @@
 }
 .pagination-containercalender {
   display: flex;
-  gap: 820px;
+  gap: 780px;
   align-items: center;
   margin: 20px 0;
-  margin-left: 20px;
+  margin-left: 23px;
 }
 .DashboardMainPagetable-tablee {
     width: 98%;
@@ -68,20 +68,26 @@
     }
     
   
-    .dateinsighttt{
+    .dateinsighttt {
       display: flex;
-      border: 1px solid rgb(212, 209, 209);
-      height: 40px;
-      width: 140px;
-      border-radius: 5px;
-      box-shadow: 0 0 0 2px #efeeee; /* Blue outline when focused */
-  
-      
-  }
+      align-items: center; /* Aligns label and icon in one line */
+      gap: 8px; /* Adds space between label and icon */
+      position: relative;
+    }
+    .calendar-icon {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative; /* Prevents overlap */
+      z-index: 10; /* Ensures it stays on top */
+    }
+    .react-datepicker {
+      z-index: 1000 !important;
+    }
   .earningquterlyrowalll {
     display: flex;
-    width: 890px;
-    margin-left: 40px;
+
+   
     gap: 210px;
     margin-bottom: 20px;
     padding: 16px;

@@ -3,6 +3,7 @@ import "./Managealert.css"; // Add your styles here
 import Navbar from "../../Navbar/Navbar";
 import { IoIosClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 const Managealert = () => {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ const Managealert = () => {
   };
 
   return (
+    <div>
     <div className="managealertalldata">
       <h1 className="profilepage-titleorder">Manage Alert</h1>
       <div className="profilepage-tabsorder">
@@ -158,6 +160,9 @@ const Managealert = () => {
         <button className="footer-subscribe-buttonmanage">Subscribe</button>
       </div>
       <Navbar />
+    
+    </div>
+    <FooterForAllPage/>
     </div>
   );
 };

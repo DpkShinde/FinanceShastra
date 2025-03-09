@@ -8,6 +8,13 @@
     font-family: 'calibri';
 
 }
+
+
+.cahngeupdownheader{
+  display: flex;
+  align-items: center;  /* Center vertically */
+  gap: 5px; /* Space between text and button */
+}
 .screenerheadercontainer {
     display: flex;
     justify-content: space-between;
@@ -36,15 +43,15 @@
   .screenertablenifty th,
   .screenertablenifty td {
     padding: 10px;
-    text-align: center;
+   text-align: left;
     border-bottom: 1px solid #ddd;
   }
   
   .screenertablenifty th {
     background-color: #f9f9f9;
     color: #333;
-    padding: 10px;
-    text-align: center;
+    padding: 7px 7px;
+    text-align: left;
     border-bottom: 1px solid #24b676; /* Border color for bottom */
     border-top: 1px solid #24b676; /* Border color for top */
     box-shadow: 0 4px 6px #24b676; /* Adds subtle shadow */

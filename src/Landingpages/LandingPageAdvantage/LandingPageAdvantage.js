@@ -1,4 +1,7 @@
-import React from "react";
+import React, {
+ 
+  useContext,
+} from "react"
 import "./LandingPageAdvantage.css";
 import advimg1 from '../../assest/advimg1.png';
 import advimg2 from '../../assest/advimg2.png';
@@ -6,8 +9,10 @@ import advimg3 from '../../assest/advimg3.png';
 import advimg4 from '../../assest/advimg4.png';
 import advimg5 from '../../assest/advimg5.png';
 import advimg6 from '../../assest/advimg6.png';
+import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 
 const LandingPageAdvantage = () => {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const advantages = [
     {
       id: 1,
@@ -42,8 +47,8 @@ const LandingPageAdvantage = () => {
   ];
 
   return (
-    <div className="landingpageadvantage-container">
-      <h2 className="landingpageadvantage-title">
+    <div className={darkMode ? "landingpageadvantagedarkcontainer" :"landingpageadvantage-container"}>
+      <h2 className={darkMode ? "landingpageadvantagedarktitle" :"landingpageadvantage-title"}>
         Advantage of Investing With FinanceShastra
       </h2>
       <div className="landingpageadvantage-grid">

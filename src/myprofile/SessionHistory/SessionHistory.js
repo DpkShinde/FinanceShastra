@@ -5,6 +5,7 @@ import Navbar from "../../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { API_BASE_URL } from "../../config.js";
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage.js";
 
 const SessionHistory = () => {
   const navigate = useNavigate();
@@ -97,6 +98,7 @@ const SessionHistory = () => {
   if (loading) return <h1>Loading..</h1>;
 
   return (
+    <div>
     <div className="session-history">
       <h1 className="profilepage-titlesession">My Account</h1>
       <div className="profilepage-tabsorderuserss">
@@ -202,8 +204,12 @@ const SessionHistory = () => {
               </div>
             </div>
           ))}
+           
       </div>
-      <Navbar />
+    
+    </div>
+    <Navbar />
+    <FooterForAllPage/>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import './OrderTable.css'
 
 import Navbar from "../../Navbar/Navbar";
 import {useNavigate} from "react-router-dom";
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 const ordersData = [
   { id: "#7234531", order: "Elite ", date: "08-07-2024", amount: "₹2,000", status: "Completed" },
   { id: "#7234532", order: "Premium ", date: "08-06-2024", amount: "₹5,999", status: "Completed" },
@@ -26,6 +27,7 @@ const OrderTable = () => {
         : ordersData.filter((order) => order.status === activeTab);
   
     return (
+      <div>
       <div className="order-table-all">
         <h1 className="profilepage-titleorder">My Orders</h1>
       <div className="profilepage-tabsorder">
@@ -77,6 +79,9 @@ const OrderTable = () => {
           </tbody>
         </table>
         <Navbar/>
+        
+      </div>
+      <FooterForAllPage/>
       </div>
     );
   };

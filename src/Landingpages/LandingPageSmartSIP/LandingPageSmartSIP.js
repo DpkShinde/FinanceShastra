@@ -1,8 +1,13 @@
-import React from "react";
+import React, {
+ 
+  useContext,
+} from "react"
 import "./LandingPageSmartSIP.css";
 import { useNavigate } from "react-router-dom";
+import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 
 const LandingPageSmartSIP = () => {
+   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
     const navigate = useNavigate();
   const cards = [
     {
@@ -32,13 +37,13 @@ const LandingPageSmartSIP = () => {
   ];
 
   return (
-    <div className="landingpagesmartsip-container">
-      <h2 className="landingpagesmartsip-title">Stocks SmartSIP Overview</h2>
+    <div className={darkMode ? "landingpagesmartsipdarkcontainer" :"landingpagesmartsip-container"}>
+      <h2 className={darkMode ? "landingpagesmartsip-darktitle" :"landingpagesmartsip-title"}>Stocks SmartSIP Overview</h2>
       <div className="landingpagesmartsip-cards">
         {cards.map((card) => (
-          <div key={card.id} className="landingpagesmartsip-card">
+          <div key={card.id} className={darkMode ? "landingpagesmartsipdarkcard" :"landingpagesmartsip-card"}>
             <h3 className="landingpagesmartsip-card-title">{card.title}</h3>
-            <p className="landingpagesmartsip-card-description">
+            <p className={darkMode ? "landingpagesmartsip-carddarkdescription" :"landingpagesmartsip-card-description"}>
               {card.description}
             </p>
           </div>

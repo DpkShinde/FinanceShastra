@@ -6,13 +6,14 @@ import Navbar from '../../Navbar/Navbar';
 import Watchlistdashboardmain from '../Watchlistdashboardmain/Watchlistdashboardmain';
 import Stockcalender from '../Stockcalender/Stockcalender';
 import itiimg from '../../../src/assest/iti.png';
-import FooterForhomeAllPage from '../../Footerhomeeepage/Footerhomeeepage';
+
+import FooterForAllPage from '../../FooterForAllPage/FooterForAllPage';
 
 
 
 
 
-const Calenderchartmain= () => {
+const Calenderchartmain= ({children}) => {
   const [timeRange, setTimeRange] = useState('1D');
   const [financialData, setFinancialData] = useState({
     price: "₹127.89",
@@ -173,7 +174,7 @@ const Calenderchartmain= () => {
           </div>
         </div>
         <div className="datadisstock">
-  <Sidebar />
+
   <div className="main-content">
     <Navbar />
     <Watchlistdashboardmain />
@@ -181,9 +182,13 @@ const Calenderchartmain= () => {
 </div>
       </div>
      <Stockcalender/>
-     <div className="foooterpagesatt">
-    <FooterForhomeAllPage/>
-  </div>
+     <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

@@ -68,6 +68,54 @@
     margin-right: 200px;
 }
 
+
+
+
+
+
+
+
+
+.landingpagehowtoearndarkcontainer {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #212639;
+    padding: 20px 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'calibri';
+    border: 2px solid #cecece;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: -15px;
+
+}
+
+.landingpagehowtoearndarkheading {
+    font-size: 24px;
+    color: #ffff;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+
+
+.landingpagehowtoearndarkstep {
+    background: linear-gradient(90deg, #24b676, #238486);
+    color: #212639;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 13px 10px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 10px #238486;
+    width: 60%;
+    margin-left: 200px;
+    cursor: pointer;
+}
+
+
 /* Mobile View - Tablet (max-width: 768px) */
 @media (max-width: 768px) {
     .landingpagehowtoearn-container {

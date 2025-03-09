@@ -230,11 +230,14 @@ const Nifty50screenerStockdatatable = () => {
           </button>
         </th>
         <th>
-          Change %
-          <button className="screenerbtnlist" onClick={() => handleSort("change")}>
-            <PiCaretUpDownFill />
-          </button>
-        </th>
+  <div className="cahngeupdownheader">
+    Change %
+    <button className="screenerbtnlist" onClick={() => handleSort("change")}>
+      <PiCaretUpDownFill />
+    </button>
+  </div>
+</th>
+
         <th>
           Volume
           <button className="screenerbtnlist" onClick={() => handleSort("volume")}>

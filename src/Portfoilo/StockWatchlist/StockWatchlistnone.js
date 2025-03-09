@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 import "./StockWatchlistnone.css";
@@ -12,6 +12,12 @@ import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 const StockWatchlist = () => {
   const navigate = useNavigate();
   const getStockData = useSelector((store) => store?.searchData?.searchData || []);
+
+  // Refs for popup containers
+  const renamePopupRef = useRef(null);
+  const deletePopupRef = useRef(null);
+  const deleteWatchlistPopupRef = useRef(null);
+  const dropdownRefs = useRef([]);
 
   // State management with logical grouping
   const [stockInput, setStockInput] = useState({
@@ -138,7 +144,7 @@ const StockWatchlist = () => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/addStockToWatchklist`, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -182,7 +188,7 @@ const StockWatchlist = () => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/CreateWatchList`, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -277,7 +283,7 @@ const StockWatchlist = () => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/renameWatchlist`, {
         method: "PUT",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -331,7 +337,7 @@ const StockWatchlist = () => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/removeStockFromWatchlist`, {
         method: "DELETE",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -396,10 +402,49 @@ const StockWatchlist = () => {
     fetchWatchlistAssets();
   }, [watchlistState.selected]);
 
+  // Close popups when clicking outside
+  const handleClickOutside = useCallback((event) => {
+    // Handle rename popup
+    if (uiState.renamePopup &&
+      renamePopupRef.current &&
+      !renamePopupRef.current.contains(event.target)) {
+      setUiState(prev => ({ ...prev, renamePopup: false }));
+    }
+
+    // Handle delete stock popup
+    if (uiState.deletePopup &&
+      deletePopupRef.current &&
+      !deletePopupRef.current.contains(event.target)) {
+      setUiState(prev => ({ ...prev, deletePopup: false }));
+    }
+
+    // Handle delete watchlist popup
+    if (uiState.deleteWatchlistPopup &&
+      deleteWatchlistPopupRef.current &&
+      !deleteWatchlistPopupRef.current.contains(event.target)) {
+      setUiState(prev => ({ ...prev, deleteWatchlistPopup: false }));
+    }
+
+    // Handle dropdown menus
+    if (uiState.activeDropdown !== null) {
+      const activeDropdownElement = dropdownRefs.current[uiState.activeDropdown];
+      if (activeDropdownElement && !activeDropdownElement.contains(event.target)) {
+        setUiState(prev => ({ ...prev, activeDropdown: null }));
+      }
+    }
+  }, [uiState.renamePopup, uiState.deletePopup, uiState.deleteWatchlistPopup, uiState.activeDropdown]);
+
+  useEffect(() => {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [handleClickOutside]);
+
   // UI Components
   const RenamePopup = () => (
     <div className="popup-overlay">
-      <div className="popup-container">
+      <div className="popup-container" ref={renamePopupRef}>
         <h3>Rename Watchlist</h3>
         <input
           type="text"
@@ -415,8 +460,8 @@ const StockWatchlist = () => {
   );
 
   const DeleteStockPopup = () => (
-    <div className="popup-overlaywatchlist">
-      <div className="popup-containerwatchlist">
+    <div className="popup-overlay">
+      <div className="popup-container" ref={deletePopupRef}>
         <h3>Confirm Deletion</h3>
         <p>Are you sure you want to delete this stock?</p>
         <div className="watchlistpopup-btn">
@@ -429,7 +474,7 @@ const StockWatchlist = () => {
 
   const DeleteWatchlistPopup = () => (
     <div className="popup-overlay">
-      <div className="popup-container">
+      <div className="popup-container" ref={deleteWatchlistPopupRef}>
         <h3>Confirm Watchlist Deletion</h3>
         <p>Are you sure you want to delete this watchlist? This action cannot be undone.</p>
         <div className="watchlistpopup-btn">
@@ -498,7 +543,12 @@ const StockWatchlist = () => {
                   ⋮
                 </button>
                 {uiState.activeDropdown === index && (
-                  <div className="menu-dropdownwatchlist">
+                  <div className="menu-dropdownwatchlist"
+                  ref={el => {
+                    // Dynamically add refs to the dropdown elements
+                    dropdownRefs.current[index] = el;
+                  }}
+                  >
                     <button
                       className="menu-itemwatchlist"
                       onClick={() => handleRenameWatchlist(watchlist.watchlist_id)}

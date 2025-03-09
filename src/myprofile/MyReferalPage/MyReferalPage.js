@@ -115,7 +115,11 @@ const MyReferalPage = () => {
                         <li>Recognition as a key contributor to FinanceShastra’s Mission Financial Freedom.</li>
                         <li>Access to premium resources to elevate your investment knowledge.</li>
                     </ul>
-                    <button className="myreferalpagesss-partner-benefitsrefer-button">
+                    <button className="myreferalpagesss-partner-benefitsrefer-button"
+                     onClick={() => {
+                      navigate("/referMoreProfilePages"); 
+                      window.scrollTo(0, 0); // Scroll to top after navigation
+                    }}>
     Refer Now <FaArrowRight />
 </button>
 
@@ -161,9 +165,17 @@ const MyReferalPage = () => {
             FinanceShastra is dedicated to helping millions of Indians <br/>achieve financial independence
             by investing wisely.
           </p>
-          <button className="why-financeshastrarefer-now-button">
-            Refer Now <FaArrowRight />
-          </button>
+          <button 
+  className="why-financeshastrarefer-now-button" 
+  onClick={() => {
+    navigate("/WhyFinadvanceeducationnn"); 
+    window.scrollTo(0, 0); // Scroll to top after navigation
+  }}
+>
+  Refer Now <FaArrowRight />
+</button>
+
+
         </div>
       </div>
     </section>
@@ -192,7 +204,11 @@ const MyReferalPage = () => {
           Let’s make financial freedom a reality for millions. Together, we can
           create a brighter financial future.
         </p>
-        <button className="refer-now-button">Refer Now <FaArrowRight /></button>
+        <button className="refer-now-button"
+         onClick={() => {
+          navigate("/WhyFinadvanceeducationnn"); 
+          window.scrollTo(0, 0); // Scroll to top after navigation
+        }}>Refer Now <FaArrowRight /></button>
       </div>
     </section>
     </div>

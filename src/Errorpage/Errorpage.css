@@ -30,7 +30,7 @@
     text-align: center;
   }
   
-  .error-message {
+  .messagepageerror-message {
     font-size:20px;
     color: #24b676;
     font-weight: bold;
@@ -95,7 +95,7 @@
     text-align: center;
   }
   
-  .error-message {
+  .messagepageerror-message {
     font-size:24px;
     color: #24b676;
     font-weight: bold;
@@ -162,7 +162,7 @@
     text-align: center;
   }
   
-  .error-message {
+  .messagepageerror-message {
     font-size:20px;
     color: #24b676;
     font-weight: bold;

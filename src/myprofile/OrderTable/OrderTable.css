@@ -7,6 +7,7 @@
   width: 900px;
     margin: auto;
     margin-top: 100px;
+   
   }
   
   .halfyear{
@@ -37,6 +38,7 @@
     width: 100%;
     border-collapse: collapse;
     border-bottom: 1px solid #24b676;
+    margin-bottom: 70px;
    
 }
 

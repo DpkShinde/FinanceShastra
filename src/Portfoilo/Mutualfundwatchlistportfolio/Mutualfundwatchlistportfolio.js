@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css"; // Import FontAwesome CSS
 import Navbar from "../../Navbar/Navbar";
@@ -12,6 +12,12 @@ import { API_BASE_URL } from "../../config";
 const MutualWatchlist = () => {
   const navigate = useNavigate();
   const getStockData = useSelector((store) => store?.searchData?.searchData || []);
+
+  // Refs for popup containers
+  const renamePopupRef = useRef(null);
+  const deletePopupRef = useRef(null);
+  const deleteWatchlistPopupRef = useRef(null);
+  const dropdownRefs = useRef([]);
 
   // State management
   const [stockInput, setStockInput] = useState({
@@ -268,7 +274,8 @@ const MutualWatchlist = () => {
       ...prev,
       renameIndex: watchlistId,
       newWatchlistName: watchlist?.name || "",
-      renamePopup: true
+      renamePopup: true,
+      activeDropdown: null // Close dropdown when opening popup
     }));
   };
 
@@ -387,6 +394,38 @@ const MutualWatchlist = () => {
     }));
   };
 
+  // Close popups when clicking outside
+  const handleClickOutside = useCallback((event) => {
+    // Handle rename popup
+    if (uiState.renamePopup && 
+        renamePopupRef.current && 
+        !renamePopupRef.current.contains(event.target)) {
+      setUiState(prev => ({ ...prev, renamePopup: false }));
+    }
+    
+    // Handle delete stock popup
+    if (uiState.deletePopup && 
+        deletePopupRef.current && 
+        !deletePopupRef.current.contains(event.target)) {
+      setUiState(prev => ({ ...prev, deletePopup: false }));
+    }
+    
+    // Handle delete watchlist popup
+    if (uiState.deleteWatchlistPopup && 
+        deleteWatchlistPopupRef.current && 
+        !deleteWatchlistPopupRef.current.contains(event.target)) {
+      setUiState(prev => ({ ...prev, deleteWatchlistPopup: false }));
+    }
+    
+    // Handle dropdown menus
+    if (uiState.activeDropdown !== null) {
+      const activeDropdownElement = dropdownRefs.current[uiState.activeDropdown];
+      if (activeDropdownElement && !activeDropdownElement.contains(event.target)) {
+        setUiState(prev => ({ ...prev, activeDropdown: null }));
+      }
+    }
+  }, [uiState.renamePopup, uiState.deletePopup, uiState.deleteWatchlistPopup, uiState.activeDropdown]);
+
   // Effects
   useEffect(() => {
     fetchWatchlists();
@@ -401,10 +440,18 @@ const MutualWatchlist = () => {
     fetchWatchlistAssets();
   }, [watchlistState.selected, fetchWatchlistAssets]);
 
+  // Add click outside event listener
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [handleClickOutside]);
+
   // UI Components
   const RenamePopup = () => (
     <div className="popup-overlay">
-      <div className="popup-container">
+      <div className="popup-container" ref={renamePopupRef}>
         <h3>Rename Watchlist</h3>
         <input
           type="text"
@@ -420,8 +467,8 @@ const MutualWatchlist = () => {
   );
 
   const DeleteStockPopup = () => (
-    <div className="popup-overlaywatchlist">
-      <div className="popup-containerwatchlist">
+    <div className="popup-overlay">
+      <div className="popup-container" ref={deletePopupRef}>
         <h3>Confirm Deletion</h3>
         <p>Are you sure you want to delete this mutual fund?</p>
         <div className="watchlistpopup-btn">
@@ -434,7 +481,7 @@ const MutualWatchlist = () => {
 
   const DeleteWatchlistPopup = () => (
     <div className="popup-overlay">
-      <div className="popup-container">
+      <div className="popup-container" ref={deleteWatchlistPopupRef}>
         <h3>Confirm Watchlist Deletion</h3>
         <p>Are you sure you want to delete this watchlist? This action cannot be undone.</p>
         <div className="watchlistpopup-btn">
@@ -497,12 +544,21 @@ const MutualWatchlist = () => {
               <label className="watchlist-label">{watchlist.name}</label>
               <button
                 className="menu-iconwatchlist"
-                onClick={() => toggleDropdown(index)}
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent click from bubbling
+                  toggleDropdown(index);
+                }}
               >
                 ⋮
               </button>
               {uiState.activeDropdown === index && (
-                <div className="menu-dropdownwatchlist">
+                <div 
+                  className="menu-dropdownwatchlist"
+                  ref={el => {
+                    // Dynamically add refs to the dropdown elements
+                    dropdownRefs.current[index] = el;
+                  }}
+                >
                   <button
                     className="menu-itemwatchlist"
                     onClick={() => handleRenameWatchlist(watchlist.watchlist_id)}

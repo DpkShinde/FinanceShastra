@@ -34,7 +34,7 @@ import notiimg7 from "../assest/video.png";
 import notiimg8 from "../assest/ipoo.webp";
 import notiimg9 from "../assest/images.jpg";
 import notiimg10 from "../assest/portra.webp";
-
+import Cookies from 'js-cookie';
 import logo from "../assest/Logo design (1).png";
 import Darkmodelogo from "../assest/navlogo.png";
 import { Link } from "react-router-dom";
@@ -42,10 +42,11 @@ import { useSelector } from "react-redux";
 import { debounce } from "lodash";
 import { API_BASE_URL } from "../config";
 
+
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const {user} = useContext(UserProfileContext)
-  console.log(user)
+  console.log("user:", user)
 
   const [isOpen, setIsOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -209,6 +210,12 @@ const Navbar = () => {
 
   // Close search results when clicking outside
   useEffect(() => {
+    const token = Cookies.get("jwtToken");
+          if (!token) {
+            alert("Session expired, Please login again.");
+            navigate("/login")
+            return;
+          }
     const handleClickOutside = (event) => {
       if (
         searchResultsRef.current && 
@@ -291,6 +298,13 @@ const Navbar = () => {
     };
   }, [debouncedSearch]);
 
+  const onLogout = ()=>{
+    Cookies.remove('jwtToken')
+    Cookies.remove('token')
+    localStorage.clear()
+    navigate('/')
+  }
+
   const toggleStockDropdown = () => {
     setStockDropdownOpen(!stockDropdownOpen);
   };
@@ -322,6 +336,8 @@ const Navbar = () => {
   const togglelearnDropdown = () => {
     setLearnDropdownOpen(!learnDropdownOpen);
   };
+
+  
 
   const renderStockDropdown = () => (
     <div className={darkMode ? "stockmenudarkerrrrmode" : "stockmenu"}>
@@ -508,11 +524,10 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={darkMode ? "dropdown-itemdarkerrmode" : "dropdown-item"}>
-        <Link to="/">
-          {" "}
+        <button className="butn" onClick={onLogout} type="button"  >
           <FaUserCircle className={darkMode ? "dropdown-icondarkerrrmode" : "dropdown-icon"} />
           Logout
-        </Link>
+        </button>
       </div>
       <div className={darkMode ? "dropdown-itemdarkerrmode" : "dropdown-item"}>
         <div onClick={toggleDarkMode} style={{cursor: 'pointer'}}>Dark Mode</div>

@@ -66,9 +66,9 @@ const SectorWeightageTableniffty50 = () => {
          <Navbar/>
          <div>
   <h1 className="sectorTableHeadingniffty50">Nifty 50 Sector Weightage</h1>
-  <div className="sectorTableContainerniffty50" style={{ overflowY: 'auto', height: '450px' }}>
+  <div className="sectorTableContainerniffty50" style={{ overflowY: 'auto', height: '410px' }}>
     <table className="NiftySectorWeightage-table" style={{ borderCollapse: 'collapse', width: '100%' }}>
-      <thead style={{ position: 'sticky', top: 0, backgroundColor: '#f9f9f9', zIndex: 10, boxShadow: '0 4px 6px #24b676' }}>
+      <thead style={{ position: 'sticky', top: -21, backgroundColor: '#f9f9f9', zIndex: 10, boxShadow: '0 4px 6px #24b676',height:"30px" }}>
         <tr>
           <th className="symbol-cell">Sectors</th>
             <th>
@@ -107,9 +107,9 @@ const SectorWeightageTableniffty50 = () => {
       </table>
       </div>
     </div>
-    <div className="foooterpagesatt">
+   
     <FooterForAllPage />
-  </div>
+  
     </div>
   );
 };

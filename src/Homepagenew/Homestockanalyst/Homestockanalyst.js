@@ -168,17 +168,7 @@ const Homestockanalyst = () => {
 
   return (
     <div className="DashboardMainPagetable-container">
-    <div className="DashboardMainPagetable-headeranalyst">
-      <button className="DashboardMainPagetable-tab"  onClick={() => navigate("/home")}>Stock Sector</button>
-    <button
-    className="DashboardMainPagetable-tab"
-    onClick={() => navigate("/stockindexall")}
-  >
-    Stock Index
-  </button>
-      <button className="DashboardMainPagetable-tab" onClick={() => navigate("/calenderchartmain")}>Stock Calendar</button>
-      <button className="DashboardMainPagetable-tab active">Stock Analyst</button>
-    </div>
+   
     <div>
       <div className="screener-containerr">
         {/* Tabs */}
@@ -368,7 +358,6 @@ const Homestockanalyst = () => {
 </div>
        
 
-        <Navbar />
       </div>
     </div>
     </div>

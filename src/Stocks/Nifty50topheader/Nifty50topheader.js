@@ -44,13 +44,13 @@ function Nifty50topheader() {
   }, []);
 
   return (
-    <div className="graphcontainerer">
+    <div className="graphcontainerernifty50">
       <div className="graphheadernifty">
         <div className="title-containernifty">
           <h1 className="telephoneniftyh1">Nifty 50</h1>
         </div>
         <div className="graph-price-update">
-        <span className={`graphpricenifty50 ${change >= 0 ? 'positive' : 'negative'}`}>
+        <span style={{fontSize:"20px"}}className={`graphpricenifty50 ${change >= 0 ? 'positive' : 'negative'}`}>
 
             ₹{parseFloat(currentPrice).toLocaleString()} {/* Format the price with ₹ symbol */}
           </span>

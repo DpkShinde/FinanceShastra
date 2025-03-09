@@ -1,20 +1,32 @@
-
+.graphcontainerernifty50{
+  width: 150%; 
+  margin-left: -10%; 
+padding: 6px;
+  font-family: "calibri";
+  margin-top: 100px;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
     .title-containernifty{
         margin-left: 50px;
     }
+
     .graphnavbarrnifty50 {
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
         
-       
-        margin-left: 330px;
+    
+        margin-left: 315px;
         cursor: pointer;
         transition: transform 0.3s ease, color 0.3s ease;
       }
       .graphheadernifty {
         display: flex;
-        gap: 600px;
+        gap: 400px;
         align-items: center;
         padding-bottom: 5px;
         margin-bottom: 5px;
@@ -33,7 +45,7 @@
       }
       
       .graphnavbarrnifty50 span {
-        font-size: 15px;
+        font-size: 18px;
         color: #333;
         cursor: pointer;
         padding: 5px 10px;

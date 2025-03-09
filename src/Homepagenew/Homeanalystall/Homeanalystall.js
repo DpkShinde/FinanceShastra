@@ -6,12 +6,13 @@ import Watchlistdashboardmain from '../Watchlistdashboardmain/Watchlistdashboard
 import Sidebar from '../../Sidebar/Sidebar'
 import itiimg from '../../../src/assest/iti.png';
 import Homestockanalyst from '../Homestockanalyst/Homestockanalyst';
-import FooterForhomeAllPage from '../../Footerhomeeepage/Footerhomeeepage';
+
+import FooterForAllPage from '../../FooterForAllPage/FooterForAllPage';
 
 
 
 
-const Stockanalystall= () => {
+const Stockanalystall= ({children}) => {
   const [timeRange, setTimeRange] = useState('1D');
   const [financialData, setFinancialData] = useState({
     price: "₹127.89",
@@ -181,9 +182,13 @@ const Stockanalystall= () => {
 </div>
       </div>
      <Homestockanalyst/>
-     <div className="foooterpagesatt">
-    <FooterForhomeAllPage/>
-  </div>
+     <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
      
     </div>
   );

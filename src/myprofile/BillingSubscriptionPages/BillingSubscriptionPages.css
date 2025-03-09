@@ -17,7 +17,7 @@
    
     border: 5px solid #cae2ee;
     margin-bottom: 20px;
-    width: 55%;
+    width: 70%;
     margin-left: 250px;
   }
   
@@ -61,7 +61,7 @@
     display: flex;
     gap: 20px;
     width: 43%;
- 
+ margin-bottom: 70px;
     margin-left: 480px;
     margin-top: 30px;
   }

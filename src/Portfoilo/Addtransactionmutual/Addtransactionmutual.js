@@ -105,7 +105,7 @@ const AddTransactionmutual = () => {
         return;
       }
 
-      const response = await fetch(`${API_BASE_URL}/myportfolio/addStock`, {
+      const response = await fetch(`${API_BASE_URL}/myportfolio/addMutuals`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

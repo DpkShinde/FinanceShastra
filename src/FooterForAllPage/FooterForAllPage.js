@@ -67,7 +67,10 @@ const FooterForAllPage = () => {
    
   
   };
- 
+  const navigateTo = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
 
   const allRoutes = { ...stockRoutes, ...mutualRoutes, ...learnRoutes, ...quickLinksRoutes,...AboutRoutes };
   return (
@@ -119,9 +122,10 @@ const FooterForAllPage = () => {
                  onClick={() => {
                    // Navigate if the link has a corresponding route
                    if (allRoutes[link]) {
-                     navigate(allRoutes[link]);
-                   }
-                 }}
+                    navigate(allRoutes[link]);
+                    window.scrollTo(0, 0);
+                  }
+                }}
                  style={{
                    cursor: allRoutes[link] ? "pointer" : "default",
                  }}

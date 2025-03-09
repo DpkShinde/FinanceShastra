@@ -25,20 +25,20 @@ const ScreenerStockList = () => {
     change: "All",
   });
 
-  const [dropdowns, setDropdowns] = useState({
-    divYield: false,
-    price: false,
-    change: false, 
-    eps: false,
-    roe: false,
-    pe: false,
-    marketcap: false,
-    performance: false,
-    peg: false,
-    revenue: false,
-    index: false,
-  });
-
+ const [dropdowns, setDropdowns] = useState({
+       divYield: false,
+       price: false,
+       change: false, 
+       eps: false,
+       roe: false,
+       pe: false,
+       marketcap: false,
+       performance: false,
+       peg: false,
+       revenue: false,
+       index: false,
+       sector: false,
+     });
 const toggleDropdown = (key) => {
   setDropdowns((prev) => {
     // Create a new object where all dropdowns are closed except the one being toggled
@@ -1547,7 +1547,7 @@ const perfOptions = [
         {/* Sector Dropdown */}
         <div  className ="indexscreenerbuttonstockcontainar" style={{ position: "relative"}}>
         <button className="indexscreenerbuttonstock"
-  onClick={() => setIsOpen((prev) => !prev)}
+   onClick={() => toggleDropdown('sector')}
  
 >
   Sectors <RiArrowDropDownLine size={24} />
@@ -1556,7 +1556,7 @@ const perfOptions = [
 
 
           {/* Dropdown Menu */}
-          {isOpen && (
+          {dropdowns.sector && (
             <div className="stockindexscreeneropt"
               
             >

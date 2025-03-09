@@ -11,18 +11,19 @@
   border: 1px solid #cccccc;
 
 
+
 }
 
 .earningcalculatorprofilepage-content {
   display: flex;
-
+margin-top: 20px;
   gap: 30px;
-
+  font-family: 'calibri';
   padding: 20px;
   background-color: #F5F4FA;
   /* Light background */
 
-  width: 80%;
+  width: 90%;
   height: 290px;
 }
 
@@ -36,7 +37,8 @@
 
 .earningcalculatorprofilepage-slider-group p {
   margin: 0 0 10px;
-  font-weight: 600;
+  font-weight: 540;
+  font-size: 15px;
 }
 
 .earningcalculatorprofilepage-slider {
@@ -52,8 +54,8 @@
 
 .earningcalculatorprofilepage-slider::-webkit-slider-thumb {
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: #24b676;
   cursor: pointer;
@@ -158,8 +160,9 @@
   /* Centers the text inside each <p> */
   margin: 0;
   /* Removes default margins */
-  font-size: 16px;
+  font-size: 15px;
   color: black;
+  font-family: 'calibri';
 }
 
 /* For tablets (768px and below) */
