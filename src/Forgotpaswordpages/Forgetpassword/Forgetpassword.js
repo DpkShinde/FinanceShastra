@@ -135,7 +135,7 @@ function Forgetpassword() {
   return (
     <div className="login-container">
       <div className="login-leftforget">
-        <img src={logoimg} className="logoforgt" />
+        <img src={logoimg} className="logoforgt" onClick={() => {navigate('/login')}} />
       </div>
       <div className="login-right">
         <div className="login-boxforget">
