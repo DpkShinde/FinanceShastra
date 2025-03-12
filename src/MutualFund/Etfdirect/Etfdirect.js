@@ -357,7 +357,7 @@ const Etfdirect = () => {
             </tbody>
           </table>
         </div>
-        <div className="foooterpagesatt">
+        <div className="foooterpagesaupdate">
     <FooterForAllPage />
   </div>
       </div>

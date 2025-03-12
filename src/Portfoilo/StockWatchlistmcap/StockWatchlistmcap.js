@@ -5,8 +5,9 @@ import 'font-awesome/css/font-awesome.min.css'; // Import FontAwesome CSS
 import Navbar from "../../Navbar/Navbar";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import Sidebar from "../../Sidebar/Sidebar";
 
-const StockWatchsectormcap= () => {
+const StockWatchsectormcap= ({children}) => {
   const [stockName, setStockName] = useState("");
   const [sector, setSector] = useState(""); // Add state for sector
   const [stockDetails, setStockDetails] = useState([]);
@@ -148,7 +149,7 @@ const StockWatchsectormcap= () => {
       <h2 className="newwmutual" >
   Stock Watchlist
 </h2>
-<div className="networth-tabs" >
+<div className="networth-tabswatclist" >
   <Link to="/stockWatchlist">
     <button className="networth-tab" style={{ background: "#24b676", color: "white" }}>
       Stocks
@@ -319,7 +320,7 @@ const StockWatchsectormcap= () => {
                 {Object.keys(groupedData).map((sector) => (
                   <React.Fragment key={sector}>
                     <tr className="sector-headerwatchlist">
-                    <td colSpan="7" style={{ paddingRight: "1000px", fontWeight: "bold" }}>
+                    <td colSpan="7" style={{ paddingRight: "800px", fontWeight: "bold" }}>
         {sector}
       </td>
                     </tr>
@@ -356,7 +357,13 @@ const StockWatchsectormcap= () => {
           </div>
         </div>
       </div>
-      <FooterForAllPage/>
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

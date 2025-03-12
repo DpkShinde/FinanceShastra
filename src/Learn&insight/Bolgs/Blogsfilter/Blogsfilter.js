@@ -15,6 +15,7 @@ import all10 from "../../../assest/all10.jpeg";
 import all11 from "../../../assest/all11.jpeg";
 import all12 from "../../../assest/img3.JPG";
 import Navbar from "../../../Navbar/Navbar";
+import FooterForAllPage from "../../../FooterForAllPage/FooterForAllPage";
 
 // Dynamic Categories & Authors
 const categories = [
@@ -112,6 +113,7 @@ function BlogFilter() {
   };
 
   return (
+    <div>
     <div className="blogFilterContainer">
       <h3 className="blogFilterTitle">Blogs / All</h3>
 
@@ -169,6 +171,10 @@ function BlogFilter() {
       </div>
       <Navbar />
     </div>
+      <div className="foooterpagesaupdate">
+      <FooterForAllPage />
+    </div>
+     </div>
   );
 }
 

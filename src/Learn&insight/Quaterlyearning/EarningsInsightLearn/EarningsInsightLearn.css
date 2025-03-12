@@ -2,6 +2,7 @@
 .earnings-insight-learn-wrapper {
     font-family: 'calibri';
     margin-top: 120px;
+    margin-bottom: 100px;
   
 }
 
@@ -135,7 +136,7 @@
 }
 .earningquterlyrowall {
     display: flex;
-    width: 890px;
+    width: 940px;
     margin-left: 40px;
     gap: 210px;
     margin-bottom: 20px;

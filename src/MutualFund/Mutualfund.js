@@ -8,6 +8,7 @@ import MutualFundsSchemeAllocation from './MutualFundsSchemeAllocation/MutualFun
 import MtuFundDetails from './MtuFundDetails/MtuFundDetails';
 import FundContactInfo from './FundContactInfo/FundContactInfo';
 import RiskOMeter from './RiskoMutualDashboard/RiskoMutualDashboard';
+import FooterForAllPage from '../FooterForAllPage/FooterForAllPage';
 
 function Mutualfund() {
   const [financialData, setFinancialData] = useState({
@@ -83,6 +84,9 @@ function Mutualfund() {
       <MtuFundDetails/>
       <RiskOMeter/>
       <FundContactInfo/>
+      <div className="foooterpagesaupdate">
+        <FooterForAllPage />
+      </div>
     </div>
      
   );

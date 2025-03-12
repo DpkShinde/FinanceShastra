@@ -2,16 +2,18 @@
 .peer-table-wrapper {
   padding: 20px;
     font-family: 'Calibri';
-    margin: 20px;
+   
+    
 }
 
 /* Styling for the table */
 .peer-analysis-table {
-  width: 100%; /* Set table width to 90% for centered and responsive layout */
+  width: 130%; /* Set table width to 90% for centered and responsive layout */
  
     border-collapse: collapse;
     border-radius: 10px; /* Rounded corners for the table */
     overflow: hidden; /* Ensures rounded corners are visible */
+    margin-left: -25px;
 
 }
 .sort-icons {
@@ -23,6 +25,8 @@
 .peer-analysis-table th {
   cursor: pointer;
   user-select: none;
+  color: white;
+  font-size: 16px;
 }
 
 .sort-icons svg {
@@ -45,10 +49,13 @@
   transition: background-color 0.3s ease;
 }
 .peer-analysis-table tr{
-  font-size: 14px;
+
   font-family: 'calibri';
   align-items: center;
  
+}
+.peer-analysis-table td {
+  font-size: 15px;
 }
 
 
@@ -70,11 +77,12 @@
 
 }
 .stockpeerheader{
-  margin-top:80px ;
+  margin-top:30px ;
 align-items: left;
 color:#24b676;
-font-size: 26px;
-margin-left: 50px;
+font-size: 24px;
+margin-left: 0px;
+font-family: 'calibri';
 }
   @media (max-width: 768px) {
     .peer-analysis-container h2 {

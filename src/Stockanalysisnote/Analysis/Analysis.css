@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    background-color: #f9f9f9;
+    
     margin-top: 20px;
+    font-family: 'calibri';
   }
   
   /* Row container for each set of charts */

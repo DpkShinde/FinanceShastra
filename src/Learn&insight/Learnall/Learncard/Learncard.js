@@ -6,6 +6,7 @@ import { LuClock9 } from "react-icons/lu";
 import Navbar from '../../../Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import FooterForAllPage from "../../../FooterForAllPage/FooterForAllPage";
+import Cookies from 'js-cookie'
 // Course Data
 const courses = [
   {
@@ -66,54 +67,55 @@ const courses = [
 
 const Learncard = () => {
   const navigate = useNavigate();
+  const token = Cookies.get('jwtToken')
   return (
     <div>
-    <div className="course-container">
-      {/* Header Section */}
-      <header className="headerlearn">
-        <div className="learntop">
-        <h1 className="learnhead">Learn<br/><br/>Investment Strategies Learning</h1>
-        <p className="learnpara">
-          Uncover the top stock market courses that can help you advance in your
-          financial career. At FinanceShastra, we provide comprehensive lessons
-          on everything you need to know about the stock market.
-        </p>
-        <p className="learnpara">Take a look at the wide range of stock trading courses
-        in India available for you to learn here:</p>
-        </div>
-        <img src={learning1} alt="Learning" className="headerlearn-image" />
-      </header>
-
-      {/* Course Cards */}
-      <h1 className="coursetophead">All courses</h1>
-      <div className="courses">
-        {courses.map((course) => (
-          <div key={course.id} className="course-card">
-            <span className="badge">Free</span>
-            <h2 >{course.title}</h2>
-            <p className="learnduration"><LuClock9 className="durationlearnicon"/>{course.duration}</p>
-            <p>{course.description}</p>
-
-            {/* Footer Row: Image and Button */}
-            <div className="learncard-footer">
-             
-            <button
-      className="learnsignup-button"
-      onClick={() => navigate('/learncardaftersignup')}
-    >
-      {course.buttonText}
-    </button>
-              <img src={course.img} alt={course.title} className="course-image" />
-            </div>
+      <div className="course-container">
+        {/* Header Section */}
+        <header className="headerlearn">
+          <div className="learntop">
+            <h1 className="learnhead">Learn<br /><br />Investment Strategies Learning</h1>
+            <p className="learnpara">
+              Uncover the top stock market courses that can help you advance in your
+              financial career. At FinanceShastra, we provide comprehensive lessons
+              on everything you need to know about the stock market.
+            </p>
+            <p className="learnpara">Take a look at the wide range of stock trading courses
+              in India available for you to learn here:</p>
           </div>
-        ))}
+          <img src={learning1} alt="Learning" className="headerlearn-image" />
+        </header>
+
+        {/* Course Cards */}
+        <h1 className="coursetophead">All courses</h1>
+        <div className="courses">
+          {courses.map((course) => (
+            <div key={course.id} className="course-card">
+              <span className="badge">Free</span>
+              <h2 >{course.title}</h2>
+              <p className="learnduration"><LuClock9 className="durationlearnicon" />{course.duration}</p>
+              <p>{course.description}</p>
+
+              {/* Footer Row: Image and Button */}
+              <div className="learncard-footer">
+
+                <button
+                  className="learnsignup-button"
+                  onClick={() => navigate('/learncardaftersignup')}
+                >
+                  {token ? "Start Learning" : "Signup Now"}
+                </button>
+                <img src={course.img} alt={course.title} className="course-image" />
+              </div>
+            </div>
+          ))}
+        </div>
+        <Navbar />
       </div>
-      <Navbar/>
+      <div className="foooterpagesaupdate">
+        <FooterForAllPage />
+      </div>
     </div>
-     <div className="foooterpagesatt">
-     <FooterForAllPage />
-   </div>
-   </div>
   );
 };
 

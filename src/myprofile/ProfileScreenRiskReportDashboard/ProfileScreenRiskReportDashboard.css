@@ -1,0 +1,1021 @@
+
+  
+  .ProfileScreenRiskReportDashboard {
+    font-family: 'calibri';
+   
+max-width: 1280px;
+    margin: 20px auto;
+    padding: 20px;
+  
+  }
+  
+  .ProfileScreenRiskReportHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 280px;
+    margin-top: 100px;
+    margin-left: 40px;
+  }
+  .ProfileScreenRiskReportHeader h1{
+    font-size: 26px;
+  }
+  .ProfileScreenRiskReportMarketUpdate p{
+    font-size: 15px;
+    margin-top: 0px;
+  }
+  .datariskreport{
+    border-right: 3px solid rgb(218, 213, 213);
+    padding: 15px;
+
+
+  }
+  .ProfileScreenRiskReportMarketUpdate {
+    display: flex;
+    gap: 20px;
+ width: 490px;
+height: 100px;
+ border: 3px solid rgb(225, 222, 222);
+    background:white;
+    padding: 15px;
+    border-radius: 8px;
+  
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+
+  }
+  .alllriskreport{
+    margin-top: 12px;
+  }
+  
+  .datariskallreport{
+    display: flex;
+   margin-left: 580px;
+   gap: 240px;
+
+  }
+  .allriskpara{
+    margin-top: -10px;
+  }
+
+  .ProfileScreenRiskReportRiskProfile{
+    margin-top: 14px;
+    font-size: 15px;
+  }
+.masterriskpara{
+    margin-top: 12px;
+    font-size: 16px;
+    color: black;
+}
+  
+   .ProfileScreenRiskReportPortfolio table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 250px;
+    margin-left: 1px;
+  }
+  
+  .ProfileScreenRiskReportPortfolio table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  .ProfileScreenRiskReportPortfolio th, td {
+    padding: 8px;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+ 
+  
+/* General container styling */
+.riskeliteprofileeecontainer {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Heading styling */
+  .riskeliteprofileeeheading{
+    font-size: 18px;
+    color: #24b676;
+    margin-bottom: 30px;
+  }
+  
+  /* Plans container styling */
+  .riskeliteprofileeeplans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Individual card styling */
+  .eliteriskprofileee {
+    border: 3px solid rgb(225, 222, 222);
+    padding: 10px 10px;
+    border-radius: 15px;
+    width: 300px;
+ 
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    background-color: #fff;
+    text-align: center;
+
+  }
+  
+  /* Plan title */
+  .riskeliteprofileeeplan-title{
+    font-size: 20px;
+    color: #24b676;
+    margin-bottom: 10px;
+margin-top: 0px;
+  }
+  
+  /* Plan description */
+  .riskeliteprofileeeplan-description{
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  /* Explore button */
+  .riskeliteprofileeeplan-button {
+    background-color: #24b676;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .riskeliteprofileeeplan-button:hover {
+    background-color: #46D295;
+  }
+  
+  .masterriskheader{
+    display: flex;
+    gap: 20px;
+  }
+  .masterriskheader h2{
+    font-size: 24px;
+   
+  }
+  .ProfileScreenRiskReportPortfolio{
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    padding: 10px;
+    width: 730px;
+    height: 380px;
+    border-radius: 8px;
+  margin-top: 50px;
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+  }
+  .upadeallriskprofile{
+    display: flex;
+    gap: 460px;
+  }
+  .buttonriskupadet{
+    background-color: #24b676;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 13px;
+  }
+  .buttonriskupadet:hover {
+    background-color: #46D295;
+  }
+
+
+
+  .analysisnoteriskprofilereport-container {
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    border-radius: 8px;
+    padding: 10px;
+
+    width: 450px;
+    height: 380px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-top: 50px;
+  }
+  .analysisnoteriskprofilereport-containerpopular{
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    border-radius: 8px;
+    padding: 10px;
+
+    width: 450px;
+    height: 570px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-top: 50px;
+  }
+  .analysisnoteriskprofilereport-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .analysisnoteriskprofilereport-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .analysisnoteriskprofilereport-item {
+    display: flex;
+
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9fafe;
+    border: 1px solid #e0e7ff;
+ 
+  }
+  
+ 
+  .analysisnoteriskprofilereport-content {
+    display: flex;
+margin-left: 55px;
+    width: 100%;
+   justify-content: space-between;
+  }
+  
+  .analysisnoteriskprofilereport-contenttt {
+    display: flex;
+
+    width: 100%;
+   justify-content: space-between;
+  }
+  .analysisnoteriskprofilereport-title {
+    font-size: 22px;
+    color:#333;
+  }
+  .analysisnoteriskprofilereport-titlee {
+    font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+    margin-left: -60px;
+  }
+  
+  .analysisnoteriskprofilereport-date {
+    font-size: 15px;
+    color: gray;
+  }
+  
+  .analysisnoteriskprofilereport-viewmore {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #2563eb;
+    text-decoration: none;
+    margin-top: 15px;
+  }
+  
+  .analysisnoteriskprofilereport-viewmore:hover {
+    text-decoration: underline;
+  }
+.screenriskreport{
+    display: flex;
+    gap: 0px;
+}  
+
+
+
+
+
+
+
+
+.popularscreenriskreport-container {
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    border-radius: 8px;
+
+width: 730px;
+  padding: 10px;
+    
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-top: 50px;
+  }
+  
+  .popularscreenriskreport-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .popularscreenriskreport-header h2 {
+    margin: 0;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  
+  .popularscreenriskreport-create-button {
+    background-color: #24b676;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .popularscreenriskreport-create-button:hover {
+  background-color: #46D295;;
+  }
+  
+  .popularscreenriskreport-no-screen {
+
+    color: #333;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+   font-size: 18px;
+  }
+  
+  .popularscreenriskreport-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 11px;
+  }
+  
+  .popularscreenriskreport-screens {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  
+  .popularscreenriskreport-card {
+    background-color: white;
+    border: 1px solid #d9e1f0;
+    border-radius: 8px;
+    padding: 15px;
+width: 190px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popularscreenriskreport-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .popularscreenriskreport-company-item {
+    display: flex;
+    flex-direction: column;
+ margin-left: -40px;
+
+  }
+  
+  .popularscreenriskreport-star-rating {
+    color: #978f8f;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .popularscreenriskreport-view-more {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .popularscreenriskreport-view-more:hover {
+    text-decoration: underline;
+  }
+  
+  .popularscreenriskreport-other-button {
+    margin-top: 20px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #24b676;
+    color: white;
+    cursor: pointer;
+    margin-left: 560px;
+  }
+  
+  .popularscreenriskreport-other-button:hover {
+     background-color: #46D295;;
+  }
+  
+  .qrisk{
+    background-color: #24b676;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 23px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid  #24b676;
+    box-shadow: 0 4px 6px  #24b676;
+  }
+  .qriskk{
+    background-color: #ffc107;
+    border: 1px solid  #ffc107;
+    box-shadow: 0 4px 6px  #ffc107;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 23px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+.qvptrisk{
+    display: flex;
+    gap: 5px;
+}
+.companyqvpt {
+    display: flex; /* Enables flexbox */
+    flex-direction: row; /* Aligns items in a horizontal row */
+     /* Aligns items vertically in the center */
+ 
+   justify-content: space-between;
+  }
+  
+.viewmorearrowriskall{
+    display: flex;
+    gap: 10px;
+}
+.viewmorearrowrisk{
+margin-top: 4px;
+color:  #2563eb;
+}
+
+
+
+.analysisnoteriskprofilereport-img {
+    display: inline-block;
+    width: 50px;  /* Adjust the width to your preferred size */
+    height: 50px; /* Adjust the height to your preferred size */
+    margin-right: 10px;  /* Space between the image and text */
+    overflow: hidden; /* Prevent the image from overflowing the container */
+    border-radius: 5px; /* Optional: Add rounded corners to the image */
+  }
+  
+  .analysisnoteriskprofilereport-img img {
+    width: 100%;  /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fills the container */
+    /* Ensures the image scales well to fit without distortion */
+  }
+  .allpopularriskcompanytrendind{
+    display: flex;
+  }
+  .analysisnoteriskprofilereport-list h3{
+    font-size: 21px;
+  }
+  @media (max-width: 768px) {
+    
+  
+  .ProfileScreenRiskReportDashboard {
+    font-family: 'calibri';
+   margin-left: -10px;
+width: 100%;
+    padding: 20px;
+      
+  }
+  
+  .datariskallreport{
+    display: flex;
+   margin-left: 10px;
+   gap: 150px;
+   margin-bottom: -50px;
+
+  }
+  .allriskpara{
+    margin-top: -10px;
+  }
+  .ProfileScreenRiskReportHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 100px;
+    margin-left: 40px;
+  }
+  .ProfileScreenRiskReportHeader h1{
+    font-size: 26px;
+    margin-left: -25px;
+  }
+  .ProfileScreenRiskReportMarketUpdate p{
+    font-size: 15px;
+    margin-top: 0px;
+  }
+  .datariskreport{
+    border-right: 3px solid rgb(218, 213, 213);
+
+
+  }
+  .ProfileScreenRiskReportMarketUpdate {
+    display: flex;
+    gap: 20px;
+ width: 420px;
+height: 100px;
+ border: 3px solid rgb(225, 222, 222);
+    background:white;
+    padding: 10px;
+    border-radius: 8px;
+  
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-left: -40px;
+    font-size: 14px;
+
+  }
+  
+
+  .ProfileScreenRiskReportRiskProfile{
+    margin-top: 14px;
+    font-size: 14px;
+  }
+.masterriskpara{
+    margin-top: 12px;
+    font-size: 14px;
+    color: black;
+}
+  
+   .ProfileScreenRiskReportPortfolio table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 250px;
+    margin-left: 1px;
+  }
+  
+  .ProfileScreenRiskReportPortfolio table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  .ProfileScreenRiskReportPortfolio th, td {
+    padding: 8px;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+ 
+  
+/* General container styling */
+.riskeliteprofileeecontainer {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Heading styling */
+  .riskeliteprofileeeheading{
+    font-size: 15px;
+    color: #24b676;
+    margin-bottom: 30px;
+    margin-left: -10px;
+  }
+  
+  /* Plans container styling */
+  .riskeliteprofileeeplans {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-left: -15px;
+  }
+  
+  /* Individual card styling */
+  .eliteriskprofileee {
+    border: 3px solid rgb(225, 222, 222);
+    padding: 10px 10px;
+    border-radius: 15px;
+    width: 190px;
+ 
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    background-color: #fff;
+    text-align: center;
+
+  }
+  
+  /* Plan title */
+  .riskeliteprofileeeplan-title{
+    font-size: 20px;
+    color: #24b676;
+    margin-bottom: 10px;
+margin-top: 0px;
+  }
+  
+  /* Plan description */
+  .riskeliteprofileeeplan-description{
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  /* Explore button */
+  .riskeliteprofileeeplan-button {
+    background-color: #24b676;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .riskeliteprofileeeplan-button:hover {
+    background-color: #46D295;
+  }
+  
+  .masterriskheader{
+    display: flex;
+    gap: 20px;
+  }
+  .masterriskheader h2{
+    font-size: 24px;
+   
+  }
+  .ProfileScreenRiskReportPortfolio{
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    padding: 10px;
+    width: 420px;
+    height: 380px;
+    border-radius: 8px;
+  margin-top: 50px;
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+  }
+  .upadeallriskprofile{
+    display: flex;
+    gap: 160px;
+  }
+  .buttonriskupadet{
+    background-color: #24b676;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 13px;
+  }
+  .buttonriskupadet:hover {
+    background-color: #46D295;
+  }
+
+
+
+  .analysisnoteriskprofilereport-container {
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    border-radius: 8px;
+    padding: 10px;
+margin-left: 2px;
+    width: 415px;
+    height: 380px;
+  
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-top: 50px;
+  }
+  .analysisnoteriskprofilereport-containerpopular{
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    border-radius: 8px;
+    padding: 10px;
+
+    width: 416px;
+    height: 570px;
+   margin-left: 1px;
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-top: 50px;
+  }
+  .analysisnoteriskprofilereport-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .analysisnoteriskprofilereport-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .analysisnoteriskprofilereport-item {
+    display: flex;
+
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9fafe;
+    border: 1px solid #e0e7ff;
+ 
+  }
+  
+ 
+  .analysisnoteriskprofilereport-content {
+    display: flex;
+justify-content: space-between;
+    width: 100%;
+  }
+  
+  .analysisnoteriskprofilereport-title {
+    font-size: 22px;
+    color:#333;
+  }
+  .analysisnoteriskprofilereport-titlee {
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .analysisnoteriskprofilereport-date {
+    font-size: 15px;
+    color: gray;
+  }
+  
+  .analysisnoteriskprofilereport-viewmore {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #2563eb;
+    text-decoration: none;
+    margin-top: 15px;
+  }
+  
+  .analysisnoteriskprofilereport-viewmore:hover {
+    text-decoration: underline;
+  }
+.screenriskreport{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}  
+
+
+
+
+
+
+
+
+.popularscreenriskreport-container {
+    border: 3px solid rgb(225, 222, 222);
+    background:white;
+    border-radius: 8px;
+
+width: 419px;
+  padding: 10px;
+    
+    box-shadow: 0 4px 6px rgb(223, 220, 220);
+    margin-top: 50px;
+  }
+  
+  .popularscreenriskreport-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .popularscreenriskreport-header h2 {
+    margin: 0;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  
+  .popularscreenriskreport-create-button {
+    background-color: #24b676;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .popularscreenriskreport-create-button:hover {
+  background-color: #46D295;;
+  }
+  
+  .popularscreenriskreport-no-screen {
+
+    color: #333;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+   font-size: 18px;
+  }
+  
+  .popularscreenriskreport-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 11px;
+  }
+  
+  .popularscreenriskreport-screens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  
+  .popularscreenriskreport-card {
+    background-color: white;
+    border: 1px solid #d9e1f0;
+    border-radius: 8px;
+    padding: 15px;
+width: 370px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popularscreenriskreport-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .popularscreenriskreport-company-item {
+    display: flex;
+    flex-direction: column;
+ margin-left: -40px;
+
+  }
+  
+  .popularscreenriskreport-star-rating {
+    color: #978f8f;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .popularscreenriskreport-view-more {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .popularscreenriskreport-view-more:hover {
+    text-decoration: underline;
+  }
+  
+  .popularscreenriskreport-other-button {
+    margin-top: 20px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #24b676;
+    color: white;
+    cursor: pointer;
+    margin-left: 250px;
+  }
+  
+  .popularscreenriskreport-other-button:hover {
+     background-color: #46D295;;
+  }
+  
+  .qrisk{
+    background-color: #24b676;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 23px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid  #24b676;
+    box-shadow: 0 4px 6px  #24b676;
+  }
+  .qriskk{
+    background-color: #ffc107;
+    border: 1px solid  #ffc107;
+    box-shadow: 0 4px 6px  #ffc107;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 23px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+.qvptrisk{
+    display: flex;
+    gap: 5px;
+}
+.companyqvpt {
+    display: flex; /* Enables flexbox */
+    flex-direction: row; /* Aligns items in a horizontal row */
+     /* Aligns items vertically in the center */
+ 
+   justify-content: space-between;
+  }
+  
+.viewmorearrowriskall{
+    display: flex;
+    gap: 10px;
+}
+.viewmorearrowrisk{
+margin-top: 4px;
+color:  #2563eb;
+}
+
+
+
+.analysisnoteriskprofilereport-img {
+    display: inline-block;
+    width: 50px;  /* Adjust the width to your preferred size */
+    height: 50px; /* Adjust the height to your preferred size */
+    margin-right: 10px;  /* Space between the image and text */
+    overflow: hidden; /* Prevent the image from overflowing the container */
+    border-radius: 5px; /* Optional: Add rounded corners to the image */
+  }
+  
+  .analysisnoteriskprofilereport-img img {
+    width: 100%;  /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fills the container */
+    object-fit: cover; /* Ensures the image scales well to fit without distortion */
+  }
+  .allpopularriskcompanytrendind{
+    display: flex;
+    flex-direction: column;
+  }
+  .analysisnoteriskprofilereport-list h3{
+    font-size: 21px;
+  }
+  }
+
+
+
+  @media (max-width: 480px) {
+    body {
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      margin: 0;
+      padding: 0;
+    }
+  
+    .ProfileScreenRiskReportDashboard {
+      width: 100%; /* Ensure full width */
+      margin: 0 auto;
+      padding: 10px; /* Adjust padding */
+    }
+  
+    .datariskallreport {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping */
+      gap: 40px; /* Reduce large gap */
+      margin-left: 20px; /* Remove large margins */
+    }
+  
+    .ProfileScreenRiskReportMarketUpdate {
+      width: calc(100% - 20px); /* Responsive width */
+     margin-left: -30px;
+      padding: 10px;
+      gap: 10px;
+      height:auto;
+    }
+  
+    .ProfileScreenRiskReportPortfolio,
+    .analysisnoteriskprofilereport-container,
+    .analysisnoteriskprofilereport-containerpopular,
+    .popularscreenriskreport-container {
+      width: 85%; /* Adjust to full width */
+      max-width: 100%; /* Prevent overflow */
+    margin-left: 8px;
+    height: auto;
+    }
+  
+    .riskeliteprofileeeplans {
+      flex-wrap: wrap; /* Allow wrapping */
+      justify-content: center; /* Center items */
+      gap: 15px;
+    }
+  
+    .eliteriskprofileee {
+      width: calc(85% - 20px); /* Adjust for padding */
+      margin-left: 9px;
+    }
+  
+    .masterriskheader {
+      flex-wrap: wrap; /* Allow wrapping */
+      justify-content: space-between;
+    }
+  
+    .popularscreenriskreport-card {
+      width: 85%; /* Full width */
+      margin: 10px 0;
+    }
+  
+    /* Remove unnecessary negative margins */
+   
+   
+    .riskeliteprofileeeheading {
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    /* Adjust text sizes for smaller screens */
+  
+    .popularscreenriskreport-other-button {
+      margin-top: 20px;
+      padding: 10px 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #24b676;
+      color: white;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    
+    .analysisnoteriskprofilereport-titlee {
+      font-size: 15px;
+      color: #333;
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+    
+  }
+  

@@ -3,8 +3,10 @@
   border-radius: 8px;
   overflow: hidden;
   font-family: 'calibri';
+  padding: 10px;
   
 }
+
 .App{
   font-family: 'calibri';
 }
@@ -17,18 +19,19 @@ width: 100%;
 .financeheader{
   font-size: 24px;
   color:#24b676;
-   margin-top: 100px;
+   margin-top: 95px;
    font-family: 'calibri';
    margin-left: 30px;
+  
  
 
 }
 .financepara{
-  margin-right: 65%;
+  margin-right: 5%;
   bottom: 0;
   font-family: 'calibri';
   color: #666;
-  margin-left: 30px;
+margin-left: 30px;
   font-size: 18px;
   font-weight: bold;
 }
@@ -116,32 +119,34 @@ width: 100%;
 .button-container {
   position: absolute;
   top: 0;
-  right: 0;
+margin-left: 790px;
   display: flex;
-  gap: 10px;
+  gap: 15px;
  padding: 40px;
  margin-top: 1170px;
+
   
 }
 
-.standalone-button,
-.consolidated-button {
+.standalone-button
+ {
   padding: 8px 12px;
   border: 2px solid #28a745;
   border-radius: 5px;
   cursor: pointer;
   background-color: white;
-  color: #28a745;
+  color:#24b676;
   font-weight: bold;
   transition: all 0.3s ease;
   margin-top: 150px;
   
 }
 
-.consolidated-button {
-  background-color:white;
-  color: #24b676;
-
+.standalone-button.active {
+  background-color: #24b676;
+  color: white;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
 
 .standalone-button:hover {
@@ -149,10 +154,7 @@ width: 100%;
   color: white;
 }
 
-.consolidated-button:hover {
-  background-color:#24b676;
-  color: white;
-}
+
 
 
 @media (max-width: 768px) {

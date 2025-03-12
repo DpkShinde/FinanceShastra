@@ -46,8 +46,7 @@ import { API_BASE_URL } from "../config";
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const {user} = useContext(UserProfileContext)
-  console.log("user:", user)
-
+  
   const [isOpen, setIsOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [stockDropdownOpen, setStockDropdownOpen] = useState(false);
@@ -458,11 +457,11 @@ const Navbar = () => {
       <div className={darkMode ? "dropdown-itemdarkerrmode" : "dropdown-item"}>
         <Link to="/portfolio-risk">
           Portfolio Risk Analysis
-          <p>Risk evaluation and insights</p>
+          <p>Risk evaluation and insights(coming soon)</p>
         </Link>
       </div>
       <div className={darkMode ? "dropdown-itemdarkerrmode" : "dropdown-item"}>
-        <Link to="/stockwatchlist">
+        <Link to="/stockWatchlist">
           Watchlist
           <p>Monitor, assess, and improve</p>
         </Link>

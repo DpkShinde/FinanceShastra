@@ -91,12 +91,12 @@ const RefundPolicy = () => {
         If you have any queries regarding our Cancellation and Refund Policy, feel free to reach out to us at{" "}
         <a href="mailto:help@financeshastra.com">help@financeshastra.com</a>.
       </p>
-      <div className={darkMode ? "foooterpagesattt" :"foooterpagesatttrefund"}>
-      <FooterForAllPage/>
-      </div>
+     
     </div>
     <Navbar/>
-   
+    <div className={darkMode ? "foooterpagesattt" :"foooterpagesaupdate"}>
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

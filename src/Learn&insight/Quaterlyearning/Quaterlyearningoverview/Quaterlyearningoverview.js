@@ -16,10 +16,12 @@ import Quarterlyratio from '../Quaterlyratio/Quaterlyratio';
  import Quarterlypeer from '../Quaterlypeer/Quaterlypeer';
  import QuaterlynewsList from '../Quaterlynews/Quaterlynews';
  import Quaterlyabout from '../Quaterlyabout/Quaterlyabout'
+import FooterForAllPage from '../../../FooterForAllPage/FooterForAllPage';
 
 
 function QuaterelyOverview() {
   return (
+    <div>
     <Container 
       sx={{
         maxWidth: '200%',
@@ -125,6 +127,10 @@ function QuaterelyOverview() {
 
      
     </Container>
+    <div className="foooterpagesaupdate">
+        <FooterForAllPage />
+      </div>
+    </div>
   );
 }
 

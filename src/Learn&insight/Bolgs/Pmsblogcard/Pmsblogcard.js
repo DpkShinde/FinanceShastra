@@ -6,9 +6,11 @@ import { MdDateRange } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import Navbar from "../../../Navbar/Navbar";
 import CommentSection from "../Comment/Comment";
+import FooterForAllPage from "../../../FooterForAllPage/FooterForAllPage";
 
 function Blogpmscard() {
   return (
+    <div>
     <div className="investblog-container">
       {/* Title */}
       <h1 className="investblog-title">Build a Prosperous Portfolio For 2024 With These Top 5 Stock Picks</h1>
@@ -140,6 +142,10 @@ function Blogpmscard() {
       <Navbar/>
       <CommentSection/>
     </div>
+       <div className="foooterpagesaupdate">
+       <FooterForAllPage />
+     </div>
+      </div>
   );
 }
 

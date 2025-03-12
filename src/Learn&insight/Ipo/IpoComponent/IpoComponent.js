@@ -123,7 +123,9 @@ const IpoComponent = () => {
       <Navbar />
       
     </div>
-    <FooterForAllPage/>
+    <div className="foooterpagesaupdate">
+     <FooterForAllPage />
+   </div>
     </div>
   );
 };

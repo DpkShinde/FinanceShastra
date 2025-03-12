@@ -40,9 +40,7 @@ const Goldmarket = () => {
           ))}
         </tbody>
       </table>
-      <div className='marketablefooter'>
-<FooterForAllPage/>
-    </div>
+      
     </div>
   );
 };

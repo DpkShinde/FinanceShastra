@@ -43,7 +43,7 @@ export const PortfolioDashboardProvider = ({ children }) => {
         }
 
         const data = await response.json();
-        console.log("API Data:", data);
+        
 
         if (data.length > 0) {
         setMyInvestment(data[0].investment_cost || 0);

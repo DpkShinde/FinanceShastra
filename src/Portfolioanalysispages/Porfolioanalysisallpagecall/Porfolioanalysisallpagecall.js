@@ -11,7 +11,7 @@ import FundamentalPortfolioAnalysis from '../FundamentalPortfolioAnalysis/Fundam
 import PerformancePortfolioAnalysis from '../PerformancePortfolioAnalysis/PerformancePortfolioAnalysis'
 import FooterForAllPage from '../../FooterForAllPage/FooterForAllPage'
 
-function Porfolioanalysisallpagecall() {
+function Porfolioanalysisallpagecall({children}) {
   return (
     <div>
         <Portfolioanalyticchart/>
@@ -21,9 +21,15 @@ function Porfolioanalysisallpagecall() {
         <PerformancePortfolioAnalysis/>
         <AnalysisResearchReportblur/>
         <PortfolioAnalysisnew/>
-        <Sidebar/>
+    
         <Navbar/>
-        <FooterForAllPage/>
+        <div className="layout">
+      <Sidebar/>
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   )
 }

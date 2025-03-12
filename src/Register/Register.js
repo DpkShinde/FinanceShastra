@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./Register.css";
 import logoimg from "../assest/finanlogo.svg";
 import { Button } from "@mui/material";
@@ -13,7 +13,7 @@ import linkedinimg from "../assest/lin.png";
 import logo from "../assest/Logo design (1).png";
 import { API_BASE_URL } from "../config";
 import Cookies from "js-cookie";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; 
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const override = {
   display: "block",
@@ -31,6 +31,8 @@ function Register() {
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+  const referralCode = searchParams.get("referralCode");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,7 +80,11 @@ function Register() {
     }
 
     try {
-      const url = `${API_BASE_URL}/users/register`;
+      let url = `${API_BASE_URL}/users/register`;
+
+      if (referralCode) {
+        url += `?referralCode=${referralCode}`;
+      }
       const options = {
         method: "POST",
         headers: {
@@ -151,7 +157,11 @@ function Register() {
   return (
     <div className="login-container">
       <div className="login-left">
-        <img src={logoimg} onClick={() => navigate("/")} className="logoforgt" />
+        <img
+          src={logoimg}
+          onClick={() => navigate("/")}
+          className="logoforgt"
+        />
       </div>
       <div className="login-right">
         <div className="login-box">
@@ -195,18 +205,22 @@ function Register() {
                 />
 
                 <span
-                     className="toggle-password"
-                     onClick={() => setShowPassword(!showPassword)}
-                     style={{
-                       cursor: "pointer",
-                       position: "absolute",
-                       right: "28px",
-                       top: "50%",
-                       transform: "translateY(-50%)",
-                     }}
-                   >
-                     {showPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
-                   </span>
+                  className="toggle-password"
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    cursor: "pointer",
+                    position: "absolute",
+                    right: "28px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                  }}
+                >
+                  {showPassword ? (
+                    <FaEye size={20} />
+                  ) : (
+                    <FaEyeSlash size={20} />
+                  )}
+                </span>
               </div>
               {passwordError && (
                 <span className="error-text">{passwordError}</span>

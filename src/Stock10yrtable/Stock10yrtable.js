@@ -14,9 +14,10 @@ const IrregularLine = () => (
   </svg>
 );
 
-const FinancialTable = ({ title, data, headers }) => (
+const FinancialTable = ({ title, data,paragraph, headers }) => (
   <div className="financial-table">
     <h2 className="table-title">{title}</h2>
+    {paragraph && <p className="table-description">{paragraph}</p>}
     <table>
       <thead>
         <tr>

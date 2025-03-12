@@ -159,7 +159,7 @@ const Bestsmallcapdirect = () => {
           </div>
         )}
       </div>
-      <div className="foooterpagesatt">
+      <div className="foooterpagesaupdate">
         <FooterForAllPage />
       </div>
     </div>

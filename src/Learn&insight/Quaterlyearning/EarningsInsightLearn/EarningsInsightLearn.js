@@ -452,7 +452,7 @@ const EarningsInsightLearn = () => {
     
        
         return (
-          
+        
             <div className="customDropdown">
                 <label className="dropdownLabel">{label}</label>
                 <div className="dropdownSelect" onClick={() => setIsOpen(!isOpen)}>
@@ -553,7 +553,7 @@ const EarningsInsightLearn = () => {
                                     dateFormat="yyyy-MM-dd"
                                      className="custom-date-picker"
                                     calendarClassName="custom-calendar" 
-                                    onClick={() => setCalendarOpen(false)}  // Close the calendar if clicked outside
+                                    onClickOutside={() => setCalendarOpen(false)}  // Close the calendar if clicked outside
                                 />
                             )}
                         </div>
@@ -639,7 +639,7 @@ const EarningsInsightLearn = () => {
             </table>
     <Navbar/>
         </div>
-         <div className="foooterpagesatt">
+         <div className="foooterpagesaupdate">
          <FooterForAllPage />
        </div>
        </div>

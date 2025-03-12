@@ -7,16 +7,22 @@ import StockResearchFaqPage from './StockResearchFaqPage/StockResearchFaqPage';
 import FooterForAllPage from '../FooterForAllPage/FooterForAllPage';
 import Sidebar from '../Sidebar/Sidebar';
 
-function Stockresearchpages() {
+function Stockresearchpages({children}) {
   return (
     <div>
       <StockResearchAnalysisPage/>
       <StockResearchtablePage/>
       <StockResearchReportPage/>
       <StockResearchFaqPage/>
-      <Sidebar/>
+
       <Navbar/>
-      <FooterForAllPage/>
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   )
 }

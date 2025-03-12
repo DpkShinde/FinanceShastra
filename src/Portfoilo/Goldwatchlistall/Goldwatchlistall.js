@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
-const GoldWatchportall = () => {
+import Sidebar from "../../Sidebar/Sidebar";
+const GoldWatchportall = ({children}) => {
   const [stockName, setStockName] = useState("");
   const [stockDetails, setStockDetails] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -111,7 +112,7 @@ const handleDeleteWatchlist = (index) => {
     <div>
       <Navbar />
       <h2 className="newwmutual">Gold Watchlist</h2>
-      <div className="networth-tabs">
+      <div className="networth-tabswatclist">
         <Link to="/stockWatchlist">
           <button className="networth-tab" style={{ background: "white", color: "black" }}>
             Stocks
@@ -250,7 +251,13 @@ const handleDeleteWatchlist = (index) => {
           </table>
         </div>
       </div>
-      <FooterForAllPage/>
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

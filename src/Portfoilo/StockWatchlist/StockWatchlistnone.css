@@ -6,7 +6,7 @@
  width:900px;
  height: auto;
  border-radius: 5px;
- margin-left: 100px;
+ margin-left: 300px;
 
 
 }
@@ -114,7 +114,7 @@ display: flex;
 
 /* Stock Table Styling */
 .stock-tablewatchlist {
-  width: 100%;
+width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   font-family: 'calibri';
@@ -127,6 +127,7 @@ display: flex;
 .stock-tablewatchlist th {
   background-color: #24b676;
   color: white;
+
 }
 
 .stock-tablewatchlist tr:nth-child(even) {
@@ -191,7 +192,13 @@ display: flex;
   width: 100%;
   color: black;
 }
-
+.networth-tabswatclist {
+  display: flex
+;
+  gap: 10px;
+  margin-left: 300px;
+  margin-top: 20px;
+}
 .menu-itemwatchlist:hover {
   background-color: #f0f0f0;
 }
@@ -262,8 +269,8 @@ padding: 10px;
 box-shadow: 0 3px 5px rgb(127, 171, 225);;
 border: 1px solid rgb(127, 171, 225);
 border-radius: 8px;
-margin-left:100px;
-width:1200px;
+margin-left:300px;
+width:70%;
 font-family: 'calibri';
 margin-bottom: 100px;
 }

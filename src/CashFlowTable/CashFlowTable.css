@@ -1,22 +1,25 @@
 .cash-flow-table {
     padding: 20px;
     font-family: 'Calibri';
-    margin: 20px;
+    margin-left: -28px;
+ 
   }
   
   .cashpara{
     color: #666;
-  margin-left: 50px;
+  margin-left: 0px;
   font-weight: bold;
   font-size: 16px;
+  font-family: 'Calibri';
   
   }
 .cashhead{
   margin-top:80px ;
 align-items: left;
 color:#24b676;
-font-size: 26px;
-margin-left: 50px;
+font-size: 24px;
+margin-left: 0px;
+font-family: 'Calibri';
 
 
 }

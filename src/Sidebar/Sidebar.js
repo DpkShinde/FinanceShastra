@@ -29,11 +29,14 @@ const Sidebar = () => {
                 </a>
 
                 <a 
-                    href="/stockwatchlist" 
-                    className={`sidebar-item ${location.pathname === "/stockwatchlist" ? "active" : ""}`} 
-                >
-                    <BsBookmark className="sideicon"/> Watchlist
-                </a>
+    href="/stockWatchlist" 
+    className={`sidebar-item ${["/stockWatchlist", "/mutualWatchlist","/goldWatchlistall","/stockwatchlistsector","/stockwatchlistmcap"
+        ,"/mutualwatchlistsector","/mutualwatchlisttype"
+    ].includes(location.pathname) ? "active" : ""}`} 
+>
+    <BsBookmark className="sideicon"/> Watchlist
+</a>
+
 
                 <a 
                     href="/stockresearchpages" 

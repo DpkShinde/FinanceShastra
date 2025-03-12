@@ -22,7 +22,9 @@ const WhyFinadvanceeducationnn = () => {
         
        
         <Navbar/>
-        <FooterForAllPage/>
+        <div className="foooterpagesaupdate">
+    <FooterForAllPage/>
+  </div>
     </div>
   )
 }

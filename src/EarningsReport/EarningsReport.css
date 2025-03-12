@@ -7,7 +7,8 @@
 align-items: left;
 color:#24b676;
 font-size: 26px;
-margin-left: 30px;
+margin-left: 29px;
+font-family: 'calibri';
 
 }
 .earnings-report a {
@@ -20,6 +21,7 @@ margin-left: 30px;
   margin-left: 30px;
   font-weight: bold;
   font-size: 16px;
+  font-family: 'calibri';
   
 }
 .earnings-table {

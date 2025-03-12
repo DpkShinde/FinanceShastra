@@ -111,11 +111,11 @@ This Disclaimer constitutes the entire agreement between FinanceShastra and the 
       </div>
      
       <Navbar/>
-    <div className={darkMode ? "foooterpagesattt" :"foooterpagesatttdisclaimer"}>
+ 
+    </div>
+    <div className={darkMode ? "foooterpagesattt" :"foooterpagesaupdate"}>
       <FooterForAllPage/>
       </div>
-    </div>
-   
     </div>
   );
 };

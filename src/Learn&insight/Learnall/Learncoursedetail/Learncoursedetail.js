@@ -79,7 +79,7 @@ const LearnCourseDetails = () => {
     <ModulecourseDetails/>
     <FaqDropdown/>
     <Learncarddetailcourse/>
-    <div className="foooterpagesatt">
+    <div className="foooterpagesaupdate">
       <FooterForAllPage />
     </div>
     </div>

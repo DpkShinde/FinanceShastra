@@ -6,7 +6,7 @@
     max-width: 750px; /* Set a maximum width */
     margin: 0 auto; /* Center the container */
 /* Add left margin to prevent overlap with sidebar */
-    font-family: 'Calibri';
+   
     margin-top: 10px;
 
     background-color: #f9f9f9;
@@ -79,6 +79,7 @@ margin-top: 150px;
     font-size: 1.5rem;
     font-weight: bold;
     margin-right: 50px;
+    font-family: 'Calibri';
   }
   
   /* Tags Section */
@@ -119,16 +120,19 @@ margin-top: 150px;
     margin: 5px 0;
     font-size: 0.9rem;
     font-weight: bold;
+    font-family: 'calibri';
   }
   
   /* Positive Percentage */
   .mutualcandletop__percentage--positive {
     color: #28a745; /* Green for positive percentages */
+    font-family: 'calibri';
   }
   
   /* Negative Percentage */
   .mutualcandletop__percentage--negative {
     color: #dc3545; /* Red for negative percentages */
+    font-family: 'calibri';
   }
   
   /* Last Updated Info */
@@ -136,6 +140,7 @@ margin-top: 150px;
     margin: 0;
     font-size: 0.8rem;
     color: #666;
+    font-family: 'calibri';
   }
 /* Adjustments for 768px screens */
 @media (max-width: 768px) {

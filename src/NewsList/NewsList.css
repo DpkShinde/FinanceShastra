@@ -6,10 +6,10 @@
   }
   
   .news-list h2 {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 15px;
     color: #24b676;
-    margin-left: 10px;
+    margin-left: -39px;
   }
   
   .news-list ul {
@@ -27,6 +27,7 @@
     padding: 10px 15px;
     background-color: #fff;
     transition: box-shadow 0.2s;
+    margin-left: -30px;
   }
   
   .news-item:hover {

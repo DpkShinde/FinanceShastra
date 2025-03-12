@@ -80,7 +80,7 @@ const WhoWeAre = () => {
 
     </div>
     <Navbar/>
-    <div className="foooterpagesattt">
+    <div className="foooterpagesaupdate">
     <FooterForAllPage/>
   </div>
     </div>

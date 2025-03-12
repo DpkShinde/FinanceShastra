@@ -8,8 +8,9 @@ import Cookies from "js-cookie";
 import { useSelector } from "react-redux";
 import { debounce } from "lodash";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import Sidebar from "../../Sidebar/Sidebar";
 
-const StockWatchlist = () => {
+const StockWatchlist = ({children}) => {
   const navigate = useNavigate();
   const getStockData = useSelector((store) => store?.searchData?.searchData || []);
 
@@ -78,6 +79,7 @@ const StockWatchlist = () => {
           Authorization: `Bearer ${token}`
         }
       });
+      console.log(watchlistState.selected)
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -491,7 +493,7 @@ const StockWatchlist = () => {
       <h2 className="newwmutual">Stock Watchlist</h2>
 
       {/* Navigation tabs */}
-      <div className="networth-tabs">
+      <div className="networth-tabswatclist">
         <Link to="/stockwatchlist">
           <button
             className="networth-tab"
@@ -736,8 +738,15 @@ const StockWatchlist = () => {
         {uiState.deletePopup && <DeleteStockPopup />}
         {uiState.deleteWatchlistPopup && <DeleteWatchlistPopup />}
 
+       
+      </div>
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
         <FooterForAllPage />
       </div>
+    </div>
     </div>
   );
 };

@@ -5,24 +5,29 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 80%;
-  margin: 0 auto;
+
   max-width: 800px;
 
+}
+.body{
+  font-family: 'calibri';
 }
 
 .finanancialh3{
 margin-top:80px ;
 align-items: left;
 color:#24b676;
-font-size: 26px;
-margin-left: 30px;
+font-size: 24px;
+margin-left: 10px;
+font-family: 'calibri';
 }
 .finanancialh2{
 
 align-items: left;
 color:black;
-font-size: 26px;
-margin-left: 30px;
+font-size: 24px;
+margin-left: 10px;
+font-family: 'calibri';
 }
 
 .table-container {

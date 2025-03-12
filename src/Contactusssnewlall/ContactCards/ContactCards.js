@@ -78,10 +78,13 @@ const ContactCards = () => {
           <h3>Connect with Us</h3>
           <h4>9 AM to 6 PM</h4>
           <p>Monday to Saturday</p>
-          <button onClick={handleChatClick}>
-        {isChatOpen ? "Connect to Chat →" : "Connect to Chat →"} {/* Button text changes based on chat state */}
-      </button>
-      {isChatOpen && <ChatBox />} 
+          <button
+    onClick={() => {
+      window.location.href = "https://wa.me/9067604020"; //  WhatsApp number
+    }}
+  >
+    Connect to Chat →
+  </button>
         </div>
 
         {/* Call Assistance Card */}
@@ -156,7 +159,7 @@ const ContactCards = () => {
         </div>
       </div>
       <Navbar/>
-      <div className="foooterpagesattt">
+      <div className="foooterpagesaupdate">
     <FooterForAllPage/>
   </div>
     </div>

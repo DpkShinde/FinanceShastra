@@ -302,6 +302,25 @@ margin-left: 240px;
 }
 
 
+
+.loginbtnpopupnot {
+  background: #24b676;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 45%;
+  margin-left: 10px;
+}
+
+.loginbtnpopupnot:hover {
+  background: #20a568;
+  
+}
 @media (max-width: 768px) {
   .userDetailss {
       font-family: 'calibri';

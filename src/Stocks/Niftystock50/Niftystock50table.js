@@ -330,9 +330,10 @@ const handlePageChange = (pageNumber) => {
 
         <Navbar />
       </div>
-      <div className="foooterpagesatt">
-    <FooterForAllPage />
-  </div>
+       <div className="foooterpagesaupdate">
+          <FooterForAllPage />
+        </div>
+       
     </div>
   );
 };

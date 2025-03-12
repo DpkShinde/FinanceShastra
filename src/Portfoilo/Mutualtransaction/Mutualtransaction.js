@@ -42,11 +42,11 @@ const MutualAccountStock = () => {
     setTransactionToDelete(transaction);
     setShowPopup(true);
   };
-  
+
   const confirmDelete = async () => {
     const token = Cookies.get("jwtToken")
     if (!transactionToDelete) return;
-  
+
     try {
       const response = await fetch(`${API_BASE_URL}/myportfolio/DeleteMutualTransactions/${transactionToDelete.scheme}`, {
         method: "DELETE",
@@ -56,14 +56,14 @@ const MutualAccountStock = () => {
         },
       });
       console.log("delete id", transactionToDelete.scheme)
-  
+
       if (!response.ok) {
         throw new Error("Failed to delete transaction");
       }
-  
+
       // Update state after successful deletion
       setMutualTransactons((prev) => prev.filter((txn) => txn.id !== transactionToDelete.scheme));
-  
+
       // Reset state
       setShowPopup(false);
       setTransactionToDelete(null);
@@ -71,7 +71,7 @@ const MutualAccountStock = () => {
       console.error("Error deleting transaction:", error);
     }
   };
-  
+
 
   const cancelDelete = () => {
     setShowPopup(false);
@@ -95,9 +95,11 @@ const MutualAccountStock = () => {
     }
   }, [location.state]);
 
+  const total_investment = mutualTransactions.reduce((acc, curr) => acc + parseFloat(curr.amount), 0)
+
   return (
     <div>
-      <Mutualportfoliodonut />
+      <Mutualportfoliodonut total_investment={total_investment} />
       <div className="portfolio-account-stock-container">
         {/* Header Section */}
         <div className="portfolio-account-stock-header">
@@ -168,7 +170,7 @@ const MutualAccountStock = () => {
                     </span>
                     {transaction.scheme}
                     <span className="stock-actions">
-                      <span className="action-text" onClick={() => {handleAddMutual()}}>Add | Sell</span>
+                      <span className="action-text" onClick={() => { handleAddMutual() }}>Add | Sell</span>
                       <span className="trash-icon">
                         <FontAwesomeIcon
                           icon={faTrashAlt}
@@ -267,7 +269,7 @@ const MutualAccountStock = () => {
                                     className="delete-icon"
                                     onClick={() => handleDeleteIconClick(transaction)}
                                   />
-                                  <BiPlusCircle className="add-icon" onClick={() => { handleAddMutual()}} />
+                                  <BiPlusCircle className="add-icon" onClick={() => { handleAddMutual() }} />
                                 </span>
                               </td>
                             </tr>

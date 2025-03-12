@@ -4,6 +4,7 @@
     font-family: 'calibri';
     color: #333;
     margin-top: 100px;
+   
   }
   
   .funds-header {
@@ -67,6 +68,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-bottom: 100px;
   }
   
   .funds-table-header th {

@@ -8,6 +8,7 @@ import './Userupdatedpage.css'
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import { API_BASE_URL } from "../../config";
 import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
+import Cookies from 'js-cookie'
 
 const UserDetailsupdate = () => {
   const navigate = useNavigate();
@@ -17,13 +18,12 @@ const UserDetailsupdate = () => {
 
   // Initial state (can be overwritten by updated data passed through location.state)
   const [emaillocal, setEmail]= useState('')
-  console.log(emaillocal)
   const [profileImage, setProfileImage] = useState(williamImage);
   const [personalDetails, setPersonalDetails] = useState({
     
     firstName: "-",
     lastName: "-",
-    email: emaillocal,
+    email: userEmail,
     gender: "-",
     dob: "-",
     ageGroup: "25 - 35",
@@ -61,11 +61,11 @@ const UserDetailsupdate = () => {
 
   // Update state when new data is passed from EditProfile
   useEffect(() => {
-    if (!localStorage.getItem("user")){
+    if (!Cookies.get("jwtToken")){
       setShowPopupforLogin(true)
     }else{
       const localStore= localStorage.getItem("user")
-      const localtoken= localStorage.getItem('token')
+      const localtoken= Cookies.get("jwtToken")
       console.log('token: ', localtoken)
       const parsed = (JSON.parse(localStore))
       console.log(parsed.email)
@@ -307,8 +307,8 @@ const UserDetailsupdate = () => {
           <div className="payment-popup-content">
             <h2>You Are not Logged in!</h2>
             <p className="amount-paid">Please Login</p>
-            <button type="button" onClick={onlogin}
-              className="loginbtn billing-detailspages-pay-button">Login</button>
+            <button  onClick={onlogin}
+              className="loginbtnpopupnot">Login</button>
           </div>
         </div>
       )}

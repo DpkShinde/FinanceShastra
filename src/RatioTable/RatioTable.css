@@ -1,7 +1,7 @@
 .ratio-table {
     padding: 20px;
     font-family: 'Calibri';
-    margin: 20px;
+
 }
 
 
@@ -16,19 +16,21 @@ margin-top:80px ;
 align-items: left;
 color:#24b676;
 font-size: 26px;
-margin-left: 50px;
+margin-left: 0px;
+font-family: 'Calibri';
 
 
 }
 .ratiopara{
 color: #666;
-margin-left: 50px;
+margin-left: 0px;
 font-weight: bold;
 font-size: 16px;
+font-family: 'Calibri';
 }
 .ratio-table table {
     width: 100%; /* Set the table width to 90% for a centered and responsive layout */
- 
+ margin-left: -26px;
     border-collapse: collapse;
     border-radius: 10px; /* Rounded corners for the table */
     overflow: hidden; /* Ensures rounded corners are visible */

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Doughnut } from "react-chartjs-2";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
-const Portfoliodonut = () => {
+const Portfoliodonut = ({total_investment}) => {
   const data = {
     todayGain: {
       totalGaining: 0,
@@ -73,7 +73,7 @@ const Portfoliodonut = () => {
         </div>
         <div>
           <p className="networthp">Amount Invested</p>
-          <h2>₹0</h2>
+          <h2>₹{total_investment}</h2>
         </div>
         <div>
           <p className="networthp">Unrealized Gain</p>

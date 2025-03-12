@@ -5,6 +5,7 @@
   padding: 20px;
   font-family: 'calibri';
   margin-top: 80px;
+  margin-bottom: 100px;
 }
 .blogDateall{
 margin-left: 20px;
@@ -22,6 +23,7 @@ font-weight: bold;
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .filterDropdown {

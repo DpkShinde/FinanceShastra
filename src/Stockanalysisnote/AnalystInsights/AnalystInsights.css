@@ -10,8 +10,8 @@
    margin-bottom: 50px;
     align-items: left;
     color:#24b676;
-    font-size: 26px;
-    
+    font-size: 24px;
+    font-family: 'calibri';
   }
   
   
@@ -47,11 +47,13 @@
     z-index: 1; /* Keep this on top of the blurred content */
     filter: none; /* Ensure this part is not blurred */
     font-weight: bold;
+    cursor: pointer;
+  
   }
   
-  .premium-feature a {
+  .premium-feature:hover {
+    background-color: #ecf5f9;
     color: #24b676;
-   font-weight: bold;
   }
 
 /* Mobile View for Tablets (max-width: 768px) */

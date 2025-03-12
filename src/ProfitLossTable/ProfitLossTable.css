@@ -4,19 +4,20 @@
 }
 
 .profitlosshead{
- 
+  font-family: 'calibri';
   margin-top:80px ;
 align-items: left;
 color:#24b676;
-font-size: 26px;
-margin-left: 40px;
+font-size: 24px;
+margin-left: 0px;
 }
 
 .profitlosspara {
   color: #666;
-  margin-left: 40px;
+  margin-left: 0px;
   font-weight: bold;
   font-size: 16px;
+  font-family: 'calibri';
 }
 
 .profit-loss-container a {
@@ -25,11 +26,12 @@ margin-left: 40px;
 }
 
 .profit-loss-table {
-  width: 100%; /* Set the table width to 80% for a narrower layout */
+  width: 130%; /* Set the table width to 80% for a narrower layout */
  
   border-collapse: collapse;
   border-radius: 10px; /* Rounded corners for the table */
   overflow: hidden; /* Ensures rounded corners are visible */
+  margin-left: -29px;
 }
 
 .profit-loss-table th, .profit-loss-table td {

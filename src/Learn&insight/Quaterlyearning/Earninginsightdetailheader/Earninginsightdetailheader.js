@@ -39,13 +39,13 @@ function Earninginsightheader() {
   }, []);
 
   return (
-    <div className="graphcontainer">
-      <div className="graphheader">
+    <div className="graphcontainerer">
+      <div className="graphheaderer">
         <div className="title-container">
           <h1 className="telephone">State Bank Of India</h1>
         </div>
         <div className="graph-price-update">
-          <span className={`graphprice ${change >= 0 ? 'positive' : 'negative'}`}>
+          <span style={{fontSize:"20px"}}className={`graphprice ${change >= 0 ? 'positive' : 'negative'}`}>
             ₹{parseFloat(currentPrice).toLocaleString()}
           </span>
           <span className="graphupdate">Last updated: {lastUpdated}</span>

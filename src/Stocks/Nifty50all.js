@@ -11,9 +11,12 @@ function Nifty50all() {
       <Nifty50page/>
       <Nifty50screenerStockdatatable/>
       <NiftySectorWeightage/>
-      <div className="foooterpagesatt">
-    <FooterForAllPage />
-  </div>
+      <div className="foooterpagesaupdate">
+          <FooterForAllPage />
+        </div>
+       
+   
+
     </div>
   )
 }

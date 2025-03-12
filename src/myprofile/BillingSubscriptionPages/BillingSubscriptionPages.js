@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BillingSubscriptionPages.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 const BillingSubscriptionPages = () => {
+  const [activepage, setactivepage]= useState('half')
   
  const navigate = useNavigate();
   return (
@@ -68,22 +69,29 @@ const BillingSubscriptionPages = () => {
       
       <h3 className="billingSubscriptionSubtitle">Available Plans</h3>
       <div className="toggle-switch-container">
-        <button className="toggle-button  active "  onClick={() => navigate("/billingSubscriptionPages")} >Half yearly</button>
+        <button className={`toggle-button ${activepage=== "half" && "active" }`}  onClick={() => setactivepage("half")} >Half yearly</button>
      
-      <button className="toggle-button" onClick={() => navigate("/billingDetailsPageannually")}>Annually</button>
+      <button className={`toggle-button ${activepage=== "yearly" && "active" }`} onClick={()=> setactivepage("yearly")}>Annually</button>
     </div>
       
       <div className="billingSubscriptionPlans">
         <div className="billingSubscriptionPlan">
           <h4 className="billingSubscriptionPlanTitle">Elite</h4>
           <p>Empower your investment journey with the Elite Plan!</p>
+          {activepage==="half" ? 
           <button className="billingSubscriptionPlanButton" onClick={() => navigate("/halfyearlySubscriptionPages")}>Explore</button>
+          : 
+          <button className="billingSubscriptionPlanButton" onClick={() => navigate("/annuallySubscriptionPages")}>Explore</button>}
+          
         </div>
         <div className="billingSubscriptionPlan">
           <h4 className="billingSubscriptionPlanTitle">Premium</h4>
           <p>Invest smarter, invest confidently with the Premium Plan!</p>
-          <button className="billingSubscriptionPlanButton"onClick={() => navigate("/premiumSubscriptionPages")}>Explore</button>
-        </div>
+          {activepage==="half" ? 
+          <button className="billingSubscriptionPlanButton" onClick={() => navigate("/premiumSubscriptionPages")}>Explore</button>
+          :
+           <button className="billingSubscriptionPlanButton" onClick={() => navigate("/annuallyPremiumSubscriptionPages")}>Explore</button>}
+          </div>
       </div>
     </div>
     <Navbar/>

@@ -4,8 +4,9 @@ import 'font-awesome/css/font-awesome.min.css'; // Import FontAwesome CSS
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import Sidebar from "../../Sidebar/Sidebar";
 
-const  StockWatchportall= () => {
+const  StockWatchportall= ({children}) => {
   const [stockName, setStockName] = useState("");
   const [stockDetails, setStockDetails] = useState([]);
   const [exchange, setExchange] = useState("NSE");
@@ -134,7 +135,7 @@ const  StockWatchportall= () => {
       <h2 className="newwmutual" >
   Stock Watchlist
 </h2>
-<div className="networth-tabs" >
+<div className="networth-tabswatclist" >
   <Link to="/stockWatchlist">
     <button className="networth-tab" style={{ background: "#24b676", color: "white" }}>
       Stocks
@@ -331,7 +332,13 @@ const  StockWatchportall= () => {
         </div>
       </div>
   </div>
-  <FooterForAllPage/>
+  <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
   </div>
   );
 };

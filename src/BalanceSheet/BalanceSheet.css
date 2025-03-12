@@ -1,20 +1,22 @@
 .balance-sheet {
   padding: 20px;
   font-family: 'Calibri';
-  margin: 20px;
+  
 }
 
 .sheethead{
   color: #24b676;
-  font-size: 26px;
+  font-size: 24px;
   margin-top: 80px;
-  margin-left: 50px;
+  margin-left: 0px;
+  font-family: 'Calibri';
 }
 .sheetpara{
   color: #666;
-  margin-left: 50px;
+  margin-left: 0px;
   font-weight: bold;
   font-size: 16px;
+  font-family: 'Calibri';
 }
 
 .sheeta{
@@ -29,7 +31,7 @@
 
 .balance-sheet table {
   width: 100%; /* Set the table width to 90% for a centered and responsive layout */
-
+margin-left: -20px;
   border-collapse: collapse;
   border-radius: 10px; /* Rounded corners for the table */
   overflow: hidden; /* Ensures rounded corners are visible */

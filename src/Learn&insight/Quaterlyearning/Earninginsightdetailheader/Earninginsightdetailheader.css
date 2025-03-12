@@ -1,7 +1,7 @@
 .graphcontainerer{
     width: 150%; 
-    margin-left: -10%; 
-    padding: 6px;
+    margin-left: -14%; 
+    padding: 20px 20px;
     font-family: "calibri";
     margin-top: 100px;
     border-radius: 0;
@@ -11,6 +11,25 @@
     background-color: #fff;
 
 } 
+
+.graphheaderer {
+  display: flex;
+  gap: 500px;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+
+}
+
+
+.graphheaderer h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 300px;
+}
+
+
 .graphnavbarr {
 display: flex;
 flex-wrap: wrap;

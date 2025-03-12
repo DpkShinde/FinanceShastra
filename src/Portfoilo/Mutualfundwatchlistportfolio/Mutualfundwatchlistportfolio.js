@@ -8,8 +8,9 @@ import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import './Mutualfundwatchlistportfolio.css'
 import Cookies from 'js-cookie'
 import { API_BASE_URL } from "../../config";
+import Sidebar from "../../Sidebar/Sidebar";
 
-const MutualWatchlist = () => {
+const MutualWatchlist = ({children}) => {
   const navigate = useNavigate();
   const getStockData = useSelector((store) => store?.searchData?.searchData || []);
 
@@ -498,7 +499,7 @@ const MutualWatchlist = () => {
       <h2 className="newwmutual">Mutual Fund Watchlist</h2>
 
       {/* Navigation tabs */}
-      <div className="networth-tabs">
+      <div className="networth-tabswatclist">
         <Link to="/stockWatchlist">
           <button
             className="networth-tab"
@@ -757,7 +758,14 @@ const MutualWatchlist = () => {
       {uiState.deletePopup && <DeleteStockPopup />}
       {uiState.deleteWatchlistPopup && <DeleteWatchlistPopup />}
 
-      <FooterForAllPage />
+     
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

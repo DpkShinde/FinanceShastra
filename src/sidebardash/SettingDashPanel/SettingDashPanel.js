@@ -4,6 +4,7 @@ import "./SettingDashPanel.css";
 import Sidebar from "../../Sidebar/Sidebar";
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import Cookies from 'js-cookie'
 
 
 
@@ -37,6 +38,7 @@ const SettingsDashboard = () => {
  const saveChanges = () => {
    setNotifications(tempNotifications); // Save changes to the main state
    alert("Changes saved successfully!");
+
  };
 
  // Cancel changes and revert temp state to the latest saved notifications

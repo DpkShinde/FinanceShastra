@@ -5,6 +5,7 @@ import learning2 from "../../../assest/learn2.jpeg";
 import { LuClock9 } from "react-icons/lu";
 import Navbar from '../../../Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
+import FooterForAllPage from "../../../FooterForAllPage/FooterForAllPage";
 // Course Data
 const courses = [
   {
@@ -66,6 +67,7 @@ const courses = [
 const Learncardaftersignup = () => {
      const navigate = useNavigate();
   return (
+    <div>
     <div className="course-container">
       {/* Header Section */}
       <header className="headerlearn">
@@ -105,6 +107,10 @@ const Learncardaftersignup = () => {
       </div>
       <Navbar/>
     </div>
+     <div className="foooterpagesaupdate">
+     <FooterForAllPage />
+   </div>
+   </div>
   );
 };
 

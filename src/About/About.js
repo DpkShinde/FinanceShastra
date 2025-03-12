@@ -31,7 +31,7 @@ const About = () => {
           </p>
 
           <h2>Products and Services Offered by the Company</h2>
-          <h3>Products</h3>
+          <h3>Products :</h3>
           <ul>
             <li>Smart energy meters</li>
             <li>GPON OLT and ONT</li>

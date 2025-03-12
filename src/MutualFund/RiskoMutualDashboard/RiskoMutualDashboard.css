@@ -19,6 +19,7 @@
 margin-top: 500px;
   color: #333;
   margin-left: 100px;
+  font-family: 'calibri';
 }
 
 /* SVG Container */
@@ -40,8 +41,8 @@ margin-top: 500px;
 
 /* Text Styling for Risk Labels */
 .riskometer text {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
+ font-weight: bold;
   fill: #000;
 
 }

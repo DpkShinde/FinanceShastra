@@ -126,7 +126,9 @@ prominent names like Welspun, Premco Global, and Page.</p>
       <UpcomingIPOs/>
      
     </div>
-    <FooterForAllPage/>
+    <div className="foooterpagesaupdate">
+     <FooterForAllPage />
+   </div>
     </div>
   );
 };

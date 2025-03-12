@@ -12,6 +12,7 @@ import { API_BASE_URL } from "../../config";
 
 import { PortfolioStocksContext } from "../context/PortfolioStocksContext";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import { current } from "@reduxjs/toolkit";
 
 const PortfolioAccountStock = () => {
   const location = useLocation();
@@ -78,9 +79,12 @@ const PortfolioAccountStock = () => {
     }
   }, [location.state]); 
 
+  const total_investment = stockTransactions.reduce((acc, curr) => acc + parseFloat(curr.amount), 0 ) 
+  
+
   return (
     <div>
-      <Portfoliodonut />
+      <Portfoliodonut total_investment = {total_investment}/>
       <div className="portfolio-account-stock-container">
         <div className="portfolio-account-stock-header">
           <h2 className="portfolio-account-stock-title">My Accounts</h2>

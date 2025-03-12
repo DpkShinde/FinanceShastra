@@ -27,7 +27,6 @@ export const UserProfileProvider = ({ children }) => {
 
       if (!response.ok) throw new Error("Failed to fetch user");
       const data = await response.json();
-      console.log(data);
       setEmail(data[0]?.email)
       setUser(data[0]?.name || "Unknown User");
     } catch (err) {

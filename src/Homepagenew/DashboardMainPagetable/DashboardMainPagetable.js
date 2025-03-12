@@ -49,7 +49,6 @@ const DashboardMainPagetable = () => {
         throw new Error("Failed to fetch data");
       }
       const data = await response.json();
-      console.log(data);
       setAllStocks(data)
       setError(null); // Clear any previous error
     } catch (err) {

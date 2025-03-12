@@ -5,6 +5,7 @@ import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import "./PricingTablehalfyear.css";
 import DealOfTheYearSection from "../DealOfTheYearSection/DealOfTheYearSection";
 import Navbar from '../../Navbar/Navbar';
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 const SubscriptionPlans = () => {
   const [isAnnually, setIsAnnually] = useState(false);
@@ -238,6 +239,9 @@ const SubscriptionPlans = () => {
       </div>
     </div>
     
+    <div className="foooterpagesaupdate">
+     <FooterForAllPage />
+     </div>
     
     </div>
             

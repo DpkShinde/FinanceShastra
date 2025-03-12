@@ -108,7 +108,9 @@ const SectorWeightageTableniffty50 = () => {
       </div>
     </div>
    
-    <FooterForAllPage />
+    <div className="foooterpagesaupdate">
+          <FooterForAllPage />
+        </div>
   
     </div>
   );

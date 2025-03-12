@@ -5,16 +5,40 @@ height: 170px;
     box-shadow: 0 3px 5px rgb(127, 171, 225);;
     border: 1px solid rgb(127, 171, 225);
     margin-top: 20px;
-    margin-left: 80px;
+    margin-left: 300px;
     width: 700px;
     border-radius: 5px;
     margin-bottom: 390px;
   
  
   }
+  .table-containerwatchlistnama {
+    width: 100%; /* Decrease width */
+  /* Center the table */
+    padding: 5px; /* Reduce padding */
+    overflow-x: auto; /* Prevents horizontal overflow */
+  }
+  
+  .stock-tablewatchlistnama {
+    width: 100%;
+    border-collapse: collapse; /* Removes extra spacing between columns */
+    table-layout: fixed; /* Ensures equal column width */
+  }
+  
+  .stock-tablewatchlistnama th,
+  .stock-tablewatchlistnama td {
+    padding: 8px 14px; /* Reduce padding inside cells */
+    text-align: left;
+    font-size: 15px; /* Adjust font size */
+    white-space: nowrap; /* Prevents text wrapping */
+  }
+  .stock-tablewatchlistnama th{
+  background-color: #24b676;
+  color: white;
+}
 
   .newwmutual{
-    margin-left: 100px;
+    margin-left: 300px;
     margin-top: 120px;
     font-family: 'calibri';
     
@@ -61,12 +85,12 @@ height: 170px;
   
   /* Stock Table Styling */
   .stock-tablewatchlist {
-    width: 100%;
+
     border-collapse: collapse;
     margin-top: 20px;
     font-family: 'calibri';
   }
-  
+ 
   .stock-tablewatchlist th,
   .stock-tablewatchlist td {
    
@@ -215,7 +239,7 @@ height: 170px;
     border: 1px solid rgb(127, 171, 225);
     border-radius: 8px;
 
-    width:1300px;
+    width:150%;
   
   }
   /* Delete Button */
@@ -273,31 +297,31 @@ height: 170px;
     display: flex;
     align-items: center;
     margin: 10px 0;
-    gap: 740px;
+    gap: 520px;
   }
   .top-sectionswatchlistmutual{
     display: flex;
     align-items: center;
     margin: 10px 0;
-    gap: 670px;
+    gap: 490px;
   }
   .top-sectionswatchlistsector{
     display: flex;
     align-items: center;
     margin: 10px 0;
-    gap: 810px;
+    gap: 550px;
   }
   .top-sectionswatchlistsectorr{
     display: flex;
     align-items: center;
     margin: 10px 0;
-    gap: 710px;
+    gap: 510px;
   }
   .top-sectionswatchlistall{
     display: flex;
     align-items: center;
     margin: 10px 0;
-    gap: 810px;
+    gap: 550px;
   }
   @media (max-width: 768px) {
     .stocksector-watchlist {

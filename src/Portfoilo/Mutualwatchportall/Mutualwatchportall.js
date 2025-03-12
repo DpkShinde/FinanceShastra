@@ -4,8 +4,9 @@ import 'font-awesome/css/font-awesome.min.css'; // Import FontAwesome CSS
 
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import Sidebar from "../../Sidebar/Sidebar";
 
-const MutualWatchportall= () => {
+const MutualWatchportall= ({children}) => {
   const [stockName, setStockName] = useState("");
   const [stockDetails, setStockDetails] = useState([]);
   const [exchange, setExchange] = useState("NSE");
@@ -128,7 +129,7 @@ const MutualWatchportall= () => {
       <h2 className="newwmutual" >
   Mutual Fund Watchlist
 </h2>
-<div className="networth-tabs" >
+<div className="networth-tabswatclist" >
   <Link to="/stockWatchlist">
     <button className="networth-tab" style={{ background: "white", color: "black" }}>
       Stocks
@@ -318,7 +319,14 @@ const MutualWatchportall= () => {
           </div>
         </div>
       </div>
-      <FooterForAllPage/>
+     
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

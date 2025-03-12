@@ -4,8 +4,9 @@ import 'font-awesome/css/font-awesome.min.css'; // Import FontAwesome CSS
 
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import Sidebar from "../../Sidebar/Sidebar";
 
-const MutualWatchtypefundlist= () => {
+const MutualWatchtypefundlist= ({children}) => {
   const [stockName, setStockName] = useState("");
   const [stockDetails, setStockDetails] = useState([]);
   const [exchange, setExchange] = useState("NSE");
@@ -135,7 +136,7 @@ const MutualWatchtypefundlist= () => {
       <h2 className="newwmutual" >
   Mutual Fund Watchlist
 </h2>
-<div className="networth-tabs" >
+<div className="networth-tabswatclist" >
   <Link to="/stockWatchlist">
     <button className="networth-tab" style={{ background: "white", color: "black" }}>
       Stocks
@@ -306,7 +307,7 @@ const MutualWatchtypefundlist= () => {
                 {Object.keys(groupedData).map((sector) => (
                   <React.Fragment key={sector}>
                     <tr className="sector-headerwatchlist">
-                    <td colSpan="7" style={{ paddingRight: "1000px", fontWeight: "bold" }}>
+                    <td colSpan="7" style={{ paddingRight: "800px", fontWeight: "bold" }}>
         {sector}
       </td>
                     </tr>
@@ -330,7 +331,13 @@ const MutualWatchtypefundlist= () => {
           </div>
         </div>
       </div>
-      <FooterForAllPage/>
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

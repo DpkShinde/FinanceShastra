@@ -9,6 +9,7 @@ import blog4 from "../../../assest/blog4.jpeg";
 import blog5 from "../../../assest/blog5.jpeg";
 import blog6 from "../../../assest/blog6.jpeg";
 import Navbar from "../../../Navbar/Navbar";
+import FooterForAllPage from "../../../FooterForAllPage/FooterForAllPage";
 
 const BlogsComponent = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -92,6 +93,7 @@ const BlogsComponent = () => {
         );
 
   return (
+    <div>
     <div className="blogsContainer">
       <h2 className="blogsTitle">Blogs</h2>
       <p className="blogsSubtitle">FinanceShastra’s Knowledge Library</p>
@@ -150,6 +152,10 @@ const BlogsComponent = () => {
   </Link>
 </div>
       <Navbar />
+    </div>
+    <div className="foooterpagesaupdate">
+     <FooterForAllPage />
+   </div>
     </div>
   );
 };

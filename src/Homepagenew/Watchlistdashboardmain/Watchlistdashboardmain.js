@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./Watchlistdashboardmain.css";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
+import Cookies from 'js-cookie'
+import { API_BASE_URL } from "../../config";
 
 // Import icons
 import reliance from "../../assest/reliance.png";
@@ -8,6 +10,7 @@ import hdfc from "../../assest/hdfcbank.png";
 import airtel from "../../assest/bhartiartl.png";
 import infosys from "../../assest/infosyss.png";
 import lic from "../../assest/lici.png";
+import { useNavigate } from "react-router-dom";
 
 const Watchlistdashboardmain = () => {
   const watchlistdashboardmainData = [
@@ -18,11 +21,66 @@ const Watchlistdashboardmain = () => {
     { id: 5, name: "Life Insura Corp of India", price: "₹926.05", change: "0.63%", changeType: "up", icon: lic },
   ];
 
+  const navigate = useNavigate()
+
+  const [watchlistState, setWatchlistState] = useState();
+  const [watchlistData, setWatchlistData] = useState();
+ 
+  const fetchWatchlists = async () => {
+    try {
+      const token = Cookies.get("jwtToken");
+      const response = await fetch(`${API_BASE_URL}/Watchlist/`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || `Failed with status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data[0].watchlist_id)
+      setWatchlistState(data[0].watchlist_id);
+    } catch (error) {
+      alert(error.message || "Failed to fetch watchlists.");
+    }
+  };
+
+  // Fetch watchlist assets
+  const fetchWatchlistAssets = useCallback(async () => {
+    try {
+      const token = Cookies.get("jwtToken");
+      const response = await fetch(`${API_BASE_URL}/Watchlist/getWatchlistAssets?watchlist_id=${watchlistState}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || `Failed with status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data)
+      setWatchlistData(data);
+    } catch (error) {
+      alert(error.message || "Failed to fetch watchlist assets.");
+    }
+  }, [watchlistState]);
+
+  useEffect(() => {
+    fetchWatchlists()
+    fetchWatchlistAssets()
+  }, [])
+
   return (
     <div className="Watchlistdashboardmain-container">
       <div className="Watchlistdashboardmain-header">
         <h2 className="Watchlistdashboardmain-title">Watchlist</h2>
-        <button className="Watchlistdashboardmain-add-button">Add New</button>
+        <button className="Watchlistdashboardmain-add-button" onClick={() => navigate('/stockWatchlist')}>Add New</button>
       </div>
       <ul className="Watchlistdashboardmain-items">
         {watchlistdashboardmainData.map((item) => (
@@ -34,11 +92,10 @@ const Watchlistdashboardmain = () => {
             <div className="Watchlistdashboardmain-price-change">
               <p className="Watchlistdashboardmain-price">{item.price}</p>
               <p
-                className={`Watchlistdashboardmain-change ${
-                  item.changeType === "up" ? "Watchlistdashboardmain-change-up" : "Watchlistdashboardmain-change-down"
-                }`}
+                className={`Watchlistdashboardmain-change ${item.changeType === "up" ? "Watchlistdashboardmain-change-up" : "Watchlistdashboardmain-change-down"
+                  }`}
               >
-               {item.changeType === "up" ? <FaArrowUp /> : <FaArrowDown />} {item.change}
+                {item.changeType === "up" ? <FaArrowUp /> : <FaArrowDown />} {item.change}
               </p>
             </div>
           </li>
