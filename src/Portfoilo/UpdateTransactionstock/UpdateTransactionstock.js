@@ -8,7 +8,7 @@ import Sidebar from "../../Sidebar/Sidebar";
 
 
 
-const UpdateTransaction = () => {
+const UpdateTransaction = ({children}) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -80,6 +80,7 @@ const UpdateTransaction = () => {
   };
 
   return (
+    <div>
     <div className="transaction-form">
       <h2 className="tranheaderform">Edit Transaction</h2>
       <div className="tabsadd">
@@ -246,10 +247,18 @@ const UpdateTransaction = () => {
         </div>
       </div>
       <Navbar/>
-      <Sidebar/>
-      <FooterForAllPage/>
+
+    
 
     </div>
+     <div className="layout">
+     <Sidebar />
+     <div className="main-contentover">
+       <div className="contentover">{children}</div>
+       <FooterForAllPage />
+     </div>
+   </div>
+   </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { AiOutlineMessage } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import { FaRegEdit } from "react-icons/fa";
@@ -10,8 +10,11 @@ import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 import { API_BASE_URL } from "../../config";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
 
 const EditProfile = () => {
+  const {userEmail} = useContext(UserProfileContext)
+  const {token}= useContext(UserProfileContext)
   const [personalDetails, setPersonalDetails] = useState({});
   const [professionalDetails, setProfessionalDetails] = useState({});
   const [investmentDetails, setInvestmentDetails] = useState({});
@@ -85,7 +88,7 @@ const EditProfile = () => {
 
     setErrors(validationErrors);
 
-    const localJWTTOken= Cookies.get('jwtToken')
+    //const localJWTTOken= Cookies.get('jwtToken')
     
       if (Object.keys(validationErrors).length === 0) {
         const url=`${API_BASE_URL}/userdetails/adduser`
@@ -95,7 +98,7 @@ const EditProfile = () => {
           method: 'PUT',
           headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localJWTTOken}`
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(formData)
         }
@@ -103,7 +106,10 @@ const EditProfile = () => {
     
         console.log("form income", formData)
         console.log(response)
-        setIsPopupVisible(true);
+        if (response.ok){
+          setIsPopupVisible(true);
+        }
+        
       }
 
     
@@ -123,9 +129,10 @@ const EditProfile = () => {
       setFormData(updatedData.investment);
       }
     }
-    const userLocal= JSON.parse(localStorage.getItem('user'))
-    const localemail = userLocal.email
-    const usernamelocal= localemail.split('@')[0]
+    
+    /*const userLocal= JSON.parse(localStorage.getItem('user'))
+    const localemail = userLocal.email*/
+    const usernamelocal= userEmail.split('@')[0]
     setusernamelocal(usernamelocal)
   }, [location.state]);
 
@@ -513,6 +520,7 @@ const EditProfile = () => {
 
 
   return (
+    <div>
     <div className="profilepage-container">
       <h1 className="profilepage-titleeeditt">My profile</h1>
       <div className="pftab">
@@ -983,8 +991,10 @@ const EditProfile = () => {
       <Navbar />
 
     </div>
-
-
+    <div className="foooterpagesaupdate">
+     <FooterForAllPage/>
+      </div>
+    </div>
 
   );
 };

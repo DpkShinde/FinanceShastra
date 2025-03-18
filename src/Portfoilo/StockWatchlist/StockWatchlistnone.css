@@ -37,6 +37,10 @@
   overflow-y: auto;
   z-index: 10;
   display: none; /* By default hidden */
+  font-size: 14px;
+  font-family: 'calibri';
+  font-weight:500;
+  color: black;
 }
 
 .search-resultswatchlistsector.active {
@@ -56,7 +60,8 @@
 }
 
 .search-resultswatchlistsector ul li:hover {
-  background: #f0f0f0;
+  background:#24b676;
+  color: white;
 }
 
 

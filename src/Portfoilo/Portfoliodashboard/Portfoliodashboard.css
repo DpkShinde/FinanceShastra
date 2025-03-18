@@ -113,11 +113,12 @@
   font-size: 12px;
   color: #24b676;
 }
-.portfolio-add {
+.portfolio-add a {
   color: #24b676;
   font-weight: bold;
   cursor: pointer;
 }
+
 .centered-content {
   display: flex; /* Enables flexible alignment */
   justify-content: center; /* Horizontally centers the content */

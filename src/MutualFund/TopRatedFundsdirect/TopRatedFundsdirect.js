@@ -21,10 +21,11 @@ const headers = [
 
 const TopRatedFundsdirect = () => {
   const navigate = useNavigate();
-  const { topRatedFunds, loading, error } = useTopRatedFunds(); // Use the custom hook
+  const { topRatedFunds, loading, error } = useTopRatedFunds();
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
-  // console.log(allFunds);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 10;
+  const totalPages = Math.max(1, Math.ceil((topRatedFunds?.length || 0) / recordsPerPage));
   const sortedData = () => {
     if (!sortConfig.key) return topRatedFunds;
 
@@ -63,6 +64,17 @@ const TopRatedFundsdirect = () => {
   };
 
   const sortedFunds = sortedData();
+  const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
+  const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, topRatedFunds.length);
+  const currentData = sortedData().slice(indexOfFirstItem, indexOfLastItem);
+
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
 
   return (
     <div>
@@ -112,7 +124,7 @@ const TopRatedFundsdirect = () => {
                 </tr>
               </thead>
               <tbody>
-                {sortedFunds.map((fund) => (
+                {currentData.map((fund) => (
                   <tr key={fund.FundID} className="funds-table-row">
                     <td>
                       {fund.url ? (
@@ -151,14 +163,27 @@ const TopRatedFundsdirect = () => {
                 ))}
               </tbody>
             </table>
+            <div className="pagination-topratedcontainer">
+            <div className="pagination-topratedwrapper">
+            <div className="pagination-topratedinfo">
+              {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${topRatedFunds.length} records`}
+            </div>
+            <div className="pagination-topratedcontainer-buttons">
+              <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+              {[...Array(totalPages)].map((_, i) => (
+                <button key={i + 1} onClick={() => handlePageChange(i + 1)} className={currentPage === i + 1 ? "active" : ""}>{i + 1}</button>
+              ))}
+              <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
+              </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
-      <div className="foooterpagesaupdate">
-        <FooterForAllPage />
-      </div>
+      <FooterForAllPage />
     </div>
   );
 };
+
 
 export default TopRatedFundsdirect;

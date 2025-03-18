@@ -34,7 +34,8 @@
 }
 
 .sidebar-item:hover {
-    background-color: #e0e0e0;
+    background-color: #24b676;
+    color: white;
 }
 
 .sidebar-item.active { 

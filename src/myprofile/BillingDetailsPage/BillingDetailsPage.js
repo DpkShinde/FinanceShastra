@@ -250,13 +250,14 @@ const BillingDetailsPage = () => {
         errors.expiryDate ? "error" : ""
       }`}
     >
-      <DatePicker
-        selected={expiryDate}
-        onChange={(date) => setExpiryDate(date)}
-        dateFormat="MM/yyyy"
-        showMonthYearPicker
-        customInput={<CustomInput />}
-      />
+    <DatePicker
+  selected={expiryDate}
+  onChange={(date) => setExpiryDate(date)}
+  dateFormat="MM/yyyy"
+  showMonthYearPicker
+  customInput={<CustomInput />} // Custom input component pass kiya
+/>
+
     </div>
 
     <div
@@ -313,7 +314,9 @@ const BillingDetailsPage = () => {
         <Navbar/>
       
         </div>
-        <FooterForAllPage/>
+        <div className="foooterpagesaupdate">
+      <FooterForAllPage />
+      </div>
         </div>
     );
 };

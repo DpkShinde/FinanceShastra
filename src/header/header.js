@@ -59,54 +59,55 @@ function Graphheader() {
       </div>
 
       {/* Navigation Links */}
-      <nav className="graphnavbar">
+     
+        <nav className="graphnavbar">
         <Divider />
-        <ScrollLink to="overview" smooth={true} duration={500}>
+        <ScrollLink to="overview" smooth={true} duration={500} offset={-320}>
           Overview
         </ScrollLink>
-        <ScrollLink to="stockxray" smooth={true} duration={500}>
+        <ScrollLink to="stockxray" smooth={true} duration={500} offset={-290}>
           10 Yrs X-Ray
         </ScrollLink>
-        <ScrollLink to="stockearning" smooth={true} duration={500}>
+        <ScrollLink to="stockearning" smooth={true} duration={500} offset={-290}>
           Earnings
         </ScrollLink>
-        <ScrollLink to="valuation" smooth={true} duration={500}>
+        <ScrollLink to="valuation" smooth={true} duration={500} offset={-270}>
           Valuation
         </ScrollLink>
-        <ScrollLink to="stockanalysis" smooth={true} duration={500}>
+        <ScrollLink to="stockanalysis" smooth={true} duration={500} offset={-270}>
           Analysis
         </ScrollLink>
-        <ScrollLink to="analysis-notes" smooth={true} duration={500}>
+        <ScrollLink to="analysis-notes" smooth={true} duration={500} offset={-270}>
           Analysis Insight
         </ScrollLink>
-        <ScrollLink to="stockpeer" smooth={true} duration={500}>
+        <ScrollLink to="stockpeer" smooth={true} duration={500} offset={-270}>
           Peers
         </ScrollLink>
-        <ScrollLink to="profitloss" smooth={true} duration={500}>
+        <ScrollLink to="profitloss" smooth={true} duration={500} offset={-270}>
           Profit & Loss
         </ScrollLink>
-        <ScrollLink to="balance-sheet" smooth={true} duration={500}>
+        <ScrollLink to="balance-sheet" smooth={true} duration={500} offset={-270}>
           Balance Sheet
         </ScrollLink>
-        <ScrollLink to="cashflow" smooth={true} duration={500}>
+        <ScrollLink to="cashflow" smooth={true} duration={500} offset={-270}>
           Cash Flow
         </ScrollLink>
-        <ScrollLink to="ratios" smooth={true} duration={500}>
+        <ScrollLink to="ratios" smooth={true} duration={500} offset={-270}>
           Ratios
         </ScrollLink>
-        <ScrollLink to="news" smooth={true} duration={500}>
+        <ScrollLink to="news" smooth={true} duration={500} offset={-250}>
           News
         </ScrollLink>
-        <ScrollLink to="about" smooth={true} duration={500}>
+        <ScrollLink to="about" smooth={true} duration={500} offset={-250}>
           About
         </ScrollLink>
+
         
         {/* Optional: For routing to other pages */}
         <Divider />
-        
       </nav>
 
-      <Divider sx={{ margin: '10px 0' }} />
+      <Divider sx={{ margin: "10px 0" }} />
     </div>
   );
 }

@@ -1236,13 +1236,7 @@ const ScreenerStockvaluation = () => {
              </div>
    
              {/* Buttons */}
-             <div
-               style={{
-                 display: "flex",
-                 justifyContent: "space-between",
-                 marginTop: "10px",
-               }}
-             >
+             <div className="resetapplybuttoncontainer">
                <button className="resetstockscreener"
                  onClick={handleReset}
                  
@@ -1251,15 +1245,7 @@ const ScreenerStockvaluation = () => {
                </button>
               <button className="applystockscreener"
                  onClick={handleApply}
-                 style={{
-                   padding: "5px 10px",
-                   border: "none",
-                   borderRadius: "4px",
-                   color: "white",
-                   backgroundColor: "#24b676",
-                   cursor: "pointer",
-                   marginRight:"50px",
-                 }}
+                
                >
                  Apply
                </button>
@@ -1805,13 +1791,7 @@ const ScreenerStockvaluation = () => {
            </label>
          ))}
        </div>
-                     <div
-                       style={{
-                         display: "flex",
-                         justifyContent: "space-between",
-                         marginTop: "10px",
-                       }}
-                     >
+       <div className="resetapplybuttoncontainer">
                          <button className="resetstockscreener"
                          onClick={handleReset}
                          

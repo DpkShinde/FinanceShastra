@@ -314,6 +314,10 @@ const Etfregular = () => {
  
     const navigate = useNavigate();
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
+     const [currentPage, setCurrentPage] = useState(1);
+      const recordsPerPage = 10;
+      const totalPages = Math.max(1, Math.ceil((fundDataregularetf?.length || 0) / recordsPerPage));
+    
   
     const sortedData = () => {
       if (!sortConfig.key) return fundDataregularetf;
@@ -353,6 +357,17 @@ const Etfregular = () => {
     };
   
     const sortedFunds = sortedData();
+    const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
+    const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, fundDataregularetf.length);
+    const currentData = sortedData().slice(indexOfFirstItem, indexOfLastItem);
+  
+  
+    const handlePageChange = (pageNumber) => {
+      if (pageNumber > 0 && pageNumber <= totalPages) {
+        setCurrentPage(pageNumber);
+      }
+    };
+  
   
     return (
       <div>
@@ -413,7 +428,7 @@ const Etfregular = () => {
               </tr>
             </thead>
             <tbody>
-              {sortedFunds.map((fund, idx) => (
+              {currentData.map((fund, idx) => (
                 <tr key={idx} className="funds-table-row">
                   <td>
                     <a
@@ -436,13 +451,28 @@ const Etfregular = () => {
               ))}
             </tbody>
           </table>
-        </div>
-        <div className="foooterpagesaupdate">
-    <FooterForAllPage />
-  </div>
-      </div>
-    );
-  };
-  
+          <div className="pagination-topratedcontainer">
+                <div className="pagination-topratedwrapper">
+                  <div className="pagination-topratedinfo">
+                    {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${fundDataregularetf.length} records`}
+                  </div>
+                  <div className="pagination-topratedcontainer-buttons">
+                    <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+                    {[...Array(totalPages)].map((_, i) => (
+                      <button key={i + 1} onClick={() => handlePageChange(i + 1)}
+                        className={currentPage === i + 1 ? "active" : ""}>
+                        {i + 1}
+                      </button>
+                    ))}
+                    <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <FooterForAllPage />
+          </div>
+        );
+      };
+
   
 export default Etfregular;

@@ -13,7 +13,7 @@ import AddSIPForm from "../AddSIPFormstock/AddSIPFormstock";
 import { CiCirclePlus } from "react-icons/ci";
 import "./Addtransactiongold.css";
 
-const AddTransactiongold = () => {
+const AddTransactiongold = ({children}) => {
     const navigate = useNavigate();
 
     const initialTransactionState = {
@@ -112,6 +112,7 @@ const AddTransactiongold = () => {
 
 
     return (
+        <div>
         <div className="transaction-form">
             <h2 className="tranheaderform">Add Transaction</h2>
 
@@ -233,9 +234,16 @@ const AddTransactiongold = () => {
 
 
             <Navbar />
-            <FooterForAllPage />
-            <Sidebar />
+        
         </div>
+         <div className="layout">
+         <Sidebar />
+         <div className="main-contentover">
+           <div className="contentover">{children}</div>
+           <FooterForAllPage />
+         </div>
+       </div>
+       </div>
     );
 };
 

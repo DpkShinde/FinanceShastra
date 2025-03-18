@@ -119,7 +119,15 @@ font-size: 20px;
   background-color: #24b676;
   color: white;
 }
-
+.profilesettingpassword-password-field span {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  margin-right: 390px;
+}
 
 .profilesettingpassword-linked-account {
   display: flex;

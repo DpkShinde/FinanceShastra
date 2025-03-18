@@ -10,8 +10,13 @@ import itc from "../../assest/itc.png";
 import hdfc from "../../assest/hdfcbank.png";
 import adani from "../../assest/adaniimg.png";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
-const PortfolioHoldingdetailPage = () => {
-  const holdingsportfoliodetaildata = [
+import Sidebar from "../../Sidebar/Sidebar";
+import Navbar from "../../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
+
+const PortfolioHoldingdetailPage = ({children}) => {
+  const navigate = useNavigate();
+  const holdings = [
     {
          name: "Varun Beverages",
          shares: 125,
@@ -153,9 +158,9 @@ const PortfolioHoldingdetailPage = () => {
        logo: adani,
       },
   ];
-  const [holding, setHolding] = useState(holdingsportfoliodetaildata);
+  const [holding, setHolding] = useState(holdings);
   const [selectedFilter, setSelectedFilter] = useState("Invested value");
-  const [filteredstock, setFilteredstock] = useState(holdingsportfoliodetaildata);
+  const [filteredstock, setFilteredstock] = useState(holdings);
     const [currentPage, setCurrentPage] = useState(1);
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
    const [searchTerm, setSearchTerm] = useState("");
@@ -204,22 +209,9 @@ const PortfolioHoldingdetailPage = () => {
   
  // Function to add a new stock
  const handleAddStock = () => {
-  const newStock = {
-    name: "New Stock",
-    logo: "https://via.placeholder.com/30", // Placeholder logo
-    shares: 10,
-    percentage: 5,
-    current: 10000,
-    cmp: 1000,
-    change: 5,
-    changePercent: 0.5,
-    invested: 9500,
-    avgPrice: 950,
-    profitLoss: 500,
-    profitLossPercent: 5,
-  };
-  setHolding([...holding, newStock]);
+  navigate("/stockadd");
 };
+
 
 // Function to simulate importing data
 const handleImportData = () => {
@@ -253,8 +245,14 @@ const handleImportData = () => {
       profitLossPercent: -1.2,
     },
   ];
-  setHolding([...holding, ...importedData]);
+
+  setHolding((prevHoldings) => {
+    const updatedHoldings = [...importedData, ...prevHoldings]; // Imported data on top
+    setFilteredstock(updatedHoldings); // Update filtered stock list
+    return updatedHoldings;
+  });
 };
+
 const handleDeleteStock = (index) => {
   setHolding(holding.filter((_, i) => i !== index));
   setOpenMenuIndex(null);
@@ -264,16 +262,17 @@ const handleSearchChange = (e) => {
     setSearchTerm(value);
 
     if (value.trim() === "") {
-        setFilteredstock(holdingsportfoliodetaildata);
+        setFilteredstock(holdings);
     } else {
-      const filteredList = holdingsportfoliodetaildata.filter((stock) =>
+      const filteredList = holdings.filter((stock) =>
         stock.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredstock(filteredList);
     }
   };
   return (
-    <div className="PortfolioHoldingPageContainer">
+    <div>
+    <div className="PortfolioHoldingPageContainerdetaill">
         <div className="PortfolioHoldingPageTradeRecordsHeader">
   <h2 className="PortfolioHoldingPageTradeRecordsTitle">Trade Records</h2>
   <div className="PortfolioHoldingPageSearchBarContainer">
@@ -291,7 +290,7 @@ const handleSearchChange = (e) => {
   </div>
 </div>
       <div className="PortfolioHoldingPageHeader">
-        <h2 className="PortfolioHoldingPageh2">Holdings - {holdingsportfoliodetaildata.length}</h2>
+        <h2 className="PortfolioHoldingPageh2">Holdings - {holdings.length}</h2>
 
         {/* Dropdown for Sorting */}
         <select className="PortfolioHoldingPageinvestedFilter" value={selectedFilter} onChange={handleFilterChange}>
@@ -407,10 +406,15 @@ const handleSearchChange = (e) => {
           </button>
         </div>
       </div>
-      <div className="portfolioholdingfooter">
-      <FooterForAllPage/>
+    <Navbar/>
       </div>
-      
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
+      </div>
+    </div>
     </div>
   );
 };

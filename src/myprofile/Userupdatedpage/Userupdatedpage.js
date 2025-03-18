@@ -13,14 +13,16 @@ import Cookies from 'js-cookie'
 const UserDetailsupdate = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+ 
   const {userEmail} = useContext(UserProfileContext)
+  const {token}= useContext(UserProfileContext)
 
   // Initial state (can be overwritten by updated data passed through location.state)
-  const [emaillocal, setEmail]= useState('')
+  //const [emaillocal, setEmail]= useState('')
   const [profileImage, setProfileImage] = useState(williamImage);
+ 
   const [personalDetails, setPersonalDetails] = useState({
-    
+   
     firstName: "-",
     lastName: "-",
     email: userEmail,
@@ -28,21 +30,21 @@ const UserDetailsupdate = () => {
     dob: "-",
     ageGroup: "25 - 35",
     country: "India",
-    
+   
     state: "-",
     city: "-",
     address: "-",
     phoneNumber: "-",
     pincode: ''
   });
-
+ 
   const [professionalDetails, setProfessionalDetails] = useState({
-    
+   
     occupation: "-",
     industry: "-",
     incomeRange: "-",
   });
-
+ 
   const [investmentDetails, setInvestmentDetails] = useState({
     householdSavings: "₹1,00,000",
     termInsurance: "₹4,00,000",
@@ -50,31 +52,34 @@ const UserDetailsupdate = () => {
     currentInvestments: "₹24,00,500",
     interestedToInvest: "-",
   });
-
+ 
   const [showPopupforLogin, setShowPopupforLogin]= useState(false)
-  
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState({ ...investmentDetails });
+ 
   const formatDate = (dob) => {
     const date = new Date(dob); // Ensure dob is a Date object
     if (isNaN(date)) return "Invalid Date"; // Handle invalid date cases
     return date.toISOString().split("T")[0];
   };
-
+ 
   // Update state when new data is passed from EditProfile
   useEffect(() => {
+    
     if (!Cookies.get("jwtToken")){
       setShowPopupforLogin(true)
     }else{
-      const localStore= localStorage.getItem("user")
-      const localtoken= Cookies.get("jwtToken")
-      console.log('token: ', localtoken)
-      const parsed = (JSON.parse(localStore))
-      console.log(parsed.email)
-      setEmail(parsed.email)
+      //const localStore= localStorage.getItem("user")
+      //const localtoken= localStorage.getItem('token')
+      //console.log('token: ', localtoken)
+      //const parsed = (JSON.parse(localStore))
+      //console.log(userEmail)
+      //setEmail(userEmail)
       setPersonalDetails((prevDetails) => ({
       ...prevDetails,
-      email: parsed.email,
+      email: userEmail,
     }));
-
+ 
     const fetchfunc= async ()=>{
       const url= `${API_BASE_URL}/userdetails`
       //const url= 'http://localhost:3000/userdetails'
@@ -82,9 +87,10 @@ const UserDetailsupdate = () => {
         method: "GET",
         headers: {
           "Content-Type": 'application/json',
-          "Authorization": `Bearer ${localtoken}`
+          "Authorization": `Bearer ${token}`
         }
       }
+      console.log('token from usersupdatedpage:', token)
       
       const response= await fetch(url, options)
       console.log(response)
@@ -96,7 +102,7 @@ const UserDetailsupdate = () => {
           personal: {
             firstName: data[0].first_name,
             lastName: data[0].last_name,
-            email: parsed.email,
+            email: userEmail,
             gender: data[0].gender,
             dob: formatedDate,
             ageGroup: data[0].age_group,
@@ -116,24 +122,24 @@ const UserDetailsupdate = () => {
         }
         console.log(dataupdated)
         setPersonalDetails((prev) => ({ ...prev, ...dataupdated.personal }));
-        
+       
         setProfessionalDetails((prev) => ({ ...prev, ...dataupdated.professional }));
        
         setInvestmentDetails((prev) => ({ ...prev, ...dataupdated.investment }));
-        
+       
       }
-      
+     
     }
     fetchfunc()
-
-
+ 
+ 
     }
-
-    
-
+ 
+   
+ 
     /*if (location.state && location.state.updatedData) {
       const { updatedData } = location.state;
-
+ 
       if (updatedData.personal) {
         setPersonalDetails((prev) => ({ ...prev, ...updatedData.personal }));
       }
@@ -146,25 +152,29 @@ const UserDetailsupdate = () => {
     }*/
   }
  , [location.state]);
-
+ 
   const onlogin = () => {
     navigate('/login')
   }
-
+ 
+  const handleEditInvestment = () => {
+    setModalData({ ...investmentDetails });
+    setShowModal(true);
+  };
   const handleNavigation = (section) => {
     // Pass the updated data to the EditProfile page for further editing
-    navigate("/editProfile", { 
-      state: { 
-        section, 
-        updatedData: { 
+    navigate("/editProfile", {
+      state: {
+        section,
+        updatedData: {
           personal: personalDetails,
           professional: professionalDetails,
           investment: investmentDetails
-        } 
-      } 
+        }
+      }
     });
   };
-
+ 
   const uploadImage=(e)=>{
     const file = e.target.files[0];
       if (file) {
@@ -173,9 +183,41 @@ const UserDetailsupdate = () => {
           setProfileImage(reader.result);
         };
         reader.readAsDataURL(file);
-
+ 
       }
   }
+  const handleFinancialChange = (e) => {
+    const { name, value } = e.target;
+    setModalData((prevData) => ({
+      ...prevData,
+      [name]: value,  // Directly update the value without restricting it to 100
+    }));
+  };
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let percentage = parseFloat(value) || 0; // Agar NaN ho toh 0 le lo
+  
+    if (percentage > 100) percentage = 100; // 100% se zyada na ho
+  
+    let updatedData = { ...modalData, [name]: percentage };
+  
+    // Automatically adjust the other field
+    if (name === "stocks") {
+      updatedData.mutualfund = 100 - percentage;
+    } else if (name === "mutualfund") {
+      updatedData.stocks = 100 - percentage;
+    }
+  
+    setModalData(updatedData);
+  };
+  
+
+  const handleSave = () => {
+    setInvestmentDetails({ ...modalData });
+    setShowModal(false);
+  };
+
 
   return (
     <div>
@@ -202,7 +244,7 @@ const UserDetailsupdate = () => {
         >
           Manage Alert
         </span>
-
+ 
         <span
           className="profilepage-tabb"
           onClick={() => navigate("/accountSettings")}
@@ -212,8 +254,8 @@ const UserDetailsupdate = () => {
         <span className="profilepage-tabb" onClick={() => navigate('/sessionHistory')}>Active Devices</span>
         <span className="profilepage-tabb" onClick={() => navigate('/myReferalPage')}>My referrals</span>
       </div>
-
-
+ 
+ 
       <div className="profileContainer">
         <div className="userwilliamimg">
           <img src={profileImage} alt="William Rober" className="profileImage" />
@@ -236,7 +278,7 @@ const UserDetailsupdate = () => {
           <p className="profileOccupation">{professionalDetails.occupation}</p>
         </div>
       </div>
-
+ 
       {/* Personal Details Section */}
       <h2 className="sectionTitle">Personal Details</h2>
       <div className="allpersonal">
@@ -256,7 +298,7 @@ const UserDetailsupdate = () => {
           <BiSolidEdit />
         </div>
       </div>
-
+ 
       {/* Professional Details Section */}
       <h2 className="sectionTitle">Professional Details</h2>
       <div className="allpersonall">
@@ -276,30 +318,102 @@ const UserDetailsupdate = () => {
           <BiSolidEdit />
         </div>
       </div>
-
+ 
       {/* Investment Details Section */}
       <h2 className="sectionTitle">Investment Details</h2>
-      <div className="allpersonal">
-        <div className="personalDetailAll">
-          {Object.entries(investmentDetails).map(([key, value]) => (
-            <p key={key} className="detailRow">
-              <strong className="labelprofiledetail">
-                {key
-                  .replace(/([A-Z])/g, " $1")
-                  .replace(/^./, (str) => str.toUpperCase())}:
-              </strong>
-              <span className="value">{value}</span>
-            </p>
-          ))}
-        </div>
-        <div className="editiconprofilee" onClick={() => handleNavigation("Investment")}>
-          <BiSolidEdit />
-        </div>
+        <div className="allpersonal">
+          <div className="personalDetailAll">
+            {Object.entries(investmentDetails).map(([key, value]) => (
+              <p key={key} className="detailRow">
+                <strong className="labelprofiledetail">
+                  {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}:
+                </strong>
+                <span className="value">{value}</span>
+              </p>
+            ))}
+          </div>
+          <div className="editiconprofilee" onClick={handleEditInvestment}>
+            <BiSolidEdit />
+          </div>
       </div>
+     
 
+               
+              
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-contentuserupdate">
+          
+            <div className="modal-body">
+            <label>Household Savings per month*</label>
+<input 
+  type="text" 
+  name="householdSavings" 
+  value={modalData.householdSavings} 
+  onChange={handleFinancialChange} 
+/>
+
+<label>Term Insurance*</label>
+<input 
+  type="text" 
+  name="termInsurance" 
+  value={modalData.termInsurance} 
+  onChange={handleFinancialChange} 
+/>
+
+<label>Health Insurance*</label>
+<input 
+  type="text" 
+  name="healthInsurance" 
+  value={modalData.healthInsurance} 
+  onChange={handleFinancialChange} 
+/>
+
+<label>Major Current Investments*</label>
+<input 
+  type="text" 
+  name="currentInvestments" 
+  value={modalData.currentInvestments} 
+  onChange={handleFinancialChange} 
+/>
+              <label>Interested to invest in*</label>
+              <div className="investment-optionsalluser">
+              <div className="investment-itemalluser">
+  <span>Stocks</span>
+  <input
+    type="number"
+    name="stocks"
+    value={modalData.stocks}
+    onChange={handleChange}
+    placeholder="%"
+  />
+</div>
+
+<div className="investment-itemalluser">
+  <span>Mutual Fund</span>
+  <input
+    type="number"
+    name="mutualfund"
+    value={modalData.mutualfund}
+    onChange={handleChange}
+    placeholder="%"
+  />
+</div>
+
+</div>
+               
+              
+            </div>
+            <div className="modal-footer">
+              <button className="save-btnuserrr" onClick={handleSave}>Save & Update</button>
+              <button className="cancel-btnuserrrr" onClick={() => setShowModal(false)}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
       <Navbar />
     </div>
-    <div className="foooterpagesattt">
+    <div className="foooterpagesaupdate">
     <FooterForAllPage/>
   </div>
   {showPopupforLogin && (
@@ -315,5 +429,6 @@ const UserDetailsupdate = () => {
     </div>
   );
 };
-
+ 
 export default UserDetailsupdate;
+ 

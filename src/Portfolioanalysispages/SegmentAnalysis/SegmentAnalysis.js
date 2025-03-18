@@ -39,8 +39,8 @@ export default function SegmentAnalysis() {
   return (
     <div>
      <h2 className="segment-title">Segment Analysis</h2>
-     <div className="allsegmentsizeanalysis">
-    <div className="segment-card">
+    <div className="allsegmsize" >
+    <div className="segment-card" style={{ flex: 1 }}>
      
       <div className="dropdowncaharportanana">
         <select
@@ -55,27 +55,43 @@ export default function SegmentAnalysis() {
 
       <div className="chartdonutportfolioana">
       <div className="chart-containerportana">
-        <PieChart width={300} height={250}>
-          <Pie data={data} dataKey="value" nameKey="name" innerRadius={60} outerRadius={90}>
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Pie>
-          <Tooltip content={<CustomTooltip />} /> 
-        </PieChart>
+      <PieChart width={322} height={250} style={{ transform: "translateX(-19px)" }}>
+
+  <Pie 
+    data={data} 
+    dataKey="value" 
+    nameKey="name" 
+    innerRadius={60} 
+    outerRadius={90} 
+  >
+    {data.map((entry, index) => (
+      <Cell key={`cell-${index}`} fill={entry.color} />
+    ))}
+  </Pie>
+  <Tooltip content={<CustomTooltip />} /> 
+</PieChart>
+
       </div>
 
       <ul className="legend-listprtana">
-        {data.map((entry) => (
-          <li key={entry.name} className="legend-itemprtana">
-            <span className="legend-colorprtana" style={{ backgroundColor: entry.color }}></span>
-            {entry.name} : {entry.value}%
-          </li>
-        ))}
-      </ul>
+  {data.map((entry) => (
+    <li key={entry.name} className="legend-itemprtana">
+      <span
+        className="legend-colorprtana"
+        style={{
+          backgroundColor: entry.color,
+          border: `2px solid ${entry.color}`,
+          width: entry.name === "Banks" ? "15px" : "15px", // Custom size for Banks
+        }}
+      ></span>
+      {entry.name} : {entry.value}%
+    </li>
+  ))}
+</ul>
+
     </div>
     </div>
-    <div>
+    <div className="size" style={{ flex: 1}}>
     <SizeAnalysis/>
     </div>
     </div>

@@ -9,6 +9,7 @@ const BillingSubscriptionPages = () => {
   
  const navigate = useNavigate();
   return (
+    <div>
     <div className="profilepagee-container">
     
     <h1 className="profilepage-title" style={{ fontFamily: 'Calibri' }}>
@@ -95,7 +96,11 @@ const BillingSubscriptionPages = () => {
       </div>
     </div>
     <Navbar/>
- <FooterForAllPage/>
+   
+    </div>
+    <div className="foooterpagesaupdate">
+      <FooterForAllPage />
+      </div>
     </div>
      
   );

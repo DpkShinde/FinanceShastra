@@ -5,6 +5,7 @@
   font-family: 'calibri';
   line-height: 1.3;
   color: black;
+  margin-bottom: 100px;
 }
 
 .iti-limited-container h1 {
@@ -48,13 +49,13 @@
 .read-more-btn {
   background-color: #24b676;
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 8px 10px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: 0px;
+  margin-bottom: 60px;
   float: right; /* Aligns the button to the right */
 }
 

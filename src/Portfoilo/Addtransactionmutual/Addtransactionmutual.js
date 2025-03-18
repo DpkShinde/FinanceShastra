@@ -18,13 +18,13 @@ const initialTransactionState = {
   nav: "",
   date: "",
   quantity: 0,
-  dividend: "Invest",
+  dividend: 0,
   amount: 0,
   notes: "",
   showSIP: false,
 };
 
-const AddTransactionmutual = () => {
+const AddTransactionmutual = ({children}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -139,6 +139,7 @@ const AddTransactionmutual = () => {
     });
 };
   return (
+    <div>
     <div className="transaction-form">
       <h2 className="tranheaderform">Add Transaction</h2>
       <div className="tabsadd">
@@ -223,9 +224,17 @@ const AddTransactionmutual = () => {
       </div>
 
       <Navbar />
-      <FooterForAllPage />
-      <Sidebar />
+     
+     
     </div>
+    <div className="layout">
+    <Sidebar />
+    <div className="main-contentover">
+      <div className="contentover">{children}</div>
+      <FooterForAllPage />
+    </div>
+  </div>
+  </div>
   );
 };
 

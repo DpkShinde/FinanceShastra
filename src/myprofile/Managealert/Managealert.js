@@ -157,12 +157,14 @@ const Managealert = () => {
       <div className="subscribe-footerrmanagealert">
         <h1 className="headingmanagealert">Subscribe Now!</h1>
         <h2>Choose a plan that aligns with your investment goals!</h2>
-        <button className="footer-subscribe-buttonmanage">Subscribe</button>
+        <button className="footer-subscribe-buttonmanage" onClick={()=>{navigate('/pricehalf')}} >Subscribe</button>
       </div>
       <Navbar />
     
     </div>
-    <FooterForAllPage/>
+    <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

@@ -99,6 +99,7 @@ const PerformancePortfolioAnalysis = () => {
         <div className="stockresearchanalysispagecontainer">
             <div className="performanceportfolioanalysis-header">
                 <h2 className="stockresearchatable-title">Performance Tracker</h2>
+                <div className="date-pickerperfowrapper">
                 <button
                     className="performanceportfolioanalysis-date-btn"
                     onClick={() => setShowDatePicker((prev) => !prev)} // Toggle visibility
@@ -107,6 +108,7 @@ const PerformancePortfolioAnalysis = () => {
                 </button>
                  {/* Date Picker (Hidden until button is clicked) */}
                  {showDatePicker && (
+                       <div className="date-pickerperfcontainer">
                     <DatePicker
                         selected={selectedDate}
                         onChange={(date) => {
@@ -116,8 +118,9 @@ const PerformancePortfolioAnalysis = () => {
                         className="performanceportfolioanalysis-date-picker"
                         inline // Displays inline instead of a dropdown
                     />
+                        </div>
                 )}
-
+</div>
                 {/* Display Selected Date */}
                 
             </div>

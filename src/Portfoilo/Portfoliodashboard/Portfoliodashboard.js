@@ -4,9 +4,12 @@ import "./Portfoliodashboard.css";
 import { API_BASE_URL } from "../../config";
 import PortfolioAllocationManagerChart from "../AllocationChart/AllocationChart";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const PortfolioManagerDashboard = () => {
   const [portfolioData, setPortfolioData] = useState([]);
+  const navigate = useNavigate();
 
   // Fetch portfolio stocks data
   const fetchData = async () => {
@@ -67,7 +70,7 @@ const PortfolioManagerDashboard = () => {
     <div className="portfolio-dashboard-container">
       <h3 className="portfoliomanager-h3">My Accounts</h3>
       <div className="portfolio-action-buttons">
-        <button className="portfolio-action-button">+ Add Transaction</button>
+        <button className="portfolio-action-button" onClick={() => navigate("/stockadd")}>+ Add Transaction</button>
         <button className="portfolio-action-button portfolio-alert-button">
           My Alerts
         </button>
@@ -147,7 +150,9 @@ const PortfolioManagerDashboard = () => {
               <td>
                 Mutual Funds
                 <br />
-                <span className="portfolio-add">Add</span>
+                <span className="portfolio-add">
+                <Link to={"/addTransactionmutual"}>Add</Link>
+                </span>
               </td>
               <td>
                 {mutualInvestment}
@@ -181,7 +186,9 @@ const PortfolioManagerDashboard = () => {
               <td>
                 Gold
                 <br />
-                <span className="portfolio-add">Add</span>
+                <span className="portfolio-add">
+                <Link to={"/addTransactiongold"}>Add</Link>
+                </span>
               </td>
               <td colSpan="7" className="portfolio-add-link">
                 No data: + Click to Add Gold in your Portfolio

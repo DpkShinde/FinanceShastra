@@ -191,9 +191,6 @@
     display: flex;
     gap: 3px;
     margin-left: 250px;
-
-
-
 }
 
 .sidebar {
@@ -248,11 +245,6 @@
 
 
 
-
-
-
-
-
 /* Main layout to make sure everything is structured */
 .layout {
     display: flex;
@@ -297,7 +289,6 @@
         margin-left: 10px;
         font-size: 20px;
     }
-
 
 
     .portfoliomutual-containerrniftydashboard {

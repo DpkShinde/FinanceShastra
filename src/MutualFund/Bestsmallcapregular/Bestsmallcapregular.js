@@ -24,6 +24,11 @@ const Bestsmallcapregular = () => {
   const navigate = useNavigate();
   const { smallCapfunds, loading, error } = useSmallCapFunds(); // Use the custom hook
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
+  
+      const [currentPage, setCurrentPage] = useState(1);
+        const recordsPerPage = 5;
+        const totalPages = Math.max(1, Math.ceil((smallCapfunds?.length || 0) / recordsPerPage));
+    
 
   // Sort function
   const sortedData = () => {
@@ -67,6 +72,17 @@ const Bestsmallcapregular = () => {
   };
 
   const sortedFunds = sortedData();
+  const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
+  const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, smallCapfunds.length);
+  const currentData = sortedData().slice(indexOfFirstItem, indexOfLastItem);
+
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
 
   return (
     <div>
@@ -117,7 +133,7 @@ const Bestsmallcapregular = () => {
                 </tr>
               </thead>
               <tbody>
-                {sortedFunds.map((fund) => (
+                {currentData.map((fund) => (
                   <tr key={fund.FundID} className="funds-table-row">
                     <td>
                       {fund.url ? (
@@ -156,14 +172,25 @@ const Bestsmallcapregular = () => {
                 ))}
               </tbody>
             </table>
+            <div className="pagination-topratedcontainer">
+            <div className="pagination-topratedwrapper">
+            <div className="pagination-topratedinfo">
+              {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${smallCapfunds.length} records`}
+            </div>
+            <div className="pagination-topratedcontainer-buttons">
+              <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+              {[...Array(totalPages)].map((_, i) => (
+                <button key={i + 1} onClick={() => handlePageChange(i + 1)} className={currentPage === i + 1 ? "active" : ""}>{i + 1}</button>
+              ))}
+              <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
+              </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
-      <div className="foooterpagesaupdate">
-        <FooterForAllPage />
-      </div>
+      <FooterForAllPage />
     </div>
   );
 };
-
 export default Bestsmallcapregular;

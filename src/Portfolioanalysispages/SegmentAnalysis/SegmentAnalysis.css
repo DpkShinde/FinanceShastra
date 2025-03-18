@@ -1,21 +1,57 @@
-.segment-card {
-    background: white;
-  padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(196, 193, 193, 0.955);
-    border: 1px solid rgb(231, 227, 227);
- width: 520px;
-font-family: 'calibri';
-margin-left: 270px;
 
-  }
+
+
+.segment-card,
+.size-analysis-container {
+  flex: 1; /* Both take equal space */
+  max-width: 526px; /* Optional */
+  font-family: 'calibri';
+}
+
   
+.size-analysis-container {
+  width: 100%; /* Make it take full space */
+ font-family: 'calibri';
+  height: 345px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid rgb(224, 221, 221);
+  box-shadow: 0px 4px 10px rgba(210, 207, 207, 0.929);
+  margin-left: 0px;
+}
+
+.allsegmsize {
+margin-left: 270px;
+  display: flex; /* Use flexbox */
+  gap: 20px;
+  width: 100%;
+
+}
+
+.segment-card {
+  flex: 1; /* Adjust width */
+ width:50%; /* Optional limit */
+  padding: 20px;
+  background-color: white;
+  border: 3px solid rgb(241, 235, 235);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(174, 170, 170, 0.979);
+
+}
+
+.size {
+  flex: 1; /* Take equal space */
+  max-width: 500px;
+}
+
   .allsegmentsizeanalysis{
     display: flex;
-  justify-content: space-between;
-  gap: 20px;
+
+  gap: 10px;
 
   }
+
   .segment-title {
     font-size: 21px;
     font-weight: bold;
@@ -26,11 +62,13 @@ margin-left: 270px;
   }
   .chartdonutportfolioana{
     display: flex;
-    margin-left: -50px;
+   
   }
-  
+  .chart-containerportana{
+   
+  }
 
-  
+
   .dropdowncaharportanana {
     width: 40%;
     padding: 8px;
@@ -43,7 +81,9 @@ margin-left: 270px;
   .legend-listprtana {
     list-style: none;
     padding: 0;
-    margin-top: 53px;
+    margin-top: 39px;
+  
+   
   }
   
   .legend-itemprtana {

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import './AccountSettings.css';
-import { API_BASE_URL } from "../../config";
 
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from "../../config";
+
+import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
+import Cookies from 'js-cookie'
+
 
 const AccountSettings = () => {
+  const {token}= useContext(UserProfileContext)
   const [passwordData, setPasswordData] = useState({
     currentPassword: "",
     newPassword: "",
@@ -17,7 +22,7 @@ const AccountSettings = () => {
     newPassword: false,
     confirmPassword: false,
   });
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isPopupVisible, setIsPopupVisible] = useState(false); 
   const [linkedAccounts, setLinkedAccounts] = useState([
     {
       platform: "Google",
@@ -25,7 +30,7 @@ const AccountSettings = () => {
       connected: true,
     },
   ]);
-  const navigate = useNavigate()
+  const navigate= useNavigate()
 
   const [errors, setErrors] = useState({
     currentPassword: "",
@@ -50,91 +55,118 @@ const AccountSettings = () => {
     return passwordPattern.test(password);
   };
 
+  const clickCancle= ()=>{
+    setPasswordData({
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: "",
+    })
+  }
+
   const handleSavePassword = async () => {
     const newErrors = {
       currentPassword: passwordData.currentPassword ? "" : "This field is required",
       newPassword: passwordData.newPassword ? "" : "This field is required",
       confirmPassword: passwordData.confirmPassword ? "" : "This field is required",
     };
-
+  
+    // Check if passwords match
     if (passwordData.newPassword !== passwordData.confirmPassword) {
       newErrors.newPassword = "Passwords do not match!";
       newErrors.confirmPassword = "Passwords do not match!";
     }
-
+  
+    // If password does not meet criteria
     if (passwordData.newPassword && !validatePassword(passwordData.newPassword)) {
       newErrors.newPassword = "Password does not meet the required criteria!";
     }
-
-    setErrors(newErrors);
-
+  
+    setErrors(newErrors); // Update errors for each field
+  
+    // If there are no errors, proceed
     if (!newErrors.currentPassword && !newErrors.newPassword && !newErrors.confirmPassword) {
-      const url = `${API_BASE_URL}/users/changepass`;
-      const localtoken = localStorage.getItem('token');
-
-      const options = {
+      const url= `${API_BASE_URL}/users/changepass`
+      //const localtoken= localStorage.getItem('token')
+      const options= {
         method: "PUT",
         headers: {
-          "Authorization": `Bearer ${localtoken}`,
-          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(passwordData),
+        body: JSON.stringify(passwordData)
       };
-
-      const response = await fetch(url, options);
-
-      if (response.status === 200) {
-        setIsPopupVisible(true);
-        setTimeout(() => setIsPopupVisible(false), 3000);
+      const response= await fetch(url, options)
+      if (response.status=== 200){
+        setIsPopupVisible(true); // Show the popup
+        setTimeout(() => setIsPopupVisible(false), 3000); // Hide the popup after 3 seconds
+        setPasswordData ({
+          currentPassword: "",
+          newPassword: "",
+          confirmPassword: "",
+        })
       }
-    }
+      if (response.status === 404){
+        newErrors.currentPassword = "Please enter correct password";
+        setErrors(newErrors)
+      }
+     
+      }
   };
 
+  const endallSessions=()=>{
+    Cookies.remove('jwtToken')
+    localStorage.clear()
+    navigate('/')
+  }
+  
   const handleRemoveAccount = (platform) => {
     setLinkedAccounts(linkedAccounts.filter((account) => account.platform !== platform));
     alert(`${platform} account removed.`);
+    Cookies.remove('jwtToken')
+    localStorage.clear()
+    navigate('/')
   };
   return (
-
+    
     <div className="profilesettingpassword-container">
       <h1 className="profilepage-titlee">Password & Security</h1>
       <div className="profilepage-tabsss">
         <span className="profilepage-tabb" onClick={() => navigate("/userDetailsupdate")}>My Account</span>
         <span
-          className="profilepage-tabb"
-          onClick={() => navigate('/orderTable')}
-        >
-          Orders
-        </span>
-        <span className="profilepage-tabb" onClick={() => navigate("/billingSubscriptionPages")}>Billing & Subscription</span>
-        <span className="profilepage-tabb" onClick={() => navigate("/riskAnalysisDashboard")}>Risk Profile Report</span>
+      className="profilepage-tabb"
+      onClick={() => navigate('/orderTable')}
+    >
+      Orders
+    </span>
+        <span className="profilepage-tabb"onClick={() => navigate("/billingSubscriptionPages")}>Billing & Subscription</span>
+        <span className="profilepage-tabb"onClick={() => navigate("/riskAnalysisDashboard")}>Risk Profile Report</span>
         <span className="profilepage-tabb"
-          onClick={() => navigate('/managealert')}>Manage Alert</span>
+         onClick={() => navigate('/managealert')}>Manage Alert</span>
 
-        <span className="profilepage-tabb" style={{
-          borderBottom: "2px solid #24b676",
-          fontWeight: "bold",
-          color: "#24b676",
-        }}
-          onClick={() => navigate('/accountSettings')}>Password & Security</span>
-        <span className="profilepage-tabb" onClick={() => navigate('/sessionHistory')} >Active Devices</span>
-        <span className="profilepage-tabb" onClick={() => navigate("/myReferalPage")}>My referrals</span>
+<span className="profilepage-tabb"style={{
+  borderBottom: "2px solid #24b676",
+  fontWeight: "bold",
+  color: "#24b676",
+}}
+         onClick={() => navigate('/accountSettings')}>Password & Security</span>
+        <span className="profilepage-tabb"  onClick={() => navigate('/sessionHistory')} >Active Devices</span>
+        <span className="profilepage-tabb"onClick={() => navigate("/myReferalPage")}>My referrals</span>
       </div>
-      {/* Popup Notification */}
-      <section className={`profilesettingpassword-content ${isPopupVisible ? "blur" : ""}`}>
-        {/* Password Form and Linked Accounts */}
-      </section>
+         {/* Popup Notification */}
+         <section className={`profilesettingpassword-content ${isPopupVisible ? "blur" : ""}`}>
+    {/* Password Form and Linked Accounts */}
+  </section>
 
-      {isPopupVisible && (
-        <div className="popup-overlay">
-
-          <div className="popup-content">
-            <span className="popup-icon">✔</span>
-            <p>Your Password has been updated successfully!</p>
-          </div>
-
-        </div>
-      )}
+         {isPopupVisible && (
+  <div className="popup-overlay">
+    
+      <div className="popup-content">
+        <span className="popup-icon">✔</span>
+        <p>Your Password has been updated successfully!</p>
+      </div>
+  
+  </div>
+)}
 
       {/* Set a New Password Section */}
       <section className="profilesettingpassword-password-section">
@@ -153,7 +185,7 @@ const AccountSettings = () => {
                 className={errors.currentPassword ? "error" : ""}
               />
               <span onClick={() => togglePasswordVisibility("currentPassword")}>
-
+                
               </span>
             </div>
             {errors.currentPassword && <div className="error-message">{errors.currentPassword}</div>}
@@ -172,7 +204,7 @@ const AccountSettings = () => {
                 className={errors.newPassword ? "error" : ""}
               />
               <span onClick={() => togglePasswordVisibility("newPassword")}>
-
+               
               </span>
             </div>
             {errors.newPassword && <div className="error-message">{errors.newPassword}</div>}
@@ -191,12 +223,22 @@ const AccountSettings = () => {
                 className={errors.confirmPassword ? "error" : ""}
               />
               <span onClick={() => togglePasswordVisibility("confirmPassword")}>
-
+              
               </span>
             </div>
             {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
           </div>
 
+          {/* Password Rules */}
+          <div className="profilesettingpassword-password-rules">
+            <p>New password must contain:</p>
+            <ul>
+              <li>Between 8 and 12 characters</li>
+              <li>At least one uppercase character</li>
+              <li>At least one lowercase character</li>
+              <li>At least one number and special character</li>
+            </ul>
+          </div>
           {/* Password Rules */}
           <div className="profilesettingpassword-password-rules">
             <p>New password must contain:</p>
@@ -213,7 +255,7 @@ const AccountSettings = () => {
             <button type="button" onClick={handleSavePassword}>
               Save & Update
             </button>
-            <button type="button">Cancel</button>
+            <button type="button" onClick={clickCancle}>Cancel</button>
           </div>
         </form>
       </section>
@@ -236,11 +278,11 @@ const AccountSettings = () => {
                 <p className="platformpara">{account.platform}</p>
                 <p className="platformparaa">Added on {account.addedOn}</p>
                 <button
-                  className="profiles-endsession-button"
-
-                >
-                  End all sessions
-                </button>
+              className="profiles-endsession-button"
+              onClick={endallSessions}
+            >
+         End all sessions
+            </button>
               </div>
             </div>
             <button
@@ -250,15 +292,15 @@ const AccountSettings = () => {
               Remove
             </button>
           </div>
-
+          
         ))}
-
+          
       </section>
-
-      <Navbar />
+    
+      <Navbar/>
     </div>
 
   );
-}
+};
 
-export default AccountSettings
+export default AccountSettings;

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState,useContext } from "react";
+import React, { useCallback, useEffect, useState, useContext } from "react";
 import "./LandingPageUnlockInvest.css";
 import landingimg1 from "../../assest/landingimg1.jpeg";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { API_BASE_URL } from "../../config";
 import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 
 const LandingPageUnlockInvest = () => {
-    const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const [searchInputText, setSearchInputText] = useState("");
   const [filterData, setFilterData] = useState([]);
 
@@ -20,7 +20,7 @@ const LandingPageUnlockInvest = () => {
   const getAllData = async () => {
     try {
       const response = await fetch(`${API_BASE_URL}/search/allInfo`, {
-        method: "GET"
+        method: "GET",
       });
       const data = await response.json();
 
@@ -44,17 +44,19 @@ const LandingPageUnlockInvest = () => {
         // Filter the data from the store based on searchText
         const results = getDataFromStore.filter((item) => {
           // Convert company, Scheme_Name, and sector to lowercase for case-insensitive comparison
-          const company = item.company ? item.company.toLowerCase() : "";
+          const company = item.name ? item.name.toLowerCase() : "";
           const schemeName = item.Scheme_Name
             ? item.Scheme_Name.toLowerCase()
             : "";
           const sector = item.sector ? item.sector.toLowerCase() : "";
+          const symbol = item.symbol ? item.symbol.toLowerCase() : "";
 
           return (
             // Check if searchText is included in any of the fields
             company.includes(searchText.toLowerCase()) ||
             schemeName.includes(searchText.toLowerCase()) ||
-            sector.includes(searchText.toLowerCase())
+            sector.includes(searchText.toLowerCase()) ||
+            symbol.includes(searchText.toLowerCase())
           );
         });
         // Update the filtered data state with the results
@@ -76,7 +78,13 @@ const LandingPageUnlockInvest = () => {
   }, [searchInputText, debounceSearch]);
 
   return (
-    <div className={darkMode ? "landingpageunlockinvestdarkcontainer" :"landingpageunlockinvest-container"}>
+    <div
+      className={
+        darkMode
+          ? "landingpageunlockinvestdarkcontainer"
+          : "landingpageunlockinvest-container"
+      }
+    >
       <div className="landingpageunlockinvest-background">
         {/* Left Side Content */}
         <div className="landingpageunlockinvest-content">
@@ -88,7 +96,11 @@ const LandingPageUnlockInvest = () => {
               <input
                 type="text"
                 placeholder="Search for Stocks, Mutual..."
-                className={darkMode ? "landingpageunlockinvestdarkinput" :"landingpageunlockinvest-input"}
+                className={
+                  darkMode
+                    ? "landingpageunlockinvestdarkinput"
+                    : "landingpageunlockinvest-input"
+                }
                 onChange={(e) => setSearchInputText(e.target.value)}
               />
               {/* to display result */}
@@ -98,7 +110,8 @@ const LandingPageUnlockInvest = () => {
                     {filterData.map((data) => {
                       return (
                         <li key={data.id}>
-                          {data.company} {data.Scheme_Name} {data.sector}
+                          {data.name} {data.Scheme_Name} {data.sector}{" "}
+                          {data.symbol}
                         </li>
                       );
                     })}
@@ -120,7 +133,11 @@ const LandingPageUnlockInvest = () => {
           <img
             src={landingimg1}
             alt="Finance Chart Illustration"
-           className={darkMode ? "landingpageunlockinvestdarkimage" :"landingpageunlockinvest-image"}
+            className={
+              darkMode
+                ? "landingpageunlockinvestdarkimage"
+                : "landingpageunlockinvest-image"
+            }
           />
         </div>
       </div>

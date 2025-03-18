@@ -124,12 +124,14 @@ a span {
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
   font-family: 'Calibri', sans-serif;
-  position: fixed; /* Fix the navbar to the top */
-  top: 0; /* Align it to the top of the viewport */
-  left: 0; /* Align it to the left */
-  right: 0; /* Align it to the right */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  
 }
+
 
 /* Stock dropdown menu */
 .stockmenu {
@@ -521,11 +523,11 @@ a span {
 
 .dropdown-contentnoti {
   position: absolute;
- left: -350px;
+ left: -310px;
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 8px;
-  width: 420px;
+  width: 450px;
   max-height: 500px;
   overflow-y: auto;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -544,7 +546,8 @@ a span {
   margin-bottom: 10px;
   padding: 10px;
   transition: box-shadow 0.3s ease;
-  width: 390px;
+  width: 420px;
+  overflow-x: hidden;
 }
 
 .notification-card:hover {
@@ -1998,3 +2001,4 @@ a span {
   
   
 }
+

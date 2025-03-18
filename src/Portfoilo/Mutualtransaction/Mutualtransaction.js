@@ -17,7 +17,7 @@ const MutualAccountStock = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { mutualTransactions, setMutualTransactons } = useContext(PortfolioMutualsContext)
+  const { mutualTransactions, setMutualTransactions } = useContext(PortfolioMutualsContext)
   const [expandedRows, setExpandedRows] = useState(() => ({}));
   console.log("Trans data: ", mutualTransactions)
   // State management
@@ -62,7 +62,7 @@ const MutualAccountStock = () => {
       }
 
       // Update state after successful deletion
-      setMutualTransactons((prev) => prev.filter((txn) => txn.id !== transactionToDelete.scheme));
+      setMutualTransactions((prev) => prev.filter((txn) => txn.id !== transactionToDelete.scheme));
 
       // Reset state
       setShowPopup(false);
@@ -87,7 +87,7 @@ const MutualAccountStock = () => {
     if (location.state?.updatedTransaction) {
       const updatedTransaction = location.state.updatedTransaction;
 
-      setMutualTransactons((prev) =>
+      setMutualTransactions((prev) =>
         prev.map((txn) =>
           txn.id === updatedTransaction.id ? updatedTransaction : txn
         )
@@ -304,7 +304,9 @@ const MutualAccountStock = () => {
 
         <Navbar />
       </div>
-      <FooterForAllPage />
+      <div className="foooterpagesaupdate">
+    <FooterForAllPage/>
+  </div>
     </div>
   );
 };

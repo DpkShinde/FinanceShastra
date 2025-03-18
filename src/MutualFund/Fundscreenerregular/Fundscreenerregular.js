@@ -23,6 +23,10 @@ const Fundscreenerregular = () => {
   const navigate = useNavigate();
   const { allFunds, loading, error } = useMutualFunds(); // Use the custom hook
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
+    const [currentPage, setCurrentPage] = useState(1);
+      const recordsPerPage = 10;
+      const totalPages = Math.max(1, Math.ceil((allFunds?.length || 0) / recordsPerPage));
+  
 
   // Sort function
   const sortedData = () => {
@@ -66,6 +70,17 @@ const Fundscreenerregular = () => {
   };
 
   const sortedFunds = sortedData();
+  const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
+  const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, allFunds.length);
+  const currentData = sortedData().slice(indexOfFirstItem, indexOfLastItem);
+
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
 
   return (
     <div>
@@ -116,7 +131,7 @@ const Fundscreenerregular = () => {
                 </tr>
               </thead>
               <tbody>
-                {sortedFunds.map((fund) => (
+                {currentData.map((fund) => (
                   <tr key={fund.FundID} className="funds-table-row">
                     <td>
                       {fund.url ? (
@@ -155,14 +170,25 @@ const Fundscreenerregular = () => {
                 ))}
               </tbody>
             </table>
-          </div>
-        )}
-      </div>
-      <div className="foooterpagesaupdate">
-        <FooterForAllPage />
-      </div>
-    </div>
-  );
-};
-
+           <div className="pagination-topratedcontainer">
+                     <div className="pagination-topratedwrapper">
+                     <div className="pagination-topratedinfo">
+                       {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${allFunds.length} records`}
+                     </div>
+                     <div className="pagination-topratedcontainer-buttons">
+                       <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+                       {[...Array(totalPages)].map((_, i) => (
+                         <button key={i + 1} onClick={() => handlePageChange(i + 1)} className={currentPage === i + 1 ? "active" : ""}>{i + 1}</button>
+                       ))}
+                       <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
+                       </div>
+                       </div>
+                     </div>
+                   </div>
+                 )}
+               </div>
+               <FooterForAllPage />
+             </div>
+           );
+         };
 export default Fundscreenerregular;

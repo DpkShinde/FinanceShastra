@@ -9,6 +9,9 @@
     overflow-y: auto;
     z-index: 10;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    font-size: 14px;
+    color: black;
   }
   
   .search-resultswatchlist ul {
@@ -24,6 +27,8 @@
   }
   
   .search-resultswatchlist li:hover {
-    background-color: #f1f1f1;
+    background-color: #24b676;
+    color: white;
+  
   }
   

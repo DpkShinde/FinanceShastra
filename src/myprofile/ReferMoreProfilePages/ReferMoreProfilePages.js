@@ -139,6 +139,7 @@ const ReferMoreProfilePages = () => {
     (input) => !input.errors || Object.keys(input.errors).length === 0
   );
   return (
+    <div>
     <div className="profilepageee-container">
       <h1 className="profilepage-title" style={{ fontFamily: "Calibri" }}>
         My Referrals
@@ -283,11 +284,10 @@ const ReferMoreProfilePages = () => {
                     >
                       {/* First Name */}
                       <div
-                        className={`refermoreprofilepages-floating-input ${
-                          input.touched && validationResults.firstName
-                            ? "error"
-                            : ""
-                        }`}
+                        className={`refermoreprofilepages-floating-input ${input.touched && validationResults.firstName
+                          ? "error"
+                          : ""
+                          }`}
                       >
                         <label>First name*</label>
                         <input
@@ -306,11 +306,10 @@ const ReferMoreProfilePages = () => {
 
                       {/* Last Name */}
                       <div
-                        className={`refermoreprofilepages-floating-input ${
-                          input.touched && validationResults.lastName
-                            ? "error"
-                            : ""
-                        }`}
+                        className={`refermoreprofilepages-floating-input ${input.touched && validationResults.lastName
+                          ? "error"
+                          : ""
+                          }`}
                       >
                         <label>Last name*</label>
                         <input
@@ -329,11 +328,10 @@ const ReferMoreProfilePages = () => {
 
                       {/* Mobile Number */}
                       <div
-                        className={`refermoreprofilepages-floating-input ${
-                          input.touched && validationResults.mobileNumber
-                            ? "error"
-                            : ""
-                        }`}
+                        className={`refermoreprofilepages-floating-input ${input.touched && validationResults.mobileNumber
+                          ? "error"
+                          : ""
+                          }`}
                       >
                         <label>Mobile number*</label>
                         <input
@@ -352,11 +350,10 @@ const ReferMoreProfilePages = () => {
 
                       {/* Email */}
                       <div
-                        className={`refermoreprofilepages-floating-input ${
-                          input.touched && validationResults.email
-                            ? "error"
-                            : ""
-                        }`}
+                        className={`refermoreprofilepages-floating-input ${input.touched && validationResults.email
+                          ? "error"
+                          : ""
+                          }`}
                       >
                         <label>Email id*</label>
                         <input
@@ -449,7 +446,11 @@ const ReferMoreProfilePages = () => {
       </div>
       <Navbar />
 
-      <FooterForAllPage />
+     
+    </div>
+    <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

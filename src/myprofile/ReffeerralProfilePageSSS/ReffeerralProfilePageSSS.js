@@ -66,6 +66,7 @@ const ReffeerralProfilePageSSS = () => {
 
   console.log(referrals);
   return (
+    <div>
     <div className="profilepageee-container">
       <h1 className="profilepage-title" style={{ fontFamily: "Calibri" }}>
         My Referrals
@@ -250,7 +251,11 @@ const ReffeerralProfilePageSSS = () => {
       </div>
       <Navbar />
 
-      <FooterForAllPage />
+    
+    </div>
+    <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

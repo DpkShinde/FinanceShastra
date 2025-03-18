@@ -1,4 +1,5 @@
 import React, { useState,useEffect, useRef, useMemo } from "react";
+import {icons} from '../../Stocks/icons'
 import { screenerStockListData } from "../../Stocks/screenerStockListData";
 import { PiCaretUpDownFill } from "react-icons/pi"; // Import the icon
 
@@ -557,24 +558,79 @@ const perfOptions = [
       selectedIndexes.includes(stock.index) 
     );
     // Update the stocks with the filtered data
-     // Update the stocks with the filtered data
-     setStocks(filteredStocks);
+    setStocks(filteredStocks);
+  
+    // Close the dropdown
+    setIsDropdownVisible(false);
+  
+    // Optionally, scroll to the table (assuming your table has an id or ref)
+    const tableElement = document.getElementById('stocks-table');
+    if (tableElement) {
+      tableElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  const recordsPerPage = 10;
+  const totalPages = Math.ceil(stocks.length / recordsPerPage);
 
-     // close the dropdown
-     setDropdowns((prev) => ({
-         ...prev,
-         index: false, // Close PEG dropdown
-     }));
- 
-     //Scroll smoothly to the stocks table
-     setTimeout(() => {
-         const tableElement = document.getElementById("stocks-table");
-         if (tableElement) {
-             tableElement.scrollIntoView({ behavior: "smooth" });
+  //  Ensure currentData updates correctly
+  const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
+  const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, stocks.length);
+  const currentData = useMemo(() => {
+    return stocks.slice(indexOfFirstItem, indexOfLastItem);
+  }, [currentPage, stocks]);
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
+  //  Debugging Effect: Confirm re-rendering when `currentPage` updates
+  const API_BASE_URL= 'https://newbackend-repo.onrender.com'
+     useEffect(()=>{
+         const fetchfun= async ()=>{
+           const url= `${API_BASE_URL}/stocks/compstock/1`
+           const response= await fetch(url)
+           if (response.ok=== true){
+             const data= await response.json()
+             const formattedData= data.map(each =>({
+               "id": each.ID,
+               "symbol": each.Symbol,
+               "price": each.Price,
+               "change": each.Change,
+               "volume": each.Volume,
+               "marketCap": each.Market_cap,
+               "pToE": each.P_E,
+               "eps": each.EPS_dil,
+               "epsDilGrowth": each.EPS_dil_growth_TTM_YoY,
+               "divYield": each.Div_yield,
+               "sector": each.Sector,
+               "url": '/stockhandle',
+               "icon": icons.find(eachIcon => eachIcon.name === (each.Symbol).toLowerCase()).icon
+             }))
+             //console.log("icon: ",icons.filter(eachicon => ( eachicon.icon=== 'tcs')))
+             
+     
+             console.log(formattedData)
+             setStocks(formattedData)
+           }
          }
-     }, 100); // Small delay to ensure UI updates properly
- };
+         fetchfun()
+       }, [])
+  
 
+  //  Pagination Range Calculation
+  const { startPage, endPage } = useMemo(() => {
+    const maxVisiblePages = 5;
+    let start = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let end = Math.min(totalPages, start + maxVisiblePages - 1);
+
+    if (end - start + 1 < maxVisiblePages) {
+      start = Math.max(1, end - maxVisiblePages + 1);
+    }
+
+    return { startPage: start, endPage: end };
+  }, [currentPage, totalPages]);
   const handlesectorApply = () => {
     // Update the filters with the selected indexes and sectors
     if (!screenerStockListData || !Array.isArray(screenerStockListData)) return;
@@ -1057,39 +1113,13 @@ const handlemcapApply = () => {
        }, 100); // Small delay to ensure UI updates properly
    };
   
-   const recordsPerPage = 10;
-   const totalPages = Math.ceil(stocks.length / recordsPerPage);
- 
-   //  Ensure currentData updates correctly
-   const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
-   const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, stocks.length);
-   const currentData = useMemo(() => {
-     return stocks.slice(indexOfFirstItem, indexOfLastItem);
-   }, [currentPage, stocks]);
- 
-   const handlePageChange = (pageNumber) => {
-     if (pageNumber > 0 && pageNumber <= totalPages) {
-       setCurrentPage(pageNumber);
-     }
-   };
+   
  
    //  Debugging Effect: Confirm re-rendering when `currentPage` updates
    useEffect(() => {
      console.log("Current Page Updated:", currentPage);
    }, [currentPage]);
- 
-   // ✅ Pagination Range Calculation
-   const { startPage, endPage } = useMemo(() => {
-     const maxVisiblePages = 5;
-     let start = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-     let end = Math.min(totalPages, start + maxVisiblePages - 1);
- 
-     if (end - start + 1 < maxVisiblePages) {
-       start = Math.max(1, end - maxVisiblePages + 1);
-     }
- 
-     return { startPage: start, endPage: end };
-   }, [currentPage, totalPages]);
+   
  
 
   const handleCheckboxChange = (index, sector,marketCapCategory,pToE,epsDilGrowth,divYield,roe,peg,revenueGrowth,price,change,perf) => {
@@ -1232,13 +1262,7 @@ const handlemcapApply = () => {
       </div>
 
       {/* Buttons */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "10px",
-        }}
-      >
+      <div className="resetapplybuttoncontainer">
         <button className="resetstockscreener"
           onClick={handleReset}
         
@@ -1757,13 +1781,7 @@ const handlemcapApply = () => {
     </label>
   ))}
 </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: "10px",
-                }}
-              >
+<div className="resetapplybuttoncontainer">
                  <button className="resetstockscreener"
                   onClick={handleReset}
                   

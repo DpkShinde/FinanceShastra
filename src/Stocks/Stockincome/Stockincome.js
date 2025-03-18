@@ -1233,13 +1233,7 @@ const perfOptions = [
         </div>
 
         {/* Buttons */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "10px",
-          }}
-        >
+        <div className="resetapplybuttoncontainer">
           <button className="resetstockscreener"
             onClick={handleReset}
            
@@ -1795,13 +1789,7 @@ const perfOptions = [
       </label>
     ))}
   </div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    marginTop: "10px",
-                  }}
-                >
+  <div className="resetapplybuttoncontainer">
                     <button className="resetstockscreener"
                     onClick={handleReset}
                    

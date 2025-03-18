@@ -4,11 +4,11 @@ import "./SettingDashPanel.css";
 import Sidebar from "../../Sidebar/Sidebar";
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
-import Cookies from 'js-cookie'
 
 
 
-const SettingsDashboard = () => {
+
+const SettingsDashboard = ({children}) => {
   const [notifications, setNotifications] = useState({
     "Turn on the notification sound": null,
     "Show desktop notifications": null,
@@ -162,12 +162,16 @@ const SettingsDashboard = () => {
       )}
 
       <Navbar />
-      <Sidebar />
+
       
       </div> 
-      <div className="foooterpagesattt">
-      <FooterForAllPage/>
+      <div className="layout">
+      <Sidebar />
+      <div className="main-contentover">
+        <div className="contentover">{children}</div>
+        <FooterForAllPage />
       </div>
+    </div>
       </div>
   
     

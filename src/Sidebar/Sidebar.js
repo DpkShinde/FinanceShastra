@@ -23,7 +23,10 @@ const Sidebar = () => {
 
                 <a 
                     href="/porfolioanalysisallpagecall" 
-                    className={`sidebar-item ${location.pathname === "/porfolioanalysisallpagecall" ? "active" : ""}`} 
+                  
+                    className={`sidebar-item ${["/porfolioanalysisallpagecall", "/portfolioanalysisdividendcall","/portfoliobonuscall","/portfoliosplitcall","/portfolioanalysisrightscall"
+                        ,"/portfolioAGMcall"
+                    ].includes(location.pathname) ? "active" : ""}`}
                 >
                     <GrAnalytics className="sideicon"/> Portfolio Analysis
                 </a>

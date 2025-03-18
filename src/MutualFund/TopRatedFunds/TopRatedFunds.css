@@ -124,7 +124,52 @@
     font-size: 10px;
     color: gray;
   }
-  
+  .pagination-topratedcontainer {
+    display: flex;
+    justify-content: center; /* Centers everything */
+    margin-top: 15px;
+    width: 100%;
+}
+
+.pagination-topratedwrapper {
+    display: flex;
+    justify-content: space-between; /* Ensures left and right spacing */
+    align-items: center;
+    width: 100%; /* Adjusts width for better alignment */
+    max-width: 1700px; /* Prevents stretching on larger screens */
+    margin-top: -90px;
+}
+
+.pagination-topratedinfo {
+    font-size: 14px;
+    color: #555;
+    margin-right: 20px;
+    flex-shrink: 0; /* Prevents shrinking when space is limited */
+}
+
+.pagination-topratedcontainer-buttons {
+    display: flex;
+    gap: 8px; /* Provides spacing between buttons */
+}
+
+.pagination-topratedcontainer-buttons button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-topratedcontainer-buttons button.active {
+    background-color: #24b676;
+    color: white;
+}
+
+.pagination-topratedcontainer-buttons button:hover {
+    background-color: #ddd;
+}
+
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
   .funds-table-container {

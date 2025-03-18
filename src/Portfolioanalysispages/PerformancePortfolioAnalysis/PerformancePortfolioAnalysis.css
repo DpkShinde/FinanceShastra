@@ -50,17 +50,17 @@
 
 /* Style for Date Picker */
 .performanceportfolioanalysis-date-picker {
-    margin-top: 10px;
+    position: absolute; /* Fixed space issue */
+    z-index: 999; /* Ensure it stays above other elements */
+    margin-top: 0px;
+    left: 0;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
     background: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* Keeps it inside the container */
-    display: inline-block;
-   
+    display: none; /* Initially hidden */
 }
-
 /* Style for the Selected Date Display */
 .performanceportfolioanalysis-header p {
     font-size: 16px;
@@ -104,6 +104,24 @@
 .performanceportfolioanalysis-date-picker__day:hover {
     background: #1d9b5c !important;
     color: white !important;
+}
+.date-pickerperfcontainer{
+    position: absolute;
+    top: 100%; /* Places it right below the button */
+    left: -180px;
+    z-index: 999;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 10px;
+   
+}
+.date-pickerperfowrapper{
+    position: relative; /* Ensures absolute positioning works inside this */
+    display: inline-block;
+  
 }
 @media (max-width: 768px) {
     .react-datepicker {

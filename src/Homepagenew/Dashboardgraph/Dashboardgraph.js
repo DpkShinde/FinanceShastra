@@ -13,12 +13,9 @@ import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import FooterForhomeAllPage from "../../Footerhomeeepage/Footerhomeeepage";
 import { API_BASE_URL } from "../../config";
 import Cookies from "js-cookie";
-import Dashboardstockindex from '../Stockindex/Stockindex';
-import Stockcalender from '../Stockcalender/Stockcalender';
-import Homestockanalyst from '../Homestockanalyst/Homestockanalyst';
-
-
-
+import Dashboardstockindex from "../Stockindex/Stockindex";
+import Stockcalender from "../Stockcalender/Stockcalender";
+import Homestockanalyst from "../Homestockanalyst/Homestockanalyst";
 
 const Dashboardchartmain = ({ children }) => {
   const [timeRange, setTimeRange] = useState("1D");
@@ -39,17 +36,13 @@ const Dashboardchartmain = ({ children }) => {
   const navigate = useNavigate();
 
   const fetchData = async () => {
-      try {
-        setLoading(true);
-        const token = Cookies.get("jwtToken");
-        if (!token) {
-          alert("Session expired, Please login again.");
-          setLoading(false);
-          navigate("/login")
-          return;
-        }
-  
-        const response = await fetch(`${API_BASE_URL}/myportfolio/allocationChart`, {
+    try {
+      setLoading(true);
+      const token = Cookies.get("jwtToken");
+
+      const response = await fetch(
+        `${API_BASE_URL}/myportfolio/allocationChart`,
+        {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -161,23 +154,29 @@ const Dashboardchartmain = ({ children }) => {
 
   return (
     <div>
-      <div className='allheadd'>
-        <div className='hompagetopdata'>
+      <div className="allheadd">
+        <div className="hompagetopdata">
           <div>
-            <h1 className='headernifty50000'>Welcome back, {user}</h1>
-            <p className='headerdashboardmain'>Track your finance and achieve your financial goals.</p>
+            <h1 className="headernifty50000">Welcome back, {user}</h1>
+            <p className="headerdashboardmain">
+              Track your finance and achieve your financial goals.
+            </p>
           </div>
           <div className="homepagenewdata-card">
-            <div className='homepageamountdata'>
-              <div className="homepagenewdata-title">Total Investment<br />
-
-                <div className='homepagenewdata-amount' >{(myInvestment - 0).toLocaleString()}</div>
+            <div className="homepageamountdata">
+              <div className="homepagenewdata-title">
+                Total Investment
+                <br />
+                <div className="homepagenewdata-amount">
+                  {(myInvestment - 0).toLocaleString()}
+                </div>
               </div>
               <div
-                className={`homepagenewdata-change ${isPositiveChange
-                  ? "homepagenewdata-positive"
-                  : "homepagenewdata-negative"
-                  }`}
+                className={`homepagenewdata-change ${
+                  isPositiveChange
+                    ? "homepagenewdata-positive"
+                    : "homepagenewdata-negative"
+                }`}
               >
                 {isPositiveChange ? "▲" : "▼"} {percentChange}
               </div>
@@ -186,46 +185,61 @@ const Dashboardchartmain = ({ children }) => {
         </div>
 
         <div className="dataquatallnifty">
-
           <div className="portfoliomutual-containerrniftydashboard">
-
             <div className="portfoliomutual-card">
-              <div className='itidata'>
-                <div className='alldatagraphtop'>
+              <div className="itidata">
+                <div className="alldatagraphtop">
                   <div>
-                    <h3 className="portfoliomutual-titleport">Portfolio Value</h3>
-                    <p className="portfoliomutual-value">₹{(latestValue - 0).toLocaleString()}</p>
+                    <h3 className="portfoliomutual-titleport">
+                      Portfolio Value
+                    </h3>
+                    <p className="portfoliomutual-value">
+                      ₹{(latestValue - 0).toLocaleString()}
+                    </p>
                     <p className="portfoliomutual-profit">
-                      Your profit is <span>₹{((latestValue-myInvestment) - 0).toLocaleString()}</span>
+                      Your profit is{" "}
+                      <span>
+                        ₹{(latestValue - myInvestment - 0).toLocaleString()}
+                      </span>
                     </p>
                   </div>
                   <div>
-                    <h3 className="portfoliomutual-titleport">Avg. Monthly Grow</h3>
+                    <h3 className="portfoliomutual-titleport">
+                      Avg. Monthly Grow
+                    </h3>
                     <p className="portfoliomutual-value">~4.32%</p>
-                    <p className="portfoliomutual-profitt">
-                      ~₹20,365.75
-                    </p>
+                    <p className="portfoliomutual-profitt">~₹20,365.75</p>
                   </div>
                 </div>
-                <div className='bestprofitdata'>
-                  <h3 className="portfoliomutual-titleport">Best Profit Stock</h3>
+                <div className="bestprofitdata">
+                  <h3 className="portfoliomutual-titleport">
+                    Best Profit Stock
+                  </h3>
                   <h3 className="portfoliomutual-valuee">
-                    <img src={itiimg} alt="ITI Ltd." className="portfolio-logo" /> ITI Ltd.
+                    <img
+                      src={itiimg}
+                      alt="ITI Ltd."
+                      className="portfolio-logo"
+                    />{" "}
+                    ITI Ltd.
                   </h3>
                 </div>
               </div>
               {/* Time Range Selector */}
               <div className="time-rangemutual-selectorrniftydashboard">
-                {['1D', '5D', '1M', '6M', '1Y', '3Y', '5Y', 'Max'].map((range) => (
-                  <button
-                    key={range}
-                    className={`time-rangemutual-button ${range === timeRange ? 'active' : ''}`}
-
-                    onClick={() => setTimeRange(range)} // Update selected range
-                  >
-                    {range}
-                  </button>
-                ))}
+                {["1D", "5D", "1M", "6M", "1Y", "3Y", "5Y", "Max"].map(
+                  (range) => (
+                    <button
+                      key={range}
+                      className={`time-rangemutual-button ${
+                        range === timeRange ? "active" : ""
+                      }`}
+                      onClick={() => setTimeRange(range)} // Update selected range
+                    >
+                      {range}
+                    </button>
+                  )
+                )}
               </div>
 
               {/* Line Chart */}
@@ -235,57 +249,61 @@ const Dashboardchartmain = ({ children }) => {
             </div>
           </div>
           <div className="datadisstockdashhh">
-
             <div className="main-content">
               <Navbar />
               <Watchlistdashboardmain />
             </div>
           </div>
+        </div>
+        <div className="DashboardMainPagetable-headerrindexx">
+          <button
+            className={`DashboardMainPagetable-tab ${
+              activeTab === "Stock Sector" ? "active" : ""
+            }`}
+            onClick={() => setActiveTab("Stock Sector")}
+          >
+            Stock Sector
+          </button>
+          <button
+            className={`DashboardMainPagetable-tab ${
+              activeTab === "Stock Index" ? "active" : ""
+            }`}
+            onClick={() => setActiveTab("Stock Index")}
+          >
+            Stock Index
+          </button>
+          <button
+            className={`DashboardMainPagetable-tab ${
+              activeTab === "Stock Calendar" ? "active" : ""
+            }`}
+            onClick={() => setActiveTab("Stock Calendar")}
+          >
+            Stock Calendar
+          </button>
+          <button
+            className={`DashboardMainPagetable-tab ${
+              activeTab === "Stock Analyst" ? "active" : ""
+            }`}
+            onClick={() => setActiveTab("Stock Analyst")}
+          >
+            Stock Analyst
+          </button>
+        </div>
 
-      </div>
-      <div className="DashboardMainPagetable-headerrindexx">
-        <button
-          className={`DashboardMainPagetable-tab ${activeTab === "Stock Sector" ? "active" : ""}`}
-          onClick={() => setActiveTab("Stock Sector")}
-        >
-          Stock Sector
-        </button>
-        <button
-          className={`DashboardMainPagetable-tab ${activeTab === "Stock Index" ? "active" : ""}`}
-          onClick={() => setActiveTab("Stock Index")}
-        >
-          Stock Index
-        </button>
-        <button
-          className={`DashboardMainPagetable-tab ${activeTab === "Stock Calendar" ? "active" : ""}`}
-          onClick={() => setActiveTab("Stock Calendar")} 
-        >
-          Stock Calendar
-        </button>
-        <button
-          className={`DashboardMainPagetable-tab ${activeTab === "Stock Analyst" ? "active" : ""}`}
-          onClick={() => setActiveTab("Stock Analyst")} 
-        >
-          Stock Analyst
-        </button>
+        {/* Show component based on activeTab */}
+        {activeTab === "Stock Sector" && <DashboardMainPagetable />}
+        {activeTab === "Stock Index" && <Dashboardstockindex />}
+        {activeTab === "Stock Calendar" && <Stockcalender />}
+        {activeTab === "Stock Analyst" && <Homestockanalyst />}
       </div>
 
-      {/* Show component based on activeTab */}
-      {activeTab === "Stock Sector" && <DashboardMainPagetable />}
-      {activeTab === "Stock Index" && <Dashboardstockindex />}
-      {activeTab === "Stock Calendar" && <Stockcalender />}
-      {activeTab === "Stock Analyst" && <Homestockanalyst />}
-  
-    </div>
-
-    <div className="layout">
-      <Sidebar />
-      <div className="main-contentover">
-        <div className="contentover">{children}</div>
-        <FooterForAllPage />
+      <div className="layout">
+        <Sidebar />
+        <div className="main-contentover">
+          <div className="contentover">{children}</div>
+          <FooterForAllPage />
+        </div>
       </div>
-    </div>
-   
     </div>
   );
 };

@@ -77,7 +77,7 @@ setTimeout(() => {
 setShowPopup(false); // Automatically close the popup after 5 seconds
 // Add your actual redirect or API call logic here if needed
 }, 3000); // Popup duration set to 5 seconds
-}
+  }}
 };
 const handleGPayClick = () => {
 setShowPopupGp(true);
@@ -298,6 +298,6 @@ className="paypal-logo"
 <FooterForAllPage />
 </div>
 );
-  };}
+  ;}
 
 export default AnnuallyUPIPage;

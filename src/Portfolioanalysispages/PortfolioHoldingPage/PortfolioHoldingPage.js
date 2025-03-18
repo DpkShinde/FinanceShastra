@@ -8,7 +8,9 @@ import tcs from '../../assest/tcs.png';
 import itc from "../../assest/itc.png";
 import hdfc from "../../assest/hdfcbank.png";
 import adani from "../../assest/adaniimg.png";
+import { useNavigate } from "react-router-dom";
 const PortfolioHoldingPage = () => {
+   const navigate = useNavigate();
   const holdings = [
     {
       name: "Varun Beverages",
@@ -111,23 +113,8 @@ const PortfolioHoldingPage = () => {
 
  // Function to add a new stock
  const handleAddStock = () => {
-  const newStock = {
-    name: "New Stock",
-    logo: "https://via.placeholder.com/30", // Placeholder logo
-    shares: 10,
-    percentage: 5,
-    current: 10000,
-    cmp: 1000,
-    change: 5,
-    changePercent: 0.5,
-    invested: 9500,
-    avgPrice: 950,
-    profitLoss: 500,
-    profitLossPercent: 5,
-  };
-  setHolding([...holding, newStock]);
+  navigate("/stockadd");
 };
-
 // Function to simulate importing data
 const handleImportData = () => {
   const importedData = [
@@ -256,7 +243,7 @@ const handleDeleteStock = (index) => {
       </div>
 
       <div className="PortfolioHoldingPagetradeRecords">
-        <a href="#">
+        <a href="portfolioHoldingdetailPage">
           View all Trade Records <CiShare1 className="tradeRecordIcon" />
         </a>
       </div>

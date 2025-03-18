@@ -5,9 +5,11 @@ import React, {
 import "./LandingAboutPage.css";
 import landingaboutimg from '../../assest/landingaboutimg.png';
 import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
+import { useNavigate } from "react-router-dom";
 
 const LandingAboutPage = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const navigate = useNavigate();
 
   return (
     <div className={darkMode ? "landingaboutpage-darkcontainer" :"landingaboutpage-container"}>
@@ -39,7 +41,12 @@ const LandingAboutPage = () => {
             tools, and personalized advice to help you achieve your financial
             goals with confidence.
           </p>
-          <button className="landingaboutpage-button">Learn more</button>
+          <button className="landingaboutpage-button"
+           onClick={() => {
+            navigate("/whoWeAre"); 
+            window.scrollTo(0, 0); // Scroll to top after navigation
+          }}
+        >Learn more</button>
         </div>
       </div>
     </div>

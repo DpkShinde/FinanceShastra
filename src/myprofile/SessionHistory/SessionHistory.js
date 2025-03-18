@@ -209,7 +209,9 @@ const SessionHistory = () => {
     
     </div>
     <Navbar />
-    <FooterForAllPage/>
+    <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

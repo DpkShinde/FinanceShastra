@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
@@ -20,16 +20,18 @@ const headers = [
   { key: "FiveYearReturn", label: "5Y (%)" },
 ];
 
+
 const TopRatedFunds = () => {
   const navigate = useNavigate();
-  const { topRatedFunds, loading, error } = useTopRatedFunds(); // Use the custom hook
+  const { topRatedFunds, loading, error } = useTopRatedFunds();
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 10;
+  const totalPages = Math.ceil(topRatedFunds.length / recordsPerPage);
 
-  // Sort function
-  const sortedData = () => {
+  const sortedData = useMemo(() => {
     if (!sortConfig.key) return topRatedFunds;
-
-    const sorted = [...topRatedFunds].sort((a, b) => {
+    return [...topRatedFunds].sort((a, b) => {
       const aValue = parseFloat(a[sortConfig.key]) || a[sortConfig.key];
       const bValue = parseFloat(b[sortConfig.key]) || b[sortConfig.key];
 
@@ -40,15 +42,23 @@ const TopRatedFunds = () => {
       }
       return sortConfig.direction === "asc" ? aValue - bValue : bValue - aValue;
     });
-    return sorted;
-  };
+  }, [sortConfig, topRatedFunds]);
 
-  // Handle sort toggle
+  const indexOfFirstItem = (currentPage - 1) * recordsPerPage;
+  const indexOfLastItem = Math.min(indexOfFirstItem + recordsPerPage, topRatedFunds.length);
+  const currentData = sortedData.slice(indexOfFirstItem, indexOfLastItem);
+
   const handleSort = (key) => {
     setSortConfig((prev) => ({
       key,
       direction: prev.key === key && prev.direction === "asc" ? "desc" : "asc",
     }));
+  };
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
   };
 
   const renderSortIcons = (key) => {
@@ -63,8 +73,6 @@ const TopRatedFunds = () => {
       </span>
     );
   };
-
-  const sortedFunds = sortedData();
 
   return (
     <div>
@@ -114,23 +122,12 @@ const TopRatedFunds = () => {
                 </tr>
               </thead>
               <tbody>
-                {sortedFunds.map((fund) => (
+                {currentData.map((fund) => (
                   <tr key={fund.FundID} className="funds-table-row">
                     <td>
-                      {fund.url ? (
-                        <a
-                          href={fund.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="fund-name-link"
-                        >
-                          {fund.FundName}
-                        </a>
-                      ) : (
-                        <Link to="/mutualfundgrowth" className="fund-name-link">
-                          {fund.FundName}
-                        </Link>
-                      )}
+                      <Link to="/mutualfundgrowth" className="fund-name-link">
+                        {fund.FundName}
+                      </Link>
                     </td>
                     <td>{fund.Rating}</td>
                     <td>{fund.Riskometer}</td>
@@ -138,27 +135,32 @@ const TopRatedFunds = () => {
                     <td>{`₹${fund.AUM} Cr`}</td>
                     <td>{`₹${fund.SIPAmount}`}</td>
                     <td>{`${fund.ExpenseRatio}%`}</td>
-                    <td>
-                      {fund.OneYearReturn ? `${fund.OneYearReturn}%` : "N/A"}
-                    </td>
-                    <td>
-                      {fund.ThreeYearReturn
-                        ? `${fund.ThreeYearReturn}%`
-                        : "N/A"}
-                    </td>
-                    <td>
-                      {fund.FiveYearReturn ? `${fund.FiveYearReturn}%` : "N/A"}
-                    </td>
+                    <td>{fund.OneYearReturn ? `${fund.OneYearReturn}%` : "N/A"}</td>
+                    <td>{fund.ThreeYearReturn ? `${fund.ThreeYearReturn}%` : "N/A"}</td>
+                    <td>{fund.FiveYearReturn ? `${fund.FiveYearReturn}%` : "N/A"}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          
+            <div className="pagination-topratedcontainer">
+            <div className="pagination-topratedwrapper">
+            <div className="pagination-topratedinfo">
+              {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${topRatedFunds.length} records`}
+            </div>
+            <div className="pagination-topratedcontainer-buttons">
+              <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+              {[...Array(totalPages)].map((_, i) => (
+                <button key={i + 1} onClick={() => handlePageChange(i + 1)} className={currentPage === i + 1 ? "active" : ""}>{i + 1}</button>
+              ))}
+              <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
+              </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
-      <div className="foooterpagesaupdate">
-        <FooterForAllPage />
-      </div>
+      <FooterForAllPage />
     </div>
   );
 };

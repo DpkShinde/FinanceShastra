@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
  
  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
@@ -7,6 +7,7 @@ import React, { useState } from "react";
  import { MdPayment } from 'react-icons/md';
  import card1 from '../../assest/visa.png';
  import card2 from '../../assest/mastercard.png';
+ import Cookies from 'js-cookie'
  import card3 from '../../assest/american express.png';
  import card4 from '../../assest/unionpay.png';
  import {  faShieldAlt,faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -20,9 +21,12 @@ import React, { useState } from "react";
  import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
  import { useNavigate } from "react-router-dom";
  import {API_BASE_URL} from "../../config"
+import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
  
  registerLocale("en-GB", enGB);
  const AnnuallyPremiumSubscriptionPages = () => {
+  const {user}= useContext(UserProfileContext)
+  const {userEmail}= useContext(UserProfileContext)
    const [cardNumber, setCardNumber] = useState("");
    const [expiryDate, setExpiryDate] = useState(null);
    const [cvc, setCvc] = useState("");
@@ -59,35 +63,29 @@ import React, { useState } from "react";
      if (validateInputs()) {
        // All fields are valid, show the popup
  
-       const localuserDetails= (localStorage.getItem("user"))
-       if (!localuserDetails){
+       if (!user){
          setShowPopupforLogin(true)
-         console.log(localuserDetails)
        }else{
-         console.log(localuserDetails)
-         const {email}= JSON.parse(localuserDetails)
          const month= expiryDate.getMonth()+1
          const year= expiryDate.getFullYear()
          const expiryDateFormated= `${year}-0${month}-01`
-         console.log(expiryDate)
          const userpaymentDetails= {
-           'email': email,
+           'email': userEmail,
            "planId": 2,
            "billingCycle": "yearly", 
            "paymentMethod": "card", 
            "cardNum": cardNumber, 
            "cardExpiryDate": expiryDateFormated
          }
-         const localtoken= localStorage.getItem("token")
+         const token= Cookies.get('jwtToken')
          const options={
            method: "post",
            headers: {
              "Content-Type": "application/json",
-             "Authorization": `Bearer ${localtoken}`
+             "Authorization": `Bearer ${token}`
            },
            body: JSON.stringify(userpaymentDetails)
          }
-         console.log("stringified:", JSON.stringify(userpaymentDetails))
          const url=`${API_BASE_URL}/userPayment/paymentDetails1`
          const response= await fetch(url, options)
          console.log(response)
@@ -101,7 +99,6 @@ import React, { useState } from "react";
        setTimeout(() => {
          setShowPopup(false);
         
-         setShowPopupforLogin(false);
        }, 5000); // Hide the popup after 3 seconds
      }
    };

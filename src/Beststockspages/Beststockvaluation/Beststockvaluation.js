@@ -1236,13 +1236,7 @@ const BestStockvaluation  = () => {
              </div>
    
              {/* Buttons */}
-             <div
-               style={{
-                 display: "flex",
-                 justifyContent: "space-between",
-                 marginTop: "10px",
-               }}
-             >
+             <div className="resetapplybuttoncontainer">
                <button className="resetstockscreener"
                  onClick={handleReset}
                  
@@ -1805,13 +1799,7 @@ const BestStockvaluation  = () => {
            </label>
          ))}
        </div>
-                     <div
-                       style={{
-                         display: "flex",
-                         justifyContent: "space-between",
-                         marginTop: "10px",
-                       }}
-                     >
+       <div className="resetapplybuttoncontainer">
                          <button className="resetstockscreener"
                          onClick={handleReset}
                          

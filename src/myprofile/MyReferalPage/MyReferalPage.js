@@ -12,6 +12,7 @@ import Navbar from "../../Navbar/Navbar";
 const MyReferalPage = () => {
   const navigate = useNavigate();
   return (
+    <div>
     <div className="profilepageee-container">
       <h1 className="profilepage-title" style={{ fontFamily: "Calibri" }}>
         My Referrals
@@ -261,7 +262,7 @@ const MyReferalPage = () => {
               <button
                 className="why-financeshastrarefer-now-button"
                 onClick={() => {
-                  navigate("/WhyFinadvanceeducationnn");
+                  navigate("/referMoreProfilePages");
                   window.scrollTo(0, 0); // Scroll to top after navigation
                 }}
               >
@@ -301,7 +302,7 @@ const MyReferalPage = () => {
             <button
               className="refer-now-button"
               onClick={() => {
-                navigate("/WhyFinadvanceeducationnn");
+                navigate("/referMoreProfilePages");
                 window.scrollTo(0, 0); // Scroll to top after navigation
               }}
             >
@@ -312,7 +313,11 @@ const MyReferalPage = () => {
       </div>
       <Navbar />
 
-      <FooterForAllPage />
+     
+    </div>
+    <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

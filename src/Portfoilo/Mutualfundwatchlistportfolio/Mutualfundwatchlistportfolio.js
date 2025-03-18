@@ -10,7 +10,7 @@ import Cookies from 'js-cookie'
 import { API_BASE_URL } from "../../config";
 import Sidebar from "../../Sidebar/Sidebar";
 
-const MutualWatchlist = ({children}) => {
+const MutualWatchlist = ({ children }) => {
   const navigate = useNavigate();
   const getStockData = useSelector((store) => store?.searchData?.searchData || []);
 
@@ -147,7 +147,7 @@ const MutualWatchlist = ({children}) => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/addMutualToWatchklist`, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -185,13 +185,23 @@ const MutualWatchlist = ({children}) => {
 
   // Create new watchlist
   const handleCreateWatchlist = async () => {
-    const newWatchlistName = `My Watchlist ${watchlistState.list.length + 1}`;
+    // Find the highest number in existing watchlist names
+    const existingNumbers = watchlistState.list
+      .map(watchlist => {
+        const match = watchlist.name.match(/My Watchlist (\d+)/);
+        return match ? parseInt(match[1], 10) : 0;
+      })
+      .filter(num => !isNaN(num));
+
+    // Get the highest number and add 1, or start at 1 if no numbered watchlists exist
+    const nextNumber = existingNumbers.length > 0 ? Math.max(...existingNumbers) + 1 : 1;
+    const newWatchlistName = `My Watchlist ${nextNumber}`;
 
     try {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/CreateMutualWatchList`, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -217,11 +227,11 @@ const MutualWatchlist = ({children}) => {
 
   // Delete watchlist
   const handleDeleteWatchlist = async () => {
-    if (!watchlistState.selected) return;
+    if (!uiState.deleteWatchlistId) return;
 
     try {
       const token = Cookies.get("jwtToken");
-      const response = await fetch(`${API_BASE_URL}/Watchlist/deleteMutualWatchlist?watchlist_id=${watchlistState.selected}`, {
+      const response = await fetch(`${API_BASE_URL}/Watchlist/deleteMutualWatchlist?watchlist_id=${uiState.deleteWatchlistId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`
@@ -235,19 +245,19 @@ const MutualWatchlist = ({children}) => {
 
       setWatchlistState(prev => {
         // Filter out the deleted watchlist
-        const updatedList = prev.list.filter(watchlist => watchlist.watchlist_id !== prev.selected);
+        const updatedList = prev.list.filter(watchlist => watchlist.watchlist_id !== uiState.deleteWatchlistId);
 
-        // Select the next available watchlist dynamically
-        let newSelectedId = null;
-        if (updatedList.length > 0) {
+        // If we're deleting the currently selected watchlist, select another one
+        let newSelectedId = prev.selected;
+        if (prev.selected === uiState.deleteWatchlistId) {
           // Find the index of the deleted watchlist in the original list
-          const deletedIndex = prev.list.findIndex(w => w.watchlist_id === prev.selected);
+          const deletedIndex = prev.list.findIndex(w => w.watchlist_id === uiState.deleteWatchlistId);
           // If available, select the next watchlist in the list
           // Otherwise select the previous one, or the first in the list as last resort
           newSelectedId = updatedList[deletedIndex] ?
             updatedList[deletedIndex].watchlist_id :
             updatedList[Math.max(0, deletedIndex - 1)]?.watchlist_id ||
-            updatedList[0].watchlist_id;
+            updatedList[0]?.watchlist_id;
         }
 
         return {
@@ -260,7 +270,8 @@ const MutualWatchlist = ({children}) => {
 
       setUiState(prev => ({
         ...prev,
-        deleteWatchlistPopup: false
+        deleteWatchlistPopup: false,
+        deleteWatchlistId: null
       }));
     } catch (error) {
       alert(error.message || "Failed to delete watchlist.");
@@ -287,7 +298,7 @@ const MutualWatchlist = ({children}) => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/renameMutualWatchlist`, {
         method: "PUT",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -341,7 +352,7 @@ const MutualWatchlist = ({children}) => {
       const token = Cookies.get("jwtToken");
       const response = await fetch(`${API_BASE_URL}/Watchlist/removeMutualFromWatchlist`, {
         method: "DELETE",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         },
@@ -398,34 +409,41 @@ const MutualWatchlist = ({children}) => {
   // Close popups when clicking outside
   const handleClickOutside = useCallback((event) => {
     // Handle rename popup
-    if (uiState.renamePopup && 
-        renamePopupRef.current && 
-        !renamePopupRef.current.contains(event.target)) {
-      setUiState(prev => ({ ...prev, renamePopup: false }));
+    if (
+      renamePopupRef.current &&
+      !renamePopupRef.current.contains(event.target)
+    ) {
+      setUiState((prev) => ({ ...prev, renamePopup: false }));
     }
-    
+
     // Handle delete stock popup
-    if (uiState.deletePopup && 
-        deletePopupRef.current && 
-        !deletePopupRef.current.contains(event.target)) {
-      setUiState(prev => ({ ...prev, deletePopup: false }));
+    if (
+      deletePopupRef.current &&
+      !deletePopupRef.current.contains(event.target)
+    ) {
+      setUiState((prev) => ({ ...prev, deletePopup: false }));
     }
-    
+
     // Handle delete watchlist popup
-    if (uiState.deleteWatchlistPopup && 
-        deleteWatchlistPopupRef.current && 
-        !deleteWatchlistPopupRef.current.contains(event.target)) {
-      setUiState(prev => ({ ...prev, deleteWatchlistPopup: false }));
+    if (
+      deleteWatchlistPopupRef.current &&
+      !deleteWatchlistPopupRef.current.contains(event.target)
+    ) {
+      setUiState((prev) => ({ ...prev, deleteWatchlistPopup: false }));
     }
-    
+
     // Handle dropdown menus
     if (uiState.activeDropdown !== null) {
-      const activeDropdownElement = dropdownRefs.current[uiState.activeDropdown];
-      if (activeDropdownElement && !activeDropdownElement.contains(event.target)) {
-        setUiState(prev => ({ ...prev, activeDropdown: null }));
+      const activeDropdownElement =
+        dropdownRefs.current[uiState.activeDropdown];
+      if (
+        activeDropdownElement &&
+        !activeDropdownElement.contains(event.target)
+      ) {
+        setUiState((prev) => ({ ...prev, activeDropdown: null }));
       }
     }
-  }, [uiState.renamePopup, uiState.deletePopup, uiState.deleteWatchlistPopup, uiState.activeDropdown]);
+  }, []);
 
   // Effects
   useEffect(() => {
@@ -450,22 +468,39 @@ const MutualWatchlist = ({children}) => {
   }, [handleClickOutside]);
 
   // UI Components
-  const RenamePopup = () => (
-    <div className="popup-overlay">
-      <div className="popup-container" ref={renamePopupRef}>
-        <h3>Rename Watchlist</h3>
-        <input
-          type="text"
-          value={uiState.newWatchlistName}
-          onChange={(e) => setUiState(prev => ({ ...prev, newWatchlistName: e.target.value }))}
-        />
-        <div className="watchlistpopup-btn">
-          <button className="popup-btnconfirm" onClick={handleRenameConfirm}>Save</button>
-          <button onClick={() => setUiState(prev => ({ ...prev, renamePopup: false }))}>Cancel</button>
+  const RenamePopup = () => {
+    const [localName, setLocalName] = useState(uiState.newWatchlistName);
+
+    const handleSave = () => {
+      setUiState(prev => ({ ...prev, newWatchlistName: localName }));
+      handleRenameConfirm();
+    };
+
+    return (
+      <div className="popup-overlay">
+        <div className="popup-container" ref={renamePopupRef}>
+          <h3>Rename Watchlist</h3>
+          <input
+            type="text"
+            value={localName}
+            onChange={(e) => setLocalName(e.target.value)}
+          />
+          <div className="watchlistpopup-btn">
+            <button className="popup-btnconfirm" onClick={handleSave}>
+              Save
+            </button>
+            <button
+              onClick={() =>
+                setUiState((prev) => ({ ...prev, renamePopup: false }))
+              }
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const DeleteStockPopup = () => (
     <div className="popup-overlay">
@@ -480,18 +515,25 @@ const MutualWatchlist = ({children}) => {
     </div>
   );
 
-  const DeleteWatchlistPopup = () => (
-    <div className="popup-overlay">
-      <div className="popup-container" ref={deleteWatchlistPopupRef}>
-        <h3>Confirm Watchlist Deletion</h3>
-        <p>Are you sure you want to delete this watchlist? This action cannot be undone.</p>
-        <div className="watchlistpopup-btn">
-          <button className="popup-btnconfirm" onClick={handleDeleteWatchlist}>Confirm</button>
-          <button onClick={() => setUiState(prev => ({ ...prev, deleteWatchlistPopup: false }))}>Cancel</button>
+  const DeleteWatchlistPopup = () => {
+    // Get the watchlist being deleted
+    const watchlistToDelete = watchlistState.list.find(
+      w => w.watchlist_id === uiState.deleteWatchlistId
+    );
+
+    return (
+      <div className="popup-overlay">
+        <div className="popup-container" ref={deleteWatchlistPopupRef}>
+          <h3>Confirm Watchlist Deletion</h3>
+          <p>Are you sure you want to delete "{watchlistToDelete?.name}"? This action cannot be undone.</p>
+          <div className="watchlistpopup-btn">
+            <button className="popup-btnconfirm" onClick={handleDeleteWatchlist}>Confirm</button>
+            <button onClick={() => setUiState(prev => ({ ...prev, deleteWatchlistPopup: false }))}>Cancel</button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div>
@@ -553,7 +595,7 @@ const MutualWatchlist = ({children}) => {
                 ⋮
               </button>
               {uiState.activeDropdown === index && (
-                <div 
+                <div
                   className="menu-dropdownwatchlist"
                   ref={el => {
                     // Dynamically add refs to the dropdown elements
@@ -568,7 +610,11 @@ const MutualWatchlist = ({children}) => {
                   </button>
                   <button
                     className="menu-itemwatchlist"
-                    onClick={() => setUiState(prev => ({ ...prev, deleteWatchlistPopup: true }))}
+                    onClick={() => setUiState(prev => ({
+                      ...prev,
+                      deleteWatchlistPopup: true,
+                      deleteWatchlistId: watchlist.watchlist_id
+                    }))}
                   >
                     Delete
                   </button>
@@ -602,8 +648,8 @@ const MutualWatchlist = ({children}) => {
                   {stockInput.filterResults.length > 0 ? (
                     <ul>
                       {stockInput.filterResults.map((data) => (
-                        <li 
-                          key={data.id} 
+                        <li
+                          key={data.id}
                           onClick={() => handleSelectStock(data)}
                           style={{ cursor: "pointer", padding: "8px" }}
                         >
@@ -758,14 +804,14 @@ const MutualWatchlist = ({children}) => {
       {uiState.deletePopup && <DeleteStockPopup />}
       {uiState.deleteWatchlistPopup && <DeleteWatchlistPopup />}
 
-     
+
       <div className="layout">
-      <Sidebar />
-      <div className="main-contentover">
-        <div className="contentover">{children}</div>
-        <FooterForAllPage />
+        <Sidebar />
+        <div className="main-contentover">
+          <div className="contentover">{children}</div>
+          <FooterForAllPage />
+        </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -132,7 +132,7 @@ const Portfoliogoldaccount = () => {
             </div>
             <div className="portfolio-account-stock-actions-container">
               <div className="portfolio-account-stock-actions">
-                <button className="add-transaction-button">
+                <button className="add-transaction-button"onClick={() => navigate("/addTransactiongold")}>
                   + Add Transaction
                 </button>
                 <button className="my-alerts-button">My Alerts</button>
@@ -164,7 +164,7 @@ const Portfoliogoldaccount = () => {
                 </span>
                 Axis Gold ETF
                 <span className="stock-actions">
-                  <span className="action-text">Add | Sell</span>
+                  <span className="action-text"  onClick={() => navigate("/addTransactiongold")}>Add | Sell</span>
                   <span className="trash-icon">
                     <FontAwesomeIcon icon={faTrashAlt} onClick={() => handleDeleteIconClick()} />
                   </span>
@@ -303,7 +303,9 @@ const Portfoliogoldaccount = () => {
 
         <Navbar />
       </div>
+      <div className="foooterpagesaupdate">
       <FooterForAllPage/>
+      </div>
     </div>
   );
 };
