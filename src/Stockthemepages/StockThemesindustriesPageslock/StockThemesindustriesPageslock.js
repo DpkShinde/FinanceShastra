@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import { CiSearch } from "react-icons/ci";
@@ -6,6 +6,7 @@ import './StockThemesindustriesPageslock.css';
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import Stockthemeunlocknavbar from "../stockthemeunlocknavbar/stockthemeunlocknavbar";
 import Navbar from "../../Navbar/Navbar";
+import { SubscriptionContext } from "../../Portfoilo/context/SubscriptionContext";
 
 const stockThemesindustriesData = [
   {
@@ -27,6 +28,7 @@ const stockThemesindustriesData = [
 ];
 
 export default function StockThemesindustrieslockPages() {
+  const {issubscribed}= useContext(SubscriptionContext)
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(stockThemesindustriesData);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -36,11 +38,15 @@ export default function StockThemesindustrieslockPages() {
   const [showSubscribe, setShowSubscribe] = useState(false);
 
   const handleLockClick = () => {
-    setIsLocked(false); // Unlock the item
+    //setIsLocked(false); // Unlock the item
+    setShowSubscribe(true);
   };
 
   const handleMouseEnter = () => {
-    setShowSubscribe(true); // Show the subscription button on hover
+    if (isLocked){
+      setShowSubscribe(true);
+    }
+     // Show the subscription button on hover
   };
 
   const handleMouseLeave = () => {
@@ -70,7 +76,7 @@ export default function StockThemesindustrieslockPages() {
   const navigate = useNavigate();
 
   return (
-    <div className={`banksectorthemepage ${isLocked ? "backdrop-blur" : ""}`}>
+    <div className={`banksectorthemepage ${issubscribed ? "" :"backdrop-blur" }`}>
       <h1 className="banksectortitle">Banks Sector Stocks</h1>
       <div className="banksectorfilter">
         <button
@@ -152,12 +158,13 @@ export default function StockThemesindustrieslockPages() {
             <ChevronRight className="StockThemesSectorPages-themes-icon" />
 
             {/* Lock and Subscribe logic */}
-            {isLocked && (
+            {!issubscribed && (
               <div className="subscribethemestocklocked-overlayyy">
                 <div
                   className="subscribethemestocklocked-lock-icon"
                   onClick={handleLockClick} // Click on the lock icon to unlock and show subscribe
                   onMouseEnter={handleMouseEnter} // Show button on hover
+                  
                   // Hide button on hover out
                 >
                   <img

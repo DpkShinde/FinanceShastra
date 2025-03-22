@@ -452,7 +452,7 @@
   margin: 20px auto;
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-left: 130px;
+ 
 }
 .landingpageourservicee-image {
   width: 50px;
@@ -463,7 +463,7 @@
   margin: 20px auto;
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-left: 130px;
+ 
 }
 .landingpageourservice-image-basee {
   width: 100%;
@@ -474,4 +474,95 @@
   margin-left: -120px;
   margin-bottom: 80px;
 }
+}
+/* Default Styles */
+.landingpage-container {
+  width: 100%;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+  .landingpageourservice-container {
+      max-width: 1400px;
+  }
+  .landingpageourservice-section {
+      padding: 50px;
+      width: 90%;
+  }
+}
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .landingpageourservice-container {
+      max-width: 1200px;
+  }
+  .landingpageourservice-section {
+      padding: 40px;
+      width: 90%;
+  }
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .landingpageourservice-container {
+      max-width: 1000px;
+  }
+  .landingpageourservice-section {
+      padding: 35px;
+      width: 90%;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .landingpageourservice-container {
+      max-width: 90%;
+      padding: 15px;
+  }
+  .landingpageourservice-section {
+      padding: 30px;
+      width: 90%;
+  }
+  .landingpageourservice-images-overlap {
+      width: 80%;
+  }
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .landingpageourservice-container {
+      max-width: 95%;
+      padding: 10px;
+  }
+  .landingpageourservice-section {
+      padding: 20px;
+      width: 90%;
+  }
+  .landingpageourservice-heading {
+      font-size: 20px;
+  }
+}
+
+/* Small Mobile Devices (Below 480px) */
+@media (max-width: 480px) {
+  .landingpageourservice-container {
+      padding: 5px;
+  }
+  .landingpageourservice-section {
+    margin-left: -2px;
+    width: 90%;
+    padding: 15px;
+}
+  .landingpageourservice-heading {
+      font-size: 18px;
+  }
+  .landingpageourservice-list, .landingpageourservice-listt {
+      font-size: 14px;
+  }
+}
+
+/* Default width for all screens */
+.landingpageourservice-section {
+    width: 90%;
 }

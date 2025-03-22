@@ -1,47 +1,70 @@
-import React, { useState } from "react";
-import "./Comment.css"; // Import the CSS file
+import { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import "quill-emoji/dist/quill-emoji.css";
+import "quill-emoji";
+import "./Comment.css";
+import { FaUserCircle } from "react-icons/fa";
 
-function CommentSection() {
-  const [showInput, setShowInput] = useState(false);
+export default function CommentBox() {
   const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
 
-  const handleShowInput = () => {
-    setShowInput(true);
-  };
-
-  const handleCommentChange = (e) => {
-    setComment(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Comment submitted: ${comment}`);
-    setComment("");
-    setShowInput(false);
+  const handleCommentSubmit = () => {
+    if (comment.trim()) {
+      setComments([
+        ...comments,
+        { text: comment, user: "User", time: "a min ago" },
+      ]);
+      setComment(""); // Clear the input field
+    }
   };
 
   return (
     <div className="comment-container">
-     
-      <button className="add-comment-button" onClick={handleShowInput}>
-        Add a Comment
-      </button>
-
-      {showInput && (
-        <form className="comment-form" onSubmit={handleSubmit}>
-          <textarea
-            className="comment-textarea"
+      {/* Comment Input Field with Toolbar Below */}
+      <div className="comment-box">
+        <div className="quill-wrapper">
+          
+          <ReactQuill
+            theme="snow"
             value={comment}
-            onChange={handleCommentChange}
-            placeholder="Write your comment..."
-          /><br/>
-          <button className="submit-comment-button" type="submit">
-            Submit
-          </button>
-        </form>
-      )}
+            onChange={setComment}
+            placeholder="Add Comment..."
+           
+            modules={{
+              toolbar: [
+                ["bold", "italic", "underline"],
+                ["image", "link"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["emoji"], // Emoji button
+                ["clean"],
+              ],
+              "emoji-toolbar": true,
+              "emoji-textarea": false,
+              "emoji-shortname": true,
+            }}
+          />
+        </div>
+        <button className="comment-btn" onClick={handleCommentSubmit}>
+          Comment
+        </button>
+      </div>
+
+      {/* Comments Section */}
+      <div className="comments-section">
+        <h3>Comments <span className="comment-count">{comments.length}</span></h3>
+        {comments.map((cmt, index) => (
+          <div key={index} className="comment">
+            <div className="comment-avatar"><FaUserCircle /></div>
+            <div className="comment-content">
+              <strong>{cmt.user}</strong>
+              <p dangerouslySetInnerHTML={{ __html: cmt.text }}></p>
+              <span className="comment-time">{cmt.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-
-export default CommentSection;

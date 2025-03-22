@@ -175,7 +175,7 @@
         display: block; /* Show the mobile footer */
         padding: 20px;
         background-color: #138754; /* Example background color */
-        width: 86%; /* Decrease width to 90% of the screen */
+     
         height: 700px; /* Increase height */
         margin: 0 auto; /* Center the footer horizontally */
         /* Optional: Add rounded corners for better design */
@@ -340,5 +340,13 @@
       margin-top: 30px;
       
     }
-   
+    .footermobileviewpages-main-section{
+      display: block; /* Show the mobile footer */
+      padding: 20px;
+      background-color: #138754; /* Example background color */
+     height: 700px; /* Increase height */
+   width: auto;
+      /* Optional: Add rounded corners for better design */
+      border-radius: 10px;
+    }
   }

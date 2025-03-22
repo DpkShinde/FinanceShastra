@@ -134,10 +134,7 @@
     margin: 10px 0;
   }
 
-  .ipotable {
-    width: 40%; /* Slightly reduce width for better fit */
-    margin-left: -10px;
-  }
+ 
 
   .ipotable th,
   .ipotable td {
@@ -153,10 +150,7 @@
   .ipodetailItem {
     font-size: 13px;
   }
-  .ipopms-list {
-    margin-left: -30px;
-    width: 40%;
-}
+
 }
 
 @media (max-width: 480px) {
@@ -173,8 +167,8 @@
   }
 
   .ipotable {
-    width: 32%;
-    margin-left: -10px;
+    width: 92%;
+    margin-left: -1px;
 }
 
   .ipotable th,
@@ -186,7 +180,7 @@
   .ebitpara {
     gap: 10px;
     font-size: 12px;
-    margin-left: -10px;
+    margin-left: -1px;
 }
 
   .ipodetailItem {
@@ -195,6 +189,6 @@
   }
   .ipopms-list {
     margin-left: -30px;
-    width: 31%;
+    width: 111%;
 }
 }

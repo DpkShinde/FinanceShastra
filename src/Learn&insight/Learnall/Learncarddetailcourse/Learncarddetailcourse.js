@@ -38,13 +38,13 @@ const courses = [
 const Learncarddetailcourse = () => {
   const navigate = useNavigate();
   return (
-    <div className="course-container">
+    <div className="course-containerdetail">
 
       {/* Course Cards */}
       <h1 className="courseexplorehead">Explore Other Courses</h1>
       <div className="courses">
         {courses.map((course) => (
-          <div key={course.id} className="course-card">
+          <div key={course.id} className="course-cardd">
             <span className="badge">Free</span>
             <h2 >{course.title}</h2>
             <p className="learnduration"><LuClock9 className="durationlearnicon"/>{course.duration}</p>

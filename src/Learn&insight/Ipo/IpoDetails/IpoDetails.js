@@ -49,6 +49,7 @@ const IpoDetails = () => {
   return (
     <div>
     <div className="ipoDetailsContainer">
+    <Navbar/>
       <h2 className="ipoNewsTitle">{ipoDetails.title}</h2>
       <p className="ipoNewsSubtitle">{ipoDetails.subtitle}</p>
       <div className="datetimecardipo">
@@ -119,7 +120,7 @@ prominent names like Welspun, Premco Global, and Page.</p>
         <p><strong className='strongfontipo'>Dependence on Distribution Network:</strong> The company relies extensively on its distributors to market and sell its products. In FY24, nearly 94% of its revenue was
         generated through its distribution partners. Consequently, the loss of important distributors could harm the company’s financial performance</p>
       </div>
-      <Navbar/>
+     
       <Ipotable/>
       <IpoRecommendation/>
       <IpoComment/>

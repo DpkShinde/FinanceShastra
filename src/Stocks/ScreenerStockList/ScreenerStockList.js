@@ -1,6 +1,6 @@
 import React, { useState, useRef, useMemo, useEffect } from "react";
 import { screenerStockListData } from "../screenerStockListData";
-import { icons } from "../icons";
+import { API_BASE_URL } from "../../config";
 import { PiCaretUpDownFill } from "react-icons/pi"; // Import the icon
 
 import { FaSearch } from "react-icons/fa"; // Import FaSearch for the search bar
@@ -10,7 +10,7 @@ import "./ScreenerStockList.css";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
-import { API_BASE_URL } from "../../config";
+
 
 const ScreenerStockList = () => {
   const [stocks, setStocks] = useState(screenerStockListData);
@@ -89,7 +89,7 @@ const ScreenerStockList = () => {
                 "divYield": each.Div_yield,
                 "sector": each.Sector,
                 "url": '/stockhandle',
-                "icon": icons.find(eachIcon => eachIcon.name === (each.Symbol).toLowerCase()).icon
+                "icon": each.icons 
               }))
               //console.log("icon: ",icons.filter(eachicon => ( eachicon.icon=== 'tcs')))
               
@@ -424,24 +424,24 @@ const ScreenerStockList = () => {
   ];
 
   const indexes = [
-    "Nifty 50",
-    "Nifty 500",
-    "Nifty Midcap 100",
-    "Nifty Smallcap 100",
-    "Nifty Alpha 50",
-    "Nifty Bank",
-    "Nifty 100",
-    "Nifty Next 50",
-    "Nifty Midcap 150",
-    "Nifty Smallcap 250",
-    "Nifty50 Value 20",
-    "Nifty Commodities",
-    "Nifty 200",
-    "Nifty LargeMidcap 250",
-    "Nifty Midcap 50",
-    "Nifty Smallcap 50",
-    "Nifty Auto",
-    "Nifty CPSE",
+    {id: 1 ,index: "Nifty 50"},
+    {id: 2, index:"Nifty 500"},
+    {id: 3, index:"Nifty Midcap 100"},
+    {id: 4, index: "Nifty Smallcap 100"},
+    {id: 5, index:"Nifty Alpha 50"},
+    {id: 6, index: "Nifty Bank"},
+    {id: 7, index: "Nifty 100"},
+    {id: 8, index: "Nifty Next 50"},
+    {id: 9, index: "Nifty Midcap 150"},
+    {id: 10, index: "Nifty Smallcap 250"},
+    {id: 11, index: "Nifty50 Value 20"},
+    {id: 12, index: "Nifty Commodities"},
+    {id: 13, index: "Nifty 200"},
+    {id: 14, index: "Nifty LargeMidcap 250"},
+    {id: 15, index: "Nifty Midcap 50"},
+    {id: 16, index: "Nifty Smallcap 50"},
+    {id: 17, index: "Nifty Auto"},
+    {id: 18, index: "Nifty CPSE"},
   ];
   const marketCapCategory = [
     "Large Cap",
@@ -609,7 +609,8 @@ const ScreenerStockList = () => {
     sector.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const filteredIndexes = indexes.filter((index) =>
-    index.toLowerCase().includes(searchTerm.toLowerCase())
+    index.index.toLowerCase().includes(searchTerm.toLowerCase())
+  
   );
   const filteredmarketCapCategory = marketCapCategory.filter(
     (marketCapCategory) =>
@@ -1308,21 +1309,21 @@ const ScreenerStockList = () => {
                 <div
                   className="index-optionsstocks" // Added class name to the container of options
                 >
-                  {filteredIndexes.map((index) => (
+                  {filteredIndexes.map((eachindex) => (
                     <label
-                      key={index}
+                      key={eachindex.id}
                       className="index-optionscreener" // Added class name to each option
                     >
                       <input
                         type="checkbox"
-                        checked={selectedIndexes.includes(index)}
+                        checked={selectedIndexes.includes(eachindex.index)}
                         onChange={(e) => {
                           e.stopPropagation();
-                          handleCheckboxChange(index);
+                          handleCheckboxChange(eachindex.index);
                         }}
                         style={{ width: "20%" }}
                       />
-                      {index}
+                      {eachindex.index}
                     </label>
                   ))}
                 </div>

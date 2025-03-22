@@ -1,126 +1,96 @@
-/* Container for the comments section */
-.comment-container {
-    font-family: 'calibri';
-    margin: 20px;
-    margin-left: 150px;
-  
-  }
-  
-  /* Heading */
-  .comment-container h2 {
-    font-size: 20px;
-    color: #333;
-    margin-left: 20px;
-  }
-  
-  /* Add Comment Button */
-  .add-comment-button {
-    padding: 10px 20px;
-    background: #24b676;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-left: 50px;
-  }
-  
-  .add-comment-button:hover {
-    background: #218838;
-  }
-  
-  /* Form container */
-  .comment-form {
-    margin-top: 20px;
-  }
-  
-  /* Textarea for writing comments */
-  .comment-textarea {
-    width: 60%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
-    box-sizing: border-box;
-    margin-right: 40px;
-  }
-  
-  /* Submit Comment Button */
-  .submit-comment-button {
-   margin-left: 80px;
-    padding: 10px 20px;
-    background: #24b676;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .submit-comment-button:hover {
-    background: #218838;
-  }
-  /* Responsive Styles */
-@media (max-width: 768px) {
-  .comment-container {
-    margin-left: 50px;
-  }
+/* styles.css */
+.comment-box {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  max-width:100%;
 
-  .comment-container h2 {
-    font-size: 18px;
-    margin-left: 10px;
-  }
-
-  .comment-textarea {
-    width: 80%;
-    margin-right: 0;
-  }
-
-  .add-comment-button {
-    margin-left: 0;
-    font-size: 14px;
-    padding: 8px 16px;
-    margin-bottom: 10px;
-  }
-
-  .submit-comment-button {
-    margin-left: 0;
-    font-size: 14px;
-    padding: 8px 16px;
-    margin-bottom: 30px;
-  }
+  font-family: 'calibri';
+  font-size: 15px;
 }
 
-@media (max-width: 480px) {
-  .comment-container {
-    margin: 10px;
-    margin-left: 20px;
-  }
-
-  .comment-container h2 {
-    font-size: 16px;
-    margin-left: 5px;
-  }
-
-  .comment-textarea {
-    width: 100%;
-    padding: 8px;
-  }
-
-  .add-comment-button {
-    margin-left: 0;
-    font-size: 12px;
-    padding: 6px 12px;
-    margin-bottom: 30px;
+.comment-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
 }
 
-.submit-comment-button {
-  margin-left: 0;
-  font-size: 12px;
-  padding: 6px 12px;
-  margin-bottom: 20px;
+.ql-toolbar {
+  background: #e0e0e0;
+  border-radius: 5px;
+  order: 2;
 }
+
+.ql-container {
+  height: 120px;
+  border-radius: 5px;
+  background: white;
+  order: 1;
+  font-family:"calibri";
+  font-size: 15px;
+}
+
+.ql-picker-label {
+  font-size: 16px;
+}
+.comment-btn {
+  background-color: #24b676;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.comments-section {
+
+  padding-top: 10px;
+}
+.comments-section h3{
+ 
+ margin-right: auto;
+}
+.comment {
+  display: flex;
+  align-items: flex-start;
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.comment-avatar {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-content p {
+  margin: 5px 0;
+}
+
+.comment-time {
+  font-size: 14px;
+  color:#18A0FB80;
+  font-weight: 700;
+}
+
+.comment-count {
+  background: #24b676;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 50%;
+  font-size: 14px;
 }

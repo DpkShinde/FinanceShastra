@@ -103,6 +103,7 @@ const Dashboardchartmain = ({ children }) => {
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []); // Dependency array ensures this effect runs once on mount
+  
 
   // Chart data for different time ranges
   const chartDataByRange = {

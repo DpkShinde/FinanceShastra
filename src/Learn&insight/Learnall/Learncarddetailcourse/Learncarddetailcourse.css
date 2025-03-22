@@ -3,14 +3,76 @@
     font-size: 24px;
     margin-bottom: 20px;
     font-family: 'calibri';
+    margin-top: -30px;
+}
+/* General Container */
+.course-containerdetail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'calibri';
+    margin-top: 0px;
+    margin-bottom: 100px;
+
+  }
+
+@media (min-width: 1536px) {
+    .courseexplorehead{
+        margin-left: 670px;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: 'calibri';
+        margin-top: -10px;
+    }
+    .course-containerdetail {
+        max-width: 1536px;
+       margin-left: 310px;
+        padding: 20px;
+        font-family: 'calibri';
+        margin-top: 0px;
+        margin-bottom: 100px;
+    
+      }
+  
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+    .courseexplorehead{
+        margin-left: 360px;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: 'calibri';
+        margin-top: -80px;
+        
+    }   
+    .course-containerdetail {
+        max-width: 1024px;
+       margin-left: 40px;
+        padding: 20px;
+        font-family: 'calibri';
+        margin-top: 0px;
+        margin-bottom: 100px;
+    
+      }
+ 
 }
 /* Responsive Design for 768px and Below */
 @media screen and (max-width: 768px) {
+    
     .courseexplorehead {
         margin-left: 20px; /* Adjust the alignment for smaller screens */
         font-size: 20px; /* Reduce font size */
         text-align: center; /* Center-align the text */
     }
+    .course-containerdetail {
+        max-width: 768px;
+       margin-left: -10px;
+        padding: 20px;
+        font-family: 'calibri';
+        margin-top: 0px;
+        margin-bottom: 100px;
+    
+      }
+
 }
 
 /* Responsive Design for 480px and Below */

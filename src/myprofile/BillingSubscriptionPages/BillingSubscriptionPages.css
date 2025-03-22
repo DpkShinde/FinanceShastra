@@ -60,9 +60,9 @@
   .billingSubscriptionPlans {
     display: flex;
     gap: 20px;
-    width: 43%;
+    width: 50%;
  margin-bottom: 70px;
-    margin-left: 480px;
+    margin-left: 380px;
     margin-top: 30px;
   }
   
@@ -86,10 +86,11 @@
   .billingSubscriptionPlanButton {
     background: #24b676;
     color: white;
-    padding: 8px 18px;
+    padding: 7px 29px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 10px;
   }
   
   .billingSubscriptionPlanButton:hover {

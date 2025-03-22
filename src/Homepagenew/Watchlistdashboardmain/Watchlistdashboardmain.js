@@ -44,7 +44,8 @@ const Watchlistdashboardmain = () => {
       console.log(data[0].watchlist_id)
       setWatchlistState(data[0].watchlist_id);
     } catch (error) {
-      alert(error.message || "Failed to fetch watchlists.");
+      //alert(error.message || "Failed to fetch watchlists.");
+      console.log(error.message || "Failed to fetch watchlists.");
     }
   };
 
@@ -67,13 +68,17 @@ const Watchlistdashboardmain = () => {
       console.log(data)
       setWatchlistData(data);
     } catch (error) {
-      alert(error.message || "Failed to fetch watchlist assets.");
+      //alert(error.message || "Failed to fetch watchlist assets.");
     }
   }, [watchlistState]);
 
   useEffect(() => {
-    fetchWatchlists()
-    fetchWatchlistAssets()
+    const token = Cookies.get("jwtToken");
+    if (token){
+      fetchWatchlists()
+      fetchWatchlistAssets()
+    }
+    
   }, [])
 
   return (

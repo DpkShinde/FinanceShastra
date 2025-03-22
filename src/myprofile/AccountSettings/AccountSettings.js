@@ -7,6 +7,7 @@ import { API_BASE_URL } from "../../config";
 
 import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
 import Cookies from 'js-cookie'
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
 
 const AccountSettings = () => {
@@ -87,10 +88,11 @@ const AccountSettings = () => {
     if (!newErrors.currentPassword && !newErrors.newPassword && !newErrors.confirmPassword) {
       const url= `${API_BASE_URL}/users/changepass`
       //const localtoken= localStorage.getItem('token')
+      const CookieToken= Cookies.get('jwtToken')
       const options= {
         method: "PUT",
         headers: {
-          "Authorization": `Bearer ${token}`,
+          "Authorization": `Bearer ${CookieToken}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify(passwordData)
@@ -106,8 +108,7 @@ const AccountSettings = () => {
         })
       }
       if (response.status === 404){
-        newErrors.currentPassword = "Please enter correct password";
-        setErrors(newErrors)
+        setErrors(errors.currentPassword = "Please enter correct password")
       }
      
       }
@@ -185,7 +186,7 @@ const AccountSettings = () => {
                 className={errors.currentPassword ? "error" : ""}
               />
               <span onClick={() => togglePasswordVisibility("currentPassword")}>
-                
+              {showPasswords.currentPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
               </span>
             </div>
             {errors.currentPassword && <div className="error-message">{errors.currentPassword}</div>}
@@ -204,7 +205,7 @@ const AccountSettings = () => {
                 className={errors.newPassword ? "error" : ""}
               />
               <span onClick={() => togglePasswordVisibility("newPassword")}>
-               
+              {showPasswords.newPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
               </span>
             </div>
             {errors.newPassword && <div className="error-message">{errors.newPassword}</div>}
@@ -223,32 +224,15 @@ const AccountSettings = () => {
                 className={errors.confirmPassword ? "error" : ""}
               />
               <span onClick={() => togglePasswordVisibility("confirmPassword")}>
-              
+              {showPasswords.confirmPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
+
               </span>
             </div>
             {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
           </div>
-
+          
           {/* Password Rules */}
-          <div className="profilesettingpassword-password-rules">
-            <p>New password must contain:</p>
-            <ul>
-              <li>Between 8 and 12 characters</li>
-              <li>At least one uppercase character</li>
-              <li>At least one lowercase character</li>
-              <li>At least one number and special character</li>
-            </ul>
-          </div>
-          {/* Password Rules */}
-          <div className="profilesettingpassword-password-rules">
-            <p>New password must contain:</p>
-            <ul>
-              <li>Between 8 and 12 characters</li>
-              <li>At least one uppercase character</li>
-              <li>At least one lowercase character</li>
-              <li>At least one number and special character</li>
-            </ul>
-          </div>
+        
 
           {/* Buttons */}
           <div className="profilesettingpassword-button-group">

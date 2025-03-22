@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./BankSectorThemePagelock.css";
 import { CiSearch } from 'react-icons/ci';
 import { PiCaretUpDownFill } from "react-icons/pi";
@@ -17,12 +17,15 @@ import cbiImage from '../../assest/centralbank.png';
 import { useNavigate } from "react-router-dom";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
+
 import Navbar from "../../Navbar/Navbar";
+import { SubscriptionContext } from "../../Portfoilo/context/SubscriptionContext";
 
 const BankSectorThemePagelock = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [showSubscribe, setShowSubscribe] = useState(false); 
+    const {issubscribed}= useContext(SubscriptionContext)
     const bankData = [
         { symbol: "HDFC Bank", image: hdfcImage, price: "₹1,694.80", change: "0.16%", marketCap: "₹12,94,171.5", weekHigh: "1,880.00", weekLow: "1,363.5", pe: "18.6", pbv: "2.6", evEbitda: "16.4", roe: "17.2", salesGrowth: "16.7", profitGrowth: "18.3" },
         { symbol: "ICICI Bank", image: iciciImage, price: "₹1,242.25", change: "-0.94%", marketCap: "₹8,86,022.8", weekHigh: "1,361.4", weekLow: "985.2", pe: "19.6", pbv: "3.3", evEbitda: "14.3", roe: "19.0", salesGrowth: "22.4", profitGrowth: "62.0" },
@@ -92,7 +95,7 @@ const BankSectorThemePagelock = () => {
     }
   };
   const handleLockClick = () => {
-    setIsLocked(false); // Unlock the table
+    //setIsLocked(false); // Unlock the table
     setShowSubscribe(true); // Show the subscribe button
   };
 
@@ -197,7 +200,7 @@ const BankSectorThemePagelock = () => {
           </th>
         </tr>
       </thead>
-      <tbody className={isLocked ? "blurred" : ""}>
+      <tbody className={issubscribed ? "" : "blurred"}>
         {filteredBanks.map((bank, index) => (
           <tr key={index}>
             <td>
@@ -224,7 +227,7 @@ const BankSectorThemePagelock = () => {
         ))}
       </tbody>
     </table>
-    {isLocked && (
+    {!issubscribed && (
           <div className="subscribethemestocklocked-overlay">
             <div
               className="subscribethemestocklocked-lock-icon"

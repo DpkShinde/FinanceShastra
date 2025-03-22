@@ -127,13 +127,56 @@
     padding-top: 0 !important; /* Ensures no padding at the top */
 }
 
+@media (min-width: 1536px) {
+    .learncourse-details-container {
+        font-family: 'calibri';
+        margin-left: 530px;
+        max-width: 1536px;
+        height: 650px;
+        margin-top: 120px;
+        box-shadow: 0 2px 4px rgb(198, 197, 197);
+        border-radius: 8px;
+    }
 
+      
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+    .learncourse-details-container {
+       
+            font-family: 'calibri';
+            margin-left: 60px;
+            max-width: 1024px;
+          width: 870px;
+            height: 750px;
+            margin-top: 150px;
+            box-shadow: 0 2px 4px rgb(198, 197, 197);
+            border-radius: 8px;
+            padding: 10px;
+        }
+       
+   
+    .learncourse-contact-info p {
+      margin-left: 10px;
+    }
+    .courselearnheadertwo{
+margin-top: 20px;
+    }
+}
 /* Mobile View: 768px */
 @media screen and (max-width: 768px) {
+    /* Stop horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+   
+  
+}
+
+/* Ensure no element exceeds screen width */
+
     .learncourse-details-container {
         margin-left: 20px;
-        max-width: 90%;
-        height: auto;
+        max-width: 95%;
+        height: 1400px;
         margin-top: 60px;
     }
 
@@ -185,8 +228,9 @@
     }
 
     .learndetailimages img {
-        max-width: 80%;
+        max-width: 86%;
         height: auto;
+        margin-left: 40px;
        
     }
 
@@ -207,7 +251,7 @@
 @media screen and (max-width: 480px) {
     .learncourse-details-container {
         margin-left: 10px;
-        max-width: 90%;
+        max-width: 93%;
         height: 1400px;
         margin-top: 40px;
     }
@@ -215,7 +259,7 @@
     .learncourse-details-container h1 {
         font-size: 18px;
         margin-top: 90px;
-        text-align: center;
+       margin-left: -50px;
     }
 
     .learncourse-summary {

@@ -11,6 +11,7 @@ import Landingnavbar from "./Landingnavbar/Landingnavbar";
 import PopupUnlockLandingPage from "./PopupUnlockLandingPage/PopupUnlockLandingPage";
 import Cookies from 'js-cookie';
 import Navbar from "../Navbar/Navbar";
+import './landingpages.css';
 
 const LandingPage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -29,7 +30,7 @@ const LandingPage = () => {
 
   
   return (
-    <div>
+    <div className="landingpage-container">
       {!token && showPopup && <PopupUnlockLandingPage onClose={() => setShowPopup(false)} />}
       <LandingPageUnlockInvest />
       <LandingPageOurService />
@@ -38,7 +39,7 @@ const LandingPage = () => {
       <LandingPageSmartSIP />
       <LandingPagePremiumElite />
       <LandingAboutPage />
-      {!token ? <Landingnavbar /> : <Navbar/>}
+      <Landingnavbar />
       <FooterForAllPage />
     </div>
   );

@@ -115,98 +115,129 @@
     cursor: pointer;
 }
 
-
-/* Mobile View - Tablet (max-width: 768px) */
-@media (max-width: 768px) {
-    .landingpagehowtoearn-container {
-        display: flex
-;
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-        margin-left: 1px;
+/* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+    .landingpagehowtoearn-container,
+    .landingpagehowtoearndarkcontainer {
+        max-width: 1600px;
     }
-
-    .landingpagehowtoearn-heading {
-        font-size: 20px; /* Scale down heading font size */
-        margin-bottom: 20px;
-        /* Display heading first */
+    .landingpagehowtoearn-step,
+    .landingpagehowtoearndarkstep {
+        width: 50%;
+        margin-left: 250px;
     }
-
-    .landingpagehowtoearn-image {
-        width: 100%; /* Full width for the image container */
-        margin-top: 10px;
-        order: 2; /* Display image second */
-    }
-
     .landingpagehowtoearn-image img {
-        max-width: 100%; /* Scale image to fit screen */
-        border-radius: 10px;
-        margin: 0 auto;
-    }
-
-    .landingpagehowtoearn-steps {
-        width: 100%;
-        margin: 0 auto;
-        gap: 10px;
-        order: 3;
-        margin-top: 20px;
-        margin-left: -200px;
-    }
-
-    .landingpagehowtoearn-step {
-        width: 95%;
-        font-size: 15px;
-        text-align: center;
-        /* margin-top: 20px; */
+        max-width: 55%;
     }
 }
 
-/* Mobile View - Phone (max-width: 480px) */
-@media (max-width: 480px) {
-    .landingpagehowtoearn-container {
-        display: flex;
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    .landingpagehowtoearn-container, .landingpagehowtoearndarkcontainer {
+        max-width: 1500px;
+        margin-left: -10px;
+    }
+    .landingpagehowtoearn-step,
+    .landingpagehowtoearndarkstep {
+        width: 55%;
+        margin-left: 180px;
+    }
+    .landingpagehowtoearn-image img {
+        max-width: 60%;
+    }
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .landingpagehowtoearn-container, .landingpagehowtoearndarkcontainer {
+        max-width: 1000px;
+        margin-left: -10px;
+    }
+    .landingpagehowtoearn-step,
+    .landingpagehowtoearndarkstep {
+        width: 60%;
+        margin-left: 150px;
+    }
+    .landingpagehowtoearn-image img {
+        max-width: 65%;
+    }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .landingpagehowtoearn-container, .landingpagehowtoearndarkcontainer {
+        max-width: 100%;
+        padding: 15px;
+        margin-left: -10px;
+    }
+    .landingpagehowtoearn-content {
         flex-direction: column;
-        align-items: center;
-        width: 88%;
-        margin-left: 1px;
     }
-
-    .landingpagehowtoearn-heading {
-        font-size: 20px;
-        /* Scale down heading font size */
-        margin-bottom: 20px;
-        /* Display heading first */
+    .landingpagehowtoearn-steps {
+        width: 80%;
     }
-
+    .landingpagehowtoearn-step,
+    .landingpagehowtoearndarkstep {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .landingpagehowtoearn-image {
         width: 100%;
-        /* Full width for the image container */
-        margin-top: 10px;
-        order: 2;
-        /* Display image second */
     }
-
     .landingpagehowtoearn-image img {
-        max-width: 100%;
-        /* Scale image to fit screen */
-        border-radius: 10px;
-        margin: 0 auto;
+        max-width: 55%;
+        margin-right: 0;
+        margin-top: 25px;
     }
+}
 
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+    .landingpagehowtoearn-container, .landingpagehowtoearndarkcontainer {
+        max-width: 100%;
+        padding: 10px;
+        margin-left: -7px;
+    }
+    .landingpagehowtoearn-heading,
+    .landingpagehowtoearndarkheading {
+        font-size: 20px;
+    }
+    .landingpagehowtoearn-content {
+        flex-direction: column;
+    }
     .landingpagehowtoearn-steps {
         width: 100%;
-        margin: 0 auto;
-        gap: 10px;
-        order: 3;
-        margin-top: 20px;
-        margin-left: -200px;
     }
-
-    .landingpagehowtoearn-step {
-        width: 95%;
+    .landingpagehowtoearn-step,
+    .landingpagehowtoearndarkstep {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         font-size: 15px;
-        text-align: center;
-        /* margin-top: 20px; */
+    }
+    .landingpagehowtoearn-image img {
+        max-width: 80%;
+    }
+}
+
+/* Small Mobile Devices (Below 480px) */
+@media (max-width: 480px) {
+    .landingpagehowtoearn-container,
+    .landingpagehowtoearndarkcontainer {
+        padding: 5px;
+    }
+    .landingpagehowtoearn-heading,
+    .landingpagehowtoearndarkheading {
+        font-size: 18px;
+    }
+    .landingpagehowtoearn-step,
+    .landingpagehowtoearndarkstep {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .landingpagehowtoearn-image img {
+        max-width: 90%;
+        display: none;
     }
 }

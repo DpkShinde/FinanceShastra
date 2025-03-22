@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import './halfyearlusub.css'
 import { API_BASE_URL } from "../../config";
+import Cookies from 'js-cookie'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
@@ -79,7 +80,8 @@ const HalfyearlySubscriptionPages = () => {
           "cardNum": cardNumber,
           "cardExpiryDate": expiryDateFormated
         }
-        const localtoken = localStorage.getItem('token')
+        const localtoken = Cookies.get('jwtToken')
+        console.log(localtoken)
         const options = {
           method: "post",
           headers: {
@@ -90,7 +92,8 @@ const HalfyearlySubscriptionPages = () => {
         }
         console.log("stringified:", JSON.stringify(userpaymentDetails))
         const url = `${API_BASE_URL}/userPayment/paymentDetails1`
-        const response = await fetch(url, options)
+        const urllocal= "http://localhost:3000/userPayment/paymentDetails1"
+        const response = await fetch(urllocal, options)
         console.log(response)
         if (response.ok === true) {
           setShowPopup(true);

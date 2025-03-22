@@ -21,7 +21,7 @@ import ultratech from '../assest/ultracemco.png';
 import ntpc from '../assest/ntpc.png';
 
 export const screenerStockListData = [
-  {
+  {id: 1,
 symbol: "HCL TECHNOLOGIES LTD",
     url: "/stockhandle",
     price: "₹1,621.75",

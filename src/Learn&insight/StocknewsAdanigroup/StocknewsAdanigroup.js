@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import newsadaniImage from '../../assest/img8.JPG'; // Adjust the path based on your folder structure
+import newsadaniImage from '../../assest/img9.JPG'; // Adjust the path based on your folder structure
 import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 import Navbar from '../../Navbar/Navbar';
 import FooterForAllPage from '../../FooterForAllPage/FooterForAllPage';

@@ -1,9 +1,10 @@
-.faq-container {
-    max-width: 1000px;
+.faq-container{
+    max-width: 100%;
     margin: 0 auto;
     padding: 5px;
   font-family: 'calibri';
 }
+
 
 .faq-title {
     text-align: center;
@@ -70,9 +71,63 @@
     border-top: 1px solid #eee; /* Add a subtle divider */
 }
 /* Responsive Design for 768px and Below */
+@media (min-width: 1536px) {
+    .faq-container {
+        max-width: 1536px;
+       
+   margin-left: 260px;
+        padding: 5px;
+      font-family: 'calibri';
+    }
+    .faq-question {
+        background-color: white;
+        border: none;
+       max-width: 1536px;
+        text-align: left;
+        padding: 20px ;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px; /* Add slight space on the left */
+        margin-right: 10px; /* Add slight space on the right */
+    }
+    
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+    .faq-container {
+        max-width: 924px;
+       
+   margin-left: 50px;
+        padding: 5px;
+      font-family: 'calibri';
+    }
+    .faq-question {
+        background-color: white;
+        border: none;
+       max-width: 936px;
+        text-align: left;
+        padding: 15px ;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px; /* Add slight space on the left */
+        margin-right: 10px; /* Add slight space on the right */
+    }  
+}
 @media screen and (max-width: 768px) {
     .faq-title {
         font-size: 20px; /* Reduce font size for smaller screens */
+    }
+    .faq-container {
+        max-width: 924px;
+       margin-bottom: -80px;
+   margin-left: 20px;
+        padding: 5px;
+      font-family: 'calibri';
     }
 
     .faq-question {
@@ -104,6 +159,13 @@
         font-size: 18px; /* Further reduce font size */
     }
 
+    .faq-container {
+        max-width: 924px;
+       margin-bottom: -80px;
+   margin-left: 10px;
+        padding: 5px;
+      font-family: 'calibri';
+    }
     .faq-question {
         padding: 8px; /* Reduce padding for small screens */
         font-size: 13px; /* Adjust font size for better readability */

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaRegSquare, FaRegCheckSquare } from 'react-icons/fa'; // Import the icon
 import './RiskProfileForm.css';
 import {useNavigate} from "react-router-dom";
@@ -7,6 +7,27 @@ import Cookies from 'js-cookie'
 
 
 const RiskProfileForm = () => {
+      const [riskProfile, setRiskProfile]= useState({})
+
+    const fetchRiskProfile= async ()=>{
+      const url= `${API_BASE_URL}/riskanalysis`
+      const token= Cookies.get('jwtToken')
+      const response= await fetch(url, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        }
+      })
+      if (response.ok=== true){
+        const data= await response.json()
+        console.log(data)
+      }
+      
+    }
+
+    useEffect(()=>{
+      fetchRiskProfile()
+    })
       const [formData, setFormData] = useState({});
 
       const questions = [

@@ -27,7 +27,7 @@ const LearnCourseDetails = () => {
           </div>
         </div>
         <div className="learncourse-contact-info">
-          <p>For more information, please contact:</p>
+          <p className='allcontactpp'>For more information, please contact:</p>
           <p>
             <strong>Session Coordinator</strong>
           </p>

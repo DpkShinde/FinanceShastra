@@ -188,9 +188,10 @@ margin-top: 290px;
     .DashboardMainPagetable-table-containerrrrr {
       overflow-x: auto;
       margin: 20px;
-      width: 114%;
+
       margin-left: -1px;
       margin-top: -10px;
+      
   }
   .pagination-containeranalyst{
     display: flex;
@@ -213,6 +214,6 @@ margin-top: 290px;
     margin-bottom: 10px; /* Adds spacing at the bottom */
     padding: 0 10px; /* Optional: Add padding on left and right to create space */
     width: 100%; /* Ensure the container takes up full width */
-    margin-left: -20px;
+    margin-left: -10px;
     }
 }

@@ -148,8 +148,40 @@
     background-color: #218838;
     color: white;
   }
+  @media (min-width: 1024px) and (max-width: 1279px)  {
+    .course-container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 20px;
+      margin-left: 23px;
+      font-family: 'calibri';
+      margin-top: 50px;
+      margin-bottom: 100px;
+  
+    }
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+     
+    }
+    
+   
+  .course-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 260px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+  }
   /* Mobile View: 768px */
-@media screen and (max-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
+   
   .headerlearn {
       flex-direction: column;
       align-items: center;
@@ -166,13 +198,10 @@
       margin-left: 0;
   }
 
-  .courses {
-      flex-direction: column;
-      align-items: center;
-  }
+
 
   .course-card {
-      width: 90%;
+      width: 40%;
       margin-bottom: 20px;
   }
 
@@ -205,9 +234,15 @@
       margin-bottom: 30px;
   }
 
+  .headerlearn {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column
+;
+}
   .learnhead {
       font-size: 22px;
-      margin-top: 60px;
+      margin-top: 10px;
   }
 
   .learnpara {
@@ -237,8 +272,10 @@
   }
 
   .headerlearn-image {
-      width: 80%;
+      width: 95%;
       margin-top: 10px;
+      margin-left: 8px;
+      border-radius: 8px;
   }
 
   .learnsignup-button,

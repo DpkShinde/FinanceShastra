@@ -1,5 +1,4 @@
 import { useState,useEffect, useRef,useMemo } from "react";
-import {icons} from '../../Stocks/icons'
 import { screenerStockListData } from "../../Stocks/screenerStockListData";
 import { PiCaretUpDownFill } from "react-icons/pi"; // Import the icon
 
@@ -10,6 +9,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import { API_BASE_URL } from "../../config";
 const Midcap = () => {
   
   const [stocks, setStocks] = useState(screenerStockListData);
@@ -61,7 +61,6 @@ const Midcap = () => {
      };
    
      //  Debugging Effect: Confirm re-rendering when `currentPage` updates
-     const API_BASE_URL= 'https://newbackend-repo.onrender.com'
        useEffect(()=>{
          const fetchfun= async ()=>{
            const url= `${API_BASE_URL}/stocks/midcap`
@@ -82,7 +81,7 @@ const Midcap = () => {
                "divYield": each.Div_yield,
                "sector": each.Sector,
                "url": '/stockhandle',
-               "icon": icons.find(eachIcon => eachIcon.name === (each.Symbol).toLowerCase())
+               "icon": each.icons 
              }))
              //console.log("icon: ",icons.filter(eachicon => ( eachicon.icon=== 'tcs')))
              
@@ -1241,9 +1240,9 @@ const handleReset = () => {
         className="index-optionsstocks" // Added class name to the container of options
        
       >
-        {filteredIndexes.map((index) => (
+        {filteredIndexes.map((index, idx) => (
           <label
-            key={index}
+            key={`${index}-${idx}`}
             className="index-optionscreener" // Added class name to each option
            
           >

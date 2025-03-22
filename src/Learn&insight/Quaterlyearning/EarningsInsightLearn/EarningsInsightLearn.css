@@ -228,6 +228,44 @@
 
 
 
+@media (min-width: 1024px) and (max-width: 1279px)  {
+    .earnings-insight-learn-wrapper {
+        font-family: 'calibri';
+        max-width: 1024px;
+        margin-top: 120px;
+        margin-bottom: 100px;
+      
+    }
+    .earningquterlyrowall {
+        display: flex;
+  width: 600px;
+        margin-left: 10px;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 16px;
+        background-color: #f9f9f9; /* Light background for better contrast */
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        height: 35px;
+        box-shadow: 0px 4px 6px rgba(176, 175, 175, 0.886); /* Subtle shadow for depth */
+    }
+    /* Custom Dropdown Styling (Select Filter) */
+.earnings-insight-learn-dropdown {
+    display: flex;
+ margin-bottom: 20px;
+    justify-content: flex-start; /* Adjusts to align the dropdown properly */
+    gap: 10px;
+    font-size: 16px;
+    margin-left: 10px; /* Aligns with the rest of the header elements */
+}
+/* Table Styling */
+.earnings-insight-learn-table {
+    width: 96%;
+  
+    margin-left: 13px;
+    border-collapse: collapse;
+}
+}
 
 /* Responsive styling for tablets and smaller devices */
 /* Responsive styling for tablets and smaller devices */
@@ -248,7 +286,7 @@
     }
 
     .earnings-insight-learn-table {
-        width:100%; /* Ensure table occupies full width */
+        width:93%; /* Ensure table occupies full width */
         overflow-x: auto; /* Enable horizontal scrolling */
         display: block; /* Make table behave as a block element */
         margin-bottom: 100px;
@@ -359,6 +397,7 @@
     .earnings-insight-learn-wrapper {
         padding: 0; 
         margin-top: 50px;
+        margin-left: 5px;
     }
 
     .earnings-insight-learn-header h1 {

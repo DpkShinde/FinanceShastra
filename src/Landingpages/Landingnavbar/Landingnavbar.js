@@ -358,12 +358,17 @@ const Landingnavbar = () => {
   );
 
   const onLogout= ()=>{
+    console.log('logout was clicked')
     localStorage.clear()
-    
-    Cookies.remove('user')
-    Cookies.remove('jwtToken')
+    console.log('localstorage cleared')
+    Cookies.remove('jwtToken', { path: '/' })
+    console.log('cookies cleared')
     setIsLogedin(false)
+    console.log("logedin false set")
     navigate('/login')
+    console.log("navigating to /login page")
+
+    
   }
 
 
@@ -516,6 +521,7 @@ const Landingnavbar = () => {
         </div>
         {isLogedin ? (
           <div className="landingnavbar-icons">
+            <VscBell className="landingnavbaricon bell-icon" />
             <button
               className="landingnavbar-buttonlogin-button"
               onClick={onLogout}
@@ -525,7 +531,7 @@ const Landingnavbar = () => {
           </div>
         ) : (
           <div className="landingnavbar-icons">
-            <VscBell className="landingnavbaricon bell-icon" />
+            
             <button
               className="landingnavbar-buttonregister-button"
               onClick={() => navigate("/register")}

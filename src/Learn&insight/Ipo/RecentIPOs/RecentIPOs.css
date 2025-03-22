@@ -33,12 +33,7 @@
   }
   /* Mobile View at 768px */
 @media (max-width: 768px) {
-  .recentipo {
-    width: 39.7%;
-    margin-left: -17px;
-    margin-right: 10px;
-    height: auto;
-}
+
 
   .recentipo h3 {
       font-size: 18px;
@@ -53,9 +48,9 @@
 /* Mobile View at 480px */
 @media (max-width: 480px) {
   .recentipo {
-    width: 31%;
-    margin-left: -17px;
-    margin-right: 10px;
+    width: 104%;
+    margin-left: 0px;
+  
     height: auto;
 }
 

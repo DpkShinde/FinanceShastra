@@ -261,7 +261,7 @@ const Stockcalender = () => {
           
                 </div>
             </div>
-            <div className="DashboardMainPagetable-table-container">
+            <div className="DashboardMainPagetable-table-containercalen">
             <table className="DashboardMainPagetable-tablee">
               <thead>
                 <tr>

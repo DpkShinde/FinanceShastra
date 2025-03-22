@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { API_BASE_URL } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 // Create the context
 export const PortfolioStocksContext = createContext();
@@ -8,12 +9,14 @@ export const PortfolioStocksContext = createContext();
 // Provider Component
 export const PortfolioStockProvider = ({ children }) => {
   const [stockTransactions, setStocksTransactions] = useState([]);
+  const navigate= useNavigate()
 
   // Fetch transactions data
   const fetchStocks = async () => {
     const token = Cookies.get("jwtToken");
     if (!token) {
       alert("Session expired, Please Login again");
+      navigate('/login')
       return;
     }
 

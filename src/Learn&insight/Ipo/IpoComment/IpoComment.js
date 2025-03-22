@@ -12,11 +12,11 @@ const IpoComment = () => {
       <form className="ipocomment-form">
         <div className="iponameemailall">
         <div className="ipocommentt-group">
-          <label htmlFor="name">Name*</label>
+          <label htmlFor="name">Name*</label><br/>
           <input type="text" id="name" placeholder="Type here" required />
         </div>
         <div className="ipocommentt-group">
-          <label htmlFor="email">Email*</label>
+          <label htmlFor="email">Email*</label><br/>
           <input type="email" id="email" placeholder="Type here" required />
         </div>
         </div>

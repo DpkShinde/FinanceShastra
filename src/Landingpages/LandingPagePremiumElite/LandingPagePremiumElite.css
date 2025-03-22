@@ -3,7 +3,7 @@
     font-family:'calibri';
     padding: 40px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #ffff;
      
    
     
@@ -19,7 +19,7 @@
     
     width: 80%; /* Decrease width */
     height: 100px; /* Adjust the value as needed */
-    min-height: 400px; /* For flexibility */
+    min-height: 430px; /* For flexibility */
     box-shadow: 0 4px 8px #24b676;
     margin-left: 140px;
     margin-right: 10px;
@@ -53,21 +53,21 @@
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
-    height: 310px;
+    height: 340px;
     margin-top: -20px;
   }
   .landingpageelite-card{
     background: #ffffff;
     border: 3px solid #a4d8c1;
     border-radius: 8px;
-    width: 97%; /* Width of each card */
-    max-width: 1120px; /* Prevent the card from becoming too wide */
+    width: 95%; /* Width of each card */
+    max-width: 950px !important; /* Prevent the card from becoming too wide */
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
     height: 310px;
     margin-top: -20px;
-    margin-left: 140px;
+    margin-left: 180px;
   }
   
   .most-popular-textt {
@@ -233,6 +233,7 @@
     font-size: 16px;
     font-weight: 600;
     padding: 10px 20px;
+    
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -278,7 +279,7 @@
     cursor: pointer;
     transition: background 0.3s ease;
     font-size: 14px;
-    width: 22%;
+    width: 22% !important;
     margin-top: 10px;
     font-weight: 600;
     margin-left: 440px;
@@ -293,7 +294,7 @@
     cursor: pointer;
     transition: background 0.3s ease;
     font-size: 14px;
-    width: 22%;
+    width: 22% !important;
     margin-top: 50px;
     font-weight: 600;
     margin-left: 440px;
@@ -316,7 +317,7 @@
 .plan-featuresssh4 .fa-circle-check {
     color: #333; /* Green color for the check circle */
     font-size: 1.1rem; /* Adjust the size of the icon */
-    margin-left: 100px;
+    margin-left: 110px;
   }
   .plan-featuresssh4 {
     font-size: 1.2rem; /* Adjust the font size */
@@ -599,281 +600,393 @@
     margin-bottom: 20px;
     color: #ffff;
   }
-  
-  /* Responsive adjustments */
-@media (max-width: 768px) {
-  .landingpagepremiumelite-plans {
-      flex-direction: column; /* Stack cards vertically */
+/* Base styles remain unchanged */
 
+/* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+  .landingpagepremiumelite-container {
+    padding: 60px;
   }
-
-  
-  .landingpagepremiumelite-heading {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #0349a8;
+  .landingpagepremiumelite-card,
+  .landingpageelite-card {
+    max-width: 1200px;
+  }
+  .landingpagepremiumelite-button, .landingpageelite-button {
+    width: 18%;
+    font-size: 16px;
+  }
+  .most-popular-landingpagepremiumelitecontainer {
+    width: 70%;
+    margin-left: 180px;
+}
 }
 
-  /* Flex container for plans */
-  .landingpagepremiumelite-plans {
-    display: flex;
-    flex-direction: column; /* Stack cards vertically */
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px; /* Space between cards */
-    flex-wrap: wrap; /* Wrap cards if screen is too small */
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .landingpagepremiumelite-container {
+    padding: 50px;
   }
-
-  /* Styling for individual cards */
-  .landingpagepremiumelite-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 90%;
+  
+  .landingpageelite-card {
+      max-width: 1100px !important;
+      height: 330px; /* Adjust height as needed */
+      margin-left: 100px;
+  }
+  .landingpagepremiumelite-card{
     max-width: 1100px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    height: 700px;
-    margin-top: -10px;
-    margin-left: 0;
-    margin-right: 0;
+    height: 330px; /* Adjust height as needed */
+  }
+  .landingpagepremiumelite-button, .landingpageelite-button {
+    width: 20%;
+  }
+  .most-popular-landingpagepremiumelitecontainer {
+    width: 85%;
+    margin-left: 100px;
+    height: 420px;
 }
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .landingpagepremiumelite-container {
+    padding: 40px;
+    background-color: #ffff;
+}
+ 
 .landingpageelite-card {
+  max-width: 1100px !important; /* Increase width */
+  width: 101% !important; /* Ensure full width */
+  margin-left: -30px; /* Adjust margin */
+}
+  .landingpagepremiumelite-card{
+    max-width: 1000px;
+        height: 350px;
+    
+  }
+  .landingpagepremiumelite-button, .landingpageelite-button {
+    width: 25%;
+    font-size: 14px;
+  }
+  .most-popular-landingpagepremiumelitecontainer {
+    
+      width: 104%;
+      margin-left: -33px;
+      height: 450px; /* Adjust the height as needed */
+  }
+}
+
+
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .landingpagepremiumelite-plans {
+    flex-direction: column; /* Stack cards vertically */
+
+}
+
+
+.landingpagepremiumelite-heading {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #0349a8;
+}
+
+/* Flex container for plans */
+.landingpagepremiumelite-plans {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Wrap cards if screen is too small */
+}
+
+/* Styling for individual cards */
+.landingpagepremiumelite-card {
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 107%;
-  /* max-width: 1900px; */
+  width: 90%;
+  max-width: 1100px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
-  height: 650px;
+  height: 700px;
   margin-top: -10px;
-  margin-left: -30px;
+  margin-left: 10pxs;
   margin-right: 0;
 }
-  .most-popular-textt {
-    margin-top: 1px;
-    margin-bottom: 30px;
-    font-size: 22px; /* Slightly larger text */
-  }
-
-  /* Premium card badge */
-  .most-popular-landingpagepremiumelitecontainer {
-    background: linear-gradient(90deg, #24b676, #238486);
-    border-radius: 35px;
-    padding: 10px 15px;
-    text-align: center;
-    margin: 0 auto 15px;
-    color: #fff;
-    width: 112%;
-    height: 300px;
-    min-height: 800px;
-    box-shadow: 0 4px 8px #24b676;
-    margin-left: -30px;
-    margin-right: 10px;
-    margin-bottom: 50px;
+.landingpageelite-card {
+background: #ffffff;
+border: 1px solid #ddd;
+border-radius: 8px;
+width: 87%;
+/* max-width: 1900px; */
+padding: 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: left;
+height: 650px;
+margin-top: -10px;
+margin-left: 20px;
+margin-right: 0;
+}
+.most-popular-textt {
+  margin-top: 1px;
+  margin-bottom: 30px;
+  font-size: 22px; /* Slightly larger text */
 }
 
-  /* Title and description styling */
-  .landingpagepremiumelite-plan-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #24b676;
-  }
+/* Premium card badge */
+.most-popular-landingpagepremiumelitecontainer {
+  background: linear-gradient(90deg, #24b676, #238486);
+  border-radius: 35px;
+  padding: 10px 15px;
+  text-align: center;
+  margin: 0 auto 15px;
+  color: #fff;
+  width: 90%;
+  height: 300px;
+  min-height: 800px;
+  box-shadow: 0 4px 8px #24b676;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
 
-  .landingpagepremiumelite-plan-description {
-    font-size: 16px;
-    font-weight: 600;
-    color: #24b676;
-    margin: 10px 0 20px 0;
-  }
 
-  /* Price section styling */
-  .landingpagepremiumelite-price {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 15px 0;
-  }
+/* Title and description styling */
+.landingpagepremiumelite-plan-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #24b676;
+}
 
-  .landingpagepremiumelite-price-amount {
-    font-size: 25px;
-    font-weight: bold;
-    color: #27ae60;
-    margin-left: 30px;
-  }
+.landingpagepremiumelite-plan-description {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24b676;
+  margin: 10px 0 20px 0;
+}
 
-  .landingpagepremiumelite-year {
-    font-size: 17px;
-    font-weight: bold;
-    color: #898989;
-  }
+/* Price section styling */
+.landingpagepremiumelite-price {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 15px 0;
+}
 
-  .landingpagepremiumelite-original-price {
-    flex: 1; /* Allow it to occupy its share of space */
-    font-size: 14px;
-    text-decoration: line-through;
-    color: #51515a;
-    margin-left: 10px;
-    background-color: #fff7d4;
-  }
+.landingpagepremiumelite-price-amount {
+  font-size: 25px;
+  font-weight: bold;
+  color: #27ae60;
+  margin-left: 30px;
+}
 
-  .landingpagepremiumelite-discount {
-    flex: 1; /* Same size as price */
-    font-size: 14px;
-    color: #333;
-    font-weight: 600;
-    margin-left: 30px;
-  }
+.landingpagepremiumelite-year {
+  font-size: 17px;
+  font-weight: bold;
+  color: #898989;
+}
 
-  .landingpagepremiumelitediscountt {
-    font-size: 14px;
-    color: #24b676;
-    font-weight: 600;
-    margin-left: 5px;
-  }
+.landingpagepremiumelite-original-price {
+  flex: 1; /* Allow it to occupy its share of space */
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #51515a;
+  margin-left: 10px;
+  background-color: #fff7d4;
+}
 
-  .landingpagepremiumelitediscounttt {
-    font-size: 14px;
-    color: #333;
-    font-weight: 600;
-    margin-left: 5px;
-  }
+.landingpagepremiumelite-discount {
+  flex: 1; /* Same size as price */
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  margin-left: 30px;
+}
 
-  /* Features section styling */
-  .landingpagepremiumelite-features {
-    display: flex;
-    flex-direction: column; /* Stack features vertically */
-    justify-content: flex-start;
-    gap: 10px;
-    text-align: left;
-    flex: 2; /* Allow features to take more space */
-    font-size: 14px;
-  }
+.landingpagepremiumelitediscountt {
+  font-size: 14px;
+  color: #24b676;
+  font-weight: 600;
+  margin-left: 5px;
+}
 
-  .landingpagepremiumelite-column {
-    margin-top: 70px;
-    /* margin-right: 200px; */
-    margin-left: -210px;
-    width: 130%;
+.landingpagepremiumelitediscounttt {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* Features section styling */
+.landingpagepremiumelite-features {
+  display: flex;
+  flex-direction: column; /* Stack features vertically */
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+  flex: 2; /* Allow features to take more space */
+  font-size: 14px;
+}
+
+.landingpagepremiumelite-column {
+  margin-top: 70px;
+  /* margin-right: 200px; */
+  margin-left: -210px;
+  width: 130%;
 }
 .landingpagepremiumelite-columnn{
-  margin-top: 70px;
-    /* margin-right: 200px; */
-    margin-left: -110px;
-    
+margin-top: 70px;
+  /* margin-right: 200px; */
+  margin-left: -110px;
+  
 }
-  .landingpagepremiumelite-columnn h4 {
-    margin-bottom: 10px;
-    color: #333;
-    font-size: 16px;
-    margin-top: -80px;
-  }
-
-  .landingpagepremiumelite-columnn ul {
-    list-style-type: disc;
-    padding-left: 0;
-    color: #24b676;
-  }
-  .landingpagepremiumelite-column ul li {
-    margin-bottom: 8px;
-    width: 77%;
-    margin-left: 230px;
-    font-size: 12px;
-    color: #333;
-}
-  .landingpagepremiumelite-columnn ul li {
-    margin-bottom: 8px;
-    font-size: 12px;
-    color: #333;
-    width: 80%;
-  }
-
-  .landingpagepremiumelite-columnn li strong {
-    color: #24b676;
-    font-weight: 600;
-  }
-
-  /* Button styling */
-  .landingpagepremiumelite-button {
-    background: #27ae60;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.3s ease;
-  }
-
-  .landingpagepremiumelite-button:hover {
-    background: #1e8449;
-  }
-
-  .landingpagepremiumelite-card h3 {
-    font-size: 20px;
-    color: #24b676;
-    margin-top: -10px;
-    font-weight: 600;
-    border-bottom: 2px solid #898989;
-    width: 100%;
-  }
-
-  .landingpagepremiumelite-card ul {
-    font-size: 14px;
-    color: #333;
-    width: 500px;
+.landingpagepremiumelite-columnn h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 16px;
+  margin-top: -80px;
 }
 
-  .landingpagepremiumelite-button {
-    background: #24b676;
-    color: #fff;
-    padding: 7px 40px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 14px;
-    width: 100%; /* Full width button on small screens */
-    margin-top: 10px;
-    font-weight: 600;
-    margin-left: 0; /* Remove left margin */
-  }
+.landingpagepremiumelite-columnn ul {
+  list-style-type: disc;
+  padding-left: 0;
+  color: #24b676;
+}
+.landingpagepremiumelite-column ul li {
+  margin-bottom: 8px;
+  width: 77%;
+  margin-left: 230px;
+  font-size: 12px;
+  color: #333;
+}
+.landingpagepremiumelite-columnn ul li {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #333;
+  width: 80%;
+}
 
-  .landingpageelite-button {
-    background: #fff;
-    border: 1px solid #24b676;
-    color: #24b676;
-    padding: 7px 40px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 14px;
-    width: 100%; /* Full width button on small screens */
-    margin-top: 50px;
-    font-weight: 600;
-    margin-left: 0; /* Remove left margin */
-  }
+.landingpagepremiumelite-columnn li strong {
+  color: #24b676;
+  font-weight: 600;
+}
 
-  .landingpageelite-button:hover {
-    background: #24b676;
-    color: #ffff;
-  }
+/* Button styling */
+.landingpagepremiumelite-button {
+  background: #27ae60;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
 
-  .landingpagepremiumelite-button:hover {
-    background-color: #1d9d5b;
-  }
+.landingpagepremiumelite-button:hover {
+  background: #1e8449;
+}
 
-  .landingpagepremiumelite-content-row {
+.landingpagepremiumelite-card h3 {
+  font-size: 20px;
+  color: #24b676;
+  margin-top: -10px;
+  font-weight: 600;
+  border-bottom: 2px solid #898989;
+  width: 100%;
+}
+
+.landingpagepremiumelite-card ul {
+  font-size: 14px;
+  color: #333;
+  width: 500px;
+}
+
+.landingpagepremiumelite-button {
+  background: #24b676;
+  color: #fff;
+  padding: 7px 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 14px;
+  width: 50%; /* Full width button on small screens */
+  margin-top: 10px;
+  font-weight: 600;
+  margin-left:140px; /* Remove left margin */
+}
+
+.landingpageelite-button {
+  background: #fff;
+  border: 1px solid #24b676;
+  color: #24b676;
+  padding: 7px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 14px;
+  width: 50%; /* Full width button on small screens */
+  margin-top: 50px;
+  font-weight: 600;
+  margin-left:140px; /* Remove left margin */
+}
+
+.landingpageelite-button:hover {
+  background: #24b676;
+  color: #ffff;
+}
+
+.landingpagepremiumelite-button:hover {
+  background-color: #1d9d5b;
+}
+
+.landingpagepremiumelite-content-row {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  gap: 20px; /* Add spacing between items */
+}
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .landingpagepremiumelite-container {
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    gap: 20px; /* Add spacing between items */
+    flex-direction: column;
+    align-items: center;
+  }
+  .landingpagepremiumelite-plans {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  .landingpagepremiumelite-card,
+  .landingpageelite-card {
+    width: 95%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .most-popular-landingpagepremiumelitecontainer {
+    width: 95%;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
+
+/* Small Mobile Devices (Below 480px) */
 @media (max-width: 480px) {
   .landingpagepremiumelite-container {
     font-family: 'calibri';
@@ -907,7 +1020,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 87%;
-    max-width: 1100px;
+    max-width: 240px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -920,14 +1033,14 @@
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 107%;
+  width: 110%;
   /* max-width: 1900px; */
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
   height: 650px;
   margin-top: -10px;
-  margin-left: -30px;
+  margin-left: 10px;
   margin-right: 0;
 }
   .most-popular-textt {
@@ -944,15 +1057,17 @@
     text-align: center;
     margin: 0 auto 15px;
     color: #fff;
-    width: 112%;
+    width: 120%;
     height: 300px;
     min-height: 800px;
     box-shadow: 0 4px 8px #24b676;
-    margin-left: -30px;
+    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 50px;
 }
-
+.fa-circle-check {
+  margin-left: 10px;
+}
   /* Title and description styling */
   .landingpagepremiumelite-plan-title {
     font-size: 24px;
@@ -1123,7 +1238,7 @@
     transition: background 0.3s ease;
     font-size: 14px;
     width: 100%; /* Full width button on small screens */
-    margin-top: 50px;
+    margin-top: 40px;
     font-weight: 600;
     margin-left: 0; /* Remove left margin */
   }
@@ -1148,5 +1263,13 @@
     margin-left: 230px;
     font-size: 12px;
     color: #333;
+}
+.landingpageelite-card h3 {
+  font-size: 25px;
+  color: #24b676;
+  margin-top: -10px;
+  font-weight: 600;
+  border-bottom: 2px solid #898989;
+  width: 250px;
 }
 }

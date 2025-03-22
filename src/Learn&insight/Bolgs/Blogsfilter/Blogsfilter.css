@@ -200,7 +200,209 @@ font-weight: bold;
   color: white; /* Option text color on hover */
 }
 
+@media (min-width: 1024px) and (max-width: 1279px)  {
+  /* Blog Filter Container */
+.blogFilterContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'calibri';
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+.blogDateall{
+margin-left: 20px;
+font-size: 14px;
+font-weight: bold;
+}
+.blogFilterTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
+/* Dropdown Filters */
+.filterDropdowns {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.filterDropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownLabel {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+/* Blog List Container */
+.blogListall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjust gap between items as needed */
+}
+
+.blogListall.mutualFunds {
+  grid-template-columns: repeat(1, 1fr); /* One card per row */
+  gap: 0; /* Remove gap between cards */
+}
+
+/* Blog Card */
+.blogCardall {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgb(92, 145, 167);
+  transition: transform 0.2s ease-in-out;
+  height: 230px;
+  width: 350px;
+  width: calc(33.33% - 16px); /* Adjust for three items per row */
+  box-sizing: border-box;
+}
+
+.blogCardall:hover {
+  transform: translateY(-5px);
+}
+
+/* Blog Image */
+.blogImageContainerall {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.blogImageall {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  margin-left: 0px;
+  border-top-right-radius: 70px;
+  display: block;
+}
+
+/* Blog Content */
+.blogContentsall {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blogCategoryall {
+  font-size: 14px;
+  color: #333;
+  background-color: #f1f1f1;
+  margin-left: 20px;
+  border-radius: 7px;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blogTitleall {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.blogAuthorall {
+  font-size: 14px;
+  color: #555;
+}
+
+.readArticleLinkall {
+  color: #24b676;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 30px;
+
+}
+.highlightReadArticle {
+
+  color: #24b676;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+.readArticleLinkall:hover{
+  text-decoration: underline;
+}
+
+.highlightReadArticle:hover {
+  text-decoration: underline;
+}
+
+/* No Blogs Message */
+.noBlogsMessageall {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  grid-column: span 3;
+}
+
+.dropdownSelect {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid rgb(189, 186, 186);
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  box-shadow: 0px 4px 10px rgb(178, 176, 176);
+}
+.dropdownOptions {
+  position: absolute;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}  
+.dropdownOption {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: black;
+  width: 140px;
+}
+.dropdownOption:hover {
+  background-color: #24b676; /* Change the background color on hover */
+  color: white; /* Option text color on hover */
+}
+}
 /* Mobile View for 768px */
 @media (max-width: 768px) {
 .blogFilterContainer {

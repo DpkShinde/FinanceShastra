@@ -105,51 +105,93 @@
     margin-bottom: 15px;
   }
   
-  
-  /* Media Query for screens <= 768px (Tablet and Mobile) */
-@media (max-width: 768px) {
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .landingaboutpage-container, .landingaboutpage-darkcontainer {
+    max-width: 1000px;
+    padding: 30px;
+  }
   .landingaboutpage-content {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    flex-direction: row;
+    align-items: center;
   }
-  
+  .landingaboutpage-title, .landingaboutpage-darktitle {
+    font-size: 22px;
+  }
   .landingaboutpage-image img {
-      max-width: 100%;
+    max-width: 450px;
   }
-  
-  .landingaboutpage-title {
-      font-size: 20px;
-  }
-  
   .landingaboutpage-description,
   .landingaboutpage-mission {
-      font-size: 14px;
+    font-size: 13px;
+    width: 90%;
   }
   
-  .landingaboutpage-button {
-      font-size: 16px;
-      padding: 12px 25px;
+}
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .landingaboutpage-container, .landingaboutpage-darkcontainer {
+    flex-direction: column;
+    padding: 25px;
+    text-align: center;
+  }
+  .landingaboutpage-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .landingaboutpage-title, .landingaboutpage-darktitle {
+    font-size: 20px;
+  }
+  .landingaboutpage-description, .landingaboutpage-mission, 
+  .landingaboutpage-darkdescription, .landingaboutpage-darkmission {
+    font-size: 14px;
+    width: 97%;
+  }
+  .landingaboutpage-image img {
+    max-width: 400px;
   }
 }
-
-/* Media Query for screens <= 480px (Mobile) */
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .landingaboutpage-container, .landingaboutpage-darkcontainer {
+    padding: 20px;
+    text-align: center;
+  }
+  .landingaboutpage-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .landingaboutpage-title, .landingaboutpage-darktitle {
+    font-size: 18px;
+  }
+  .landingaboutpage-description, .landingaboutpage-mission, 
+  .landingaboutpage-darkdescription, .landingaboutpage-darkmission {
+    font-size: 13px;
+  }
+  .landingaboutpage-image img {
+    max-width: 100%;
+  }
+}
+/* Small Mobile Devices (Below 480px) */
 @media (max-width: 480px) {
-  .landingaboutpage-container {
-      padding: 20px;
+  .landingaboutpage-container, .landingaboutpage-darkcontainer {
+    padding: 15px;
+    text-align: center;
   }
-
-  .landingaboutpage-title {
-      font-size: 18px;
+  .landingaboutpage-title, .landingaboutpage-darktitle {
+    font-size: 16px;
   }
-  
-  .landingaboutpage-description,
-  .landingaboutpage-mission {
-      font-size: 13px;
+  .landingaboutpage-description, .landingaboutpage-mission, 
+  .landingaboutpage-darkdescription, .landingaboutpage-darkmission {
+    font-size: 12px;
+    width: 98%;
   }
-  
+  .landingaboutpage-image img {
+    max-width: 100%;
+  }
   .landingaboutpage-button {
-      font-size: 15px;
-      padding: 10px 20px;
+    width: 30%;
+    font-size: 12px;
   }
 }

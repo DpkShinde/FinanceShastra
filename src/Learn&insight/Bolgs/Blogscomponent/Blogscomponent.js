@@ -26,7 +26,7 @@ const BlogsComponent = () => {
     "Equity",
     "Gold",
     "PMS",
-    "Demate Account",
+   
   ];
 
   const blogData = [

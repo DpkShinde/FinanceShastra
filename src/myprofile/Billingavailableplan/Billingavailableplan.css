@@ -1,0 +1,27 @@
+.billingSubscriptionpermiumPlan {
+    background: linear-gradient(90deg, #24b676, #238486);
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 0.8; /* Adjusted flex value to reduce width */
+    text-align: center;
+    border: 2px solid #a09d9d66; /* Added border with a color */
+   
+  }
+  .billingSubscriptionpermiumPlanButton {
+    background: #ffff;
+    color: #333;
+    padding: 7px 29px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  .billingSubscriptionpermiumPlanTitle {
+    color: #ffff;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  .billingSubscriptionpermiumPlanpara{
+    color: #ffff;
+  }

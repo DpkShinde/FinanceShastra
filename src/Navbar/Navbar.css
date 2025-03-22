@@ -527,7 +527,7 @@ a span {
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 8px;
-  width: 450px;
+  width: 350px;
   max-height: 500px;
   overflow-y: auto;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -546,7 +546,7 @@ a span {
   margin-bottom: 10px;
   padding: 10px;
   transition: box-shadow 0.3s ease;
-  width: 420px;
+  width: 315px;
   overflow-x: hidden;
 }
 
@@ -740,7 +740,7 @@ a span {
     background-color: #fff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    width: 450px;
+    width: 400px;
     max-height: 500px;
     overflow-y: auto;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -1247,7 +1247,7 @@ a span {
   border-radius: 6px;
   border: 1px solid #333333;
   font-size: 12px;
-  width: 94%; /* Adjust as needed */
+  
   height: 35px;
 }
 
@@ -1596,11 +1596,11 @@ a span {
   }
 
   .footer-nav {
-    display: flex;
-    height: 60px;
-   
-   
-  }
+    display: flex
+;
+    height: 70px;
+    margin-bottom: 0px;
+}
 
   /* Hide search input on mobile */
   .navbar-search {
@@ -1799,206 +1799,224 @@ a span {
 
 /* Additional styles for 480px and below */
 @media (max-width: 480px) {
-  /* Adjust logo size for smaller screens */
+  /* Adjust logo size for very small screens */
   .logo-image {
-    width: 150px; /* Reduce logo size */
+    width: 110px !important; /* Further reduce logo size */
   }
 
   /* Adjust navbar logo size */
   .navbar-logo {
-    font-size: 16px; /* Smaller font size */
+    font-size: 14px; /* Smaller font size */
   }
 
   /* Adjust profile section layout */
   .profile-section span {
-    font-size: 12px; /* Smaller font size */
+    font-size: 10px !important; /* Smaller font size */
   }
+
   .navbar-logo,
   .navbar-icons,
   .profile-section {
     display: flex;
   }
+
   /* Adjust navbar icons */
   .navbar-icons {
-    font-size: 14px; /* Smaller icons */
+    font-size: 12px; /* Smaller icons */
   }
+
   .subscritebutton {
-    padding: 6px 12px; /* Further reduce padding */
-    font-size: 12px; /* Further reduce font size */
-   
-    margin-top: 10px; /* Adjust spacing */
-    box-shadow: 0 2px 4px red; /* Subtle shadow for very small screens */
+    padding: 4px 10px; /* Further reduce padding */
+    font-size: 10px; /* Further reduce font size */
+    margin-top: 8px; /* Adjust spacing */
+    box-shadow: 0 1px 3px red; /* Subtle shadow */
   }
+
   /* Stock dropdown menu adjustments */
   .stockmenu {
-    width: 800%;
-    height: 200vh;
-    left: 0;
-    transform: translateY(-30%);
-    gap: 5px;
-    left: -75px;
-}
-  .mutualstockmenu {
     width: 600%;
-    height: 110vh;
-    gap: 10px;
-    transform: translateY(-50%);
-    /* margin-right: 100px; */
-    left: -130px;
-}
+    height: 150vh;
+    left: -50px;
+    transform: translateY(-25%);
+    gap: 4px;
+  }
+
+  .mutualstockmenu {
+    width: 500%;
+    height: 100vh;
+    gap: 8px;
+    transform: translateY(-45%);
+    left: -100px;
+  }
+
   /* Dropdown menu adjustments */
   .dropdown-menu li {
-    font-size: 12px; /* Smaller font size for dropdown */
-    padding: 8px 10px; /* Reduce padding */
+    font-size: 10px; /* Smaller font size for dropdown */
+    padding: 6px 8px; /* Reduce padding */
   }
 
   /* Adjust button and icon sizes */
   .dropdown-icon {
-    font-size: 18px; /* Smaller icon size */
+    font-size: 16px; /* Smaller icon size */
   }
 
   .chevron-icon {
-    font-size: 12px; /* Smaller chevron icon */
+    font-size: 10px; /* Smaller chevron icon */
   }
 
   /* Adjust footer nav layout */
   .footer-nav {
-    font-size: 12px;
-    margin-left: 0px;
-    height: 60px;
+    font-size: 10px;
+    height: 68px;
+    margin-bottom: 0px;
 }
+
   .footer-dropdown {
-    width: 95%; /* Adjust width for smaller screens */
-    height: auto; /* Dynamic height based on content */
-    left: 2.5%; /* Center horizontally */
-    top: 35px; /* Position below the button */
+    width: 90%; /* Adjust width for smaller screens */
+    left: 5%; /* Center horizontally */
+    top: 30px; /* Position below the button */
   }
 
   .mutualfunds-dropdown .dropdown-item {
-    font-size: 12px; /* Even smaller font for smaller screens */
-    padding: 6px; /* Adjust padding */
+    font-size: 10px; /* Smaller font for smaller screens */
+    padding: 5px; /* Adjust padding */
   }
+
   .footer-icon {
-    margin-right: 8px;
-    font-size: 23px;
-    vertical-align: middle;
-    color: #24b676;
+    margin-right: 6px;
+    font-size: 20px;
   }
-  
 
-
-
-
-
-
-
-
-
-  
+  /* Notification section */
   .notificationall {
-    position: relative;
-    display: inline-block;
     font-family: 'calibri';
   }
-  
-  .icon.bell-icon {
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  .icon.bell-icon:hover {
-    color: #24b676;
-  }
-  
-  .dropdown-content {
-    position: absolute;
 
-    background-color: #fff;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    width: 350px;
-    max-height: 500px;
-    overflow-y: auto;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    margin-top: 10px;
-    padding: 15px;
-    margin-left: 85px;
+  .icon.bell-icon {
+    font-size: 22px;
   }
-  
+
+  .dropdown-content {
+    width: 300px;
+    max-height: 400px;
+    margin-left: 65px;
+    padding: 12px;
+  }
+
   .notification-card {
-    display: flex;
-    flex-direction: column;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    padding: 10px;
-    transition: box-shadow 0.3s ease;
-    width: 330px;
+    width: 280px;
   }
-  
-  .notification-card:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .notification-header {
-    display: flex;
-  
-  }
-  .notificationall-header{
-    display: flex;
-  }
-  
+
   .notification-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+    width: 40px;
+    height: 40px;
   }
-  
+
   .dotnotifyicon {
-    font-size: 30px;
-    color:#24b676;
-    margin-left: auto;
-    margin-top: 10px;
+    font-size: 26px;
   }
-  
-  .notification-details {
-    margin-top: 10px;
-  }
-  
+
   .notification-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 5px 0;
-  }
-  
-  .notification-date {
-    font-size: 15px;
-    color: #777;
-    margin: 0;
-  }
-  
-  .view-all {
-    display: block;
-    width: 100%;
-    padding: 8px 12px;
-    background-color: white;
-    color: black;
-    text-decoration: underline; /* Adds underline to the text */
-    border: none;
-    border-radius: 5px;
-    text-align: center;
     font-size: 14px;
-    margin-top: 10px;
-    cursor: pointer;
+  }
+
+  .notification-date {
+    font-size: 13px;
+  }
+
+  .view-all {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  span.willamname {
+    font-size: 9px !important;
+    width: 30px;
+
+   
+  }
 }
 
-  
+/* Standard Desktop Screens (1280px - 1440px) */
+@media (max-width: 1440px) {
+  .navbar-links {
+    gap: 30px;
+  }
+  .stockmenu,
+  .mutualstockmenu {
+    width: 500px;
+  }
+  .body {
+    overflow-x: hidden;
+  }
+}
+ 
  
   
-  
-}
 
+@media (max-width: 1024px) {
+  /* Adjust navbar layout */
+  .navbar {
+    padding: 8px 10px; /* Reduce padding slightly */
+  }
+
+  .navbar-links {
+    gap: 8px; /* Reduce spacing further */
+    font-size: 11px;
+    margin-left: -10px;
+  }
+
+  .navbar-links a {
+    font-size: 12px; /* Slightly smaller font */
+  }
+
+  .logo-image {
+    width: 160px; /* Reduce logo size more */
+  }
+
+  /* Adjust dropdown menu width */
+  .stockmenu,
+  .mutualstockmenu {
+    width: 400px; /* Reduce width */
+    padding: 15px;
+  }
+
+  /* Adjust notification dropdown */
+  .dropdown-contentnoti {
+    left: -220px;
+    width: 350px;
+  }
+
+  .notification-card {
+    width: 340px;
+  }
+
+  /* Adjust search bar */
+  .navbar-search input {
+    width: 160px; /* Reduce input width */
+    font-size: 12px;
+  }
+  .navbar-search input::placeholder {
+    font-size: 10px; /* Reduce placeholder font size */
+  }
+  .subscritebutton {
+    padding: 6px 12px;
+    font-size: 13px;
+    width: 45px;
+  }
+
+  /* Adjust icons */
+  .navbar-icons {
+    gap: 12px; /* Reduce icon spacing */
+  }
+
+  .chevron-icon {
+    margin-left: 4px;
+    color: #24b676;
+    font-size: 11px; /* Reduce icon size */
+    transition: transform 0.3s ease;
+  }
+  span.willamname {
+    font-size: 14px !important;
+    margin-right: 5px !important;
+  }
+}

@@ -1,9 +1,8 @@
-
-
 import { screenerStockListData } from "../../Stocks/screenerStockListData";
 import { PiCaretUpDownFill } from "react-icons/pi"; // Import the icon
 import { useState, useEffect,useMemo } from "react";
-import {icons} from '../../Stocks/icons'
+import { API_BASE_URL } from "../../config";
+import Cookies from 'js-cookie'
 
 import { FaSearch } from "react-icons/fa"; // Import FaSearch for the search bar
 import { IoLockClosedOutline } from "react-icons/io5";
@@ -95,12 +94,15 @@ const toggleDropdown = (key) => {
        };
      
        //  Debugging Effect: Confirm re-rendering when `currentPage` updates
-       const API_BASE_URL= 'https://newbackend-repo.onrender.com'
      useEffect(()=>{
        const fetchfun= async ()=>{
          const url= `${API_BASE_URL}/stocks/nifty100`
+         const options= {
+          method: "GET",
+          Authorization: `Bearer ${Cookies.get('jwtToken')}`
+         }
          console.log('url:', url)
-         const response= await fetch(url)
+         const response= await fetch(url, options)
          if (response.ok=== true){
            const data= await response.json()
            const formattedData= data.map(each =>({
@@ -116,7 +118,7 @@ const toggleDropdown = (key) => {
              "divYield": each.Div_yield,
              "sector": each.Sector,
              "url": '/stockhandle',
-             "icon": icons.find(eachIcon => eachIcon.name === (each.Symbol).toLowerCase()).icon
+             "icon": each.icons
            }))
            //console.log("icon: ",icons.filter(eachicon => ( eachicon.icon=== 'tcs')))
            
@@ -1277,9 +1279,9 @@ const perfOptions = [
         className="index-optionsstocks" // Added class name to the container of options
        
       >
-        {filteredIndexes.map((index) => (
+        {filteredIndexes.map((index,idx) => (
           <label
-            key={index}
+            key={`${index}-${idx}`}
             className="index-optionscreener" // Added class name to each option
            
           >

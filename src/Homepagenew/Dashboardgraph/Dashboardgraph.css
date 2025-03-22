@@ -1,9 +1,13 @@
 .headerdashboardmain {
     margin-left: 170px;
 }
-
+.dataquatallniftydata{
+    display: flex;
+    margin-left: 150px;
+    gap: 55px;
+}
 .portfoliomutual-containerrniftydashboard {
-    height: 450px;
+    height: 500px;
     font-family: 'calibri';
     padding: 20px;
     color: #333;
@@ -34,6 +38,7 @@
 .allheadd {
     margin-top: -70px;
     font-family: 'calibri';
+    width: 100%;
 }
 
 .headerdashboardmain {
@@ -52,7 +57,7 @@
     font-family: 'calibri';
     height: 50px;
     margin-top: 210px;
-    margin-left: -10px;
+   
 }
 
 .homepagenewdata-title {
@@ -278,6 +283,24 @@
     padding: 10px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
 }
+@media(min-width:1536px){
+    .body{
+        overflow-x: hidden;
+    }
+ 
+   
+}
+@media(min-width:1280px){
+    
+
+  
+    
+}
+@media(min-width:1024px){
+
+}
+
+
 
 @media (max-width: 768px) {
     .headerdashboardmain {
@@ -410,9 +433,9 @@
         padding: 20px;
         padding-bottom: 80px;
         color: #333;
-        width: 280px;
+        width: auto;
         margin-top: 5px;
-        margin-left: 15px;
+    
         margin-bottom: 5px;
         background-color: #f9f9f9;
         border: 1px solid #ddd;
@@ -473,7 +496,7 @@
     .headernifty50000 {
         margin-left: 10px;
         font-size: 14px;
-        margin-top: 200px;
+        margin-top: 170px;
     }
 
     .homepagenewdata-card {
@@ -482,11 +505,11 @@
         padding: 16px;
         background-color: #f9fbfc;
         box-shadow: 0px 4px 6px rgba(217, 212, 212, 0.925);
-        width: 220px;
+        width: auto;
         text-align: center;
         font-family: 'calibri';
         height: 30px;
-        margin-top: 260px;
+        margin-top: 240px;
         margin-left: -270px;
         margin-bottom: 10px;
     }
@@ -509,7 +532,7 @@
     }
 
     .portfoliomutual-card {
-        width: 300px;
+        width: auto;
         height: 290px;
         margin-left: -30px;
     }
@@ -547,4 +570,25 @@
         padding: 4px 10px;
         font-size: 10px;
     }
+    
+.datadisstockdashhh {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    /* Ensures the main content covers full viewport height */
+}
+.main-contentover {
+    flex: 1;
+    margin-left: 1px;
+    /* Same as sidebar width */
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+}
+.dataquatallniftydata{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    gap: 15px;
+}
 }

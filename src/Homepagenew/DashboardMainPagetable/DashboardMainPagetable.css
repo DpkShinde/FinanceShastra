@@ -44,6 +44,10 @@ body{
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    outline: none !important;  /* Removes the default focus outline */
+    border: none;
+    box-shadow: none !important; /* Removes any focus shadow */
+    margin-top: 10px;
   }
   
   .DashboardMainPagetable-tab.active {
@@ -52,7 +56,7 @@ body{
   }
   
   .DashboardMainPagetable-tab:hover {
-    background: #179961;
+    background: #24b676;
     color: white;
   }
   
@@ -570,9 +574,10 @@ display: none;
       padding: 10px; /* Reduced padding for smaller screens */
       font-family: 'calibri';
       background: white;
-      width: 130%; /* Full width for mobile screens */
-      margin-left: 0px; /* No left margin for mobile */
+     
+  
       /* Adjust alignment for smaller screens */
+      align-items: center;
 
       box-sizing: border-box; /* Include padding in width calculation */
     }
@@ -582,7 +587,7 @@ display: none;
 
 
     .DashboardMainPagetable-tab {
-      padding: 7px 7px;
+      padding: 10px 7px;
       background: #e0e0e0;
       border: none;
       border-radius: 5px;
@@ -590,33 +595,37 @@ display: none;
       transition: background 0.3s ease;
       flex-shrink: 0; /* Prevent shrinking */
       white-space: nowrap; /* Keep tabs in a single line */
+      margin-bottom: 3px;
     }
     
   
   .DashboardMainPagetable-tab:hover {
-      background: #47e8a2;
+      background: #24b676;
       color: white; /* Slightly darker shade on hover */
   }
   
   .DashboardMainPagetable-cards {
     display: flex
 ;
+width:300px;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
-    margin-left: 20px;
+   align-items: center;
+   margin-left: 40px;
+   
     
   
 }
 .DashboardMainPagetable-table-container {
   overflow-x: auto;
   margin: 20px;
-  width: 50%;
+
   margin-left: -10px;
 }
 .DashboardMainPagetable-tableeee {
-  width: 100%;
-  border-collapse: collapse;
+
+
   margin-top: 30px;
 }
 
@@ -749,7 +758,7 @@ padding: 10px;
 .DashboardMainPagetable-table-container {
   overflow: auto; /* Enables both x and y axis scroll */
   margin-bottom: 100px;
-  width: 250px;/* Ensures it takes full width of the container */
+  width:135%;/* Ensures it takes full width of the container */
   height: 400px; /* Set a fixed height for the table container */
   margin-top: 10px;
   margin-left: -10px;
@@ -780,9 +789,11 @@ padding: 10px;
 
 .pagination-containerrsector {
   display: flex;
-  gap: 80px;
-  align-items: center;
-  margin: 20px 0;
+ 
+gap: 50px;
+ 
+  
+  
 }
 .FooterForAllPage-footerrr{
   display: none;
@@ -800,28 +811,26 @@ padding: 10px;
         box-sizing: border-box;
         scrollbar-width: thick;
     }
-    .DashboardMainPagetable-header::-webkit-scrollbar-thumb {
-      background-color: #ccc; /* Customize scrollbar thumb color */
-      border-radius: 4px; /* Rounded corners for scrollbar thumb */
-    }
-    
-    .DashboardMainPagetable-header::-webkit-scrollbar-track {
-      background-color: #f9f9f9; /* Scrollbar track background color */
-    }
+  
     .DashboardMainPagetable-headerrindexx{
       display: flex
     ;
-            gap: 2px;
-            margin-bottom: 30px;
-            margin-top: -200px;
+            gap: 5px;
+            margin-bottom: 100px;
+  margin-top: 1px;
             margin-left: 15px;
             overflow-x: auto;
             white-space: nowrap;
-            max-width: 87%;
-            box-sizing: border-box;
+    
+      
             scrollbar-width: thick;
         }
         .DashboardMainPagetable-tab-active{
           padding: 7px 7px;
+        }
+        .DashboardMainPagetable-tab:focus,
+        .DashboardMainPagetable-tab:active {
+            outline: none !important;
+            box-shadow: none !important;
         }
   }

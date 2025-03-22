@@ -67,56 +67,80 @@
     color: #ffff;
     margin-bottom: 20px;
   }
-  /* Tablet View - max-width: 768px */
-@media (max-width: 768px) {
+ /* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
   .landingpageadvantage-grid {
-      grid-template-columns: repeat(2, 1fr); /* Reduce columns to 2 */
-      gap: 15px;
-      width: 100%; /* Adjust to fit screen */
-      margin-left: 0; /* Remove extra margin */
-  }
-
-  .landingpageadvantage-card {
-      padding: 10px;
-  }
-
-  .landingpageadvantage-icon {
-      width: 60px; /* Reduce icon size */
-      height: 60px;
-  }
-
-  .landingpageadvantage-text {
-      font-size: 14px; /* Reduce font size */
-  }
-
-  .landingpageadvantage-title {
-      font-size: 20px; /* Adjust title size for tablets */
+      width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Mobile View - max-width: 480px */
-@media (max-width: 480px) {
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
   .landingpageadvantage-grid {
-      
-      gap: 20px; /* Add spacing between cards */
-      width: 100%; /* Adjust to fit screen */
-      margin-left: 0; /* Remove extra margin */
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: repeat(3, 1fr);
   }
+}
 
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .landingpageadvantage-grid {
+      width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .landingpageadvantage-grid {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 50px;
+}
+  .landingpageadvantage-title, 
+  .landingpageadvantagedarktitle {
+      font-size: 20px;
+  }
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .landingpageadvantage-grid {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .landingpageadvantage-title, 
+  .landingpageadvantagedarktitle {
+      font-size: 18px;
+  }
   .landingpageadvantage-card {
-      padding: 15px;
+      width: 90%;
   }
+}
 
+/* Small Mobile Devices (Below 480px) */
+@media (max-width: 480px) {
+  .landingpageadvantage-title, 
+  .landingpageadvantagedarktitle {
+      font-size: 16px;
+  }
+  .landingpageadvantage-card {
+      width: 100%;
+  }
   .landingpageadvantage-icon {
-      width: 50px; /* Further reduce icon size */
-      height: 50px;
+      width: 60px;
+      height: 60px;
   }
-
   .landingpageadvantage-text {
-      font-size: 14px; /* Further reduce font size */
-  }
-
-  .landingpageadvantage-title {
-      font-size: 20px; /* Adjust title size for smaller screens */
+      font-size: 14px;
   }
 }
