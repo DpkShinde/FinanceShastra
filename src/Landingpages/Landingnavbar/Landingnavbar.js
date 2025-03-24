@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useContext,
 } from "react";
+import {jwtDecode} from "jwt-decode";
 import { DarkModeContext } from "../../Portfoilo/context/DarkModeContext";
 import { FaUserCircle, FaSearch, FaChevronDown, FaUser } from "react-icons/fa";
 import { VscBell } from "react-icons/vsc";
@@ -358,15 +359,10 @@ const Landingnavbar = () => {
   );
 
   const onLogout= ()=>{
-    console.log('logout was clicked')
     localStorage.clear()
-    console.log('localstorage cleared')
     Cookies.remove('jwtToken', { path: '/' })
-    console.log('cookies cleared')
     setIsLogedin(false)
-    console.log("logedin false set")
     navigate('/login')
-    console.log("navigating to /login page")
 
     
   }
@@ -375,8 +371,27 @@ const Landingnavbar = () => {
   // Get all data on component mount
   useEffect(() => {
     const token = Cookies.get("jwtToken");
+    const isTokenExpired = (token) => {
+      if (!token) return true; // If no token, consider it expired
+    
+      try {
+        const { exp } = jwtDecode(token);
+        if (!exp) return true; // If no expiration time, consider expired
+    
+        return exp * 1000 < Date.now(); // Compare expiry time with current time
+      } catch (error) {
+        return true; // If token is invalid, consider it expired
+      }
+    };
     if (token) {
-      setIsLogedin(true);
+      if (isTokenExpired(token)){
+        onLogout()
+        setIsLogedin(false);
+      }else{
+        setIsLogedin(true);
+      }
+      
+      //setIsLogedin(true);
     }
     getAllData();
   }, []);

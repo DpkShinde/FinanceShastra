@@ -15,6 +15,7 @@ const UserDetailsupdate = () => {
   const location = useLocation();
  
   const {userEmail} = useContext(UserProfileContext)
+  console.log('email from userupdated page:', userEmail)
   const {token}= useContext(UserProfileContext)
 
   // Initial state (can be overwritten by updated data passed through location.state)
@@ -68,7 +69,7 @@ const UserDetailsupdate = () => {
     
     if (!Cookies.get("jwtToken")){
       setShowPopupforLogin(true)
-    }else{
+    }else if(token){
       //const localStore= localStorage.getItem("user")
       //const localtoken= localStorage.getItem('token')
       //console.log('token: ', localtoken)

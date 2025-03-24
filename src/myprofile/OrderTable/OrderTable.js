@@ -25,7 +25,6 @@ import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
 
 
 const OrderTable = () => {
-  const {token}= useContext(UserProfileContext)
   const [isLogin, setislogin] = useState(true);
   const [ordersdatastate, setordersData] = useState([]);
   useEffect(() => {
@@ -38,12 +37,12 @@ const OrderTable = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${localtoken}`,
         },
       };
       const url = `${API_BASE_URL}/orders`;
-      const urllocal = "http://localhost:3000/orders";
-      const response = await fetch(urllocal, options);
+      // const urllocal = "http://localhost:3000/orders";
+      const response = await fetch(url, options);
       console.log("orders response: ", response);
       if (response.ok === true) {
         const data = await response.json();
