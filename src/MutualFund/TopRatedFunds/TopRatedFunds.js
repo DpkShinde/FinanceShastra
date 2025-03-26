@@ -68,9 +68,10 @@ const TopRatedFunds = () => {
 
     return (
       <span className="sort-icons">
-        <FaCaretUp className={isAscending ? "active" : "inactive"} />
-        <FaCaretDown className={isDescending ? "active" : "inactive"} />
-      </span>
+      <FaCaretUp className={`icon-up ${isAscending ? "active" : "inactive"}`} />
+      <FaCaretDown className={`icon-down ${isDescending ? "active" : "inactive"}`} />
+    </span>
+    
     );
   };
 
@@ -106,7 +107,7 @@ const TopRatedFunds = () => {
         </p>
 
         {loading ? (
-          <p className="loading-text">Loading funds...</p>
+          <div className="spinner"></div>
         ) : error ? (
           <p className="error-text">Error: {error}</p>
         ) : (

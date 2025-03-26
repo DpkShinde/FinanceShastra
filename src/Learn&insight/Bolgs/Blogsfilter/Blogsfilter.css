@@ -209,6 +209,8 @@ font-weight: bold;
   font-family: 'calibri';
   margin-top: 80px;
   margin-bottom: 100px;
+  overflow-x: hidden;
+  margin-left: 200px;
 }
 .blogDateall{
 margin-left: 20px;
@@ -247,10 +249,11 @@ font-weight: bold;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  padding: 10px;
+  padding: 0px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px; /* Adjust gap between items as needed */
+
 }
 
 .blogListall.mutualFunds {
@@ -340,8 +343,8 @@ font-weight: bold;
   font-size: 14px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 50px;
-  margin-left: 30px;
+  margin-top: 30px;
+  margin-left: 10px;
 
 }
 .highlightReadArticle {
@@ -350,8 +353,8 @@ font-weight: bold;
   font-size: 14px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 60px;
-  margin-left: 30px;
+  margin-top: 40px;
+  margin-left: 10px;
 }
 .readArticleLinkall:hover{
   text-decoration: underline;

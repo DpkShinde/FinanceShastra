@@ -18,7 +18,7 @@ const Goldmarket = () => {
          the ETFs have much lower expenses as compared to physical gold investments
 <h2 className='etfh2'>LIST OF GOLD ETFS</h2>
       </p>
-      <table className="etf-tablee">
+      <table className="etf-tableegold">
         <thead>
           <tr>
             <th>Issuer</th>

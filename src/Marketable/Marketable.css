@@ -69,7 +69,7 @@
 @media screen and (max-width: 768px) {
   .etcontainerrr {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 80px;
 }
 
   .etf-title {
@@ -84,8 +84,8 @@
  
   .etf-tablee {
     display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+
+    white-space: wrap;
 }
 
 
@@ -102,28 +102,41 @@
 }
 
 /* Responsive Styles for Mobile (max-width: 480px) */
-@media screen and (max-width: 480px) {
+@media(max-width: 480px) {
   .etcontainerrr {
     width: 100%;
     margin-top: 30px;
+
 }
   .etf-title {
     font-size: 20px; /* Reduce title size for small devices */
     margin-top: 50px;
+margin-left: -100px;
   }
 
   .etf-description {
     font-size: 13px; /* Further reduce description text size */
-    text-align: left; /* Align text to left for readability */
+    margin-left: 10px;
+    max-width: 370px;
+    width: 348px;
   }
 
  
   .etf-tablee {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+    white-space: wrap;
+  margin-left: 10px;
     margin-bottom: 20px;
+    max-width: 74%;
+    overflow-y: auto;
+    height: 400px;
+
+}
+.etf-tablee thead th {
+
+  position: sticky;
+  top: -1px;
 }
 
 .etf-tablee::-webkit-scrollbar {
@@ -151,4 +164,38 @@
     margin-left: -25px;
     margin-top: 50px;
   }
+}
+
+@media (max-width: 375px) {
+  .etf-description {
+    font-size: 11px !important; /* 480px से छोटा कर दिया और !important लगाया */
+  width: 300px;
+    margin-left: 5px;
+  }
+}
+
+
+@media (max-width: 320px) {
+   
+  .etf-tablee {
+    display: block;
+    overflow-x: auto;
+    white-space: wrap;
+  margin-left: 10px;
+    margin-bottom: 20px;
+    width: 55%;
+    overflow-y: auto;
+    height: 400px;
+
+}
+.etf-description {
+  font-size: 11px !important; /* 480px से छोटा कर दिया और !important लगाया */
+width: 300px;
+  margin-left: 5px;
+}
+.etf-title {
+  font-size: 20px; /* Reduce title size for small devices */
+  margin-top: 50px;
+margin-left: -180px;
+}
 }

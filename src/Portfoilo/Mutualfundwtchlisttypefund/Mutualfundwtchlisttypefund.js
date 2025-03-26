@@ -321,7 +321,7 @@ const MutualWatchtypefundlist= ({children}) => {
                     <td td style={{ color: parseFloat(stock.threemonths) >= 0 ? "green" : "red" }}>{stock.threemonths}</td>
                     <td td style={{ color: parseFloat(stock.threemonths) >= 0 ? "green" : "red" }}>{stock.fiveyears}</td>
                     <td td style={{ color: parseFloat(stock.threemonths) >= 0 ? "green" : "red" }}>{stock.tenyears}</td>
-                    <td></td>
+                  
                       </tr>
                     ))}
                   </React.Fragment>

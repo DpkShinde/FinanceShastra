@@ -11,14 +11,15 @@
 }
 .pagination-containercalender {
   display: flex;
-  gap: 780px;
+  gap: 680px;
   align-items: center;
   margin: 20px 0;
   margin-left: 23px;
 }
 .DashboardMainPagetable-tablee {
-    width: 98%;
+    width: 89%;
     border-collapse: collapse;
+    margin-top: 30px;
 }
 
 .DashboardMainPagetable-tablee th,
@@ -105,8 +106,31 @@ width: 950px;
     height: 35px;
     box-shadow: 0px 4px 6px rgba(176, 175, 175, 0.886); /* Subtle shadow for depth */
   }
- 
 
+
+
+  .DashboardMainPagetable-tablee {
+   
+    border-collapse: collapse;
+    margin-top: 30px;
+} 
+.DashboardMainPagetable-table-containerrrrr{
+width: 100%;
+}
+
+.DashboardMainPagetable-table-container {
+  overflow-x: auto;
+  margin: 20px;
+  width: 90%;
+}
+@media (min-width: 1280px) and (max-width: 1535px){
+  
+.DashboardMainPagetable-table-container {
+  overflow-x: auto;
+  margin: 20px;
+  width: 100%;
+}
+}
     @media (max-width: 768px) {
   
   .dateinsighttt {
@@ -122,6 +146,10 @@ width: 950px;
     box-shadow: 0 0 0 2px #efeeee; /* Blue outline when focused */
   }
   
+  .DashboardMainPagetable-table-container {
+    overflow-x: auto;
+    margin: 10px;
+}
     .DashboardMainPagetable-headerr{
       display: flex;
       gap: 10px;
@@ -148,8 +176,13 @@ width: 950px;
   }
   
   .DashboardMainPagetable-tablee {
-    width: 100%;
+    width: 97%;
     border-collapse: collapse;
+    margin-top: 40px;
+ 
+}
+.DashboardMainPagetable-table-containercalen{
+  width: 115%;
 }
 .pagination-containercalender {
   display: flex;

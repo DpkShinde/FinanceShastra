@@ -187,7 +187,7 @@ const Homestockanalyst = () => {
 
         {/* Table */}
         
-<div className="DashboardMainPagetable-table-containerrrrr">
+<div className="DashboardMainPagetable-table-container">
 <table className="DashboardMainPagetable-tableeee">
           <thead>
   <tr>

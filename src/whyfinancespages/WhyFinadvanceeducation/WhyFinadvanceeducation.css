@@ -8,26 +8,87 @@
    
     font-family: 'calibri';
     width: 60%;
-    margin-left: 300px;
+    margin-left: 350px !important;
     margin-top: 30px;
 }
-@media (max-width: 768px) {
+body {
+    overflow-x: hidden;
+}
+
+/* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
     .whyfinpersonalreal-containerr {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    
+}
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    .whyfinpersonalreal-containerr {
+        width: 55%;
+        margin-left: 300px !important;
+        margin-right: auto;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .whyfinpersonalreal-containerr {
+        width: 60%;
+        margin-left: auto !important;
+        margin-right: auto;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .whyfinpersonalreal-containerr {
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        margin-left: 80px !important;
+        margin-right: auto;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+    .whyfinpersonalreal-containerr {
+        width: 90%;
         flex-direction: column;
         align-items: center;
-        width: 90%;
-        margin-left: auto;
+        margin-left: auto !important;
         margin-right: auto;
     }
 }
 
-/* Mobile View (Max Width: 480px) */
+/* Small Mobile Devices (Below 480px) */
 @media (max-width: 480px) {
     .whyfinpersonalreal-containerr {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+        width: 95% ;
         padding: 10px;
-        margin-left: 0;
+        gap: 10px;
     }
-}  
+    body {
+        overflow-x: hidden;
+    }
+    
+}

@@ -8,7 +8,7 @@
    
     font-family: 'calibri';
     width: 60%;
-    margin-left: 300px;
+    margin-left: 310px;
   }
   
   .whyfinrealmarket-card {
@@ -67,82 +67,104 @@
   .whyfinrealmarket-img{
     margin-top: 40px;
   }
-  /* Tablet View (Max Width: 768px) */
-@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+}
+
+ /* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+  .whyfinpersonalreal-container {
+      width: 50%;
+      margin-left: 350px;
+  }
+  body {
+    overflow-x: hidden;
+}
+
+}
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .whyfinpersonalreal-container {
+      width: 55%;
+      margin-left: 300px;
+  }
+  body {
+    overflow-x: hidden;
+}
+
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .whyfinpersonalreal-container {
+      width: 60%;
+      margin-left: 200px;
+  }
+  body {
+    overflow-x: hidden;
+}
+
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .whyfinpersonalreal-container {
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin-left: 80px;
+    margin-right: auto;
+}
+  .whyfinrealmarket-card,
+  .whyfinpersonalreal-card {
+      width: 90%;
+  }
+  
+  body {
+    overflow-x: hidden;
+}
+
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
   .whyfinpersonalreal-container {
       flex-direction: column;
-      align-items: center;
       width: 90%;
       margin-left: auto;
       margin-right: auto;
   }
-
-  .whyfinrealmarket-card, .whyfinpersonalreal-card {
-    width: 101%;
-    padding: 15px;
-    min-height: auto;
-    height: auto;
-    box-shadow: none;
-    border: 1px solid #cecece;
-    margin-left: -18px;
+  .whyfinrealmarket-card,
+  .whyfinpersonalreal-card {
+      width: 100%;
+  }
+  body {
+    overflow-x: hidden;
 }
 
+}
+
+/* Small Mobile Devices (Below 480px) */
+@media (max-width: 480px) {
+  .whyfinpersonalreal-container {
+      width: 100%;
+  }
+  .whyfinrealmarket-card,
+  .whyfinpersonalreal-card {
+      width: 75%;
+      padding: 15px;
+     
+  }
+  .whyfinrealmarket-card{
+    margin-top: 20px;
+  }
   .whyfinpersonalreal-title,
   .whyfinrealmarket-title {
       font-size: 18px;
-      text-align: left;
-      margin-left: 12px;
   }
-
-  .whyfinpersonalreal-text,
-  .whyfinrealmarket-text {
-      font-size: 14px;
-      text-align: left;
-      margin-left: 13px;
-  }
-
-  .whyfinpersonalreal-img,
-  .whyfinrealmarket-img {
-      width: 60%;
-      margin-top: 20px;
-  }
+  body {
+    overflow-x: hidden;
 }
 
-/* Mobile View (Max Width: 480px) */
-@media (max-width: 480px) {
-  .whyfinpersonalreal-container {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
-      margin-left: 0;
-  }
-
-  .whyfinrealmarket-card, .whyfinpersonalreal-card {
-    width: 91%;
-    padding: 15px;
-    min-height: auto;
-    height: auto;
-    box-shadow: none;
-    border: 1px solid #cecece;
-    margin-left: -10px;
-}
-
-.whyfinpersonalreal-title, .whyfinrealmarket-title {
-  font-size: 16px;
-  text-align: left;
-}
-
-  .whyfinpersonalreal-text,
-  .whyfinrealmarket-text {
-      font-size: 13px;
-      text-align: left;
-      margin-left: 5px;
-  }
-
-  .whyfinpersonalreal-img,
-  .whyfinrealmarket-img {
-      width: 65%;
-      margin-top: 10px;
-  }
 }

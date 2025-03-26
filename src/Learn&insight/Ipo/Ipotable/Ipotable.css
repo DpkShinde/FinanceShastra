@@ -36,6 +36,7 @@
   
   .ipopms-list {
     margin-left: 70px;
+    width: 80%;
   }
   
   .ipotable th,
@@ -74,6 +75,7 @@
     padding-bottom: 20px;
     font-size: 15px;
     margin-left: 70px;
+    width: 85%;
   }
   
   .ipotable td {
@@ -189,6 +191,6 @@
   }
   .ipopms-list {
     margin-left: -30px;
-    width: 111%;
+    width: 91%;
 }
 }

@@ -281,7 +281,7 @@ function Register() {
                 {" "}
                 and
               </a>
-              <a href="#" className="registerContglblue-text">
+              <a href="privacyPolicypage" className="registerContglblue-text">
                 {" "}
                 Privacy Policy
               </a>

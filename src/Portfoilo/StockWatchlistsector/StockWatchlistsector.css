@@ -95,7 +95,7 @@ height: 170px;
   .stock-tablewatchlist td {
    
     padding: 8px;
-    text-align: center;
+    text-align: left;
   }
   
   .stock-tablewatchlist th {
@@ -106,7 +106,7 @@ height: 170px;
   .stock-tablewatchlist tr:nth-child(even) {
     background-color: #f9f9f9;
   }
-  
+
   .stock-tablewatchlist tr:hover {
     background-color: #f1f1f1;
   }
@@ -323,6 +323,47 @@ height: 170px;
     margin: 10px 0;
     gap: 550px;
   }
+  @media (min-width: 2000px) {
+    .top-sectionswatchlistsectorr{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 1240px;
+    }
+ 
+    .top-sectionswatchlistmutual{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 1230px;
+    }
+    .content-sectorcontainerwatchlist {
+      margin-top: 50px;
+      padding: 10px;
+      box-shadow: 0 3px 5px rgb(127, 171, 225);;
+      border: 1px solid rgb(127, 171, 225);
+      border-radius: 8px;
+  
+      width:250%;
+    
+    }
+    .top-sectionswatchlistsector{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 1250px;
+    }
+    .top-sectionswatchlist{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 1220px;
+    }
+    .stock-tablewatchlist th, .stock-tablewatchlist td {
+      padding: 8px;
+      text-align: left;
+  }
+  }
   @media (max-width: 768px) {
     .stocksector-watchlist {
       margin: 10px;
@@ -353,7 +394,7 @@ height: 170px;
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 100px;
+      gap: 200px;
     }
     .top-sectionswatchlistall{
       display: flex;
@@ -367,7 +408,7 @@ height: 170px;
     }
     .stock-tablewatchlist {
       font-size: 12px; /* Smaller font for mobile */
-      width: 320%;
+      width: 100%;
       border-collapse: collapse;
     }
     .watchlist-title {
@@ -382,7 +423,12 @@ height: 170px;
     }
   
     
-    
+    .newwmutual{
+      margin-left: 15px;
+      margin-top: 120px;
+      font-family: 'calibri';
+      
+    }
   
     .add-btnwatchlist {
       font-size: 14px;
@@ -450,6 +496,7 @@ height: 170px;
     }
   }
   
+
   /* Media query for devices <= 480px */
   @media (max-width: 480px) {
     .stocksector-watchlist  {
@@ -511,8 +558,8 @@ margin-top: 20px;
     .input-groupwatchlist {
       font-size: 14px;
       display: flex;
-      align-items: center; /* Align items vertically centered */
-      justify-content: space-between; /* Space items out horizontally */
+   
+     
       gap: 10px; /* Add spacing between scheme name and exchange */
       padding: 5px;
     }
@@ -591,9 +638,8 @@ margin-top: 20px;
   
     .scheme-exchange-cell {
       display: flex; /* Ensure items are on one row */
-      flex-direction: row; /* Align horizontally */
-      justify-content: space-between; /* Space out name and exchange */
-      align-items: center; /* Center vertically */
+      flex-direction:column;
+      
       width: 100%; /* Take up full width */
     }
   
@@ -679,11 +725,18 @@ margin-top: 20px;
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 190px;
+      gap: 340px;
     }
 
   }
  
-
-  
+  @media (max-width: 320px) { 
+    .top-sectionswatchlistsectorr {
+      display: flex
+;
+      align-items: center;
+      margin: 10px 0;
+      gap: 530px;
+  }
+  }
   

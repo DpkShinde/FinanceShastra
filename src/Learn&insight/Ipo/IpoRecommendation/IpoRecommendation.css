@@ -1,5 +1,5 @@
 .iporecommendation-container {
-    max-width: 840px;
+    max-width: 940px;
     
     font-family: 'calibri';
  margin-left: 70px;
@@ -94,7 +94,7 @@
   .avoidipo {
     background-color: #e61f11; /* Red color for Avoid */
     color: white;
-    margin-left: 630px;
+    margin-left: 730px;
     cursor: pointer;
     padding: 10px 15px ;
     border-radius: 5px;
@@ -156,7 +156,7 @@ margin-top: 10px;
 @media (max-width: 480px) {
   .iporecommendation-container {
       margin-left: 10px; /* Further reduce margin */
-      max-width: 100%;
+      max-width: 90%;
   }
 
   .iporecommendation-title {

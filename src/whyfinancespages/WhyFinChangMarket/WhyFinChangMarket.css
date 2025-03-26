@@ -42,67 +42,77 @@
   .whyfinchangmarket-texthighlight {
     color: #24b676;
   }
-  /* Tablet View (Max Width: 768px) */
-@media (max-width: 768px) {
+ /* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+  .whyfinchangmarket-container {
+      width: 50%;
+      margin-left: 350px;
+  }
+}
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .whyfinchangmarket-container {
+      width: 55%;
+      margin-left: 290px;
+  }
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .whyfinchangmarket-container {
+      width: 60%;
+      margin-left: 200px;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .whyfinchangmarket-container {
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .whyfinchangmarket-content {
+      flex-direction: row;
+  }
+  .whyfinchangmarket-text,
+  .whyfinchangmarket-image {
+      width: 50%;
+  }
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
   .whyfinchangmarket-container {
       flex-direction: column;
       width: 90%;
       margin-left: auto;
       margin-right: auto;
       height: auto;
-      padding: 15px;
-  }
-
-  .whyfinchangmarket-content {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .whyfinchangmarket-image {
-      width: 60%;
-      margin-top: 20px;
-      margin-left: 30px;
-  }
-
-  .whyfinchangmarket-text {
-      width: 100%;
       padding: 10px;
   }
-
-  .whyfinchangmarket-text h2 {
-      font-size: 18px;
+  .whyfinchangmarket-content {
+      flex-direction: column;
+      align-items: center;
+  }
+  .whyfinchangmarket-text,
+  .whyfinchangmarket-image {
+      width: 100%;
   }
 }
 
-/* Mobile View (Max Width: 480px) */
+/* Small Mobile Devices (Below 480px) */
 @media (max-width: 480px) {
   .whyfinchangmarket-container {
-    flex-direction: column;
-    width: 94%;
-    padding: 10px;
-    margin-left: 0;
-    height: auto;
-    box-shadow: none;
-    border: 1px solid #cecece;
-}
-
-  .whyfinchangmarket-content {
-      flex-direction: column;
-      text-align: center;
+      width: 75%;
   }
-
-
-    .whyfinchangmarket-image {
-        width: 65%;
-        margin-top: 10px;
-        margin-left: 30px;
-    }
   .whyfinchangmarket-text {
-      width: 100%;
       padding: 10px;
   }
-
   .whyfinchangmarket-text h2 {
-      font-size: 16px;
+      font-size: 18px;
   }
 }

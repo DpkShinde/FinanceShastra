@@ -13,6 +13,36 @@
   
 
   
+.etf-tableegold{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.etf-tableegold thead th {
+  background-color: #24b676;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+}
+
+.etf-tableegold  td {
+  padding: 10px;
+  border: 1px solid #ddd;
+ 
+  font-size: 14px;
+}
+
+.etf-tableegold tbody td.marketname {
+  color: #24b676;
+}
+
+.etf-tableegold tbody td.symbolmarket {
+  color: #24b676;
+}
+
+
  
   /* Responsive styles */
 @media screen and (max-width: 768px) {
@@ -20,10 +50,50 @@
     font-size: 20px; /* Reduce title size for small devices */
     margin-top: 10px;
   }
+  .etf-tableegold {
+    display: block;
+
+    white-space: wrap;
+}
+
+
 }
 @media screen and (max-width: 480px) {
   .goldetf-title {
     font-size: 20px;
     margin-top: -30px;
 }
+
+.etf-tableegold {
+  display: block;
+  overflow-x: auto;
+  white-space: wrap;
+margin-left: 10px;
+  margin-bottom: 20px;
+  max-width: 95%;
+  overflow-y: auto;
+  height: 400px;
+
+}
+.etf-tableegold thead th {
+
+position: sticky;
+top: -1px;
+}
+
+.etf-tableegold::-webkit-scrollbar {
+  height: 8px; /* Set the height of the scrollbar */
+}
+
+.etf-tableegold::-webkit-scrollbar-thumb {
+  background-color: #cecece; /* Scrollbar color */
+  border-radius: 4px; /* Rounded edges */
+}
+
+.etf-tableegold::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track color */
+}
+
+
+
 }

@@ -184,7 +184,10 @@ const RiskProfileForm = () => {
       ];
       const navigate = useNavigate();
       const handleSubmit = async (e) => {
+           
             e.preventDefault(); // Prevent the default form submission behavior
+            navigate("/profileRiskReportInvestment");
+            window.scrollTo(0, 0); // Correct syntax
 
             const filteredData = Object.keys(formData)
             .filter((key) => keysToKeep.includes(key))
@@ -220,6 +223,8 @@ const RiskProfileForm = () => {
             console.log("response:", response)
             if (response.ok){
                   alert('Form Submitted successfully');
+                  navigate("/profileRiskReportInvestment");
+                  window.scrollTo(0, 0); // Correct syntax
             }
             
 
@@ -235,9 +240,12 @@ const RiskProfileForm = () => {
             const url= `${API_BASE_URL}/riskanalysis/updaterisk`
             const putresponse= await fetch(url, options)
             console.log("putresponse:", putresponse)
-            if (putresponse.ok){
-                  alert('Form Submitted successfully');
-            }
+            if (putresponse.ok) {
+                  alert("Form Submitted successfully");
+                  navigate("/profileRiskReportInvestment");
+                  window.scrollTo(0, 0); 
+              }
+              
             
             }
 
@@ -330,7 +338,7 @@ const RiskProfileForm = () => {
       </div>
       ))}
       </div>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
+      <button type="submit" className='riskProfileFormAll' onClick={handleSubmit}>Submit</button>
       </form>
       );
 };

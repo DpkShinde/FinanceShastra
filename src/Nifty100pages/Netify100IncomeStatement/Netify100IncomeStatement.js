@@ -2297,7 +2297,7 @@ const perfOptions = [
      
       </div>
        {/* Pagination Section */}
-   <div className="pagination-container">
+   <div className="pagination-stockcontainer">
         <div className="pagination-info">
           {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${stocks.length} records`}
         </div>

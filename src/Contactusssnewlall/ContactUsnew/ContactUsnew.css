@@ -1,274 +1,324 @@
 .contactus-financeshastra {
-    font-family: 'calibri';
-   margin-left: 280px;
-    width: 1000px;
-    color: #333;
-    margin-top: 100px;
-  }
-  
-  .contactus-financeshastra h1 {
-   font-size: 26px;
-    margin-bottom: 10px;
-    margin-top: 30px;
-  }
-  
-  .contactus-financeshastra p {
- color:black;
-    margin-bottom: 30px;
-    font-size: 15px;
+  font-family: 'calibri';
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1000px;
+  color: #333;
+  margin-top: 100px;
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
+}
 
-  }
-  .contactus-financeshastra h3 {
-    background: linear-gradient(90deg, #24b676, #238486);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    
-  }
-  .headercontactttimage{
-    display: flex;
+
+.contactus-financeshastra h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.contactus-financeshastra p {
+  color: black;
+  margin-bottom: 30px;
+  font-size: 15px;
+  margin-left: 100px;
+
+}
+
+.contactus-financeshastra h3 {
+  background: linear-gradient(90deg, #24b676, #238486);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 100px;
+
+}
+
+.headercontactttimage {
+  display: flex;
   width: 1150px;
-    padding: 1px;
-    gap: 10px;
-    margin-bottom:-70px ;
+  padding: 1px;
+  gap: 10px;
+  margin-bottom: -70px;
+  margin-left: 50px;
 
-  }
-
-.contactimageee img{
-    width: 49%;
-    height:69%;
-    border-radius: 8px;
-  }
-    
-      
-         .contactus-financeshastra h2{
-            color: rgb(73, 72, 72);
-               margin-bottom: 1px;
-               font-size: 17px;
-               font-weight: bold;
-             }
-          
-  .contactus-financeshastra .contact-container {
-    display: flex;
-
-    gap: 10px;
-    margin-bottom: 0px;
-    border: 1px solid rgb(216, 208, 208);
-    box-shadow: 0 2px 4px rgb(183, 181, 181);
-    width: 850px;
-    height: auto;
-    border-radius: 10px;
-  }
-  .globecontactusss{
-    margin-top: 10px;
-  }
-  
-  .contactus-financeshastra .contact-info {
-    flex: 1;
-
-    padding: 20px;
-    border-radius: 8px;
-
-    margin-top: -10px;
-    margin-left: 20px;
-  }
-  
-  .contactus-financeshastra .contact-info h3 {
-    margin-bottom: 10px;
-  }
-  
-  .contactus-financeshastra .contact-info p {
-    margin: 7px 0;
-  }
-
-  
-  .contactus-financeshastra .contact-info a {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .contactus-financeshastra .contact-info a:hover {
-    text-decoration: underline;
-  }
-  
-  .contactus-financeshastra .contact-form {
-    flex: 1;
-    margin-top: 20px;
-    margin-right: 30px;
-  }
-  
-  .contactus-financeshastra .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .contactus-financeshastra .contact-form label {
-    font-weight: bold;
-  }
-  
-  .contactus-financeshastra .contact-form input,
-  .contactus-financeshastra .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .contactus-financeshastra .contactsubmit {
-    background-color: #24b676;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 90px;
-    margin-left: 150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .contactus-financeshastra .contact-form button:hover {
-    background-color: #2a835d;
-  }
-  
-  .contactus-financeshastra .issue-resolution {
-    margin-top: 30px;
-  }
-  .contactus-financeshastra .issue-resolution h2{
-    margin-top: 10px;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  .contactus-financeshastra .issue-resolution p{
-width: 860px;
-font-size: 15px;
-color: #575656;
-  }
-  .contactus-financeshastra .issue-resolution table {
-    width: 85%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .contactus-financeshastra .issue-resolution table th {
-    padding: 10px;
-    border: none; /* Remove all borders by default */
-    text-align: left;
-    background-color: #f9f9f9; /* Light background for the header */
-    font-size: 16px;
-  }
-  
-  .contactus-financeshastra .issue-resolution table th:first-child {
-    border-left: 1px solid #24b676; /* Green left border for the first column */
-    
-  }
-  
-  .contactus-financeshastra .issue-resolution table th:last-child {
-    border-right: 1px solid #24b676; /* Green right border for the last column */
-  }
-  
-  .contactus-financeshastra .issue-resolution table th {
-    border-top: 1px solid #24b676; /* Add horizontal top border for the header row */
-    border-bottom: 1px solid #24b676; /* Add horizontal bottom border for the header row */
-  }
-  
-  .contactus-financeshastra .issue-resolution table td {
-    padding: 10px;
-    border-top: 1px solid #ccc; /* Keep horizontal border for rows */
-    border-bottom: 1px solid #ccc; /* Keep horizontal border for rows */
-    font-size: 15px;
-  }
-  
-  .contactus-financeshastra .issue-resolution table tr:nth-child(odd) td {
-    background-color: rgba(0, 74, 173, 0.09);
-    color:black; /* Optional: White text for contrast */
-  }
-.contactus-financeshastra .issue-resolution table td:first-child{
-  border-left: 1px solid #ccc; /* Add left border for the first column */
 }
 
-.contactus-financeshastra .issue-resolution table td:last-child
- {
-  border-right: 1px solid #ccc; /* Add right border for the last column */
+.contactimageee img {
+  width: 49%;
+  height: 69%;
+  border-radius: 8px;
 }
 
-  .contactus-financeshastra .additional-help {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .contactus-financeshastra .additional-help button {
-    background-color: white;
-    color: #24b676;
-    padding: 10px 20px;
-    border: 1px solid #24b676 ;
-    border-radius: 4px;
-    cursor: pointer;
+
+.contactus-financeshastra h2 {
+  color: rgb(73, 72, 72);
+  margin-bottom: 1px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.contactus-financeshastra .contact-container {
+  display: flex;
+
+  gap: 10px;
+  margin-bottom: 0px;
+  border: 1px solid rgb(216, 208, 208);
+  box-shadow: 0 2px 4px rgb(183, 181, 181);
+  width: 850px;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 140px;
+}
+
+.globecontactusss {
+  margin-top: 10px;
+}
+
+.contactus-financeshastra .contact-info {
+  flex: 1;
+
+  padding: 20px;
+  border-radius: 8px;
+
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.contactus-financeshastra .contact-info h3 {
+  margin-bottom: 10px;
+}
+
+.contactus-financeshastra .contact-info p {
+  margin: 7px 0;
+}
+
+
+.contactus-financeshastra .contact-info a {
+  color: black;
+  text-decoration: none;
+}
+
+.contactus-financeshastra .contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contactus-financeshastra .contact-form {
+  flex: 1;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.contactus-financeshastra .contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactus-financeshastra .contact-form label {
+  font-weight: bold;
+}
+
+.contactus-financeshastra .contact-form input,
+.contactus-financeshastra .contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contactus-financeshastra .contactsubmit {
+  background-color: #24b676;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90px;
+  margin-left: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contactus-financeshastra .contact-form button:hover {
+  background-color: #2a835d;
+}
+
+.contactus-financeshastra .issue-resolution {
+  margin-top: 30px;
+}
+
+.contactus-financeshastra .issue-resolution h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 140px;
+}
+
+.contactus-financeshastra .issue-resolution p {
+  width: 860px;
+  font-size: 15px;
+  color: #575656;
+  margin-left: 140px;
+}
+
+.contactus-financeshastra .issue-resolution table {
+  width: 85%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  margin-left: 140px;
+}
+
+.contactus-financeshastra .issue-resolution table th {
+  padding: 10px;
+  border: none;
+  /* Remove all borders by default */
+  text-align: left;
+  background-color: #f9f9f9;
+  /* Light background for the header */
+  font-size: 16px;
+}
+
+.contactus-financeshastra .issue-resolution table th:first-child {
+  border-left: 1px solid #24b676;
+  /* Green left border for the first column */
+
+}
+
+.contactus-financeshastra .issue-resolution table th:last-child {
+  border-right: 1px solid #24b676;
+  /* Green right border for the last column */
+}
+
+.contactus-financeshastra .issue-resolution table th {
+  border-top: 1px solid #24b676;
+  /* Add horizontal top border for the header row */
+  border-bottom: 1px solid #24b676;
+  /* Add horizontal bottom border for the header row */
+}
+
+.contactus-financeshastra .issue-resolution table td {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  /* Keep horizontal border for rows */
+  border-bottom: 1px solid #ccc;
+  /* Keep horizontal border for rows */
+  font-size: 15px;
+}
+
+.contactus-financeshastra .issue-resolution table tr:nth-child(odd) td {
+  background-color: rgba(0, 74, 173, 0.09);
+  color: black;
+  /* Optional: White text for contrast */
+}
+
+.contactus-financeshastra .issue-resolution table td:first-child {
+  border-left: 1px solid #ccc;
+  /* Add left border for the first column */
+}
+
+.contactus-financeshastra .issue-resolution table td:last-child {
+  border-right: 1px solid #ccc;
+  /* Add right border for the last column */
+}
+
+.contactus-financeshastra .additional-help {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contactus-financeshastra .additional-help button {
+  background-color: white;
+  color: #24b676;
+  padding: 10px 20px;
+  border: 1px solid #24b676;
+  border-radius: 4px;
+  cursor: pointer;
   margin-right: 10px;
   font-weight: bold;
   margin-bottom: 100px;
-  }
-  
-  .contactus-financeshastra .additional-help button:hover {
-    background-color: #24b676;
-    color: white;
+  margin-left: 140px;
+}
 
-  }
-  .additional-help {
-    margin-right: 170px;
-  }
-  .additional-help h2{
-    font-size: 20px;
-    color: black;
-  }
-  .additional-help p{
-    font-size: 16px;
-    color: black;
-   
-  }
-  .contact-detailsneww p {
-    font-size: 16px;
-   /* Text color */
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between icon and text */
-    margin: 10px 0;
-  }
-  
-  .contact-iconnnss {
-    color: black; /* Primary icon color */
-    font-size: 20px; /* Icon size */
-  }
-  
-  .globe-contact-icon {
-    color: black; /* Different color for globe icon (optional) */
-  }
-  
+.contactus-financeshastra .additional-help button:hover {
+  background-color: #24b676;
+  color: white;
 
-  
-  .contact-detailsneww a:hover {
-    text-decoration: underline; /* Add underline effect on hover */
-    color: #24b676; /* Hover color */
-  }
+}
 
-  .icon-header {
-    display: flex;
-    align-items: center; /* Vertically align icon and text */
-    gap: 10px; /* Space between icon and text */
-    font-size: 18px; /* Adjust font size */
-  
-    font-weight: bold; /* Bold text */
-    margin: 20px 0; /* Spacing around the heading */
-  }
-  
-  .header-icon {
-    width: 24px; /* Adjust icon size */
-    height: 24px;
-    object-fit: contain; /* Ensures the image scales proportionally */
-  }
- /* Default field styles */
+.additional-help {
+  margin-right: 170px;
+}
+
+.additional-help h2 {
+  font-size: 20px;
+  color: black;
+  margin-left: 140px;
+}
+
+.additional-help p {
+  font-size: 16px;
+  color: black;
+
+}
+
+.contact-detailsneww p {
+  font-size: 16px;
+  /* Text color */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Space between icon and text */
+  margin: 10px 0;
+}
+
+.contact-iconnnss {
+  color: black;
+  /* Primary icon color */
+  font-size: 20px;
+  /* Icon size */
+}
+
+.globe-contact-icon {
+  color: black;
+  /* Different color for globe icon (optional) */
+}
+
+
+
+.contact-detailsneww a:hover {
+  text-decoration: underline;
+  /* Add underline effect on hover */
+  color: #24b676;
+  /* Hover color */
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  /* Vertically align icon and text */
+  gap: 10px;
+  /* Space between icon and text */
+  font-size: 18px;
+  /* Adjust font size */
+
+  font-weight: bold;
+  /* Bold text */
+  margin: 20px 0;
+  /* Spacing around the heading */
+}
+
+.header-icon {
+  width: 24px;
+  /* Adjust icon size */
+  height: 24px;
+  object-fit: contain;
+  /* Ensures the image scales proportionally */
+}
+
+/* Default field styles */
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
@@ -286,8 +336,8 @@ color: #575656;
   border: 2px solid red;
 }
 
-.contact-form input.validate:invalid + .errorcontact-message,
-.contact-form textarea.validate:invalid + .errorcontact-message {
+.contact-form input.validate:invalid+.errorcontact-message,
+.contact-form textarea.validate:invalid+.errorcontact-message {
   display: block;
   color: red;
   font-size: 14px;
@@ -339,646 +389,206 @@ color: #575656;
   border: none;
 
   cursor: pointer;
-margin-left: 250px;
+  margin-left: 250px;
 
   font-size: 24px;
 }
 
+/* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+  .contactus-financeshastra {
+    max-width: 1200px;
+  }
 
-
-@media (max-width: 768px) {
-    .contactus-financeshastra {
-        font-family: 'calibri';
-       margin-left: 2px;
-        width: 1000px;
-        color: #333;
-        margin-top: 100px;
-      }
-      
-  .contactus-financeshastra h1 {
-    font-size: 20px;
-     margin-bottom: 1px;
-     margin-top: 10px;
-     margin-left: 18px;
-   }
-   
-   .contactus-financeshastra p {
-  color:black;
-     margin-bottom: 30px;
-     font-size: 14px;
- 
-   }
-   .contactus-financeshastra h3 {
-     background: linear-gradient(90deg, #24b676, #238486);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     margin-bottom: 10px;
-     font-size: 15px;
-     font-weight: bold;
-     
-   }
-   .headercontactttimage{
-     display: flex;
-   width: 550px;
-     padding: 1px;
-     gap: 10px;
-     margin-bottom:20px ;
- 
-   }
- 
- .contactimageee img{
-     width: 49%;
-     height:69%;
-     border-radius: 8px;
-   }
-     
-       
-          .contactus-financeshastra h2{
-             color: rgb(73, 72, 72);
-                margin-bottom: 1px;
-                font-size: 17px;
-                font-weight: bold;
-              }
-           
-   .contactus-financeshastra .contact-container {
-     display: flex;
-     flex-direction: column;
- 
-     gap: 10px;
-     margin-bottom: 0px;
-     border: 1px solid rgb(216, 208, 208);
-     box-shadow: 0 2px 4px rgb(183, 181, 181);
-     width: 450px;
-     height: auto;
-     border-radius: 10px;
-   }
-   .globecontactusss{
-     margin-top: 10px;
-   }
-   
-   .contactus-financeshastra .contact-info {
-     flex: 1;
- 
-     padding: 20px;
-     border-radius: 8px;
-width: 600px;
-     margin-top: -10px;
-     margin-left: 90px;
-   }
-   
-   .contactus-financeshastra .contact-info h3 {
-     margin-bottom: 10px;
-   }
-   
-   .contactus-financeshastra .contact-info p {
-     margin: 7px 0;
-   }
- 
-   
-   .contactus-financeshastra .contact-info a {
-     color: black;
-     text-decoration: none;
-   }
-   
-   .contactus-financeshastra .contact-info a:hover {
-     text-decoration: underline;
-   }
-   
-   .contactus-financeshastra .contact-form {
-     flex: 1;
-     margin-top: 20px;
-     margin-right: 30px;
-     margin-left: 15px;
-   }
-   
-   .contactus-financeshastra .contact-form form {
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
-   }
-   
-   .contactus-financeshastra .contact-form label {
-     font-weight: bold;
-   }
-   
-   .contactus-financeshastra .contact-form input,
-   .contactus-financeshastra .contact-form textarea {
-     padding: 10px;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-   }
-   
-   .contactus-financeshastra .contactsubmit {
-     background-color: #24b676;
-     color: #fff;
-     padding: 10px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     width: 90px;
-     margin-left: 150px;
-     margin-top: 10px;
-     margin-bottom: 10px;
-   }
-   
-   .contactus-financeshastra .contact-form button:hover {
-     background-color: #2a835d;
-   }
-   
-   .contactus-financeshastra .issue-resolution {
-     margin-top: 30px;
-   }
-   .contactus-financeshastra .issue-resolution h2{
-     margin-top: 10px;
-     font-size: 20px;
-     margin-bottom: 10px;
-     margin-left: 0px;
-   }
-   .contactus-financeshastra .issue-resolution p{
- width: 450px;
- font-size: 15px;
- color: #575656;
-   }
-   .contactus-financeshastra .issue-resolution table {
-     width: 45%;
-     border-collapse: collapse;
-     margin-bottom: 20px;
-     margin-left: 0px;
-   }
-   
-   .contactus-financeshastra .issue-resolution table th {
-     padding: 10px;
-     border: none; /* Remove all borders by default */
-     text-align: left;
-     background-color: #f9f9f9; /* Light background for the header */
-     font-size: 16px;
-   }
-   
-   .contactus-financeshastra .issue-resolution table th:first-child {
-     border-left: 1px solid #24b676; /* Green left border for the first column */
-     
-   }
-   
-   .contactus-financeshastra .issue-resolution table th:last-child {
-     border-right: 1px solid #24b676; /* Green right border for the last column */
-   }
-   
-   .contactus-financeshastra .issue-resolution table th {
-     border-top: 1px solid #24b676; /* Add horizontal top border for the header row */
-     border-bottom: 1px solid #24b676; /* Add horizontal bottom border for the header row */
-   }
-   
-   .contactus-financeshastra .issue-resolution table td {
-     padding: 10px;
-     border-top: 1px solid #ccc; /* Keep horizontal border for rows */
-     border-bottom: 1px solid #ccc; /* Keep horizontal border for rows */
-     font-size: 15px;
-   }
-   
-   .contactus-financeshastra .issue-resolution table tr:nth-child(odd) td {
-     background-color: rgba(0, 74, 173, 0.09);
-     color:black; /* Optional: White text for contrast */
-   }
- .contactus-financeshastra .issue-resolution table td:first-child{
-   border-left: 1px solid #ccc; /* Add left border for the first column */
- }
- 
- .contactus-financeshastra .issue-resolution table td:last-child
-  {
-   border-right: 1px solid #ccc; /* Add right border for the last column */
- }
- 
-   .contactus-financeshastra .additional-help {
-     text-align: center;
-     margin-top: 30px;
-   }
-   
-   .contactus-financeshastra .additional-help button {
-     background-color: white;
-     color: #24b676;
-     padding: 10px 20px;
-     border: 1px solid #24b676 ;
-     border-radius: 4px;
-     cursor: pointer;
-   margin-right: 10px;
-   margin-left: -390px;
-   font-weight: bold;
-   margin-bottom: 100px;
-   }
-   
-   .contactus-financeshastra .additional-help button:hover {
-     background-color: #24b676;
-     color: white;
- 
-   }
-   .additional-help {
-     margin-right: 170px;
-   }
-   .additional-help h2{
-     font-size: 20px;
-     color: black;
-margin-top: 10px;
-    margin-left: -430px;
-   }
-   .additional-help p{
-     font-size: 16px;
-     color: black;
-     width: 450px;
-    
-   }
-   .contact-detailsneww p {
-     font-size: 16px;
-    /* Text color */
-     display: flex;
-     align-items: center;
-     gap: 10px; /* Space between icon and text */
-     margin: 10px 0;
-   }
-   
-   .contact-iconnnss {
-     color: black; /* Primary icon color */
-     font-size: 20px; /* Icon size */
-   }
-   
-   .globe-contact-icon {
-     color: black; /* Different color for globe icon (optional) */
-   }
-   
- 
-   
-   .contact-detailsneww a:hover {
-     text-decoration: underline; /* Add underline effect on hover */
-     color: #24b676; /* Hover color */
-   }
- 
-   .icon-header {
-     display: flex;
-     align-items: center; /* Vertically align icon and text */
-     gap: 10px; /* Space between icon and text */
-     font-size: 18px; /* Adjust font size */
-   
-     font-weight: bold; /* Bold text */
-     margin: 20px 0; /* Spacing around the heading */
-   }
-   
-   .header-icon {
-     width: 24px; /* Adjust icon size */
-     height: 24px;
-     object-fit: contain; /* Ensures the image scales proportionally */
-   }
-  /* Default field styles */
- .contact-form input,
- .contact-form textarea {
-   padding: 10px;
-   border: 2px solid #ccc;
-   border-radius: 5px;
-   width: 100%;
-   margin-bottom: -10px;
-   font-size: 16px;
-   outline: none;
- }
- 
- /* Invalid field styles */
- .contact-form input.validate:invalid,
- .contact-form textarea.validate:invalid {
-   border: 2px solid red;
- }
- 
- .contact-form input.validate:invalid + .errorcontact-message,
- .contact-form textarea.validate:invalid + .errorcontact-message {
-   display: block;
-   color: red;
-   font-size: 14px;
-   margin-top: 5px;
- }
- 
- /* Hide error messages by default */
- .contact-form .error-message {
-   display: none;
- }
- 
- /* Valid field styles */
- .contact-form input.validate:valid,
- .contact-form textarea.validate:valid {
-   border: 2px solid #24b676;
- }
 }
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .contactus-financeshastra {
+    max-width: 1000px;
+  }
+
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .contactus-financeshastra {
+    max-width: 900px;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contactus-financeshastra {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+
+  .contactus-financeshastra .contact-form input,
+  .contactus-financeshastra .contact-form textarea {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .contactus-financeshastra .issue-resolution table {
+    margin-left: 20px;
+  }
+
+  .contactus-financeshastra .issue-resolution p {
+    width: 710px;
+    font-size: 15px;
+    color: #575656;
+  }
+
+  .additional-help p {
+    margin-left: 150px;
+  }
+
+  .additional-help h2 {
+    margin-left: 150px;
+  }
+
+  .contactus-financeshastra .additional-help button {
+    margin-left: 150px;
+  }
+
+  .contactus-financeshastra .contact-container {
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .contactus-financeshastra .contact-form {
+    margin-right: 0;
+  }
+
+  .headercontactttimage {
+    width: 100%;
+  }
+
+
+  .contactimageee img {
+    width: 90%;
+    height: 80%;
+  }
+
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .contactus-financeshastra {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .contactus-financeshastra h1 {
+    font-size: 22px;
+  }
+
+  .contactus-financeshastra .contact-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contactus-financeshastra .contact-info,
+  .contactus-financeshastra .contact-form {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .contactus-financeshastra .issue-resolution table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .contactus-financeshastra .additional-help button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .headercontactttimage {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contactimageee img {
+    width: 60%;
+    height: auto;
+    margin-left: 70px;
+  }
+}
+
+/* Small Mobile Devices (Below 480px) */
 @media (max-width: 480px) {
-    .contactus-financeshastra {
-        font-family: 'calibri';
-       margin-left: 2px;
-        width: 1000px;
-        color: #333;
-        margin-top: 100px;
-      }
-      
   .contactus-financeshastra h1 {
     font-size: 20px;
-     margin-bottom: 1px;
-     margin-top: 10px;
-     margin-left: 18px;
-   }
-   
-   .contactus-financeshastra p {
-  color:black;
-     margin-bottom: 30px;
-     font-size: 14px;
- 
-   }
-   .contactus-financeshastra h3 {
-     background: linear-gradient(90deg, #24b676, #238486);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     margin-bottom: 10px;
-     font-size: 15px;
-     font-weight: bold;
-     
-   }
-   .headercontactttimage{
-     display: flex;
-   width: 550px;
-     padding: 1px;
-     gap: 10px;
-     margin-bottom:20px ;
- 
-   }
- 
- .contactimageee img{
-     width: 49%;
-     height:69%;
-     border-radius: 8px;
-   }
-     
-       
-          .contactus-financeshastra h2{
-             color: rgb(73, 72, 72);
-                margin-bottom: 1px;
-                font-size: 17px;
-                font-weight: bold;
-              }
-           
-   .contactus-financeshastra .contact-container {
-     display: flex;
-     flex-direction: column;
- 
-     gap: 10px;
-     margin-bottom: 0px;
-     border: 1px solid rgb(216, 208, 208);
-     box-shadow: 0 2px 4px rgb(183, 181, 181);
-     width: 400px;
-     height: auto;
-     border-radius: 10px;
-   }
-   .globecontactusss{
-     margin-top: 10px;
-   }
-   
-   .contactus-financeshastra .contact-info {
-     flex: 1;
- 
-     padding: 20px;
-     border-radius: 8px;
-width: 600px;
-     margin-top: -10px;
-     margin-left: 90px;
-   }
-   
-   .contactus-financeshastra .contact-info h3 {
-     margin-bottom: 10px;
-   }
-   
-   .contactus-financeshastra .contact-info p {
-     margin: 7px 0;
-   }
- 
-   
-   .contactus-financeshastra .contact-info a {
-     color: black;
-     text-decoration: none;
-   }
-   
-   .contactus-financeshastra .contact-info a:hover {
-     text-decoration: underline;
-   }
-   
-   .contactus-financeshastra .contact-form {
-     flex: 1;
-     margin-top: 20px;
-     margin-right: 30px;
-     margin-left: 15px;
-   }
-   
-   .contactus-financeshastra .contact-form form {
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
-   }
-   
-   .contactus-financeshastra .contact-form label {
-     font-weight: bold;
-   }
-   
-   .contactus-financeshastra .contact-form input,
-   .contactus-financeshastra .contact-form textarea {
-     padding: 10px;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-   }
-   
-   .contactus-financeshastra .contactsubmit {
-     background-color: #24b676;
-     color: #fff;
-     padding: 10px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     width: 90px;
-     margin-left: 150px;
-     margin-top: 10px;
-     margin-bottom: 10px;
-   }
-   
-   .contactus-financeshastra .contact-form button:hover {
-     background-color: #2a835d;
-   }
-   
-   .contactus-financeshastra .issue-resolution {
-     margin-top: 30px;
-   }
-   .contactus-financeshastra .issue-resolution h2{
-     margin-top: 10px;
-     font-size: 20px;
-     margin-bottom: 10px;
-     margin-left: 0px;
-   }
-   .contactus-financeshastra .issue-resolution p{
- width: 400px;
- font-size: 15px;
- color: #575656;
-   }
-   .contactus-financeshastra .issue-resolution table {
-    width: 10%;
-     border-collapse: collapse;
-     margin-bottom: 20px;
- 
-   }
-   
-   .contactus-financeshastra .issue-resolution table th {
-     padding: 10px;
-     border: none; /* Remove all borders by default */
-     text-align: left;
-     background-color: #f9f9f9; /* Light background for the header */
-     font-size: 16px;
-  
-   }
-   
-   .contactus-financeshastra .issue-resolution table th:first-child {
-     border-left: 1px solid #24b676; /* Green left border for the first column */
-     
-   }
-   
-   .contactus-financeshastra .issue-resolution table th:last-child {
-     border-right: 1px solid #24b676; /* Green right border for the last column */
-   }
-   
-   .contactus-financeshastra .issue-resolution table th {
-     border-top: 1px solid #24b676; /* Add horizontal top border for the header row */
-     border-bottom: 1px solid #24b676; /* Add horizontal bottom border for the header row */
-   }
-   
-   .contactus-financeshastra .issue-resolution table td {
-     padding: 10px;
-     border-top: 1px solid #ccc; /* Keep horizontal border for rows */
-     border-bottom: 1px solid #ccc; /* Keep horizontal border for rows */
-     font-size: 15px;
-   }
-   
-   .contactus-financeshastra .issue-resolution table tr:nth-child(odd) td {
-     background-color: rgba(0, 74, 173, 0.09);
-     color:black; /* Optional: White text for contrast */
-   }
- .contactus-financeshastra .issue-resolution table td:first-child{
-   border-left: 1px solid #ccc; /* Add left border for the first column */
- }
- 
- .contactus-financeshastra .issue-resolution table td:last-child
-  {
-   border-right: 1px solid #ccc; /* Add right border for the last column */
- }
- 
-   .contactus-financeshastra .additional-help {
-     text-align: center;
-     margin-top: 30px;
-   }
-   
-   .contactus-financeshastra .additional-help button {
-     background-color: white;
-     color: #24b676;
-     padding: 10px 20px;
-     border: 1px solid #24b676 ;
-     border-radius: 4px;
-     cursor: pointer;
-   margin-right:30px;
-   margin-left: -400px;
-   font-weight: bold;
-   margin-bottom: 100px;
-   }
-   
-   .contactus-financeshastra .additional-help button:hover {
-     background-color: #24b676;
-     color: white;
- 
-   }
-   .additional-help {
-     margin-right: 170px;
-   }
-   .additional-help h2{
-     font-size: 20px;
-     color: black;
-margin-top: 10px;
-    margin-left: -430px;
-   }
-   .additional-help p{
-     font-size: 16px;
-     color: black;
-     width: 450px;
-     margin-left: -30px;
-    
-   }
-   .contact-detailsneww p {
-     font-size: 16px;
-    /* Text color */
-     display: flex;
-     align-items: center;
-     gap: 10px; /* Space between icon and text */
-     margin: 10px 0;
-   }
-   
-   .contact-iconnnss {
-     color: black; /* Primary icon color */
-     font-size: 20px; /* Icon size */
-   }
-   
-   .globe-contact-icon {
-     color: black; /* Different color for globe icon (optional) */
-   }
-   
- 
-   
-   .contact-detailsneww a:hover {
-     text-decoration: underline; /* Add underline effect on hover */
-     color: #24b676; /* Hover color */
-   }
- 
-   .icon-header {
-     display: flex;
-     align-items: center; /* Vertically align icon and text */
-     gap: 10px; /* Space between icon and text */
-     font-size: 18px; /* Adjust font size */
-   
-     font-weight: bold; /* Bold text */
-     margin: 20px 0; /* Spacing around the heading */
-   }
-   
-   .header-icon {
-     width: 24px; /* Adjust icon size */
-     height: 24px;
-     object-fit: contain; /* Ensures the image scales proportionally */
-   }
-  /* Default field styles */
- .contact-form input,
- .contact-form textarea {
-   padding: 10px;
-   border: 2px solid #ccc;
-   border-radius: 5px;
-   width: 100%;
-   margin-bottom: -10px;
-   font-size: 16px;
-   outline: none;
- }
- 
- /* Invalid field styles */
- .contact-form input.validate:invalid,
- .contact-form textarea.validate:invalid {
-   border: 2px solid red;
- }
- 
- .contact-form input.validate:invalid + .errorcontact-message,
- .contact-form textarea.validate:invalid + .errorcontact-message {
-   display: block;
-   color: red;
-   font-size: 14px;
-   margin-top: 5px;
- }
- 
- /* Hide error messages by default */
- .contact-form .error-message {
-   display: none;
- }
- 
- /* Valid field styles */
- .contact-form input.validate:valid,
- .contact-form textarea.validate:valid {
-   border: 2px solid #24b676;
- }
+  }
+
+  .contactus-financeshastra p {
+    font-size: 14px;
+  }
+
+  .contactus-financeshastra .contact-container {
+    width: 93%;
+    flex-direction: column;
+    margin-top: 70px;
+  }
+
+  .contactus-financeshastra .contact-form input,
+  .contactus-financeshastra .contact-form textarea {
+    font-size: 16px;
+    width: 87%;
+  }
+
+  .contactus-financeshastra .contact-info,
+  .contactus-financeshastra .contact-form {
+    padding: 10px;
+  }
+
+  .contactus-financeshastra .issue-resolution table {
+    font-size: 13px;
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .contactus-financeshastra .issue-resolution p {
+    width: 350px;
+    font-size: 15px;
+
+  }
+
+  .additional-help p {
+    margin-left: 0px;
+    margin-right: -130px;
+  }
+
+  .additional-help h2 {
+    margin-left: 0px;
+    margin-right: -130px;
+  }
+
+  .contactus-financeshastra .additional-help button {
+    margin-left: 0px;
+    margin-right: -130px;
+  }
+
+  .contactus-financeshastra .contactsubmit {
+    width: 50%;
+        margin-left: 80px;
+  }
+}
+
+/* Prevents horizontal scrolling globally */
+body {
+  overflow-x: hidden;
+}
+@media (max-width: 320px) {
+  .contactus-financeshastra .issue-resolution p {
+      width: 270px;
+      font-size: 12px;
+      margin-left: auto;
+      margin-right: auto;
+  }
 }

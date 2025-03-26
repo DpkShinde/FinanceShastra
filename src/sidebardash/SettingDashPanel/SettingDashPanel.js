@@ -182,7 +182,7 @@ import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import Cookies from "js-cookie";
 import { API_BASE_URL } from "../../config";
 
-const SettingsDashboard = () => {
+const SettingsDashboard = ({children}) => {
   const [notificationPermission, setNotificationPermission] = useState([]);
   const [tempNotificationPermission, setTempNotificationPermission] = useState(
     []
@@ -317,11 +317,15 @@ const SettingsDashboard = () => {
           </button>
         </div>
         <Navbar />
-        <Sidebar />
+       
       </div>
 
-      <div className="foooterpagesattt">
-        <FooterForAllPage />
+      <div className="layout">
+        <Sidebar />
+        <div className="main-contentover">
+          <div className="contentover">{children}</div>
+          <FooterForAllPage />
+        </div>
       </div>
     </div>
   );

@@ -208,15 +208,22 @@ const ProfileRiskReportInvestment = () => {
             </section>
             <button
   className="solutionriskbutton"
-  onClick={() => navigate("/profileScreenRiskReport")}
+  onClick={() => {
+    navigate("/home", { replace: true });
+    window.scrollTo(0, 0);
+  }}
 >
   Submit
 </button>
 
+
             <div className="subscribe-footerrmanagealertrisk">
       <h2 className="headingmanagealertrisk">Subscribe Now!</h2>
         <h3>Choose a plan that aligns with your investment goals!</h3>
-        <button className="footer-subscribe-buttonmanagerisk">Subscribe</button>
+        <button className="footer-subscribe-buttonmanagerisk"  onClick={() => {
+    navigate('/pricehalf', { replace: true }); 
+    window.scrollTo(0, 0);
+  }} >Subscribe</button>
       </div>
         </div>
         <Navbar/>

@@ -48,7 +48,7 @@
 /* Mobile View at 480px */
 @media (max-width: 480px) {
   .recentipo {
-    width: 104%;
+    width: 90%;
     margin-left: 0px;
   
     height: auto;

@@ -225,7 +225,7 @@ const Dashboardstockindex = () => {
 
 
 <div className="DashboardMainPagetable-table-containerrrrr">
-            <table className="DashboardMainPagetable-tableeee">
+            <table className="DashboardMainPagetable-tablee">
         <thead>
           <tr>
             <th>Company</th>

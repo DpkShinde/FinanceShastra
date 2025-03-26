@@ -69,6 +69,29 @@ margin-bottom: 30px;
 .DashboardMainPagetable-tableee tr:hover {
   background-color: #ddd;
 }
+@media(min-width:1536px){
+
+  .DashboardMainPagetable-card.custom-card-size {
+    width: 145px;
+}
+  .pagination-slider{
+    margin-right: -1000px;
+  }
+  .DashboardMainPagetable-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    width: 280px;
+  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'calibri';
+  }
+  .pagination-containerrindex{
+    gap: 880px;
+  }
+}
 @media (max-width: 768px) {
   .DashboardMainPagetable-headerr{
     margin-left: 300px;
@@ -80,7 +103,7 @@ margin-bottom: 30px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 16px;
-    width: 140px;
+    width: 580px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: 'calibri';

@@ -4,9 +4,10 @@
   border-radius: 8px;
   background-color: #f2f2f2;
   max-width:100%;
-
+width: 80%;
   font-family: 'calibri';
   font-size: 15px;
+  margin-left: 80px;
 }
 
 .comment-btn {
@@ -49,11 +50,11 @@
 }
 
 .comments-section {
-
+margin-left: 30px;
   padding-top: 10px;
 }
 .comments-section h3{
- 
+  margin-left: 58px;
  margin-right: auto;
 }
 .comment {
@@ -65,7 +66,8 @@
   margin-bottom: 10px;
   margin: 0 auto;
   margin-right: auto;
-  max-width: 100%;
+  max-width: 82%;
+  margin-left: 50px;
 }
 
 .comment-avatar {
@@ -93,4 +95,41 @@
   padding: 3px 7px;
   border-radius: 50%;
   font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .comment {
+    display: flex;
+    align-items: flex-start;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-right: auto;
+    max-width: 82%;
+    margin-left: 50px;
+  }
+  .comment-container{
+    margin-left: -50px;
+    width: 380px;
+  }
+}
+@media (max-width: 320px) {
+  .comment {
+    display: flex;
+    align-items: flex-start;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-right: auto;
+    max-width: 82%;
+    margin-left: 50px;
+  }
+  .comment-container{
+    margin-left: -50px;
+    width: 280px;
+  }
 }

@@ -1,0 +1,180 @@
+.privacypolicyy{
+    font-family: 'Calibri';
+    max-width: 100%;
+   margin-left: 150px;
+    color: #333;
+    line-height: 1.4;
+    margin-top: 120px;
+    margin-bottom: 100px;
+  }
+.privacyy-image{
+    width: 500px;
+    margin-left: 330px;
+}
+
+  .privacypolicyy h1 {
+    background: linear-gradient(to right, #24B676, #238486);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 26px;
+    margin-left: 500px;
+  }
+  .privacypolicyy p {
+    line-height: 1.4;
+    max-width: 90%;
+    font-size: 15px; 
+  }
+  .privacypolicyy-section p{
+    margin-left: 10px;
+    font-size: 15px;
+  }
+  .privacypolicyy h2{
+    color: #0349A8;
+    font-size: 18px;
+   
+  }
+  .privacypolicyy-section h3{
+    margin-bottom: -15px;
+    font-size: 18px;
+  }
+  .privacypolicyy li{
+list-style: none;
+  }
+  .collectpara li {
+    list-style-type: disc; /* For solid bullet points */
+  }
+  .privacypolicyy a {
+    color: #24b676; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make it bold */
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .privacypolicyy a:hover {
+    color: #238486; /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  
+@media (min-width: 1536px) {
+    .privacypolicyy{
+        font-family: 'Calibri';
+        max-width: 100%;
+       margin-left: 350px;
+        color: #333;
+        line-height: 1.4;
+        margin-top: 120px;
+        margin-bottom: 100px;
+      }
+    .privacyy-image{
+        width: 500px;
+        margin-left: 330px;
+    }
+    
+      .privacypolicyy h1 {
+        background: linear-gradient(to right, #24B676, #238486);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 26px;
+        margin-left: 500px;
+      }  
+}
+
+@media (min-width: 1024px) and (max-width: 1279px)  {
+    .privacypolicyy{
+        font-family: 'Calibri';
+        max-width: 1024px;
+       margin-left: 150px;
+        color: #333;
+        line-height: 1.4;
+        margin-top: 120px;
+        margin-bottom: 100px;
+      }
+    .privacyy-image{
+        width: 500px;
+        margin-left: 130px;
+    }
+    
+      .privacypolicyy h1 {
+        background: linear-gradient(to right, #24B676, #238486);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 26px;
+        margin-left: 300px;
+      }  
+
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .privacypolicyy{
+        font-family: 'Calibri';
+        max-width: 768px;
+       margin-left: 150px;
+        color: #333;
+        line-height: 1.4;
+        margin-top: 120px;
+        margin-bottom: 100px;
+      }
+    .privacyy-image{
+        width: 500px;
+        margin-left: -15px;
+    }
+    
+      .privacypolicyy h1 {
+        background: linear-gradient(to right, #24B676, #238486);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 26px;
+        margin-left: 150px;
+      } 
+      .privacypolicyy h2{
+        color: #0349A8;
+        font-size: 18px;
+       margin-left: -5px;
+      }
+    }
+    @media (max-width: 480px){
+
+        .privacypolicyy{
+            font-family: 'Calibri';
+            max-width: auto;
+           margin-left: 20px;
+            color: #333;
+            line-height: 1.4;
+            margin-top: 70px;
+            margin-bottom: 100px;
+          }
+        .privacyy-image{
+       
+          width: 360px;
+            margin-left: -15px;
+            margin-right: auto;
+        }
+        
+          .privacypolicyy h1 {
+            background: linear-gradient(to right, #24B676, #238486);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 26px;
+            margin-left: 100px;
+          } 
+          .privacypolicyy h2{
+            color: #0349A8;
+            font-size: 18px;
+           margin-left: -5px;
+          }
+        }
+        @media (max-width: 320px){
+            .privacyy-image{
+       
+                width: 300px;
+                  margin-left: -15px;
+                  margin-right: auto;
+              }
+              .privacypolicyy h1 {
+                background: linear-gradient(to right, #24B676, #238486);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 24px;
+                margin-left: 70px;
+              }
+        }

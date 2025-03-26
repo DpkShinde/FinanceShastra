@@ -411,7 +411,19 @@ margin-bottom: 100px;
 
 
 
-
+@media (min-width: 1024px) and (max-width: 1279px)  {
+  .content-containerwatchlist {
+    margin-top: 50px;
+    padding: 10px;
+    box-shadow: 0 3px 5px rgb(127, 171, 225);;
+    border: 1px solid rgb(127, 171, 225);
+    border-radius: 8px;
+    margin-left:300px;
+    width:100%;
+    font-family: 'calibri';
+    margin-bottom: 100px;
+    }
+}
 
 
 
@@ -429,7 +441,7 @@ margin-bottom: 100px;
 
   .group-by-sectionwatchlist {
     display: flex; /* Enable flexbox for responsive layout */
-    margin-left: 790px;
+    margin-left: 0px;
     gap:5px
   }
 
@@ -478,11 +490,12 @@ margin-bottom: 100px;
     margin-bottom: 400px;
     overflow-x: auto; /* 'auto' is usually more user-friendly than 'scroll' */
     white-space: nowrap; /* Ensures content doesn't wrap, useful for horizontal scrolling */
-    overflow-x: scroll;
-    width: -webkit-fill-available;
-    margin: 20px 0;
+    overflow-x: hide;
+    width: 710px;
+
     padding: 10px;
     margin-bottom: 130px;
+    margin-left: 10px;
   }
   
   .stock-tablewatchlist {
@@ -501,19 +514,52 @@ margin-bottom: 100px;
     padding: 8px 12px;
     width: 100%;
   }
+  .networth-tabswatclist {
+    display: flex
+  ;
+    gap: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 }
 
-/* Media query for devices <= 480px */
-@media (max-width: 480px) {
+@media (max-width: 374px) { 
   .stock-watchlist {
     margin: 5px;
     padding: 10px;
     border-radius: 6px;
 margin-top: 20px;
-    height: 200px;
+    height: 300px;
     width: auto;
+    width: 278px;
+    margin-left: 10px;
+  }
+  .content-containerwatchlist{
+    width: 280px;
   }
 
+}
+/* Media query for devices <= 480px */
+@media (max-width: 480px) and (min-width: 375px)  {
+  .stock-watchlist {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 6px;
+margin-top: 20px;
+    height: 300px;
+    width: auto;
+   max-width: 360px;
+    margin-left: 20px;
+  }
+  .networth-tabswatclist {
+    display: flex
+  ;
+    gap: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
   .watchlist-title {
     font-size: 16px;
     margin: 10px 0;
@@ -530,15 +576,16 @@ margin-top: 20px;
       overflow-x: scroll/* Adjust container width */;
       width: -webkit-fill-available;
       margin-bottom: 130px;
+      width: 360px;
+      margin-left: 20px;
        
   }
 
   .input-groupwatchlist {
     font-size: 14px;
     display: flex;
-    align-items: center; /* Align items vertically centered */
-    justify-content: space-between; /* Space items out horizontally */
-    gap: 10px; /* Add spacing between scheme name and exchange */
+  
+    gap: 20px; /* Add spacing between scheme name and exchange */
     padding: 5px;
   }
 
@@ -660,3 +707,6 @@ margin-top: 20px;
 
   
 }
+
+
+  

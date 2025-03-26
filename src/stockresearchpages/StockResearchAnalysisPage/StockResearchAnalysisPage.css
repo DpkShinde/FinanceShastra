@@ -299,3 +299,11 @@ margin-left: 60px
   color: #333;
 }
 }
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .stockresearchanalysispage-table {
+      width: 93%;
+      margin-left: 40px;
+      margin-bottom: 40px;
+  }
+}

@@ -7,6 +7,22 @@
    
   }
   
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1); 
+    border-left-color: #24b676; 
+    border-radius: 50%; 
+    animation: spin 1s linear infinite; 
+    margin: auto; 
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg); /* लगातार घुमाने के लिए */
+    }
+  }
+  
   .funds-header {
     display: flex
 ;
@@ -87,6 +103,7 @@
 .sort-icons {
   display: inline-flex
 ;
+line-height: 0.1;
   flex-direction: column;
   align-items: center;
   margin-left: 5px;
@@ -117,12 +134,19 @@
   
   .sort-icons .active {
     color: white;
+  
   }
   
   .sort-icons .icon-up,
   .sort-icons .icon-down {
-    font-size: 10px;
-    color: gray;
+    font-size: 13px
+  }
+  .sort-icons .icon-up{
+
+  }
+   .sort-icons .icon-down{
+margin-top: -5px;
+
   }
   .pagination-topratedcontainer {
     display: flex;
@@ -169,7 +193,43 @@
     background-color: #ddd;
 }
 
+@media (min-width: 1536px) {
+  .pagination-topratedcontainer {
+    display: flex;
+   margin-left: -280px;
+   
+}
+.pagination-topratedcontainer-buttons {
+  display: flex;
+  gap: 8px; /* Provides spacing between buttons */
+ margin-right: -530px;
+}
 
+}
+
+
+@media (min-width: 1024px) and (max-width: 1279px)  {
+  .funds-table-header th {
+    background-color: #24b676;
+    text-align: left;
+    padding: 4px;
+    font-weight: bold;
+    color: white;
+    font-size: 11px;
+}
+  
+.sort-icons .icon-up,
+.sort-icons .icon-down {
+  font-size: 10px
+}
+.sort-icons .icon-up{
+
+}
+ .sort-icons .icon-down{
+margin-top: -5px;
+
+}
+}
 /* Responsive styles */
 @media screen and (max-width: 768px) {
   .funds-table-container {
@@ -188,6 +248,7 @@
       align-items: flex-start;
       margin-top: 20px;
       gap: 5px;
+      margin-left: 520px;
   }
 
   .fund-button {
@@ -214,7 +275,7 @@
 
 @media screen and (max-width: 480px) {
   .funds-table-container {
-      width: 100%;
+      width: 90%;
       margin-top: 30px;
   }
 
@@ -235,11 +296,12 @@
     width: 80%;
     margin-right: 0;
     align-items: stretch;
+    margin-left: 0px;
 }
   .fund-button {
       font-size: 12px;
       padding: 8px;
-      width: 100%;
+      width: 30%;
   }
 
   .funds-table {

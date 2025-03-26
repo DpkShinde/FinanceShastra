@@ -7,6 +7,7 @@ import FooterForAllPage from '../../../FooterForAllPage/FooterForAllPage';
 
 const RiskAnalysisDashboard = () => {
     const navigate = useNavigate();
+
     return (
         <div>
         <div className="riskreportprofile-container">
@@ -80,7 +81,17 @@ const RiskAnalysisDashboard = () => {
             <div className="subscribe-footerrmanagealerttt">
       <h2 className="headingmanagealert">Subscribe Now!</h2>
         <h3>Choose a plan that aligns with your investment goals!</h3>
-        <button className="footer-subscribe-buttonmanage" onClick={()=>{navigate('/pricehalf')}} >Subscribe</button>
+        <button 
+  className="footer-subscribe-buttonmanage" 
+  onClick={() => {
+    navigate('/pricehalf', { replace: true }); 
+    window.scrollTo(0, 0);
+  }} 
+>
+  Subscribe
+</button>
+
+
       </div>
         </div>
         <Navbar/>

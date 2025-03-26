@@ -2210,7 +2210,7 @@ const ScreenerStockList = () => {
 
         <div
           className="screener-table-wrapper"
-          style={{ overflowY: "auto", height: "500px" }}
+          
         >
           <table
             className="screener-table"
@@ -2390,7 +2390,7 @@ const ScreenerStockList = () => {
           </table>
         </div>
         {/* Pagination Section */}
-        <div className="pagination-container">
+        <div className="pagination-stockcontainer">
           <div className="pagination-info">
             {`Showing ${indexOfFirstItem + 1} to ${indexOfLastItem} of ${
               stocks.length

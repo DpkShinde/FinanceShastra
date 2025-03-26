@@ -31,12 +31,18 @@ const EditProfile = () => {
     pincode: personalDetails.pincode,
     industry: professionalDetails.industry,
     income: professionalDetails.income,
+    name: billingInfo.name,
+    address: billingInfo.address,
+    city: billingInfo.city,
+    state: billingInfo.state,
+    country: billingInfo.country,
 
   });
 
   const [errors, setErrors] = useState({}); // For validation errors
 
   const navigate = useNavigate();
+  const { billingInfo } = location.state || {};
 
 
   const profilePageCancel = () => {
@@ -456,7 +462,14 @@ const EditProfile = () => {
     const maskedName = name.slice(0, 3) + "********"; // Keep first 3 characters, mask the rest
     return `${maskedName}@${domain}`;
   };
-
+  useEffect(() => {
+    if (billingInfo) {
+      setFormData(billingInfo);
+    }
+  }, [billingInfo]);
+  const handleSave = () => {
+    navigate("/billing-info-history", { state: { billingInfo: formData } });
+  };
 
   return (
     <div>

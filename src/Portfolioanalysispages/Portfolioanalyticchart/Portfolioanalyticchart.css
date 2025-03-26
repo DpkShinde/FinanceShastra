@@ -199,6 +199,101 @@ padding: 4px 8px;
     cursor: pointer;
   }
   
+
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .portfolioanalysisallchart {
+        flex-direction: column;
+        margin-left: 200px;
+    }
+    .fullscreenanalysis {
+        margin-left: 270px;
+    }
+    .portfolio-cardanalysisssmainchart {
+        max-width: 710px;
+        margin-left: 60px;
+    }
+    .PortfolioHoldingPageContainer {
+        width: 90% !important;
+        margin-left: 40px;
+    }
+    .trackerportfolioanalysis {
+        width: 700px;
+        margin-left: 260px;
+    }
+    .stock-containertrackerport {
+        gap: 6px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-color: #24b676 #f1f1f1;
+        scrollbar-width: thin;
+    }
+    
+    .stock-containertrackerport::-webkit-scrollbar {
+        height: 8px; /* Adjust scrollbar height */
+    }
+    
+    .stock-containertrackerport::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Track background */
+        border-radius: 8px;
+    }
+    
+    .stock-containertrackerport::-webkit-scrollbar-thumb {
+        background: #24b676; /* Scrollbar color */
+        border-radius: 8px;
+    }
+    
+    .performance-containerstockanalysiss {
+      
+        max-width: 720px;
+    }
+    .performerallstockanalysis {
+        margin-left: 280px;
+        gap: 240px;
+        font-size: 16px;
+    }
+    .allsegmsize {
+        margin-left: 150px;
+        gap: 15px;
+        width: 90%;
+        flex-direction: row;
+    }
+    .chartdonutportfolioana {
+        flex-direction: column;
+    ;
+    }
+    .segment-card {
+        width: 25%;
+        padding: 18px;
+        margin-left: 120px;
+    }
+    .size-analysis-container {
+        width: 80%;
+        padding: 18px;
+        height: 520px;
+        margin-right: auto;
+    }
+    .speedometer-container {
+        max-width: 420px;
+        height: 380px;
+        padding: 8px;
+        margin-right: 82px;
+    }
+    .speedometer-gauge text {
+        font-size: 6px !important;
+    }
+    .table-view-button {
+        width: 50px;
+        font-size: 11px;
+    }
+    .speedometer-subtitle {
+        font-size: 10px;
+       
+    }
+    
+}
+
   @media screen and (max-width: 768px){
 /* Portfolio Container */
 

@@ -1,0 +1,148 @@
+/* BillingInfoHistory.css */
+
+.billinginfohistory-container {
+    font-family: 'calibri';
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .billinginfohistory-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .billinginfohistory-wide {
+    flex: 1;
+  }
+  
+  .billinginfohistory-card {
+    border: 2px solid #24b676;
+    padding: 15px;
+    border-radius: 8px;
+    background: #ffff;
+  }
+  .billinginfohistorycard {
+    border: 2px solid #24b676;
+    padding: 15px;
+    border-radius: 8px;
+    background: #ffff;
+    height: 210px; /* Set to your preferred height */
+}
+
+  .billinginfohistory-btn {
+    background: #ffff;
+    color: #24b676;
+    padding: 10px 15px;
+    border: 2px solid #24b676;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 18px;
+  }
+  .billinginfohistorybtn {
+    background: #ffff;
+    color: #24b676;
+    padding: 10px 15px;
+    border: 2px solid #24b676;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .billinginfohistorypara{
+    color: #333;
+    font-weight: bold;
+  }
+  .billinginfohistory-switch{
+    color:#24b676;
+    font-weight: bold;
+  }
+  
+  .billinginfohistory-history table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .billinginfohistory-history td {
+    border-top: 1px solid #ddd;  /* Keep top border */
+    border-bottom: 1px solid #ddd; /* Keep bottom border */
+    border-left: none; /* Remove left border */
+    border-right: none; /* Remove right border */
+    padding: 10px;
+    text-align: left;
+}
+
+/* Add left border to the first td in each row */
+.billinginfohistory-history td:first-child {
+    border-left: 1px solid #ddd;
+}
+
+/* Add right border to the last td in each row */
+.billinginfohistory-history td:last-child {
+    border-right: 1px solid #ddd;
+}
+
+
+.billinginfohistory-history th {
+  border-top: 2px solid #24b676;  /* Keep top border */
+  border-bottom: 2px solid #24b676; /* Keep bottom border */
+  border-left: none; /* Remove left border */
+  border-right: none; /* Remove right border */
+  border-radius: 10px; /* Adjust the value as needed */
+  padding: 10px;
+  text-align: left;
+}
+/* Add left border to the first td in each row */
+.billinginfohistory-history th:first-child {
+  border-left: 2px solid #24b676;
+}
+
+/* Add right border to the last td in each row */
+.billinginfohistory-history th:last-child {
+  border-right: 2px solid #24b676;
+}
+
+
+  
+  .billinginfohistory-processing {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .billinginfohistory-success {
+    color: #24b676;
+    font-weight: bold;
+  }
+  
+ 
+  .status-icon {
+    font-size: 14px; /* Adjust icon size */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Green color for "Success" */
+.status-icon.success {
+    color: #24b676;
+}
+
+/* Orange color for "Processing" */
+.status-icon.processing {
+    color: orange;
+}
+.billinginfohistory-download,
+.billinginfohistory-view {
+ 
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 6px; /* Rounded corners */
+    background: #fff; /* White background */
+    cursor: pointer;
+    font-size: 18px; /* Adjust size */
+    margin: 0 5px; /* Space between icons */
+    color: #333; /* Default color */
+}
+
+/* Add hover effect */
+.billinginfohistory-download:hover,
+.billinginfohistory-view:hover {
+    color: #24b676; /* Change color on hover */
+}

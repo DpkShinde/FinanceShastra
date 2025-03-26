@@ -115,7 +115,7 @@ const Bestsmallcapdirect = () => {
         </p>
 
         {loading ? (
-          <p className="loading-text">Loading funds...</p>
+          <div className="spinner"></div>
         ) : error ? (
           <p className="error-text">Error: {error}</p>
         ) : (

@@ -181,7 +181,7 @@ margin-left: 200px;
     color: black;
   }
   
-  @media (min-width: 1536px) {
+  @media (min-width: 2500px) {
 
     .modulelearncourse-container {
         font-family: 'calibri';
@@ -392,4 +392,10 @@ margin-left: 50px;
   .modulelearncourse-container .modulelearncourse-card:nth-child(4) .modulelearncourse-duration {
       margin-left: 0;
   }
+}
+@media (max-width: 320px){
+  .modulelearncourse-instructor-bio {
+    font-size: 15px;
+    width: 250px;
+}
 }

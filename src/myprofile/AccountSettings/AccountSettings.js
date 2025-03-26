@@ -8,6 +8,7 @@ import { API_BASE_URL } from "../../config";
 import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
 import Cookies from 'js-cookie'
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 
 const AccountSettings = () => {
@@ -85,7 +86,7 @@ const AccountSettings = () => {
     setErrors(newErrors); // Update errors for each field
   
     // If there are no errors, proceed
-    if (!newErrors.currentPassword && !newErrors.newPassword && !newErrors.confirmPassword) {
+    if (!passwordData.currentPassword || !passwordData.newPassword || !passwordData.confirmPassword) {
       const url= `${API_BASE_URL}/users/changepass`
       //const localtoken= localStorage.getItem('token')
       const CookieToken= Cookies.get('jwtToken')
@@ -110,8 +111,10 @@ const AccountSettings = () => {
       if (response.status === 404){
         setErrors(errors.currentPassword = "Please enter correct password")
       }
-     
+      
       }
+   
+
   };
 
   const endallSessions=()=>{
@@ -128,7 +131,7 @@ const AccountSettings = () => {
     navigate('/')
   };
   return (
-    
+    <div>
     <div className="profilesettingpassword-container">
       <h1 className="profilepage-titlee">Password & Security</h1>
       <div className="profilepage-tabsss">
@@ -283,7 +286,10 @@ const AccountSettings = () => {
     
       <Navbar/>
     </div>
-
+    <div className="foooterpagesaupdate">
+        <FooterForAllPage />
+      </div>
+    </div>
   );
 };
 

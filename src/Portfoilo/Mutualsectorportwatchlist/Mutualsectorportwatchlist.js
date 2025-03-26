@@ -229,7 +229,7 @@ const MutualWatchsectorlist= ({children}) => {
         </div>
         {/* Stock Table Section */}
         <div className="content-sectorcontainerwatchlist">
-        <div className="top-sectionswatchlist"style={{ display: "flex", justifyContent: "space-between", alignItems: "center", margin: "10px 0" }}>
+        <div className="top-sectionswatchlist"style={{ display: "flex", margin: "10px 0" }}>
             <div className="filters-sectionwatchlist">
               <span className="filter-labelwatchlist">FILTER:</span>
               <button className= {`filter-buttonwatchlist ${activeFilter === "All" ? "active" : ""}`}
@@ -315,7 +315,7 @@ const MutualWatchsectorlist= ({children}) => {
                     <td td style={{ color: parseFloat(stock.threemonths) >= 0 ? "green" : "red" }}>{stock.threemonths}</td>
                     <td td style={{ color: parseFloat(stock.threemonths) >= 0 ? "green" : "red" }}>{stock.fiveyears}</td>
                     <td td style={{ color: parseFloat(stock.threemonths) >= 0 ? "green" : "red" }}>{stock.tenyears}</td>
-                    <td></td>
+                   
                       </tr>
                     ))}
                   </React.Fragment>

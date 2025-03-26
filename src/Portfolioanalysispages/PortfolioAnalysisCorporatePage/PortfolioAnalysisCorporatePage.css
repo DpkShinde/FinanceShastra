@@ -536,3 +536,12 @@ input:checked + .portfolianalysiscorporatepageslider:before {
 
 
    }
+
+   /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .portfolianalysiscorporatepage-container {
+    width: 68%;
+    margin-left: 270px;
+    padding: 18px;
+}
+}

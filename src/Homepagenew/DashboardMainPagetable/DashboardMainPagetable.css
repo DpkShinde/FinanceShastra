@@ -11,9 +11,10 @@
 }
 .pagination-containerrsector {
   display: flex;
-  gap: 810px;
+  gap: 770px;
   align-items: center;
   margin: 20px 0;
+  margin-left: 20px;
 }
 .DashboardMainPagetable-change{
 font-size: 14px;
@@ -72,8 +73,8 @@ body{
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 16px;
-    width: 125px;
-    max-width: 140px;
+    width: 100px;
+    max-width: 130px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: 'calibri';
@@ -317,14 +318,70 @@ body{
       gap: 10px;
       margin-bottom: 230px;
  margin-left: 270px;
-      margin-top: -180px;
+      margin-top: -130px;
 }
   /* Responsive Design */
- 
-  
+
+  @media(min-width:1536px){
+    .pagination-containerrsector {
+      display: flex;
+      gap: 821px;
+      align-items: center;
+      margin: 20px 0;
+      margin-left: 20px;
+    }
+    .DashboardMainPagetable-card.custom-card-size {
+      width: 145px;
+  }
+    .pagination-slider{
+      margin-right: -1000px;
+    }
+    .DashboardMainPagetable-card {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+   
+    
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-family: 'calibri';
+    }
+    .DashboardMainPagetable-tableeee {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+  }
+  .DashboardMainPagetable-headerrindexx{
+    display: flex;
+        gap: 10px;
+        margin-bottom: 230px;
+   margin-left: 270px;
+        margin-top: -105px;
+  }
+  }
+
+  @media (max-width: 1440px) {
+    .DashboardMainPagetable-headerrindexx{
+      display: flex;
+          gap: 10px;
+          margin-bottom: 230px;
+     margin-left: 270px;
+          margin-top: 40px;
+    }
+}
+    
 
 
-
+  @media (min-width: 1024px) and (max-width: 1279px)  {
+    .DashboardMainPagetable-headerrindexx{
+        display: flex;
+            gap: 10px;
+            margin-bottom: 230px;
+       margin-left: 270px;
+            margin-top: 30px;
+      }
+}
 
 
   @media (max-width: 768px) {
@@ -333,7 +390,7 @@ body{
       padding: 10px; /* Reduced padding for smaller screens */
       font-family: 'calibri';
       background: white;
-      width: 100%; /* Full width for mobile screens */
+      width: 90%; /* Full width for mobile screens */
       margin-left: 0; /* No left margin for mobile */
       margin-top: -100px; /* Adjust alignment for smaller screens */
       box-sizing: border-box; /* Include padding in width calculation */
@@ -345,9 +402,9 @@ body{
     .DashboardMainPagetable-headerrindexx{
       display: flex;
           gap: 10px;
-          margin-bottom: 20px;
-          margin-left: 10px;
-          margin-top: -100px;
+          margin-bottom: 110px;
+          margin-left: 20px;
+          margin-top: -40px;
     }
   
     .DashboardMainPagetable-header {
@@ -377,8 +434,24 @@ body{
       background-color: #f9f9f9; /* Scrollbar track background color */
     }
   
+    .DashboardMainPagetable-container {
+      padding: 10px; /* Reduced padding for smaller screens */
+      font-family: 'calibri';
+      background: white;
+     
+  
+      /* Adjust alignment for smaller screens */
+      align-items: center;
+
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+    body{
+      overflow-x: hidden;
+    }
+
+
     .DashboardMainPagetable-tab {
-      padding: 7px 10px;
+      padding: 10px 7px;
       background: #e0e0e0;
       border: none;
       border-radius: 5px;
@@ -386,34 +459,32 @@ body{
       transition: background 0.3s ease;
       flex-shrink: 0; /* Prevent shrinking */
       white-space: nowrap; /* Keep tabs in a single line */
-    }
-  
-    .DashboardMainPagetable-tab:hover {
-      background-color: #24b676; 
-      color: white;
-      /* Slightly darker shade on hover */
-    }
-  
-    .DashboardMainPagetable-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-      margin-left: 50px;
-    }
-  
-    .DashboardMainPagetable-table-container {
-      overflow-x: auto; /* Enables horizontal scrolling */
-      overflow-y: auto; /* Enables vertical scrolling if needed */
-      margin: 20px;
-      width: 130%; /* Adjust width to fill the container */
-      margin-left: -10px;
-      height: 300px;
-      /* Set a fixed height for the table container */
+      margin-bottom: 3px;
     }
     
+  
+  .DashboardMainPagetable-tab:hover {
+      background: #24b676;
+      color: white; /* Slightly darker shade on hover */
+  }
+  
+  .DashboardMainPagetable-cards {
+    display: flex
+;
+width:600px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+   align-items: center;
+   margin-left: 90px;
+   
+    
+  
+}
+ 
+    
     .DashboardMainPagetable-tableeee {
-      width: 100%;
+      width: 50%;
       border-collapse: collapse;
       margin-top: 30px;
       overflow-x: auto;
@@ -438,22 +509,11 @@ body{
       z-index: 2; /* Ensure it stays above table content */
     }
     
-    .DashboardMainPagetable-card {
-      background-color: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      font-family: 'calibri';
-      flex: 0 1 calc(50% - 10px); /* Each card takes 50% of the width minus gap */
-      width: 140px;
-      box-sizing: border-box; /* Include padding and borders in width calculations */
-    }
+   
   
     .DashboardMainPagetable-card.custom-card-size {
-      width: 190px;
-      margin-left: 70px;
+      width: 300px;
+      margin-left: 183px;
     }
   
     /* Sector Icons */
@@ -545,17 +605,15 @@ body{
   
     .pagination-containerrsector {
       display: flex;
-      gap: 160px;
+      gap: 360px;
       align-items: center;
       margin: 20px 0;
+      margin-left: 15px;
     }
     .FooterForAllPage-footerrr{
 display: none;
     }
-    .DashboardMainPagetable-card.custom-card-size {
-      width: 320px;
-      margin-left: 70px;
-    }
+  
   }
   
 
@@ -607,12 +665,12 @@ display: none;
   .DashboardMainPagetable-cards {
     display: flex
 ;
-width:300px;
+width:400px;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
    align-items: center;
-   margin-left: 40px;
+   margin-left: 20px;
    
     
   

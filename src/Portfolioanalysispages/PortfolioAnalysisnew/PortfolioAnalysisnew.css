@@ -371,3 +371,13 @@ margin-left: 5px;
 }
 
   }
+
+  /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .news-cardportfoloiaa {
+    max-width: 69%;
+    margin-left: 270px;
+    margin-right: auto;
+    padding: 12px;
+}
+}

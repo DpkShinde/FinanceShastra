@@ -2,7 +2,7 @@
   text-align: center;
   margin: 20px;
   font-family: 'calibri';
-  margin-bottom: 170px;
+  margin-bottom: 100px;
 }
 
 .testimonial-slider-heading {
@@ -86,93 +86,65 @@
 .testimonial-nav-button:hover {
   color: #000;
 }
-/* Tablet View (Max Width: 768px) */
-@media (max-width: 768px) {
-  .testimonial-slider-wrapper {
-    margin: 10px;
+/* Extra Large Screens (1536px and above) */
+@media (min-width: 1536px) {
+  .testimonial-card {
+    width: 350px;
   }
+}
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .testimonial-card {
+    width: 320px;
+  }
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .testimonial-card {
+    width: 300px;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
   .testimonial-slider-container {
     flex-direction: column;
   }
-
-  .testimonial-slider-heading {
-    font-size: 22px;
-  }
-
   .testimonial-card {
-    width: 97%;
-    padding: 10px;
-    margin: 10px 0;
-    margin-left: -2px;
-}
-  .testimonial-text {
-    font-size: 13px;
+    width: 80%;
+    margin-bottom: 20px;
   }
-
-  .testimonial-name,
-  .testimonial-role {
-    font-size: 13px;
-  }
-
-  .testimonial-image {
-    width: 40px;
-    height: 40px;
-  }
-
-  .testimonial-nav-button {
-    display: none;
-}
-
-
-  .testimonial-nav-button.prev {
-    left: -20px;
-  }
-
-  .testimonial-nav-button.next {
-    right: -20px;
-  }
-}
-
-/* Mobile View (Max Width: 480px) */
-@media (max-width: 480px) {
   .testimonial-slider-wrapper {
-    margin: 5px;
+    margin-bottom: -10px;
   }
-
-  .testimonial-slider-heading {
-    font-size: 20px;
-  }
-
-  .testimonial-slider-container {
-    flex-direction: column;
-  }
-
-  .testimonial-card {
-    width: 95%;
-    padding: 10px;
-    margin: 10px 0;
-    margin-left: 0px;
 }
-  .testimonial-text {
-    font-size: 12px;
-  }
 
-  .testimonial-name,
-  .testimonial-role {
-    font-size: 12px;
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .testimonial-card {
+    width: 90%;
+    margin: 10px 0;
   }
-
-  .testimonial-image {
-    width: 35px;
-    height: 35px;
-  }
-
   .testimonial-nav-button {
     font-size: 1.5rem;
   }
+}
 
-  .testimonial-nav-button.prev,
-  .testimonial-nav-button.next {
-    display: none; /* Hide navigation buttons on smaller screens */
+/* Small Mobile Devices (Below 480px) */
+@media (max-width: 480px) {
+  .testimonial-card {
+    width: 78%;
+    padding: 15px;
+}
+  .testimonial-slider-heading {
+    font-size: 20px;
+  }
+  .testimonial-slider-container {
+    flex-direction: column; 
+  }
+  .testimonial-slider-wrapper {
+    margin-bottom: -10px;
   }
 }

@@ -57,10 +57,18 @@ function Forgetpassword() {
   //function to send password reset link on user mail
   const handleForgotPasswordEmailSubmit = async (e) => {
     e.preventDefault();
+    if (!email.trim()) {
+      setEmailError("Email is required");
+      return;
+    }
+    if (!validateEmail(email)) {
+      setEmailError("Enter a valid email address");
+      return;
+    }
     setIsLoading(true);
     try {
       const url = `${API_BASE_URL}/users/forget-password`;
-      const token =Cookies.get("jwtToken");
+      const token = Cookies.get("jwtToken");
 
       const response = await fetch(url, {
         method: "POST",
@@ -71,11 +79,11 @@ function Forgetpassword() {
         body: JSON.stringify({ email }),
       });
 
-      const data =await response.json();
+      const data = await response.json();
 
       if (response.ok) {
         alert("Password reset link sent to your email!");
-        navigate("/openemailforgotpass")
+        navigate("/openemailforgotpass");
       } else {
         alert(data.message || "Something went wrong");
       }
@@ -135,7 +143,13 @@ function Forgetpassword() {
   return (
     <div className="login-container">
       <div className="login-leftforget">
-        <img src={logoimg} className="logoforgt" onClick={() => {navigate('/login')}} />
+        <img
+          src={logoimg}
+          className="logoforgt"
+          onClick={() => {
+            navigate("/login");
+          }}
+        />
       </div>
       <div className="login-right">
         <div className="login-boxforget">

@@ -916,7 +916,7 @@ margin-top: 70px;
   cursor: pointer;
   transition: background 0.3s ease;
   font-size: 14px;
-  width: 50%; /* Full width button on small screens */
+  width: 50% !important; /* Full width button on small screens */
   margin-top: 10px;
   font-weight: 600;
   margin-left:140px; /* Remove left margin */
@@ -931,7 +931,7 @@ margin-top: 70px;
   cursor: pointer;
   transition: background 0.3s ease;
   font-size: 14px;
-  width: 50%; /* Full width button on small screens */
+  width: 50% !important; /* Full width button on small screens */
   margin-top: 50px;
   font-weight: 600;
   margin-left:140px; /* Remove left margin */
@@ -1019,8 +1019,8 @@ margin-top: 70px;
     background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 87%;
-    max-width: 240px;
+    width: 150% !important;
+    max-width: 250px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -1033,7 +1033,7 @@ margin-top: 70px;
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 110%;
+  width: 90%;
   /* max-width: 1900px; */
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1057,7 +1057,7 @@ margin-top: 70px;
     text-align: center;
     margin: 0 auto 15px;
     color: #fff;
-    width: 120%;
+    width: 100%;
     height: 300px;
     min-height: 800px;
     box-shadow: 0 4px 8px #24b676;
@@ -1222,7 +1222,7 @@ margin-top: 70px;
     cursor: pointer;
     transition: background 0.3s ease;
     font-size: 14px;
-    width: 100%; /* Full width button on small screens */
+    width: 100% !important; /* Full width button on small screens */
     margin-top: 10px;
     font-weight: 600;
     margin-left: 0; /* Remove left margin */
@@ -1237,7 +1237,7 @@ margin-top: 70px;
     cursor: pointer;
     transition: background 0.3s ease;
     font-size: 14px;
-    width: 100%; /* Full width button on small screens */
+    width: 100% !important; /* Full width button on small screens */
     margin-top: 40px;
     font-weight: 600;
     margin-left: 0; /* Remove left margin */
@@ -1272,4 +1272,37 @@ margin-top: 70px;
   border-bottom: 2px solid #898989;
   width: 250px;
 }
+}
+@media (max-width: 320px) {
+  .landingpagepremiumelite-container {
+      padding: 20px;
+  }
+
+  .landingpagepremiumelite-heading {
+      font-size: 18px;
+  }
+
+  .landingpagepremiumelite-plans {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .landingpagepremiumelite-card {
+      width: 90%;
+     
+      padding: 15px;
+  }
+
+  .landingpagepremiumelite-price-amount {
+      font-size: 20px;
+  }
+
+  .landingpagepremiumelite-features {
+      font-size: 12px;
+  }
+
+  .landingpagepremiumelite-button {
+      font-size: 12px;
+      padding: 5px 30px;
+  }
 }

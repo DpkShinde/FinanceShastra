@@ -121,13 +121,13 @@
       cursor: pointer;
       margin-top: 20px;
       transition: background-color 0.3s ease;
-      margin-left: 500px;
+      margin-left: 480px;
       margin-bottom: 10px;
     }
     
     /* Submit button hover effect */
     .riskProfileFormAll button:hover {
-      background-color: #45a049;
+      background-color: #3bcb8d;
     }
     /* Style the options to display in a 3-column layout */
   .riskProfileFormAll .option-row {

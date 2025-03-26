@@ -133,12 +133,13 @@
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
         z-index: 9999; /* Ensure it stays on top */
         position: absolute; /* Positions it properly */
-        
+        height: 350px;
+        padding: 5px;
         /* Margin Adjustments */
-        margin-top: 4470px;
+        margin-top: 1170px;
         margin-left: auto;
         font-family: 'calibri';
-        left: 63%;
+        left: 23%;
         transform: translateX(-50%); /* Centers it horizontally */
     }
     

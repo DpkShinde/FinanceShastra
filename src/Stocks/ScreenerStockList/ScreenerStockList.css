@@ -1,7 +1,8 @@
 /* src/components/ScreenerStockList.css */
 
 .screener-container {
-  width: 95%;
+  max-width: 95%;
+  overflow-x: hidden;
   margin: auto;
   font-family: 'calibri';
   margin-top: 120px;
@@ -37,6 +38,8 @@
   overflow-x: auto;
   font-size: 15px;
   font-family: 'calibri';
+  overflow-Y: auto;
+  height: 500px; 
 
 }
 
@@ -1141,7 +1144,14 @@
   gap: 10px; /* Adjust the gap as needed */
   margin-top: 10px;
 }
+.pagination-stockcontainer {
+  display: flex;
+gap: 1020px;
+  align-items: center;
+  margin-top: 20px;
 
+ 
+}
 
 /* Mobile View for 768px */
 @media screen and (max-width: 768px) {
@@ -1154,7 +1164,7 @@
   .screener-header {
     font-size: 1.6rem;
     margin-bottom: 0.8rem;
-    margin-top: 100px;
+    margin-top: 40px;
   }
 
   .screener-table td {
@@ -1172,9 +1182,25 @@
     /* Maintain the gap between elements */
     overflow-x: auto;
     /* Enable horizontal scrolling */
-    white-space: nowrap;
+    white-space: nowrap; /* Prevent wrapping */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #24b676 #e0e0e0; 
     /* Prevent wrapping of child elements */
   }
+  /* Always show scrollbar for WebKit browsers (Chrome, Safari) */
+.screener-filters::-webkit-scrollbar {
+  height: 8px; /* Scrollbar thickness */
+  display: block; /* Forces scrollbar visibility */
+}
+
+.screener-filters::-webkit-scrollbar-thumb {
+  background: #24b676; /* Green scrollbar color */
+  border-radius: 4px;
+}
+
+.screener-filters::-webkit-scrollbar-track {
+  background: #24b676; /* Light gray scrollbar track */
+}
 
   .screener-filter-btn {
     width: 100%;
@@ -1190,8 +1216,26 @@
 
   .screener-table-wrapper {
     overflow-x: auto;
+   
+    white-space: nowrap; /* Prevent content from wrapping */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #24b676 #e0e0e0; /* Green scrollbar with light gray track */
     margin-bottom: 100px;
   }
+/* Always show scrollbar for WebKit browsers (Chrome, Safari) */
+.screener-table-wrapper::-webkit-scrollbar {
+  height: 8px; /* Scrollbar thickness */
+  display: block; /* Forces scrollbar visibility */
+}
+
+.screener-table-wrapper::-webkit-scrollbar-thumb {
+  background: #24b676; /* Green scrollbar */
+  border-radius: 4px;
+}
+
+.screener-table-wrapper::-webkit-scrollbar-track {
+  background: #24b676; /* Light gray track */
+}
 
   .screener-table {
     font-size: 14px;
@@ -1317,7 +1361,7 @@
   }
 
   .dropdown-market-cap-options {
-    width: 100%;
+    width: 30%;
     max-width: 50%;
     top: 180px;
     position: fixed;
@@ -1568,19 +1612,28 @@
     color: white;
     border: none;
   }
+  .pagination-stockcontainer {
+    margin-top: -60px;
+ 
+    }
+  
 }
 
 /* Mobile View for 480px */
 @media screen and (max-width: 480px) {
   .screener-container {
-    padding: 0 10px;
+    
     margin-top: 50px;
   }
-
+  .pagination-stockcontainer {
+    margin-top: -90px;
+    flex-direction: column;
+    gap: 10px;
+  }
   .screener-header {
     font-size: 1.4rem;
     margin-bottom: 0.6rem;
-    margin-top: 105px;
+    margin-top:40px;
   }
 
   .screener-filters {
@@ -1602,7 +1655,27 @@
 
   .screener-table-wrapper {
     overflow-x: auto;
+    white-space: nowrap; /* Prevent content from wrapping */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #24b676 ; /* Green scrollbar with light gray track */
+    margin-bottom: 100px;
   }
+/* Always show scrollbar for WebKit browsers (Chrome, Safari) */
+.screener-table-wrapper::-webkit-scrollbar {
+  height: 8px; /* Scrollbar thickness */
+  display: block; /* Forces scrollbar visibility */
+}
+
+.screener-table-wrapper::-webkit-scrollbar-thumb {
+  background: #24b676; /* Green scrollbar */
+  border-radius: 4px;
+}
+
+.screener-table-wrapper::-webkit-scrollbar-track {
+  background: #24b676; /* Light gray track */
+}
+
+  
 
   .screener-table {
     font-size: 12px;
@@ -1722,13 +1795,12 @@
   }
 
   .dropdown-market-cap-options {
-    width: 100%;
+    width: 40%;
     max-width: 50%;
     top: 180px;
     position: fixed;
-
-
-  }
+    margin-left: -100px;
+}
 
   .dropdown-change-options {
     width: 100%;
@@ -2033,4 +2105,80 @@
     background: #555;
     /* Optional: change the color when hovering over the thumb */
   }
+}
+@media (min-width: 1280px) and (max-width: 1535px)  /* Medium Desktops (1024px - 1279px) */{
+  .pagination-stockcontainer {
+    display: flex;
+  gap: 1000px;
+    align-items: center;
+    margin-top: 20px;
+  
+   
+  }
+}
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .screener-filters {
+      display: flex;
+      flex-wrap: nowrap; /* Prevents wrapping */
+      gap: 8px;
+      margin-bottom: 15px;
+      overflow-x: scroll !important; /* Ensures scrolling is enabled */
+      white-space: nowrap; /* Prevents text from wrapping */
+      scrollbar-width: thin; /* Firefox - Shows a thin scrollbar */
+      scrollbar-color: #24b676 #e0e0e0; /* Scrollbar styling */
+  }
+
+  /* Ensures the container has limited width to trigger scrolling */
+  .screener-container {
+      
+      overflow-x: hidden;
+  }
+
+  /* Always visible scrollbar for WebKit browsers (Chrome, Safari) */
+  .screener-filters::-webkit-scrollbar {
+      height: 8px; /* Adjust scrollbar height */
+      display: block; /* Forces scrollbar to be always visible */
+  }
+
+  .screener-filters::-webkit-scrollbar-thumb {
+      background: #24b676; /* Green scrollbar thumb */
+      border-radius: 4px;
+  }
+
+  .screener-filters::-webkit-scrollbar-track {
+      background: #e0e0e0; /* Light grey track */
+  }
+
+  .dropdown-market-cap-toggle {
+      padding: 6px;
+      font-size: 14px;
+      gap: 4px;
+  }
+  .dropdown-market-cap-options {
+   margin-top: 190px;
+    position: fixed;
+   
+ 
+}
+.stockindexscreeneropt {
+  position: fixed;
+  top: 230px;
+  left: 50px;
+  width: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.pagination-stockcontainer {
+  display: flex;
+gap: 620px;
+  align-items: center;
+  margin-top: 20px;
+
+ 
+}
 }

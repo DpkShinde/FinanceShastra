@@ -439,3 +439,41 @@ margin-left: 40px;
       /* Rounded bottom-right corner */
     } 
   }
+
+  /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .report-container {
+    width: 68%;
+    margin-left: 270px;
+    height: 580px;
+    padding: 18px;
+}
+.stockresearchanalysispage-tableanalysisblur {
+  width: 101%;
+  margin-left: 5px;
+  margin-bottom: 6px;
+  margin-top: 18px;
+  overflow-x: auto;
+  display: block;
+  scrollbar-color: #24b676 white;
+  scrollbar-width: thin;
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.stockresearchanalysispage-tableanalysisblur::-webkit-scrollbar {
+  height: 8px; /* Adjust scrollbar thickness */
+}
+
+.stockresearchanalysispage-tableanalysisblur::-webkit-scrollbar-track {
+  background: white; /* Track color */
+}
+
+.stockresearchanalysispage-tableanalysisblur::-webkit-scrollbar-thumb {
+  background: #24b676; /* Scrollbar color */
+  border-radius: 4px;
+}
+
+.stockresearchanalysispage-tableanalysisblur::-webkit-scrollbar-thumb:hover {
+  background: #1f9a5a; /* Darker shade on hover */
+}
+}
