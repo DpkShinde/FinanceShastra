@@ -86,7 +86,9 @@ const AccountSettings = () => {
     setErrors(newErrors); // Update errors for each field
   
     // If there are no errors, proceed
-    if (!passwordData.currentPassword || !passwordData.newPassword || !passwordData.confirmPassword) {
+    if (!errors.currentPassword || !errors.newPassword || !errors.confirmPassword) {
+      
+      console.log('sending url')
       const url= `${API_BASE_URL}/users/changepass`
       //const localtoken= localStorage.getItem('token')
       const CookieToken= Cookies.get('jwtToken')
@@ -99,6 +101,7 @@ const AccountSettings = () => {
         body: JSON.stringify(passwordData)
       };
       const response= await fetch(url, options)
+      console.log(response)
       if (response.status=== 200){
         setIsPopupVisible(true); // Show the popup
         setTimeout(() => setIsPopupVisible(false), 3000); // Hide the popup after 3 seconds
@@ -109,7 +112,10 @@ const AccountSettings = () => {
         })
       }
       if (response.status === 404){
-        setErrors(errors.currentPassword = "Please enter correct password")
+        const errorset= {
+          currentPassword: "Please enter correct password!",
+        }
+        setErrors(errorset)
       }
       
       }
@@ -178,38 +184,43 @@ const AccountSettings = () => {
         <form>
           {/* Current Password */}
           <div className="profilesettingpassword-form-group">
-            <label>Current Password*</label>
+            <label htmlFor="currentPassword">Current Password*</label>
             <div className="profilesettingpassword-password-field">
               <input
                 type={showPasswords.currentPassword ? "text" : "password"}
                 name="currentPassword"
+                id="currentPassword"
                 placeholder="Enter your current password"
                 value={passwordData.currentPassword}
                 onChange={handlePasswordChange}
                 className={errors.currentPassword ? "error" : ""}
               />
-              <span onClick={() => togglePasswordVisibility("currentPassword")}>
-              {showPasswords.currentPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
-              </span>
+              {passwordData.currentPassword && <span onClick={() => togglePasswordVisibility("currentPassword")}>
+              {showPasswords.currentPassword ? <FaEyeSlash size={20} /> : <FaEye size={20}/>}
+              </span>}
+              
             </div>
             {errors.currentPassword && <div className="error-message">{errors.currentPassword}</div>}
           </div>
 
           {/* New Password */}
           <div className="profilesettingpassword-form-group">
-            <label>New Password*</label>
+            <label htmlFor="newPassword">New Password*</label>
             <div className="profilesettingpassword-password-field">
               <input
-                type={showPasswords.newPassword ? "text" : "password"}
+              type={showPasswords.newPassword ? "text" : "password"}
                 name="newPassword"
+                id="newPassword"
                 placeholder="Enter your new password"
                 value={passwordData.newPassword}
                 onChange={handlePasswordChange}
                 className={errors.newPassword ? "error" : ""}
               />
-              <span onClick={() => togglePasswordVisibility("newPassword")}>
-              {showPasswords.newPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
-              </span>
+              
+              {passwordData.newPassword && <span onClick={() => togglePasswordVisibility("newPassword")}>
+              {showPasswords.newPassword ? <FaEyeSlash size={20} /> : <FaEye size={20}/> }
+              </span>}
+              
             </div>
             {errors.newPassword && <div className="error-message">{errors.newPassword}</div>}
           </div>
@@ -226,15 +237,25 @@ const AccountSettings = () => {
                 onChange={handlePasswordChange}
                 className={errors.confirmPassword ? "error" : ""}
               />
-              <span onClick={() => togglePasswordVisibility("confirmPassword")}>
-              {showPasswords.confirmPassword ? <FaEye size={20}/> : <FaEyeSlash size={20} />}
+              {passwordData.confirmPassword && <span onClick={() => togglePasswordVisibility("confirmPassword")}>
+              {showPasswords.confirmPassword ? <FaEyeSlash size={20} />: <FaEye size={20}/>}
 
-              </span>
+              </span>}
+              
             </div>
             {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
           </div>
           
           {/* Password Rules */}
+          <div className="profilesettingpassword-password-rules">
+            <p>New password must contain:</p>
+            <ul>
+              <li>Between 8 and 12 characters</li>
+              <li>At least one uppercase character</li>
+              <li>At least one lowercase character</li>
+              <li>At least one number and special character</li>
+            </ul>
+          </div>
         
 
           {/* Buttons */}

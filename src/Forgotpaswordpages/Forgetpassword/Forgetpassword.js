@@ -83,9 +83,11 @@ function Forgetpassword() {
 
       if (response.ok) {
         alert("Password reset link sent to your email!");
-        navigate("/openemailforgotpass");
-      } else {
-        alert(data.message || "Something went wrong");
+        navigate("/openemailforgotpass")
+      } else if(response.status === 404) {
+        console.log('response:', response)
+        setEmailError("Please enter correct email")
+        //alert(data.message || "Something went wrong");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -160,7 +162,7 @@ function Forgetpassword() {
             send you a link to reset your password.{" "}
           </p>
 
-          <form>
+          <form onSubmit={handleForgotPasswordEmailSubmit}>
             <div className="input-container">
               <label>Email Address*</label>
               <input
@@ -182,7 +184,7 @@ function Forgetpassword() {
               type="submit"
               className={`sign-in-btn ${email ? "active" : "inactive"}`}
               disabled={!email.trim()}
-              onClick={handleForgotPasswordEmailSubmit}
+              //onClick={handleForgotPasswordEmailSubmit}
             >
               {isLoading ? "Submitting..." : "Submit"}
             </button>

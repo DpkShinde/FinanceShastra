@@ -98,13 +98,21 @@ const Learncard = () => {
 
               {/* Footer Row: Image and Button */}
               <div className="learncard-footer">
-
+              {token ? <button
+                  className="learnsignup-button"
+                  onClick={() => navigate('/learnCourseDetails')}
+                >
+                  Start Learning
+                </button> 
+                :
                 <button
                   className="learnsignup-button"
-                  onClick={() => navigate('/learncardaftersignup')}
+                  onClick={() => navigate('/login')}
                 >
-                  {token ? "Start Learning" : "Signup Now"}
+                  Signup Now
                 </button>
+                }
+                
                 <img src={course.img} alt={course.title} className="course-image" />
               </div>
             </div>
