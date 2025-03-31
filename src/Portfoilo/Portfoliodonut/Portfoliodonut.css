@@ -4,7 +4,7 @@
     gap: 20px;
     justify-content: center;
     margin: 20px;
-    flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+    
     margin-top: 100px;
     margin-right: 400px;
   }
@@ -260,12 +260,38 @@ font-size: 14px;
   width: 120px; /* Default size for large screens */
   height: 120px;
 }
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .portfolio-gain-loss {
+    display: flex
+;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-right: 330px;
+}
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+  .portfolio-gain-loss {
+    display: flex
+;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-right: 0px;
+}
+
+}
  /* General Styles for 768px (tablet view) */
 @media (max-width: 768px) {
   .portfolio-gain-loss {
-    flex-direction: column; /* Stack cards vertically */
+  
     margin: 20px auto; /* Center and add space */
-    gap: 20px; /* Adjust space between elements */
+    
   }
   .chart canvas {
     width: 100px;
@@ -281,7 +307,9 @@ font-size: 14px;
     padding: 15px;
     margin: 10px auto;
   }
-
+  .unrealized-card {
+    width: 320px;
+  }
   .chartunrealized canvas {
     width: 100px;
     height: 100px;
@@ -337,11 +365,11 @@ font-size: 14px;
   }
   .highest-profitunrealized {
     height: 60px; /* Decrease height */
-    width: 380px; /* Increase width */
+    width: 300px; /* Increase width */
   }
   .highest-lossunrealized{
     height: 60px; /* Further decrease height */
-    width: 380px; /* Further increase width */
+    width: 300px; /* Further increase width */
   }
 }
 
@@ -365,7 +393,7 @@ font-size: 14px;
   .gain-card, .unrealized-card {
     padding: 20px;
     margin: 10px auto;
-    width: 90%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -424,10 +452,21 @@ font-size: 14px;
   }
   .highest-profitunrealized {
     height: 50px;
-    width: 310px;
+    width: 280px;
 }
   .highest-lossunrealized{
     height: 50px; /* Further decrease height */
-    width: 310px; /* Further increase width */
+    width: 280px; /* Further increase width */
+  }
+}
+
+@media (max-width: 320px) {
+  .highest-profitunrealized {
+    height: 50px;
+    width: 230px;
+}
+  .highest-lossunrealized{
+    height: 50px; /* Further decrease height */
+    width: 230px; /* Further increase width */
   }
 }

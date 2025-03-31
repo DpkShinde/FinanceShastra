@@ -34,6 +34,7 @@ import { faBullseye } from "@fortawesome/free-solid-svg-icons";
 
 // Dropdown menu components
 const StockDropdownMenu = () => (
+  
   <div className="stockmenu">
     <div className="stockmenu-column">
       <ul>
@@ -282,6 +283,7 @@ const MutualFundsDropdownMenu = () => (
 );
 
 const Landingnavbar = () => {
+
   // State for different dropdowns
   const [dropdowns, setDropdowns] = useState({
     stock: false,
@@ -629,6 +631,7 @@ const Landingnavbar = () => {
             )}
           </div>
         </div>
+        
         {isLogedin ? (<>
           <FaBell
                           className={
@@ -638,7 +641,7 @@ const Landingnavbar = () => {
                           
                         />
                         {isOpen && displayedNotifications?.length > 0 && (
-                                      <div className="dropdown-content">
+                                      <div className="dropdown-contentnotilanding" ref={dropdownRef}>
                                         {displayedNotifications.map((notif) => (
                                           <div
                                             key={notif.id}

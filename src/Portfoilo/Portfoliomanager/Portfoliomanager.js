@@ -22,7 +22,7 @@ function Portfolio() {
     <div>
     <div className="networth-stocks-dashboard">
       {/* Header Section */}
-      <h2 className="newwmutual">Portfolio Management Dashboard</h2>
+      <h2 className="newwmutualmanagement">Portfolio Management Dashboard</h2>
       <div className="networth-tabs">
         <Link to="/portfolio">
           <button className="networth-tabact">Dashboard</button>

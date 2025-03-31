@@ -251,7 +251,7 @@ const MutualWatchtypefundlist= ({children}) => {
         name="groupBywatchlist"
         value="nonewatchlist"
         checked={selectedValue === "nonewatchlist"}
-        onChange={() => handleChange("nonewatchlist", "/mutualwatchlistall")}
+        onChange={() => handleChange("nonewatchlist", "/mutualWatchlist")}
         style={{
           width: "14px",
           height: "14px",
@@ -307,7 +307,7 @@ const MutualWatchtypefundlist= ({children}) => {
                 {Object.keys(groupedData).map((sector) => (
                   <React.Fragment key={sector}>
                     <tr className="sector-headerwatchlist">
-                    <td colSpan="7" style={{ paddingRight: "800px", fontWeight: "bold" }}>
+                    <td colSpan="7" style={{  fontWeight: "bold" }}>
         {sector}
       </td>
                     </tr>

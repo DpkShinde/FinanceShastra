@@ -2,7 +2,12 @@
     font-family: 'calibri';
     
   }
-  
+  .chart-wrapper{
+    height: 300px;
+    width: 500px; 
+    margin-left: 50px
+  }
+
   .portfolio-tabs {
     display: flex;
     gap: 10px;
@@ -23,8 +28,10 @@
   }
   
   .portfolio-market-data {
-    display: flex;
-    justify-content: space-between;
+   display: flex;
+   margin-left: -100px;
+   gap: 20px;
+  
 
 
   }
@@ -160,4 +167,11 @@ margin-left: 90px;
     background-color: #24b676; /* Color when hovered */
     color: white;
   
+}
+
+@media (max-width: 480px){
+ .chart-wrapper{
+width: 200px;
+margin-left: -50px;
+  }
 }

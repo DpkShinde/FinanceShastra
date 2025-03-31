@@ -108,11 +108,18 @@ margin-left: 270px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(196, 193, 193, 0.955);
       border: 1px solid rgb(231, 227, 227);
-   width: 420px;
+   width: 250px;
   font-family: 'calibri';
-  margin-left: 0px;
+
   
     }
+    .allsegmsize {
+      margin-left: 20px;
+      display: flex
+  ;
+      gap: 20px;
+      width: 100%;
+  }
     
     .allsegmentsizeanalysis{
       display: flex;
@@ -131,8 +138,8 @@ margin-left: 270px;
      
     }
     .chartdonutportfolioana{
-      display: flex;
-      margin-left: -50px;
+    flex-direction: column;
+ 
     }
     
   
@@ -185,7 +192,13 @@ margin-left: 270px;
   margin-left: 0px;
   
     }
+    .allsegmsize {
+      margin-left: 20px;
+ flex-direction: column;
+      gap: 20px;
+      width: 91%;
     
+  }
     .allsegmentsizeanalysis{
       display: flex;
     justify-content: space-between;
@@ -198,7 +211,7 @@ margin-left: 270px;
       font-weight: bold;
       margin-bottom: 10px;
       font-family: 'calibri';
-      margin-left: 0px;
+      margin-left: 20px;
       margin-top: 80px;
      
     }
@@ -222,8 +235,8 @@ margin-left: 270px;
       list-style: none;
       padding: 0;
       margin-top: 53px;
-    }
-    
+      margin-left: 150px;
+  }
     .legend-itemprtana {
       display: flex;
 

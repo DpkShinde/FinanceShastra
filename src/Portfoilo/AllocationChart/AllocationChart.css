@@ -76,7 +76,7 @@
     /* Center-align the content */
     padding: 15px;
     /* Adjust padding for smaller screens */
-    width: 100%;
+    width: 90%;
     /* Ensure the container doesn't exceed the screen width */
     margin: 0 auto;
     /* Center the container horizontally */
@@ -87,8 +87,7 @@
   }
 
   .portfolio-chart-section {
-    width: 100%;
-    /* Make the chart section full width on tablets */
+ 
     margin-bottom: 15px;
     /* Add margin between the chart and amount */
     text-align: center;
@@ -157,7 +156,7 @@
   }
 
   .portfolio-chart-section {
-    width: 100%;
+    width: 90%;
     /* Make the chart section full width */
     margin-bottom: 10px;
     /* Adjust margin for smaller screens */

@@ -392,8 +392,8 @@ function Login() {
                         : ""
                     }
                     // Ensure space for the icon
-                  />
-                  <span
+                  />{
+                    password && <span
                     className="toggle-password"
                     onClick={() => setShowPassword(!showPassword)}
                     style={{
@@ -404,12 +404,16 @@ function Login() {
                       transform: "translateY(-50%)",
                     }}
                   >
-                    {showPassword ? (
-                      <FaEye size={20} />
-                    ) : (
+                    {
+                    showPassword ? (
                       <FaEyeSlash size={20} />
+                      
+                    ) : (
+                      <FaEye size={20} />
                     )}
                   </span>
+                  }
+                  
                 </div>
                 {passwordError && (
                   <span

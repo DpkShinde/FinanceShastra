@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import {useNavigate, useLocation } from "react-router-dom";
 import Portfoliodonut from "../Portfoliodonut/Portfoliodonut";
 import Navbar from "../../Navbar/Navbar";
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 
 const PortfolioStocksector = () => {
@@ -281,6 +282,9 @@ const PortfolioStocksector = () => {
       </div>
       </div>
       <Navbar/>
+      <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+      </div>
     </div>
   );
 };

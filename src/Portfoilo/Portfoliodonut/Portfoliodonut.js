@@ -47,7 +47,7 @@ const Portfoliodonut = ({total_investment}) => {
   return (
     <div className="networth-stocks-dashboard">
       {/* Navigation Tabs */}
-      <h2 className="newwmutual">
+      <h2 className="newwmutualmanagement">
   Stocks Portfolio
     </h2>
     <div className="networth-tabs">

@@ -148,8 +148,8 @@
     }
 
     .faq-item {
-        max-width: 100%; /* Ensure items take full width */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow */
+        max-width: 95%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 }
 

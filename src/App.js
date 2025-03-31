@@ -270,6 +270,7 @@ import PrivacyPolicypage from "./Privacypolicypage/Privacypolicypage";
 import ProfileRiskReportInvestment from "./myprofile/Riskanalysis/InvestmentGuide/InvestmentGuide";
 import ProfileScreenRiskReport from "./myprofile/ProfileScreenRiskReportDashboard/ProfileScreenRiskReportDashboard";
 import BillingInfoHistory from "./myprofile/BillingInfoHistory/BillingInfoHistory";
+import IpoRecommendationsubscribe from "./Learn&insight/Ipo/IpoRecommendationsubscribe/IpoRecommendationsubscribe";
 
 
 function App() {
@@ -1204,6 +1205,7 @@ function App() {
       <Route path="/dashboardall" element={< Dashboardall/>}/>
       <Route path="/billingavailableplan" element={<Billingavailableplan/>}/>
       <Route path="/billingInfoHistory" element={<BillingInfoHistory/>}/>
+      <Route path="/ipoRecommendationsubscribe" element={<IpoRecommendationsubscribe/>}/>
      
     
 

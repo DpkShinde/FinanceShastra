@@ -316,6 +316,9 @@ body {
   .landingpageunlockinvestdarkinput {
     width: 120%;
   }
+  .landingpageunlockinvest-button {
+    font-size: 10px;
+  }
 }
 
 /* Mobile Devices (Below 768px) */

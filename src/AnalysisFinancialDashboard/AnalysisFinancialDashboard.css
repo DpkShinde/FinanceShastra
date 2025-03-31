@@ -107,7 +107,7 @@ font-family: 'calibri';
 
   /* Adjust Header Font Size */
   h2, h3 {
-    font-size: 20px; /* Slightly reduce font size */
+    font-size: 17px; /* Slightly reduce font size */
     margin-left: 20px; /* Adjust margin for better alignment */
   }
 
@@ -140,7 +140,7 @@ font-family: 'calibri';
 
   /* Adjust Header Font Size */
   h2, h3 {
-    font-size: 18px; /* Further reduce font size for smaller screens */
+    font-size: 15px; /* Further reduce font size for smaller screens */
     margin-left: 10px; /* Adjust margin */
   }
 

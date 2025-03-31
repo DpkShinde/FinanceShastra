@@ -4,7 +4,13 @@
   padding: 20px;
  
 }
-
+.newwmutualmanagement{
+  margin-left: 100px;
+  margin-top: 120px;
+  font-family: 'calibri';
+  font-size: 24px;
+  
+}
 .finance-dashboard-header {
   display: flex;
   flex-direction: column;
@@ -224,12 +230,41 @@
     .investh2{
       padding: 20px;
     }
-    /* Tablet view for 768px and below */
+
+    @media (min-width: 1024px) and (max-width: 1279px)  {
+      
+.finance-investment-details-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 3px solid #a79a9a; /* Border for the card */
+  border-radius: 8px;
+ 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Distribute groups evenly */
+  align-items: flex-start; /* Align items at the top */
+  width: 60%; /* Decrease card width */
+  max-width: 900px; /* Optional max width for larger screens */
+  min-width: 400px;
+}
+.newwmutualmanagement{
+  margin-left: 30px;
+  margin-top: 120px;
+  font-family: 'calibri';
+  font-size: 20px;
+  
+}
+    }
 @media (max-width: 768px) {
   .finance-portfolio-dashboard {
     padding: 15px; /* Adjust padding for smaller screens */
   }
-
+  .newwmutualmanagement{
+    margin-left: 10px;
+    margin-top: 120px;
+    font-family: 'calibri';
+    font-size: 20px;
+    
+  }
   .finance-dashboard-header {
     padding: 15px;
     font-size: 12px; /* Adjust font size */
@@ -312,7 +347,9 @@
   .finance-portfolio-dashboard {
     padding: 10px; /* Further reduce padding for smaller screens */
   }
-
+.newwmutualmanagement {
+margin-left: 10px;
+}
   .finance-dashboard-header {
     padding: 10px;
     font-size: 10px; /* Further adjust font size */

@@ -48,7 +48,7 @@ const Mutualportfoliodonut = ({ total_investment }) => {
     <div>
 
       <div className="networth-stocks-dashboard">
-        <h2 className="newwmutual">
+        <h2 className="newwmutualmanagement">
           Mutual Fund Portfolio
         </h2>
         <div className="networth-tabs">
@@ -84,7 +84,7 @@ const Mutualportfoliodonut = ({ total_investment }) => {
         <div className="portfolio-gain-loss">
           {/* Today's Gain Section */}
           <div className="gainnn-card">
-            <h3 style={{ marginLeft: "100px" }}>Holding summary-Unrealized Gain</h3>
+            <h3 className="holdhhh">Holding summary-Unrealized Gain</h3>
             <div className="content">
               <div className="portrowgainloss">
                 {/* Donut Chart */}

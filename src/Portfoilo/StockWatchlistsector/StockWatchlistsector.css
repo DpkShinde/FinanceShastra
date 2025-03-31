@@ -85,7 +85,7 @@ height: 170px;
   
   /* Stock Table Styling */
   .stock-tablewatchlist {
-
+width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     font-family: 'calibri';
@@ -323,7 +323,7 @@ height: 170px;
     margin: 10px 0;
     gap: 550px;
   }
-  @media (min-width: 2000px) {
+  @media (min-width: 2300px) {
     .top-sectionswatchlistsectorr{
       display: flex;
       align-items: center;
@@ -364,13 +364,76 @@ height: 170px;
       text-align: left;
   }
   }
+  @media (min-width: 1280px) and (max-width: 1535px) {
+    .top-sectionswatchlistmutual{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 450px;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1279px)  {
+    .top-sectionswatchlistsectorr{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 210px;
+    }
+    .stock-tablewatchlist {
+ 
+          border-collapse: collapse;
+          margin-top: 20px;
+          font-family: 'calibri';
+        }
+    .content-sectorcontainerwatchlist {
+      margin-top: 50px;
+      padding: 10px;
+      box-shadow: 0 3px 5px rgb(127, 171, 225);;
+      border: 1px solid rgb(127, 171, 225);
+      border-radius: 8px;
+  margin-left: -2px;
+      width:97%;
+    
+    }
+
+    .stocksector-watchlist {
+      font-family: 'Calibri';
+  height: 170px;
+      box-shadow: 0 3px 5px rgb(127, 171, 225);;
+      border: 1px solid rgb(127, 171, 225);
+      margin-top: 20px;
+      margin-left: 280px;
+      width: 700px;
+      border-radius: 5px;
+      margin-bottom: 390px;
+    
+   
+    }
+    .top-sectionswatchlistsector{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 190px;
+    }
+    .top-sectionswatchlist{
+      display: flex;
+   
+      gap: 150px;
+    }
+    .top-sectionswatchlistmutual{
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 160px;
+    }
+  }
   @media (max-width: 768px) {
     .stocksector-watchlist {
       margin: 10px;
       padding: 10px;
       width: auto; /* Full-width on smaller devices */
       border-radius: 8px;
-      height: 230px;
+      height: 250px;
       margin-bottom: 500px;
     }
   
@@ -382,13 +445,13 @@ height: 170px;
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 40px;
+      gap: 130px;
     }
     .top-sectionswatchlistsector{
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 50px;
+      gap: 180px;
     }
     .top-sectionswatchlistsectorr{
       display: flex;
@@ -481,9 +544,9 @@ height: 170px;
       margin: 20px 0;
       padding: 10px;
      margin-top: 50px;
-      overflow-x: scroll/* Adjust container width */;
+   
       width: -webkit-fill-available;
-  width: 415px;
+
     
        margin-left: -3px;
     
@@ -492,7 +555,7 @@ height: 170px;
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 70px;
+      gap: 150px;
     }
   }
   
@@ -504,14 +567,14 @@ height: 170px;
       padding: 10px;
       border-radius: 6px;
 margin-top: 20px;
-      height: 250px;
+      height: 290px;
  
     }
     .top-sectionswatchlistmutual{
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 170px;
+      gap: 280px;
     }
   
     .watchlist-title {
@@ -526,16 +589,16 @@ margin-top: 20px;
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 150px;
+      gap: 400px;
     }
   
     .content-sectorcontainerwatchlist {
       margin: 20px 0;
       padding: 10px;
-     margin-top: 100px;
+     margin-top: 80px;
       overflow-x: scroll/* Adjust container width */;
      margin-left: -5px;
-      width:295px;
+      width:370px;
       
        
     
@@ -545,7 +608,7 @@ margin-top: 20px;
       display: flex;
       align-items: center;
       margin: 10px 0;
-      gap: 137px;
+      gap: 393px;
     }
   
     .top-sectionswatchlistall{
@@ -563,11 +626,30 @@ margin-top: 20px;
       gap: 10px; /* Add spacing between scheme name and exchange */
       padding: 5px;
     }
-  
+  .input-groupwatchlistt{
+    margin-left: 18px;
+    font-size: 14px;
+    display: flex;
+ font-weight: bold;
+   
+    gap: 10px; /* Add spacing between scheme name and exchange */
+    padding: 5px;
+  }
+  .input-groupwatchlistt input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
     .add-btnwatchlist {
       font-size: 12px;
-      padding: 6px 10px;
+     
     }
+    .input-groupwatchlistt label {
+      font-size: 16px;
+      color: #333;
+      white-space: nowrap;
+      font-weight: bold;
+  }
   
     .watchlist-management {
       display: flex;
@@ -670,7 +752,7 @@ margin-top: 20px;
     }
     .group-by-sectionwatchlist {
      /* Allow items to wrap to the next line */
-    
+
       align-items: center; /* Vertically align items */
      /* Add spacing between radio buttons */
    
@@ -711,7 +793,7 @@ margin-top: 20px;
     .create-watchlist {
     
    
-      padding: 10px;
+ 
    
       cursor: pointer;
       width: 50%;
@@ -727,8 +809,11 @@ margin-top: 20px;
       margin: 10px 0;
       gap: 340px;
     }
-
+ .newwmutual{
+  font-size: 15px;
+  margin-left: 15px;
   }
+}
  
   @media (max-width: 320px) { 
     .top-sectionswatchlistsectorr {
@@ -737,6 +822,33 @@ margin-top: 20px;
       align-items: center;
       margin: 10px 0;
       gap: 530px;
+  }
+  .stock-tablewatchlist {
+    font-size: 12px; /* Smaller font for mobile */
+    width: 400%;
+    border-collapse: collapse;
+  }
+
+  .top-sectionswatchlistsector{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 880px;
+  }
+  .top-sectionswatchlist{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 863px;
+  }
+  .top-sectionswatchlistmutual{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 480px;
+  }
+  .input-groupwatchlist input {
+    width: 130px;
   }
   }
   

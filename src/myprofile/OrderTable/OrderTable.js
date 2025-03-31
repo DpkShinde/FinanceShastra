@@ -22,7 +22,10 @@ import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
   { id: "#7234540", order: "Premium (half yearly)", date: "01-01-2024", amount: "₹5,999", status: "Cancel" },
 ];*/
 
-
+const formatDate = (isoString) => {
+  const date = new Date(isoString);
+  return date.toISOString().split("T")[0]; // "2025-03-08"
+};
 
 const OrderTable = () => {
   const [isLogin, setislogin] = useState(true);
@@ -51,7 +54,7 @@ const OrderTable = () => {
           const formattedordersData = data.map((e) => ({
             id: e.order_id,
             order: e.order_name,
-            date: e.order_date,
+            date: formatDate(e.order_date),
             amount: e.Amount,
             status: e.Status,
           }));

@@ -6,8 +6,8 @@ import Navbar from "../../Navbar/Navbar";
 const Portfoliogoldtop = () => {
   return (
      <div className="networth-stocks-dashboard">
-    <h2 className="newwmutual" style={{marginLeft:"100px"}}>
-    Stocks
+    <h2 className="newwmutualmanagement" >
+    Gold Portfoilo
   </h2>
   <div className="networth-tabs">
       <Link to="/portfolio">

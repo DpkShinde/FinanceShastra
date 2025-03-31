@@ -155,3 +155,118 @@
   .popupunlocklandingpagelogin:hover {
     background-color: #1d9d5b;
   }
+  /* Responsive Design */
+
+@media (min-width: 1536px) {
+  .popupunlocklandingpage {
+      width: 600px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .popupunlocklandingpage {
+      width: 550px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .popupunlocklandingpage {
+      width: 500px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .popupunlocklandingpage {
+      width: 420px;
+      margin-bottom: 40px;
+  }
+  .popupunlocklandingpage-title {
+    font-size: 18px;
+  }
+  .popupunlocklandingpage-image {
+    width: 150px;
+    
+}
+.popupunlocklandingpage-subtitle {
+  font-size: 15px;
+}
+.popupunlocklandingpage-list {
+  font-size: 12px;
+}
+.popupunlocklandingpageregister {
+  width: 28%;
+  font-size: 11px;
+}
+.popupunlocklandingpagelogin  {
+  width: 23%;
+  font-size: 11px;
+}
+.popupunlocklandingpage-footer {
+  font-size: 15px;
+}
+}
+
+@media (max-width: 767px) {
+  .popupunlocklandingpage {
+      width: 90%;
+      padding: 20px;
+  }
+  .popupunlocklandingpage-buttons {
+      flex-direction: row;
+  }
+  .popupunlocklandingpageregister,
+  .popupunlocklandingpagelogin {
+   
+    margin-left: 0;
+    font-size: 11px;
+}
+}
+/* Responsive Design */
+@media (max-width: 480px) {
+  .popupunlocklandingpage {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 40px;
+}
+  .popupunlocklandingpage-title {
+      font-size: 17px;
+  }
+  .popupunlocklandingpage-subtitle {
+      font-size: 14px;
+  }
+  .popupunlocklandingpage-footer {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+  .popupunlocklandingpage-list {
+    font-size: 11px;
+  }
+  .popupunlocklandingpage-image {
+    width: 140px;
+   
+}
+
+
+}
+
+@media (max-width: 320px) {
+  .popupunlocklandingpage {
+      width: 90%;
+      padding: 10px;
+  }
+  .popupunlocklandingpage-title {
+      font-size: 15px;
+  }
+  .popupunlocklandingpage-subtitle {
+      font-size: 13px;
+  }
+  .popupunlocklandingpage-footer {
+      font-size: 12px;
+  }
+  .popupunlocklandingpage-list {
+      font-size: 10px;
+  }
+  .popupunlocklandingpage-image {
+      width: 120px;
+  }
+}

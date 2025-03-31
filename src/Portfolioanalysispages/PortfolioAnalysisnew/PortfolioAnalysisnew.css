@@ -131,20 +131,21 @@ margin-left: 19px;
 }
 
 .news-cardportfoloiaa {
-  display: flex;
+  display: flex
+;
   align-items: center;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid rgb(213, 208, 208);
   box-shadow: 0 4px 8px rgb(187, 184, 184);
-
   padding: 15px;
-  max-width: 1030px;
+  max-width: 682px;
   transition: transform 0.3s ease-in-out;
   font-family: 'calibri';
-  margin-left: 10px;
+  margin-left: 20px;
   margin-bottom: 15px;
 }
+
 
 .news-cardportfoloiaa:hover {
   transform: scale(1.02);
@@ -254,28 +255,27 @@ margin-left: 10px;
   font-size: 20px;
   font-weight: bold;
 color: #24b676;
-margin-left: 15px;
+margin-left: 20px;
   font-family: 'calibri';
 
 
 }
 
 .news-cardportfoloiaa {
-  display: flex;
+  display: flex
+;
   align-items: center;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid rgb(213, 208, 208);
   box-shadow: 0 4px 8px rgb(187, 184, 184);
-
   padding: 15px;
-  max-width: 1030px;
+  max-width: 350px;
   transition: transform 0.3s ease-in-out;
   font-family: 'calibri';
-  margin-left: 5px;
+  margin-left: 20px;
   margin-bottom: 15px;
 }
-
 .news-cardportfoloiaa:hover {
   transform: scale(1.02);
 }
@@ -305,7 +305,7 @@ margin-left: 15px;
 }
 
 .know-moreportfoilioanalytick {
-margin-left: 220px;
+margin-left: 290px;
  cursor: pointer;
   font-family: 'calibri';
   text-decoration: underline;

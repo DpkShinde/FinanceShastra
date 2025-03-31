@@ -8,7 +8,12 @@
     gap: 10px;
     margin-bottom: 20px;
   }
-  
+  .chart-wrapper{
+    height: 300px;
+    width: 500px; 
+    margin-left: 50px
+  }
+
   .portfolio-tab {
     padding: 10px 20px;
     border: 1px solid #ccc;
@@ -161,4 +166,77 @@ margin-left: 90px;
     background-color: #24b676; /* Color when hovered */
     color: white;
   
+}
+@media (max-width: 480px){
+  .portfolio-market-data {
+    display: flex;
+ gap: 30px;
+flex-direction: column;
+margin-left: -10px;
+
+  }
+  .chart-containerportfolio{
+
+    width: 300px;
+    height: 400px;
+    margin-right: 160px;
+    box-shadow: 0 2px 5px rgb(127, 171, 225);;
+    border: 1px solid rgb(127, 171, 225);
+    margin-left: 10px;
+      }
+      .chart-wrapper{
+        width: 280px;
+        margin-left: 10px;
+          }
+          .market-data-container {
+            width: 42%;
+            max-width: 450px;
+            box-shadow: 0 2px 5px rgb(127, 171, 225);;
+        border: 1px solid rgb(127, 171, 225);
+            border-radius: 5px;
+            font-family: 'calibri';
+            background-color: #fff;
+            overflow: hidden;
+           margin-left: 10px;
+            height: 400px;
+            
+          }
+          .market-data-content {
+            padding: 10px;
+            width: 300px;
+            margin-left: -24px;
+        }
+}
+@media (max-width: 320px){
+  .market-data-container {
+    width: 47%;
+    max-width: 450px;
+    box-shadow: 0 2px 5px rgb(127, 171, 225);;
+border: 1px solid rgb(127, 171, 225);
+    border-radius: 5px;
+    font-family: 'calibri';
+    background-color: #fff;
+    overflow: hidden;
+   margin-left: 5px;
+    height: 400px;
+    
+  }
+  .market-data-content {
+    padding: 10px;
+    width: 250px;
+    margin-left: -25px;
+}
+.chart-containerportfolio{
+
+  width: 250px;
+  height: 400px;
+  margin-right: 160px;
+  box-shadow: 0 2px 5px rgb(127, 171, 225);;
+  border: 1px solid rgb(127, 171, 225);
+  margin-left: 5px;
+    }
+    .chart-wrapper{
+      width: 230px;
+      margin-left: 10px;
+        }
 }

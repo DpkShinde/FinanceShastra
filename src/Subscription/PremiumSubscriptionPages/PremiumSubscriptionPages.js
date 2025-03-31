@@ -33,7 +33,7 @@ const PremiumSubscriptionPages = () => {
   const [cvc, setCvc] = useState("");
   const [errors, setErrors] = useState({});
   const [showPopup, setShowPopup] = useState(false);
-  const [showLoginPopup, setShowLoginPopup]= useState(faLessThanEqual)
+  const [showLoginPopup, setShowLoginPopup]= useState(false)
 
   const validateInputs = () => {
     let hasErrors = false;
@@ -77,7 +77,7 @@ const PremiumSubscriptionPages = () => {
     if (validateInputs()) {
     // All fields are valid, show the popup
 
-      if (!user){
+      if (!Cookies.get('jwtToken')){
         setShowLoginPopup(true)
 
       }else{

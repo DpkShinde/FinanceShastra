@@ -1614,8 +1614,8 @@ gap: 1020px;
   }
   .pagination-stockcontainer {
     margin-top: -60px;
- 
-    }
+    gap: 400px;
+}
   
 }
 

@@ -66,7 +66,7 @@ const UserDetailsupdate = () => {
  
   // Update state when new data is passed from EditProfile
   useEffect(() => {
-    
+    const cookietoken= Cookies.get('jwtToken')
     if (!Cookies.get("jwtToken")){
       setShowPopupforLogin(true)
     }else if(token){
@@ -88,16 +88,14 @@ const UserDetailsupdate = () => {
         method: "GET",
         headers: {
           "Content-Type": 'application/json',
-          "Authorization": `Bearer ${token}`
+          "Authorization": `Bearer ${cookietoken}`
         }
       }
-      console.log('token from usersupdatedpage:', token)
       
       const response= await fetch(url, options)
       console.log(response)
       if (response.ok=== true){
         const data= await response.json()
-        console.log(data)
         const formatedDate= formatDate(data[0].dob)
         let dataupdated= {
           personal: {

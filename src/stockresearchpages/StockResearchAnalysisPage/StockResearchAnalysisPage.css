@@ -196,12 +196,13 @@ margin-left: 60px
 
   .stockresearchanalysispage-table {
     margin-left: 0;
-    width: 100%;
+    width: 95%;
     overflow-x: auto;
     display: block;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch; 
-  }
+    margin-left: 10px;
+    -webkit-overflow-scrolling: touch;
+}
  /* For Webkit browsers like Chrome, Safari */
  .stockresearchanalysispage-table::-webkit-scrollbar {
   height: 12px; /* Scrollbar height */
@@ -256,15 +257,15 @@ margin-left: 60px
     padding-left: 30px;
     /* margin-left: 200px; */
 }
-  .stockresearchanalysispage-table {
-    font-size: 12px;
-    margin-left: 0;
-    width: 100%;
-    overflow-x: auto;
-    display: block;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch; 
-  }
+.stockresearchanalysispage-table {
+  font-size: 12px;
+  margin-left: 20;
+  width: 91%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
   /* For Webkit browsers like Chrome, Safari */
 .stockresearchanalysispage-table::-webkit-scrollbar {
   height: 8px; /* Scrollbar height */

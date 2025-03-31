@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ContactFormmanagealert.css"; // Import the CSS file
 import { RiFacebookFill } from "react-icons/ri";
 import { FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaGlobe } from "react-icons/fa";
@@ -7,8 +7,10 @@ import { BsCheckCircleFill } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate } from 'react-router-dom';
+import { SubscriptionContext } from "../../Portfoilo/context/SubscriptionContext";
 
 const ContactFormmanagealert = () => {
+  const {issubscribed}= useContext(SubscriptionContext)
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -78,12 +80,8 @@ const ContactFormmanagealert = () => {
     <div className="managealertalldata">
       <h1 className="profilepage-titleorder">Manage Alert</h1>
       <div className="profilepage-tabsorderusers">
-        <span className="profilepage-tabb"
-        style={{
-          borderBottom: "2px solid #24b676",
-          fontWeight: "bold",
-          color: "#24b676",
-        }}>My Account</span>
+        <span className="profilepage-tabb">
+          My Account</span>
         <span
           className="profilepage-tabb"
           onClick={() => navigate("/orderTable")}
@@ -95,7 +93,11 @@ const ContactFormmanagealert = () => {
         <span
           className="profilepage-tabb"
           onClick={() => navigate("/managealert")}
-        >
+          style={{
+            borderBottom: "2px solid #24b676",
+            fontWeight: "bold",
+            color: "#24b676",
+          }}>
           Manage Alert
         </span>
 
@@ -226,11 +228,13 @@ const ContactFormmanagealert = () => {
           </div>
         </div>
       </div>
+      {!issubscribed &&
       <div className="subscribe-footerrmanagealert">
         <h1 className="headingmanagealert">Subscribe Now!</h1>
         <h2>Choose a plan that aligns with your investment goals!</h2>
         <button className="footer-subscribe-buttonmanage">Subscribe</button>
-      </div>
+      </div>}
+      
       <Navbar />
       {showPopup && (
         <div className="popupppp-overlayyy">

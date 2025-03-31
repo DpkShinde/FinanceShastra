@@ -214,7 +214,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 89%;
-  margin-left: 0px;
+  margin-left: 20px;
 }
 
 .portfolianalysiscorporatepage-header {
@@ -357,18 +357,17 @@ input:checked + .portfolianalysiscorporatepageslider:before {
 
   @media (max-width: 480px) {
     /* PortfolioAnalysisCorporatePage.css */
- 
- .portfolianalysiscorporatepage-container {
-   font-family: 'calibri';
-   margin: 20px;
-   border: 1px solid #ddd;
-   border-radius: 8px;
-   background-color: #fff;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   padding: 20px;
-   width: 89%;
-   margin-left: 0px;
- }
+    .portfolianalysiscorporatepage-container {
+      font-family: 'calibri';
+      margin: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      margin-left: 20px;
+  }
  
  .portfolianalysiscorporatepage-header {
    display: flex;
@@ -469,11 +468,11 @@ input:checked + .portfolianalysiscorporatepageslider:before {
  
  }
  .portfolianalysiscorporatepage-table {
-   border-collapse: collapse;
-   width: 220%;
-   table-layout: fixed; /* Ensures equal column width */
- }
- 
+  border-collapse: collapse;
+  width: 55%;
+  table-layout: fixed;
+  overflow-x: auto;
+}
  .portfolianalysiscorporatepage-table th,
  .portfolianalysiscorporatepage-table td {
    border: 1px solid #ddd; /* Ensure vertical and horizontal lines are visible */

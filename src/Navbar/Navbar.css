@@ -523,7 +523,7 @@ a span {
 
 .dropdown-contentnoti {
   position: absolute;
- left: -310px;
+ left: -240px;
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 8px;
@@ -650,17 +650,20 @@ a span {
 
   /* Stock dropdown menu */
   .stockmenu {
-    
-    width: 530%;
+    margin-top: 30px !important;
+    width: 900% !important;
     height: 150vh; /* Full height on mobile */
     gap: 10px;
     transform: translateY(-50%);
+    margin-left: -100px;
   }
   .mutualstockmenu{
-    width: 600%;
-    height: 110vh; /* Full height on mobile */
+    width: 900% !important;
+    height: 140vh; /* Full height on mobile */
+    margin-top: 30px;
     gap: 10px;
     transform: translateY(-50%);
+    margin-left: -200px;
   }
   /* Styling for the divider line */
   .stockmenu::before {
@@ -678,10 +681,10 @@ a span {
 
   /* Dropdown menu for user profile */
   .dropdown-menu {
-    position: static; /* Allow dropdown to flow naturally */
-    box-shadow: none; /* Remove shadow for simplicity */
-    width: 100%; /* Use full width */
-    margin-top: 10px; /* Add spacing above */
+    min-width: 140px; /* Slightly reduce width */
+    padding: 10px 0; /* Adjust padding */
+    margin-top: -275px;
+    margin-left: -100px;
   }
 
   .dropdown-menu li {
@@ -856,22 +859,13 @@ a span {
     box-shadow: 0 2px 4px red; /* Subtle shadow for very small screens */
   }
   /* Stock dropdown menu adjustments */
-  .stockmenu {
-    width: 800%;
-    height: 200vh;
-    left: 0;
-    transform: translateY(-30%);
-    gap: 5px;
-    left: -75px;
-}
-  .mutualstockmenu {
-    width: 600%;
-    height: 110vh;
-    gap: 10px;
-    transform: translateY(-50%);
-    /* margin-right: 100px; */
-    left: -130px;
-}
+  
+  .dropdown-menu {
+    min-width: 140px; /* Slightly reduce width */
+    padding: 10px 0; /* Adjust padding */
+    margin-top: -275px;
+    margin-left: -100px;
+  }
   /* Dropdown menu adjustments */
   .dropdown-menu li {
     font-size: 12px; /* Smaller font size for dropdown */
@@ -1616,6 +1610,7 @@ a span {
     font-size: 14px; /* Reduce font size */
     margin-top: 15px; /* Adjust margin spacing */
     box-shadow: 0 3px 5px red; /* Slightly lighter shadow for smaller screens */
+    margin-left: 320px;
   }
   /* Adjust logo size */
   .logo-image {
@@ -1636,6 +1631,12 @@ a span {
     gap: 10px;
     transform: translateY(-50%);
   }
+  .learn-menu {
+    min-width: 180px;
+    padding: 10px 0;
+    margin-top: -465px;
+    margin-left: -50px;
+}
   /* Styling for the divider line */
   .stockmenu::before {
     content: ""; /* Empty content for the line */
@@ -1651,12 +1652,7 @@ a span {
   }
 
   /* Dropdown menu for user profile */
-  .dropdown-menu {
-    position: static; /* Allow dropdown to flow naturally */
-    box-shadow: none; /* Remove shadow for simplicity */
-    width: 100%; /* Use full width */
-    margin-top: 10px; /* Add spacing above */
-  }
+  
 
   .dropdown-menu li {
     font-size: 14px; /* Reduce font size */
@@ -1702,6 +1698,7 @@ a span {
     font-size: 24px;
     cursor: pointer;
     color: #333;
+    margin-left: 400px;
   }
   
   .icon.bell-icon:hover {
@@ -1834,21 +1831,26 @@ a span {
 
   /* Stock dropdown menu adjustments */
   .stockmenu {
-    width: 600%;
-    height: 150vh;
-    left: -50px;
+    width: 600% !important;
+    height: 362vh;
+    left: 40px;
     transform: translateY(-25%);
     gap: 4px;
-  }
+}
 
-  .mutualstockmenu {
-    width: 500%;
-    height: 100vh;
-    gap: 8px;
-    transform: translateY(-45%);
-    left: -100px;
-  }
-
+.mutualstockmenu {
+  width: 200px !important;
+  height: 130vh;
+  gap: 8px;
+  transform: translateY(-45%);
+  left: 0px;
+}
+.learn-menu {
+  min-width: 180px;
+  padding: 10px 0;
+  margin-top: -465px;
+  margin-left: -140px;
+}
   /* Dropdown menu adjustments */
   .dropdown-menu li {
     font-size: 10px; /* Smaller font size for dropdown */
@@ -1859,7 +1861,9 @@ a span {
   .dropdown-icon {
     font-size: 16px; /* Smaller icon size */
   }
-
+  .chevron-Portfolioicon{
+  font-size: 10px; /* Smaller chevron icon */
+}
   .chevron-icon {
     font-size: 10px; /* Smaller chevron icon */
   }
@@ -1974,11 +1978,7 @@ a span {
   }
 
   /* Adjust dropdown menu width */
-  .stockmenu,
-  .mutualstockmenu {
-    width: 400px; /* Reduce width */
-    padding: 15px;
-  }
+ 
 
   /* Adjust notification dropdown */
   .dropdown-contentnoti {
@@ -2015,6 +2015,7 @@ a span {
     font-size: 11px; /* Reduce icon size */
     transition: transform 0.3s ease;
   }
+  
   span.willamname {
     font-size: 14px !important;
     margin-right: 5px !important;

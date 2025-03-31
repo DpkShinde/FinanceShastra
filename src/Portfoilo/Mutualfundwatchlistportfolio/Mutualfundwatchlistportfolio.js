@@ -717,7 +717,7 @@ const MutualWatchlist = ({ children }) => {
               type="radio"
               name="groupBywatchlist"
               value="nonewatchlist"
-              onClick={() => navigate("/mutualwatchlistall")}
+              onClick={() => navigate("/mutualWatchlist")}
               defaultChecked
               style={{
                 width: "14px",

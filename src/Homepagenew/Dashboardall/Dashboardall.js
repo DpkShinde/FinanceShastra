@@ -3,6 +3,7 @@ import Navbar from '../../Navbar/Navbar'
 import Sidebar from '../../Sidebar/Sidebar'
 import Dashboardchartmain from '../Dashboardgraph/Dashboardgraph'
 import FooterForAllPage from '../../FooterForAllPage/FooterForAllPage'
+import './Dashboardall.css';
 
 function Dashboardall() {
   return (

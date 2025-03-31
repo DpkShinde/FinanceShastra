@@ -407,7 +407,10 @@ margin-bottom: 100px;
 }
 
 
-
+.allh2{
+  font-size: 20px;
+  margin-left: 20px;
+}
 
 
 
@@ -418,10 +421,22 @@ margin-bottom: 100px;
     box-shadow: 0 3px 5px rgb(127, 171, 225);;
     border: 1px solid rgb(127, 171, 225);
     border-radius: 8px;
-    margin-left:300px;
-    width:100%;
+    margin-left:280px;
+    width:68%;
     font-family: 'calibri';
     margin-bottom: 100px;
+    }
+    .stock-watchlist {
+      font-family: 'Calibri';
+      margin: 20px;
+      box-shadow: 0 3px 5px rgb(127, 171, 225);;
+      border: 1px solid rgb(127, 171, 225);
+     width:700px;
+     height: auto;
+     border-radius: 5px;
+     margin-left: 280px;
+    
+    
     }
 }
 

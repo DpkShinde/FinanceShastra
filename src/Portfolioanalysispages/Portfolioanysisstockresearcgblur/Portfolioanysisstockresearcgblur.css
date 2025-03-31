@@ -172,19 +172,23 @@ margin-left: 40px;
     .report-container {
       position: relative;
       width: 80%;
-     width: 400px;
-  
+      width: 670px;
       padding: 20px;
       background: #fff;
       border-radius: 12px;
       border: 3px solid rgb(223, 218, 218);
       box-shadow: 0px 4px 8px rgba(228, 225, 225, 0.992);
       overflow: hidden;
-      height: 450px;
+      height: 600px;
       margin-left: 20px;
       margin-top: 30px;
       margin-bottom: 30px;
-    }
+  }
+  .stockresearchanalysispage-containerforblur {
+    width: 90%;
+    margin-left: 40px;
+    height: 20%;
+}
    .reportcontaineranalysisheaderr{
   font-family: 'calibri';
   margin-left: 20px;
@@ -242,19 +246,20 @@ margin-left: 40px;
     .subscribe-btnblurone:hover {
       background: #2ec785;
     }
-    
-    .stockresearchanalysispage-tableanalysisblur {
-      width: 93%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-left: -10px;
-    margin-bottom: 50px;
-   
-    
+    .stockresarch-search-iconblur {
+      margin-left: -514px;
+      
     }
+    .stockresearchanalysispage-tableanalysisblur {
+      width: 101%;
+      margin-left: 50px;
+      margin-bottom: 6px;
+      margin-top: 18px;
+      overflow-x: auto;
+      display: block;
+      scrollbar-color: #24b676 white;
+      scrollbar-width: thin;
+  }
     .stockresearchanalysispage-tableanalysisblur th,
     .stockresearchanalysispage-tableanalysisblur td {
       border-bottom: 1px solid #ddd;
@@ -310,7 +315,7 @@ margin-left: 40px;
   @media (max-width: 480px) {
     .report-container {
       position: relative;
-     width: auto;
+      width: 80%;
       padding: 20px;
       background: #fff;
       border-radius: 12px;
@@ -318,13 +323,18 @@ margin-left: 40px;
       box-shadow: 0px 4px 8px rgba(228, 225, 225, 0.992);
       overflow: hidden;
       height: 450px;
-      margin-left: 5px;
+      margin-left: 20px;
       margin-top: 30px;
       margin-bottom: 30px;
-    }
+  }
+  .stockresearchanalysispage-containerforblur {
+    width: 95%;
+    margin-left: 0px;
+    height: 20%;
+}
    .reportcontaineranalysisheaderr{
   font-family: 'calibri';
-  margin-left: 15px;
+  margin-left: 20px;
   font-size: 20px;
   color: #24b676;
   margin-top: 50px;
@@ -381,17 +391,18 @@ margin-left: 40px;
     }
     
     .stockresearchanalysispage-tableanalysisblur {
-      width: 93%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-left: -10px;
-    margin-bottom: 50px;
-   
-    
-    }
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow-x: auto;
+      display: block;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      margin-left: 1px;
+      margin-bottom: 50px;
+  }
     .stockresearchanalysispage-tableanalysisblur th,
     .stockresearchanalysispage-tableanalysisblur td {
       border-bottom: 1px solid #ddd;

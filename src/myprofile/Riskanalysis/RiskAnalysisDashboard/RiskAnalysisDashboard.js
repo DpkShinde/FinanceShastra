@@ -1,12 +1,14 @@
-import React from 'react';
+import {React, useContext} from 'react';
 import './RiskAnalysisDashboard.css';
 import RiskProfileForm from '../RiskProfileForm/RiskProfileForm';
 import {useNavigate} from "react-router-dom";
 import Navbar from '../../../Navbar/Navbar';
 import FooterForAllPage from '../../../FooterForAllPage/FooterForAllPage';
+import { SubscriptionContext } from '../../../Portfoilo/context/SubscriptionContext';
 
 const RiskAnalysisDashboard = () => {
     const navigate = useNavigate();
+    const {issubscribed}= useContext(SubscriptionContext)
 
     return (
         <div>
@@ -78,7 +80,7 @@ const RiskAnalysisDashboard = () => {
                 Answer a few quick questions, and you're all set to start investing smart!</strong></p>
             </div>
             <RiskProfileForm/>
-            <div className="subscribe-footerrmanagealerttt">
+            {!issubscribed && <div className="subscribe-footerrmanagealerttt">
       <h2 className="headingmanagealert">Subscribe Now!</h2>
         <h3>Choose a plan that aligns with your investment goals!</h3>
         <button 
@@ -92,7 +94,8 @@ const RiskAnalysisDashboard = () => {
 </button>
 
 
-      </div>
+      </div>}
+            
         </div>
         <Navbar/>
         <div className="foooterpagesaupdate">

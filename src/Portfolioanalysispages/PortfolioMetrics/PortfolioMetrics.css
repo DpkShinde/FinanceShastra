@@ -112,8 +112,8 @@ width: 95%;
       align-items: flex-start; /* Align items at the top */
       gap: 20px; /* Add spacing between elements */
       width: 95%;
-  margin-left: 0px;
-  flex-direction: column;
+  margin-left: 20px;
+  flex-direction: row;
      
     }
     
@@ -183,15 +183,12 @@ width: 95%;
       border-radius: 10px;
       border: 1px solid rgb(208, 203, 203);
       box-shadow: 0 4px 8px rgba(169, 167, 167, 0.964);
-     
-width: 87%;
-   margin-top: 23px;
-   height: 350px;
-    margin-left: 0px;
-
-   
+      width: 81%;
+      margin-top: 23px;
+      height: 350px;
+      margin-left: 20px;
       font-family: 'calibri';
-    }
+  }
     
     .metrics-title {
       font-size: 18px;

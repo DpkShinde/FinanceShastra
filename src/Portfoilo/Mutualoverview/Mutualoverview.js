@@ -215,7 +215,7 @@ const OverviewMutual = () => {
               {expandedRows[transaction.scheme] && (
                 <>
                   <tr>
-                    <td colSpan="8" className="subcategory-row">
+                    <td className="subcategory-row">
                       <table className="subcategory-table">
                         <thead>
                           <tr>
@@ -308,7 +308,7 @@ const OverviewMutual = () => {
                           {/* Intraday Stock Trading Graph Section */}
                           <div className="chart-containerportfolio">
                             <h3 style={{ marginLeft: "50px" }}>{title}</h3>
-                            <div className="chart-wrapper" style={{ height: "300px", width: "500px", marginLeft: "50px" }}>
+                            <div className="chart-wrapper">
                               <Line data={intradayData} options={intradayOptions} />
                             </div>
                           </div>

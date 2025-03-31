@@ -203,8 +203,7 @@ function Register() {
                   required
                   className={passwordError ? "input-error" : ""}
                 />
-
-                <span
+                {formData.password && <span
                   className="toggle-password"
                   onClick={() => setShowPassword(!showPassword)}
                   style={{
@@ -216,11 +215,12 @@ function Register() {
                   }}
                 >
                   {showPassword ? (
-                    <FaEye size={20} />
-                  ) : (
                     <FaEyeSlash size={20} />
+                  ) : (
+                    <FaEye size={20} />
                   )}
-                </span>
+                </span>}
+                
               </div>
               {passwordError && (
                 <span className="error-text">{passwordError}</span>

@@ -188,7 +188,7 @@ const OverviewPortfolioManagergold = () => {
             {isDropdownOpen && (
               <>
                 <tr>
-                  <td colSpan="8" className="subcategory-row">
+                  <td colSpan="7" className="subcategory-row">
                     <table className="subcategory-table">
                       <thead>
                         <tr>
@@ -250,7 +250,7 @@ const OverviewPortfolioManagergold = () => {
                         {/* Intraday Stock Trading Graph Section */}
                         <div className="chart-containerportfolio">
                           <h3 style={{ marginLeft: "50px" }}>{title}</h3>
-                          <div className="chart-wrapper" style={{ height: "300px", width: "500px", marginLeft: "50px" }}>
+                          <div className="chart-wrapper" >
                             <Line data={intradayData} options={intradayOptions} />
                           </div>
                         </div>

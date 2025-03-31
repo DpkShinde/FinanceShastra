@@ -286,6 +286,23 @@ color: red;
   background-color: #f44336;
   color: white;
 }
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+  .portfolio-account-stock-container {
+    font-family: 'Calibri';
+    background-color: #ffffff;
+    border: 3px solid #a79a9a;
+    border-radius: 8px;
+    padding: 16px;
+    width: 89%; /* Set container width to 80% of the viewport width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+}
 /* Mobile view adjustments */
 @media (max-width: 768px) {
   .portfolio-account-stock-container {
@@ -294,12 +311,12 @@ color: red;
     border: 3px solid #a79a9a;
     border-radius: 8px;
     padding: 16px;
-    width: 85%;
+    width: 90%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 70px;
+    margin-bottom: 170px;
 }
 }
 
@@ -312,9 +329,14 @@ color: red;
     padding: 16px;
     width: 85%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
 }
+.subcategory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 }

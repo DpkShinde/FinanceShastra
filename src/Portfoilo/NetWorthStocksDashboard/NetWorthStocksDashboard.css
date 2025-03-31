@@ -190,10 +190,17 @@ font-weight: bold;
 @media (max-width:1145px)
 {
   .networth-summary{
-    position: static;
-    margin: 10px auto;
+   margin-top: 120px;
     width: 344px;
+    margin-bottom: -10px;
   }
+  .networth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
 }
 /* Media query for 768px (tablet view) */
 @media (max-width: 768px) {
@@ -224,6 +231,7 @@ font-weight: bold;
     justify-content: space-between; /* Distribute evenly */
     align-items: center;
     gap: 10px;
+
   }
 
   .networth-summary div {
@@ -281,6 +289,7 @@ font-weight: bold;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    margin-left: -5px;
   }
 
   .networth-summary div {

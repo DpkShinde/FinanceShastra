@@ -263,7 +263,7 @@ const StockWatchsectormcap= ({children}) => {
         name="groupBywatchlist"
         value="nonewatchlist"
         checked={selectedValue === "nonewatchlist"}
-        onChange={() => handleChange("nonewatchlist", "/stockwatchlistall")}
+        onChange={() => handleChange("nonewatchlist", "/stockwatchlist")}
         style={{
           width: "14px",
           height: "14px",
@@ -320,7 +320,7 @@ const StockWatchsectormcap= ({children}) => {
                 {Object.keys(groupedData).map((sector) => (
                   <React.Fragment key={sector}>
                     <tr className="sector-headerwatchlist">
-                    <td colSpan="7" style={{ paddingRight: "800px", fontWeight: "bold" }}>
+                    <td colSpan="7" style={{  fontWeight: "bold" }}>
         {sector}
       </td>
                     </tr>

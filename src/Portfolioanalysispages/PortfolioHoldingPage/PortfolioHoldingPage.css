@@ -260,12 +260,38 @@
 
 @media screen and (max-width: 768px) {
   .PortfolioHoldingPageContainer {
-    width: 100%; /* Ensure it takes full width */
-    overflow-x: auto; /* Allow horizontal scrolling */
-    white-space: nowrap; /* Prevent elements from breaking lines */
+    width: 94%;
+    overflow-x: auto;
+    white-space: nowrap;
     padding: 4px;
     font-family: 'calibri';
-  }
+    margin-left: 20px;
+}
+.trackerportfolioanalysis {
+  width: 690px;
+  margin-left: 20px;
+}
+.stock-containertrackerport {
+  gap: 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-color: #24b676 #f1f1f1;
+  scrollbar-width: thin;
+}
+
+.stock-containertrackerport::-webkit-scrollbar {
+  height: 8px; /* Adjust scrollbar height */
+}
+
+.stock-containertrackerport::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background */
+  border-radius: 8px;
+}
+
+.stock-containertrackerport::-webkit-scrollbar-thumb {
+  background: #24b676; /* Scrollbar color */
+  border-radius: 8px;
+}
 
   /* Ensure tables and wide content are scrollable */
   .PortfolioHoldingPageholdingsList {
@@ -296,13 +322,38 @@
 
 @media screen and (max-width:480px) {
   .PortfolioHoldingPageContainer {
-    width: 100%; /* Ensure it takes full width */
+    width: 89%;/* Ensure it takes full width */
     overflow-x: auto; /* Allow horizontal scrolling */
     white-space: nowrap; /* Prevent elements from breaking lines */
     padding: 4px;
     font-family: 'calibri';
    margin-top: 30px;
   }
+  .trackerportfolioanalysis {
+    width: 360px;
+    margin-left: 20px;
+}
+.stock-containertrackerport {
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-color: #24b676 #f1f1f1;
+    scrollbar-width: thin;
+}
+
+.stock-containertrackerport::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.stock-containertrackerport::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track background */
+    border-radius: 8px;
+}
+
+.stock-containertrackerport::-webkit-scrollbar-thumb {
+    background: #24b676; /* Scrollbar color */
+    border-radius: 8px;
+}
 
   /* Ensure tables and wide content are scrollable */
   .PortfolioHoldingPageholdingsList {

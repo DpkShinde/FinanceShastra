@@ -9,6 +9,7 @@ import {useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import Mutualportfoliodonut from "../Mutualportfoliodonut/Mutualportfoliodonut";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
 const Mutualsector = () => {
     const location = useLocation();
@@ -278,6 +279,9 @@ const Mutualsector = () => {
       </div>
       </div>
       <Navbar/>
+      <div className="foooterpagesaupdate">
+    <FooterForAllPage/>
+  </div>
     </div>
   );
 };

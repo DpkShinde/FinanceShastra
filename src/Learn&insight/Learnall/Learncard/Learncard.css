@@ -120,7 +120,7 @@
   
   /* Signup Button */
   .learnsignup-button {
-    background-color: #28a745;
+    background-color: #24b676;
     color: white;
     padding: 8px 12px;
     border: none;
@@ -128,10 +128,13 @@
     font-size: 14px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    border: 1px solid #24b676;
   }
   
   .learnsignup-button:hover {
-    background-color: #218838;
+    background-color:white;
+    color:#24b676;
+    border-color: 1px solid #24b676;
   }
   
   .startlearnsignup-button{

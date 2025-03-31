@@ -18,6 +18,7 @@ export const UserProfileProvider = ({ children }) => {
       const token = Cookies.get("jwtToken");
       setToken(token)
       
+      
       if (!token) throw new Error("No token found");
 
       const response = await fetch(`${API_BASE_URL}/users/`, {
