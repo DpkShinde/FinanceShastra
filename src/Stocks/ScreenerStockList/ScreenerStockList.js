@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate from react
 import Navbar from "../../Navbar/Navbar";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 
-
 const ScreenerStockList = () => {
   const [stocks, setStocks] = useState(screenerStockListData);
   const [sortDirection, setSortDirection] = useState(true); // true for ascending, false for descending
@@ -32,6 +31,7 @@ const ScreenerStockList = () => {
   const [isDivYieldDropdownVisible, setDivYieldDropdownVisible] =
     useState(false);
   const [filteredData, setFilteredData] = useState(screenerStockListData);
+  const [filteredStocks, setFilteredStocks] = useState(screenerStockListData); // Add a new state to hold the filtered stocks
 
   const toggleDivYieldDropdown = () => {
     setDivYieldDropdownVisible(!isDivYieldDropdownVisible);
@@ -71,34 +71,33 @@ const ScreenerStockList = () => {
   };
   //  Debugging Effect: Confirm re-rendering when `currentPage` updates
   useEffect(() => {
-    const fetchfun= async ()=>{
-            const url= `${API_BASE_URL}/stocks/compstock/1`
-            const response= await fetch(url)
-            if (response.ok=== true){
-              const data= await response.json()
-              const formattedData= data.map(each =>({
-                "id": each.ID,
-                "symbol": each.Symbol,
-                "price": each.Price,
-                "change": each.Change,
-                "volume": each.Volume,
-                "marketCap": each.Market_cap,
-                "pToE": each.P_E,
-                "eps": each.EPS_dil,
-                "epsDilGrowth": each.EPS_dil_growth_TTM_YoY,
-                "divYield": each.Div_yield,
-                "sector": each.Sector,
-                "url": '/stockhandle',
-                "icon": each.icons 
-              }))
-              //console.log("icon: ",icons.filter(eachicon => ( eachicon.icon=== 'tcs')))
-              
-      
-              console.log(formattedData)
-              setStocks(formattedData)
-            }
-          }
-          fetchfun()
+    const fetchfun = async () => {
+      const url = `${API_BASE_URL}/stocks/compstock/1`;
+      const response = await fetch(url);
+      if (response.ok === true) {
+        const data = await response.json();
+        const formattedData = data.map((each) => ({
+          id: each.ID,
+          symbol: each.Symbol,
+          price: each.Price,
+          change: each.Change,
+          volume: each.Volume,
+          marketCap: each.Market_cap,
+          pToE: each.P_E,
+          eps: each.EPS_dil,
+          epsDilGrowth: each.EPS_dil_growth_TTM_YoY,
+          divYield: each.Div_yield,
+          sector: each.Sector,
+          url: "/stockhandle",
+          icon: each.icons,
+        }));
+        //console.log("icon: ",icons.filter(eachicon => ( eachicon.icon=== 'tcs')))
+
+        console.log(formattedData);
+        setStocks(formattedData);
+      }
+    };
+    fetchfun();
   }, []);
 
   //  Pagination Range Calculation
@@ -214,28 +213,13 @@ const ScreenerStockList = () => {
   };
   const applyFilters = (newFilters) => {
     console.log(newFilters, "newfilter");
-    const filteredStocks = screenerStockListData.filter((stock) => {
-      console.log(
-        parseFloat(stock.price.replace(/₹|,/g, "")) <=
-          parseFloat(newFilters.price)
-      );
-      console.log(stock.price.replace(/₹|,/g, ""));
+
+    // Apply filters to the currently filtered stocks
+    const updatedFilteredStocks = filteredStocks.filter((stock) => {
       const matchesPrice =
         newFilters.price === "All" ||
         parseFloat(stock.price.replace(/₹|,/g, "")) <=
           parseFloat(newFilters.price);
-
-      // const matchesMarketCap =
-      // newFilters.marketCap.length !== 0 || // Check if it's empty
-      // newFilters.marketCap.some((cap) => {
-      //   const stockMarketCap = parseFloat(stock.marketCap.replace("T", ""));
-      //   if (cap === "large" && stockMarketCap > 10) return true;
-      //   if (cap === "mid" && stockMarketCap > 2 && stockMarketCap <= 10) return true;
-      //   if (cap === "small" && stockMarketCap > 0.5 && stockMarketCap <= 2) return true;
-      //   if (cap === "micro" && stockMarketCap <= 0.5) return true;
-      //   if (cap === "others" && stockMarketCap > 0) return true;
-      //   return false;
-      // });
 
       const matchesDivYield =
         newFilters.divYield.length === 0 ||
@@ -256,13 +240,6 @@ const ScreenerStockList = () => {
       const matchesSector =
         newFilters.sector === "All" || stock.sector === newFilters.sector;
 
-      // const matchesChange =
-      //   newFilters.change === "All" ||
-      //   (newFilters.change === "-5" && parseFloat(stock.change) <= -5) ||
-      //   (newFilters.change === "0" && parseFloat(stock.change) >= 0) ||
-      //   (newFilters.change === "5" && parseFloat(stock.change) >= 5) ||
-      //   (newFilters.change === "10" && parseFloat(stock.change) >= 10);
-
       const matchesROE =
         newFilters.roe.length === 0 ||
         newFilters.roe.some((roeValue) => {
@@ -274,6 +251,7 @@ const ScreenerStockList = () => {
             return true;
           return false;
         });
+
       const matchesEPSDilGrowth =
         newFilters.epsDilGrowth.length === 0 ||
         newFilters.epsDilGrowth.some((epsValue) => {
@@ -287,7 +265,6 @@ const ScreenerStockList = () => {
           return false;
         });
 
-      // PE filter
       const matchesPE =
         newFilters.pe.length === 0 ||
         newFilters.pe.some((peValue) => {
@@ -301,19 +278,22 @@ const ScreenerStockList = () => {
           if (peValue === "0-above" && stockPE >= 0) return true;
           return false;
         });
+
       return (
         matchesPrice &&
-        // matchesMarketCap &&
         matchesDivYield &&
         matchesSector &&
-        // matchesChange &&
         matchesROE &&
         matchesEPSDilGrowth &&
         matchesPE
       );
     });
 
-    setStocks(filteredStocks);
+    // Update the filteredStocks state
+    setFilteredStocks(updatedFilteredStocks);
+
+    // Update the stocks state to reflect the filtered data
+    setStocks(updatedFilteredStocks);
   };
 
   // Handle sorting logic for columns
@@ -424,24 +404,24 @@ const ScreenerStockList = () => {
   ];
 
   const indexes = [
-    {id: 1 ,index: "Nifty 50"},
-    {id: 2, index:"Nifty 500"},
-    {id: 3, index:"Nifty Midcap 100"},
-    {id: 4, index: "Nifty Smallcap 100"},
-    {id: 5, index:"Nifty Alpha 50"},
-    {id: 6, index: "Nifty Bank"},
-    {id: 7, index: "Nifty 100"},
-    {id: 8, index: "Nifty Next 50"},
-    {id: 9, index: "Nifty Midcap 150"},
-    {id: 10, index: "Nifty Smallcap 250"},
-    {id: 11, index: "Nifty50 Value 20"},
-    {id: 12, index: "Nifty Commodities"},
-    {id: 13, index: "Nifty 200"},
-    {id: 14, index: "Nifty LargeMidcap 250"},
-    {id: 15, index: "Nifty Midcap 50"},
-    {id: 16, index: "Nifty Smallcap 50"},
-    {id: 17, index: "Nifty Auto"},
-    {id: 18, index: "Nifty CPSE"},
+    { id: 1, index: "Nifty 50" },
+    { id: 2, index: "Nifty 500" },
+    { id: 3, index: "Nifty Midcap 100" },
+    { id: 4, index: "Nifty Smallcap 100" },
+    { id: 5, index: "Nifty Alpha 50" },
+    { id: 6, index: "Nifty Bank" },
+    { id: 7, index: "Nifty 100" },
+    { id: 8, index: "Nifty Next 50" },
+    { id: 9, index: "Nifty Midcap 150" },
+    { id: 10, index: "Nifty Smallcap 250" },
+    { id: 11, index: "Nifty50 Value 20" },
+    { id: 12, index: "Nifty Commodities" },
+    { id: 13, index: "Nifty 200" },
+    { id: 14, index: "Nifty LargeMidcap 250" },
+    { id: 15, index: "Nifty Midcap 50" },
+    { id: 16, index: "Nifty Smallcap 50" },
+    { id: 17, index: "Nifty Auto" },
+    { id: 18, index: "Nifty CPSE" },
   ];
   const marketCapCategory = [
     "Large Cap",
@@ -610,16 +590,14 @@ const ScreenerStockList = () => {
   );
   const filteredIndexes = indexes.filter((index) =>
     index.index.toLowerCase().includes(searchTerm.toLowerCase())
-  
   );
   const filteredmarketCapCategory = marketCapCategory.filter(
     (marketCapCategory) =>
       marketCapCategory.toLowerCase().includes(searchTerm.toLowerCase())
   );
   //useEffect(() => {
-    //setFilteredData(screenerStockListData);
-//}, [screenerStockListData]);
-
+  //setFilteredData(screenerStockListData);
+  //}, [screenerStockListData]);
 
   const handleReset = () => {
     setSelectedSectors([]); // Reset selected sectors
@@ -654,31 +632,34 @@ const ScreenerStockList = () => {
       // Close PEG dropdown
     }));
   };
-   //  Reset filtered data to original list
-   //setFilteredData(screenerStockListData);
+  //  Reset filtered data to original list
+  //setFilteredData(screenerStockListData);
   //};
   const handleApply = () => {
-    // Update the filters with the selected indexes and sectors
+    // Update the filters with the selected indexes
     setFilters((prevFilters) => ({
       ...prevFilters,
       index: selectedIndexes,
     }));
-    if (!screenerStockListData || !Array.isArray(screenerStockListData)) return;
-    // Apply the filter based on the selected indexes and sectors
-    const filteredStocks = screenerStockListData.filter((stock) =>
-      selectedIndexes.includes(stock.index)
-    );
-    // Update the stocks with the filtered data
-    // Update the stocks with the filtered data
-    setStocks(filteredStocks);
 
-    // close the dropdown
+    // Apply the filter based on the selected indexes
+    const updatedFilteredStocks = filteredStocks.filter((stock) =>
+      selectedIndexes.some((selectedIndex) => stock.index === selectedIndex)
+    );
+
+    // Update the filteredStocks state
+    setFilteredStocks(updatedFilteredStocks);
+
+    // Update the stocks state to reflect the filtered data
+    setStocks(updatedFilteredStocks);
+
+    // Close the dropdown
     setDropdowns((prev) => ({
       ...prev,
-      index: false, // Close PEG dropdown
+      index: false, // Close the index dropdown
     }));
 
-    //Scroll smoothly to the stocks table
+    // Scroll smoothly to the stocks table
     setTimeout(() => {
       const tableElement = document.getElementById("stocks-table");
       if (tableElement) {
@@ -2208,10 +2189,7 @@ const ScreenerStockList = () => {
         </div>
         {/* Conditional Rendering */}
 
-        <div
-          className="screener-table-wrapper"
-          
-        >
+        <div className="screener-table-wrapper">
           <table
             className="screener-table"
             style={{ borderCollapse: "collapse", width: "100%" }}

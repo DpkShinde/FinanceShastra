@@ -47,6 +47,23 @@
     margin-bottom: 10px;
     
   }
+  @media (min-width: 1024px) and (max-width: 1279px)  {
+  .stockresearchreportpage-description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-left: 50px;
+    width: 700px;
+}
+.stockresearchreportpage-list {
+  list-style-type: disc;
+  padding-left: 70px;
+  color: #333;
+  font-size: 14px;
+  width: 650px;
+}
+  }
 /* Responsive adjustments for tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .stockresearchreportpage-container {
@@ -69,6 +86,13 @@
     padding-left: 40px;
     font-size: 13px;
   }
+  .stockresarch-search-icon {
+    color: #333;
+    position: absolute;
+     left: 122px; 
+    top: 79.5%; 
+    transform: translateY(-50%);
+}
 }
 
 /* Responsive adjustments for mobile phones (max-width: 480px) */
@@ -77,6 +101,7 @@
     width: 100%;
     margin: 10px;
   }
+ 
 
   .stockresearchreportpage-title,
   .stockresearchreportpage-subtitle {

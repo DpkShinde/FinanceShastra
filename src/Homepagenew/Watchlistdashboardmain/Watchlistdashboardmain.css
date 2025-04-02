@@ -114,9 +114,23 @@
     
   }
 }
-@media (max-width: 1440px) {
+@media(min-width:2000px){
   .Watchlistdashboardmain-container {
-    width:480px;
+    width:580px;
+    background: #ffffff;
+    border: 2px solid #e0e0e0; /* Add a border with a light gray color */
+    border-radius: 8px;       /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a more prominent effect */
+    padding: 20px;
+    font-family: 'Calibri';
+    height: 500px;
+    margin-right: -300px;
+    
+  } 
+}
+@media (min-width: 1280px) and (max-width: 1535px){
+  .Watchlistdashboardmain-container {
+    width:380px;
     background: #ffffff;
     border: 2px solid #e0e0e0; /* Add a border with a light gray color */
     border-radius: 8px;       /* Rounded corners */
@@ -126,6 +140,35 @@
     height: 500px;
     
   }
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+  .Watchlistdashboardmain-container {
+    width:250px;
+    background: #ffffff;
+    border: 2px solid #e0e0e0; /* Add a border with a light gray color */
+    border-radius: 8px;       /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a more prominent effect */
+    padding: 20px;
+    font-family: 'Calibri';
+    height: 500px;
+    
+  }
+  .Watchlistdashboardmain-name {
+    font-size: 12px;
+    margin: 0;
+    color: black;
+    font-weight: 550;
+}
+.Watchlistdashboardmain-price {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+.Watchlistdashboardmain-change {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 4px;
+}
 }
 
 @media (max-width: 768px) {
@@ -138,13 +181,14 @@
     padding: 20px;
     font-family: 'Calibri';
     height: 420px;
-    margin-left: 0px;
+    margin-left: 50px;
   
   }
 }
 @media (max-width: 480px) {
   .Watchlistdashboardmain-container {
-    width: auto;
+    width: 90%;
+    max-width: 100%;
     background: #ffffff;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
@@ -152,10 +196,10 @@
     padding: 20px;
     font-family: 'Calibri';
     height: 400px;
-    margin-left: -5px;
-
-
+    margin-left: 10px;
   }
+
+
   .Watchlistdashboardmain-name {
     font-size: 13px;
     margin: 0;

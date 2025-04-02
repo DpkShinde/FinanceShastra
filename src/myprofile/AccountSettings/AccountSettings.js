@@ -63,6 +63,12 @@ const AccountSettings = () => {
       newPassword: "",
       confirmPassword: "",
     })
+    const errorset= {
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: ""
+    }
+    setErrors(errorset)
   }
 
   const handleSavePassword = async () => {
@@ -90,6 +96,7 @@ const AccountSettings = () => {
       
       console.log('sending url')
       const url= `${API_BASE_URL}/users/changepass`
+      
       //const localtoken= localStorage.getItem('token')
       const CookieToken= Cookies.get('jwtToken')
       const options= {
@@ -117,6 +124,7 @@ const AccountSettings = () => {
         }
         setErrors(errorset)
       }
+     
       
       }
    

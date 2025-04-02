@@ -9,6 +9,13 @@ max-width: 1100px;
 .riskreportprofile-factor h2{
   font-size: 17px;
 }
+.loader-cont{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
 .riskreportprofile-container h1 {
   color: black;
@@ -512,4 +519,8 @@ max-width: 1100px;
       margin: 20px auto 100px;
     }
   }
-  
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .profilepage-tabb {
+        font-size: 15px;
+    }
+}

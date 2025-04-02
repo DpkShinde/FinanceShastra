@@ -120,6 +120,7 @@ const Beststock = () => {
     };
     fetchfun();
   }, []);
+  console.log(stocks)
 
   // Pagination Range Calculation
   const { startPage, endPage } = useMemo(() => {
@@ -2313,6 +2314,7 @@ const Beststock = () => {
                   </button>
                 </th>
               </tr>
+              {console.log(currentData)}
             </thead>
             <tbody>
               {currentData.map((stock, index) => (

@@ -104,6 +104,28 @@
     background-color: #f4f4f4;
   }
   
+
+  /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .NiftySectorWeightage-table-wrapper {
+    margin-left: 10px;
+    width: 200%;
+}
+  .NiftySectorWeightage-table {
+    width: 100%;
+  }
+  .NiftySectorWeightage-title {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 15px;
+}
+.NiftySectorWeightage-explore-btn {
+  font-size: 14px;
+  width: 100%;
+  margin-right: -500px;
+}
+  
+}
   /* Responsive Design for 768px */
 @media (max-width: 768px) {
   .NiftySectorWeightage-weightage-container {

@@ -49,6 +49,28 @@
     margin-top: 250px;
     font-family: 'calibri';
  }
+
+ /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .dataquatallnifty {
+      margin-left: 100px;
+      gap: 20px;
+    }
+    .portfoliomutual-containerrnifty {
+        width: 530px;
+        height: 360px;
+        margin-left: -80px;
+        margin-top: 20px;
+    }
+    .chartmutual-containerrnifty {
+      width: 530px;
+      height: 320px;
+    }
+    .time-rangemutual-selectorrnifty {
+      margin-left: 250px;
+    }
+  }
+  
  /* Mobile View for 768px */
 @media (max-width: 768px) {
     .dataquatallnifty {

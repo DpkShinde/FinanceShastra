@@ -3,6 +3,9 @@
     padding: 20px;
     font-family: 'calibri';
   }
+  /*.activecont{
+    background-color: ;
+  }*/
   
   .billingSubscriptionTitle, .billingSubscriptionSubtitle {
     color: #333;
@@ -96,6 +99,20 @@
   .billingSubscriptionPlanButton:hover {
     background: #218838;
   }
+  /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .billingSubscriptionPlans {
+    width: 50%;
+    margin-left: 230px;
+  }
+  .billingSubscriptionCard {
+    margin-left: 120px;
+  }
+  .billingSubscriptionTitle, .billingSubscriptionSubtitle {
+    margin-left: 130px;
+  }
+}
+
   @media screen and (max-width: 768px) {
     .billingSubscriptionContainer {
       padding: 15px;
@@ -157,7 +174,7 @@
   
     .billingSubscriptionCard {
       width: 93%;
-      margin-left: auto;
+      margin-left: -10px;
       margin-right: auto;
       padding: 12px;
     }

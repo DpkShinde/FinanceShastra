@@ -25,12 +25,9 @@ const BillingInfoHistory = () => {
   };
  
   // Function to show PDF preview
-  const handleViewInvoice = (planName) => {
-    // Example PDF URL (Replace with actual invoice URLs)
-    const pdfUrl = `/invoices/${planName.replace(/\s+/g, "_")}.pdf`;
-
-    // Open PDF in a new tab
-    window.open(pdfUrl, "_blank");
+  const handleViewInvoice = (plan) => {
+    window.scrollTo(0, 0); 
+    navigate(`/invoicePage?plan=${encodeURIComponent(plan.name)}&purchasedate=${encodeURIComponent(plan.purchasedate)}&amount=${encodeURIComponent(plan.amount)}`);
   };
  
   const [billingInfo, setBillingInfo] = useState({
@@ -120,8 +117,9 @@ const BillingInfoHistory = () => {
       </div>
 
       <div className="billinginfohistory-history">
-        <h2 className="billinginfohistory-historytable">Billing History</h2>
-        <table>
+        <h2 className="billinginfohistory-historyh2">Billing History</h2>
+        <div className="billinginfohistory-history-scroll">
+        <table className="billinginfohistory-historytable">
         <thead>
           <tr>
             <th>Plan Name</th>
@@ -152,14 +150,15 @@ const BillingInfoHistory = () => {
                 <button className="billinginfohistory-download" onClick={() => handleDownload(plan.name)}>
                   <HiOutlineDownload />
                 </button>
-                <button className="billinginfohistory-view" onClick={() => handleViewInvoice(plan.name)}>
-                  <MdOutlineRemoveRedEye />
-                </button>
+                <button className="billinginfohistory-view" onClick={() => handleViewInvoice(plan)}>
+      <MdOutlineRemoveRedEye />
+    </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
       </div>
     </div>
     <Navbar/>

@@ -1,13 +1,28 @@
 .allpersonall {
   display: flex;
+  justify-content: space-between;
   flex-direction: row; /* Aligns child elements vertically */
   border: 1px solid rgb(208, 206, 206);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
   background-color: white;
-  width: 700px;
-  gap: 80px; /* Adds spacing between child elements */
+  width: 750px;
+  /*gap: 80px; /* Adds spacing between child elements */
+  margin-left: 300px;
+  box-shadow: 0px 4px 8px rgb(208, 206, 206); /* Adds a subtle shadow effect */
+}
+.allpersonal {
+  display: flex;
+  flex-direction: row; /* Aligns child elements vertically */
+  justify-content: space-between;
+  border: 1px solid rgb(208, 206, 206);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: white;
+  width: 750px;
+  gap: 20px; /* Adds spacing between child elements */
   margin-left: 300px;
   box-shadow: 0px 4px 8px rgb(208, 206, 206); /* Adds a subtle shadow effect */
 }
@@ -20,19 +35,7 @@
   max-width:1200px ;
   padding: 20px;
 }
-.allpersonal {
-  display: flex;
-  flex-direction: row; /* Aligns child elements vertically */
-  border: 1px solid rgb(208, 206, 206);
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  background-color: white;
-  width: 700px;
-  gap: 20px; /* Adds spacing between child elements */
-  margin-left: 300px;
-  box-shadow: 0px 4px 8px rgb(208, 206, 206); /* Adds a subtle shadow effect */
-}
+
 
 
 .personalDetailAll,
@@ -124,7 +127,7 @@ margin-left: 240px;
   height:150px;
   padding: 20px;
   margin-left: 300px;
-  width: 700px;
+  width: 750px;
   box-shadow: 0px 4px 8px rgb(208, 206, 206);
   border-radius: 8px;
 }
@@ -436,12 +439,12 @@ margin-left: 240px;
           margin-left: -10px;
       }
     
-    .profilepage-tabsorderusers{
-     overflow-x: scroll; /* Stack tabs vertically */
-      border-bottom: none; /* Remove unnecessary border */
-      margin-left: 10px;
-      margin-bottom: 15px; /* Adjust spacing */
-      width: 470px;
+      .profilepage-tabsorderusers {
+        overflow-x: scroll;
+        border-bottom: none;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        width: 730px;
     }
     .profilepage-tabbbactive{
       display: flex;
@@ -550,5 +553,18 @@ margin-left: -10px;
     border-radius: 8px;
     width: 300px;
   }
+
+}
+
+ /* Medium Desktops (1024px - 1279px) */
+ @media (min-width: 1024px) and (max-width: 1279px) {
+  .profilepage-tabsorderusers {
+    text-align: center;
+    margin-left: 100px;
+}
+
+.profilepage-title {
+  margin-left: 100px;
+}
 
 }

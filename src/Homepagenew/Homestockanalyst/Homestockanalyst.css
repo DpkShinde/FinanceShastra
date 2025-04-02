@@ -4,7 +4,7 @@
 }
 .tabsnifty50-containerdash {
 display: flex; /* Flexbox layout to align buttons in a row */
-overflow-x: auto; /* Enables horizontal scrolling */
+
 white-space: nowrap; /* Prevents buttons from wrapping to next line */
 -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 margin-bottom: 10px; /* Adds spacing at the bottom */
@@ -122,20 +122,66 @@ margin-top: 290px;
  gap: 810px;
 }
 }
+@media(min-width:2000px){
+ 
+.pagination-containerreasearch{
+  display: flex;
+  padding: 10px;
+  gap: 1340px;
+  margin-left: 15px;
+} 
+}
+
+@media (min-width: 1280px) and (max-width: 1535px){
+  .DashboardMainPagetable-tableeee th {
+    font-size: 14px;
+  }
+  .pagination-containerreasearch{
+    display: flex;
+    padding: 10px;
+    gap: 720px;
+    margin-left: 15px;
+  } 
+}
 @media (min-width: 1024px) and (max-width: 1279px)  {
   .pagination-containerreasearch {
     gap: 680px;
-  }}
+  }
+  .DashboardMainPagetable-tableeee th, .DashboardMainPagetable-tableeee td {
+    font-size: 12px;
+
+}
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+.tabnifty50-buttondash {
+  font-size: 10px;
+  margin: 4px;
+  padding: 10px 8px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background-color: white;
+  color: #000;
+  cursor: pointer;
+
+}
+.tabsnifty50-containerdash {
+  margin-left: -12px;
+}
+.pagination-containerreasearch {
+  margin-left: -10px;
+  gap: 360px;
+}
+}
 @media (max-width: 768px) {
 
   .tabsnifty50-containerdash {
     display: flex; /* Flexbox layout to align buttons in a row */
-    overflow-x: auto; /* Enables horizontal scrolling */
+ overflow-x: scroll;
     white-space: nowrap; /* Prevents buttons from wrapping to next line */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  /* Smooth scrolling on iOS */
     margin-bottom: 10px; /* Adds spacing at the bottom */
-    padding: 0 10px; /* Optional: Add padding on left and right to create space */
-    width: 100%; /* Ensure the container takes up full width */
+    padding: 5px 1px; /* Optional: Add padding on left and right to create space */
+    width: 125%; /* Ensure the container takes up full width */
     }
 .tabnifty50-buttondash {
   font-size: 10px; /* Ensure font is small enough for mobile */
@@ -151,8 +197,8 @@ margin-top: 290px;
   .DashboardMainPagetable-table-containerrrrr {
     overflow-x: auto;
     margin: 20px;
-    width: 100%;
-    margin-left: 10px;
+    width: 125%;
+    margin-left: 0px;
     margin-top: -10px;
     height: 400px;
     overflow-y: auto;
@@ -167,8 +213,11 @@ margin-top: 290px;
 .pagination-containerreasearch{
   display: flex;
   padding: 10px;
-  gap: 360px;
-  margin-left: 15px;
+  gap: 200px;
+  margin-left: 25px;
+}
+.DashboardMainPagetable-tableeee th,.DashboardMainPagetable-tableeee td {
+  font-size: 12px;
 }
 }
 

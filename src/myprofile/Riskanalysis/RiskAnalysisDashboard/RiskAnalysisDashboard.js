@@ -1,17 +1,61 @@
-import {React, useContext} from 'react';
+import {React, useContext, useEffect, useState} from 'react';
 import './RiskAnalysisDashboard.css';
 import RiskProfileForm from '../RiskProfileForm/RiskProfileForm';
 import {useNavigate} from "react-router-dom";
 import Navbar from '../../../Navbar/Navbar';
 import FooterForAllPage from '../../../FooterForAllPage/FooterForAllPage';
 import { SubscriptionContext } from '../../../Portfoilo/context/SubscriptionContext';
+import { API_BASE_URL } from '../../../config';
+import ProfileRiskReportInvestment from '../InvestmentGuide/InvestmentGuide';
+import Cookies from 'js-cookie'
+import ClipLoader from "react-spinners/ClipLoader";
+const override = {
+  display: "block",
+  textAlign: "center",
+};
 
 const RiskAnalysisDashboard = () => {
     const navigate = useNavigate();
     const {issubscribed}= useContext(SubscriptionContext)
+    const [datalenght, setlenght]= useState(0)
+    const [isLoading, setisLoading]= useState(false)
+
+   const fetchRiskProfile= async ()=>{
+    
+         const url= `${API_BASE_URL}/riskanalysis`
+         const token= Cookies.get('jwtToken')
+         setisLoading(true)
+         const response= await fetch(url, {
+           method: "GET",
+           headers: {
+             "Authorization": `Bearer ${token}`,
+           }
+         })
+         console.log(response)
+         if (response.ok=== true){
+           const data= await response.json()
+           console.log(data)
+           setlenght(data.length)
+           setisLoading(false)
+         }
+         
+       }
+   
+  useEffect(()=>{
+    fetchRiskProfile()
+  }, [])
 
     return (
-        <div>
+      <div>{isLoading ? <div className='loader-cont'><ClipLoader
+                      cssOverride={override}
+                      size={35}
+                      data-testid="loader"
+                      loading={isLoading}
+                      speedMultiplier={1}
+                      color="green"
+                    /></div>
+                  : 
+                  <div>
         <div className="riskreportprofile-container">
                     <h1 className="profilepage-titlesession">Risk Profile Report</h1>
       <div className="profilepage-tabsorderuserss">
@@ -46,6 +90,7 @@ const RiskAnalysisDashboard = () => {
 >Active Devices</span>
         <span className="profilepage-tabb" onClick={() => navigate("/myReferalPage")}>My referrals</span>
       </div>
+      {datalenght=== 0 ? <>
             <h1>Risk Analysis Dashboard</h1>
             <p>Your investment strategy and the returns you can expect are majorly dependent on your Risk Profile.</p>
 
@@ -80,6 +125,8 @@ const RiskAnalysisDashboard = () => {
                 Answer a few quick questions, and you're all set to start investing smart!</strong></p>
             </div>
             <RiskProfileForm/>
+            </>: <ProfileRiskReportInvestment/>
+      }
             {!issubscribed && <div className="subscribe-footerrmanagealerttt">
       <h2 className="headingmanagealert">Subscribe Now!</h2>
         <h3>Choose a plan that aligns with your investment goals!</h3>
@@ -101,6 +148,11 @@ const RiskAnalysisDashboard = () => {
         <div className="foooterpagesaupdate">
       <FooterForAllPage />
       </div>
+        </div>
+                  }
+        
+      
+        
         </div>
     );
 };

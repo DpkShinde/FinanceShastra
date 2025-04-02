@@ -123,12 +123,79 @@ width: 100%;
   margin: 20px;
   width: 90%;
 }
+@media(min-width:2000px){
+  .pagination-containercalender {
+    display: flex;
+    gap: 1220px;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: 23px;
+  }  
+}
 @media (min-width: 1280px) and (max-width: 1535px){
   
 .DashboardMainPagetable-table-container {
   overflow-x: auto;
   margin: 20px;
-  width: 100%;
+  width: 93%;
+}
+.pagination-containercalender {
+  display: flex;
+  gap: 710px;
+  align-items: center;
+  margin: 20px 0;
+  margin-left: 3px;
+}
+.DashboardMainPagetable-table-containerrrrr{
+  width: 95%;
+  }
+  
+}
+@media (min-width: 1024px) and (max-width: 1279px)  {
+.DashboardMainPagetable-table-container {
+  overflow-x: auto;
+  margin: 20px;
+  width: 64%;
+  margin-left: -10px;
+}
+.DashboardMainPagetable-table-containerrrrr {
+  width: 94%;
+}
+.DashboardMainPagetable-tablee th,.DashboardMainPagetable-tablee td {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  font-size: 12px;
+}
+.earningquterlyrowalll {
+  display: flex;
+width: 650px;
+font-size: 12px;
+  gap: 120px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 13px;
+  background-color: #f9f9f9; /* Light background for better contrast */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  height: 35px;
+  box-shadow: 0px 4px 6px rgba(176, 175, 175, 0.886); /* Subtle shadow for depth */
+}
+.earnings-insight-learn-tab-button {
+  cursor: pointer;
+  font-family: 'calibri';
+  font-size: 12px;
+}
+.DashboardMainPagetable-tablee {
+  width: 60%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+.pagination-containercalender {
+  display: flex;
+ gap: 350px;
+  align-items: center;
+ margin-left: 15px;
+
 }
 }
     @media (max-width: 768px) {
@@ -147,8 +214,15 @@ width: 100%;
   }
   
   .DashboardMainPagetable-table-container {
-    overflow-x: auto;
+
     margin: 10px;
+}
+
+.DashboardMainPagetable-table-container {
+  overflow-x: auto;
+  margin: 20px;
+  width: 130%;
+  margin-left: -20px;
 }
     .DashboardMainPagetable-headerr{
       display: flex;
@@ -176,19 +250,22 @@ width: 100%;
   }
   
   .DashboardMainPagetable-tablee {
-    width: 97%;
+   
     border-collapse: collapse;
     margin-top: 40px;
  
+} .DashboardMainPagetable-tablee th, .DashboardMainPagetable-tablee td{
+font-size: 12px;
 }
 .DashboardMainPagetable-table-containercalen{
-  width: 115%;
+  width: 140%;
 }
 .pagination-containercalender {
   display: flex;
  gap: 100px;
   align-items: center;
- margin-left: 15px;
+ margin-left: 45px;
+
 
 }
 
@@ -247,7 +324,7 @@ width: 100%;
         .DashboardMainPagetable-table-container {
           overflow-x: auto;
         
-     width: 100%;
+     width: 120%;
           height: 300px;
           margin-left: 10px;
       }
@@ -262,7 +339,7 @@ width: 100%;
       .DashboardMainPagetable-table-containercalen{
         overflow-x: auto;
         
-        width: 130%;
+        width: 170%;
              height: 300px;
              margin-left: 10px;
       }

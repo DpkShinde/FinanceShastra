@@ -121,6 +121,12 @@ function Login() {
       if (response.status === 404) {
         setEmailError("Invalid email address");
       }
+      if (response.status === 400) {
+        setPasswordError("Incorrect Password, please try again");
+      }
+      if (response.status === 429) {
+        alert("Too many failed attempts, please try again later.");
+      }
     } catch (error) {
       console.error("Error during login:", error);
       setPasswordError(error.message || "Invalid email or password");
@@ -392,28 +398,26 @@ function Login() {
                         : ""
                     }
                     // Ensure space for the icon
-                  />{
-                    password && <span
-                    className="toggle-password"
-                    onClick={() => setShowPassword(!showPassword)}
-                    style={{
-                      cursor: "pointer",
-                      position: "absolute",
-                      right: "28px",
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                    }}
-                  >
-                    {
-                    showPassword ? (
-                      <FaEyeSlash size={20} />
-                      
-                    ) : (
-                      <FaEye size={20} />
-                    )}
-                  </span>
-                  }
-                  
+                  />
+                  {password && (
+                    <span
+                      className="toggle-password"
+                      onClick={() => setShowPassword(!showPassword)}
+                      style={{
+                        cursor: "pointer",
+                        position: "absolute",
+                        right: "28px",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                      }}
+                    >
+                      {showPassword ? (
+                        <FaEyeSlash size={20} />
+                      ) : (
+                        <FaEye size={20} />
+                      )}
+                    </span>
+                  )}
                 </div>
                 {passwordError && (
                   <span

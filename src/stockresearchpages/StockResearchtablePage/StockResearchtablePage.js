@@ -119,7 +119,7 @@ const StockResearchtablePage = () => {
         <h2 className="stockresearchatable-title">Profit Peak</h2>
 
       
-      
+      <div className='stockresearchanalysispagerre'>
       <table className="stockresearchanalysispage-table">
         <thead>
           <tr>
@@ -198,7 +198,7 @@ const StockResearchtablePage = () => {
           ))}
         </tbody>
       </table>
-
+      </div>
       {/* Pagination Section */}
       <div className="pagination-containeranalystreaserchtable">
         <div className="pagination-info">

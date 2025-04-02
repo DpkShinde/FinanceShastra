@@ -78,7 +78,54 @@
     border-right: none; /* No right border for middle columns */
   }
   
+ /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .screenertablenifty {
+      width: 70%; /* Reduce width further */
+      margin-left: 0; /* Adjust margin if necessary */
+  }
   
+  .screener-table-wrapper {
+    height: 500px;
+    max-height: 500px;
+    font-size: 14px;
+    overflow-x: scroll; /* Always show horizontal scrollbar */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    width: 96%;
+    margin-left: 20px;
+    scrollbar-color: #24b676 transparent; /* Scrollbar color */
+    scrollbar-width: thin; /* Makes scrollbar thinner */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.screener-table-wrapper::-webkit-scrollbar {
+    height: 8px; /* Scrollbar thickness */
+}
+
+.screener-table-wrapper::-webkit-scrollbar-track {
+    background: transparent; /* Track background */
+}
+
+.screener-table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #24b676; /* Scroll thumb color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Hide scrollbar buttons (arrows) */
+.screener-table-wrapper::-webkit-scrollbar-button {
+    display: none;
+}
+
+.screenerheadercontainer {
+  max-width: 1000px;
+}
+.screenerheaderexplorebtn {
+  margin-right: 0px;
+}
+.screenerheader {
+  margin-left: 20px;
+}
+}
   /* Mobile View for 768px */
 @media (max-width: 768px) {
   body {

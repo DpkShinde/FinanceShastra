@@ -61,7 +61,7 @@ const HalfyearlySubscriptionPages = () => {
   const handlePaymentBillingDetailsPage = async () => {
     if (validateInputs()) {
       // All fields are valid, show the popup
-      const localuserDetails = (localStorage.getItem("user"))
+      const localuserDetails = (Cookies.get("user"))
       if (!localuserDetails) {
         setShowPopupforLogin(true)
         console.log(localuserDetails)

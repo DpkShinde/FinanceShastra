@@ -93,6 +93,35 @@ padding: 6px;
         margin-right: 130px;
         margin-top: 20px;
       }
+      .graphcontainerernifty50 {
+        margin-top: 80px;
+      }
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .graphcontainerernifty50 {
+    margin-top: 80px;
+  }
+}
+      /* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .graphheadernifty {
+    gap: 350px; /* Adjust the gap for medium desktops */
+  }
+  .graphupdatenifty50 {
+    font-size: 12px;
+   
+    margin-left: -10px;
+}
+.graphheadernifty h1 {
+  margin-left: 190px;
+}
+.graphnavbarrnifty50 {
+  margin-left: 210px;
+}
+.graphcontainerernifty50 {
+  margin-top: 70px;
+}
+}
       /* Style for active link */
       @media (max-width: 768px) {
         .graphcontainerer {

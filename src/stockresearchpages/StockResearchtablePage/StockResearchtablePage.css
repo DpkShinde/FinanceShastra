@@ -7,6 +7,7 @@
     -webkit-text-fill-color: transparent;
     
 }
+
 .pagination-containeranalystreaserchtable{
   margin-left: 50px;
   display: flex;
@@ -19,6 +20,59 @@
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
+@media (min-width: 1024px) and (max-width: 1279px)  {
+
+.stockresearchanalysispagecon{
+  width: 20px;
+}
+
+.pagination-containeranalystreaserchtable{
+  margin-left: 50px;
+  display: flex;
+  gap: 380px;
+  margin-top: 20px;
+}
+}
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .pagination-containeranalystreaserchtable {
+    margin-left: 50px;
+    display: flex
+;
+    gap: 800px;
+    margin-top: -30px;
+}
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .stockresearchanalysispage-table {
+    width: 85% !important; /* Ensure it shrinks */
+    max-width: 100% !important;
+    margin: 0 auto; /* Center it */
+    display: block; /* Prevent auto-stretch */
+    margin-left: 50px;
+    overflow-x: scroll;
+    white-space: wrap;
+   
+  }
+  .stockresearchanalysispage-table th{
+    font-size: 10px;
+    padding: 4px;
+
+  }
+  .stockresearchanalysispage-table td{
+    font-size: 10px;
+ 
+   
+  }
+  /* Ensure Parent Container Doesn't Override */
+  .stockresearchanalysispagecontainer {
+    width: 80% !important;
+    max-width: 100% !important;
+  
+  }
+}
+
+
 /* Styling for screens 768px and smaller */
 @media (max-width: 768px) {
     .stockresearchatable-title {
@@ -26,6 +80,13 @@
     text-align: left; /* Adjust left margin for smaller screens */
       margin-bottom: 15px; /* Adjust bottom margin for better spacing */
       margin-left: 10px;
+    }
+    .pagination-containeranalystreaserchtable {
+      margin-left: 10px;
+      display: flex
+    ;
+      gap: 410px;
+      margin-top: -30px;
     }
   }
   
@@ -37,4 +98,11 @@
         margin-bottom: 10px;
         text-align: left;
     }
+    .pagination-containeranalystreaserchtable {
+      margin-left: 10px;
+      display: flex
+;
+      gap: 70px;
+      margin-top: -30px;
+  }
   }

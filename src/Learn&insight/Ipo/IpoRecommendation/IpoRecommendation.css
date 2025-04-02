@@ -28,12 +28,14 @@
   
   
   .iporecommendation-content {
+    position: relative;
     /* Adds a strong blur effect */
      /* Prevents interaction with blurred content */
   }
   .blurclass{
     filter: blur(4px); 
     pointer-events: none;
+    border: 1px solid #ddd;
   }
   
   .iporecommendation-overlay {
@@ -93,6 +95,7 @@
     
     margin-top: 20px;
   }
+  
   
   .avoidipo {
     background-color: #e61f11; /* Red color for Avoid */

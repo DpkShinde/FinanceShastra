@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./InvestmentGuide.css"; // For styling
 import Navbar from "../../../Navbar/Navbar";
 import FooterForAllPage from "../../../FooterForAllPage/FooterForAllPage";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
+import Cookies from 'js-cookie'
 
 const ProfileRiskReportInvestment = () => {
+    const [name, setname]= useState('')
+    const decodeJWT = (token) => {
+        try {
+          const decoded = jwtDecode(token);
+          const {name}= decoded
+          setname(name)
+        } catch (error) {
+          console.error("Invalid token", error);
+          return null;
+        }
+      };
+    useEffect(()=>{
+        const tokencookies= Cookies.get('jwtToken')
+        decodeJWT(tokencookies)
+    })
     const navigate = useNavigate();
     return (
         <div>
         <div className="profile-risk-report">
             <header className="headerinvestrisk">
-                <h2>Welcome back, William</h2>
+                <h2>Welcome back, {name}</h2>
                 <p>
                     Based on your answers to the questionnaire, here are important
                     guidelines to the investment strategy that will best suit you and how
@@ -87,11 +104,12 @@ const ProfileRiskReportInvestment = () => {
                     <p>
                         The 'Moderate' Investment strategy suits you best. The aim of this strategy is to have equal mix across various asset classes, such that the risk is equally distributed.
                         Both your risk willingness and risk taking ability are medium; suggesting a good mix across asset classes. Thus, you can consider shifting your portfolio across equity and fixed asset classes, thus increasing your allocation in equities when they are substantially undervalued and decrease your allocation to fixed income. Similarly, when fixed income assets are available at attractive yields, you can shift a major portion of your portfolio from equities to fixed income.
+                        </p>
                         <h5>
 
                             How much should you invest in each Asset Class ?</h5>
                         <p>Based on your profile, here's how you should allocate your investible surplus as follows: (after accounting for insurance, cash required for 6 months etc.)</p>
-                    </p>
+                        
                     <div className="alltableriskreport">
                         <div className="allocationprofile">
                             <div className="allocationprofile-table">
@@ -217,19 +235,10 @@ const ProfileRiskReportInvestment = () => {
 </button>
 
 
-            <div className="subscribe-footerrmanagealertrisk">
-      <h2 className="headingmanagealertrisk">Subscribe Now!</h2>
-        <h3>Choose a plan that aligns with your investment goals!</h3>
-        <button className="footer-subscribe-buttonmanagerisk"  onClick={() => {
-    navigate('/pricehalf', { replace: true }); 
-    window.scrollTo(0, 0);
-  }} >Subscribe</button>
-      </div>
+            
         </div>
-        <Navbar/>
-        <div className="foooterpagesattt">
-    <FooterForAllPage/>
-  </div>
+        
+        
         </div>
     );
 };

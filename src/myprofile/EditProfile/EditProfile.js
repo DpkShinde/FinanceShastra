@@ -8,6 +8,7 @@ import { FaTimes } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import { API_BASE_URL } from "../../config"; // Ensure API_BASE_URL is imported
 
 const EditProfile = () => {
   const [personalDetails, setPersonalDetails] = useState({});
@@ -65,13 +66,13 @@ const EditProfile = () => {
       income: "",
     });
   };
-  const profilePageSaveUpdate = () => {
+
+  const profilePageSaveUpdate = async () => {
     const requiredFields = [
       "firstName",
       "lastName",
       "dob",
       "email",
-      "address",
       "address",
       "phoneNumber",
       "state",
@@ -89,12 +90,30 @@ const EditProfile = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      console.log("Form data saved:", formData);
-      setIsPopupVisible(true);
+      const url = `${API_BASE_URL}/userdetails/adduser`; // API endpoint
+
+      const options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // Token for authentication
+        },
+        body: JSON.stringify(formData), // Sending form data
+      };
+
+      try {
+        const response = await fetch(url, options);
+        console.log("Form data sent to API:", formData);
+        if (response.ok) {
+          setIsPopupVisible(true);
+        } else {
+          console.error("Failed to save user details:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error saving user details:", error);
+      }
     }
-
   };
-
 
   useEffect(() => {
     if (location.state && location.state.updatedData) {
@@ -263,27 +282,17 @@ const EditProfile = () => {
       }));
       return;
     }
-    setShowPopup(true);
+    console.log("Opening popup for phone verification...");
+    setShowPopup(true); // Open the popup
   };
 
-
   const handlePopupClose = () => {
-    setShowPopup(false);
+    console.log("Closing popup..."); // Debug log
+    setShowPopup(false); // Close the popup
     setOtpStep(false); // Reset OTP step
   };
 
 
-
-  const handleSmsIconClick = () => {
-    if (phoneRegex.test(formData.phoneNumber)) {
-      setOtpStep(true); // Show OTP section
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        phoneNumber: "Please enter a valid 10-digit phone number before proceeding.",
-      }));
-    }
-  };
   const handleOtpSubmitemail = () => {
     if (otp !== "1234") {
       setErrors((prevErrors) => ({
@@ -693,7 +702,7 @@ const EditProfile = () => {
                     <button
                       type="button"
                       className="profile-verify-btn"
-                      onClick={handleSmsIconClick}
+                      onClick={handlePopupOpen}
                     >
                       Verify
                     </button>

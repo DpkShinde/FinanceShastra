@@ -48,8 +48,8 @@
   
    
     position: absolute;
-  left: 90px;
-  top: 35.5%;
+margin-left: -30px;
+  top: 60.5%;
   transform: translateY(-50%);
     
   }
@@ -69,6 +69,7 @@
   
   .stockresearchanalysispage-table {
     width: 93%;
+    max-width: 100%;
   border-collapse: collapse;
   background-color: white;
   border-radius: 10px;
@@ -131,12 +132,14 @@
   display: flex;
   align-items: center;
   position: relative;
+  margin-left: -220px;
 }
 
 .stockresearchanalysispageselect-wrapper {
   display: flex;
   align-items: center;
   position: relative;
+ 
 }
 
 
@@ -176,6 +179,82 @@ margin-left: 60px
     color: green;
   }
   
+  @media (min-width: 1280px) and (max-width: 1535px) {
+  .stockresearchanalysispage-dropdown {
+    display: flex
+;
+    align-items: center;
+    position: relative;
+    margin-left: -290px;
+}
+.stockresarch-search-icon {
+  color: #333;
+  position: absolute;
+  margin-left: -30px;
+  top: 74.5%;
+  transform: translateY(-50%);
+}
+.stockresearchanalysispage-dropdown select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  width: 20%;
+  margin-top: 15px;
+  margin-left: 1300px;
+  font-size: 12px;
+  padding-left: 30px;
+}
+
+.pagination-containeranalystreaserch {
+  margin-left: 50px;
+  display: flex
+;
+  gap: 780px;
+  margin-top: -30px;
+}
+
+  }
+  @media (min-width: 1024px) and (max-width: 1279px)  {
+    .stockresearchanalysispagecontainer{
+max-width: 1024px;
+    }
+    .stockresearchanalysispage-container {
+      padding: 20px;
+      background: linear-gradient(to right, #24b676, #238486);
+      color: white;
+      border-radius: 10px;
+      width: 81%;
+    
+      margin-top: 120px;
+    }
+    .stockresearchanalysispage-dropdown {
+      display: flex
+;
+      align-items: center;
+      position: relative;
+      margin-left: -710px;
+  }
+  .stockresearchanalysispage-dropdown select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    width: 20%;
+    margin-top: 15px;
+    margin-left: 1300px;
+    font-size: 12px;
+    padding-left: 30px;
+}
+    .pagination-containeranalystreaserch{
+      margin-left: 50px;
+      display: flex;
+      gap: 330px;
+      margin-top: 20px;
+    }
+    
+ 
+  }
   /* Responsive Styles */
 @media (max-width: 768px) {
   .stockresearchanalysispagecontainer{
@@ -183,6 +262,15 @@ margin-left: 60px
     margin-left: 10px;
 }
 
+.stockresearchanalysispage-container {
+  padding: 20px;
+  background: linear-gradient(to right, #24b676, #238486);
+  color: white;
+  border-radius: 10px;
+  width: 81%;
+
+  margin-top: 120px;
+}
   .stockresearchanalysispage-search {
     width: 90%;
     margin-bottom: 15px;
@@ -225,11 +313,29 @@ margin-left: 60px
     left: 35px; /* Adjust the left position for smaller screens */
     top: 39%; /* Adjust the vertical positioning */
   }
+  .stockresearchanalysispage-dropdown {
+    display: flex
+;
+    align-items: center;
+    position: relative;
+    margin-left: 15px;
+}
+.HiOutlineicon{
+  margin-left: -790px;
+}
+.pagination-containeranalystreaserch {
+  margin-left: 10px;
+  display: flex
+;
+  gap: 380px;
+  margin-top: -30px;
+}
+
 }
 
 @media (max-width: 480px) {
   .stockresearchanalysispage-container {
-    margin-left: 10px;
+    margin-left: 5px;
     margin-right: 10px;
     margin-top: 80px;
     padding: 10px;
@@ -239,6 +345,14 @@ margin-left: 60px
     font-size: 20px;
   }
 
+
+  .stockresearchanalysispage-dropdown {
+    display: flex
+;
+    align-items: center;
+    position: relative;
+    margin-left: 0px;
+}
   .stockresearchanalysispage-subtitle {
     font-size: 14px;
   }
@@ -251,10 +365,19 @@ margin-left: 60px
     left: 15px;
   }
 
+  .pagination-containeranalystreaserch {
+    margin-left: 10px;
+    display: flex
+;
+    gap: 60px;
+    margin-top: -30px;
+}
+
   .stockresearchanalysispage-dropdown select {
-    width: 80%;
+    width: 85%;
     font-size: 12px;
-    padding-left: 30px;
+    padding-left: 0px;
+    padding: 10px 10px;
     /* margin-left: 200px; */
 }
 .stockresearchanalysispage-table {
@@ -301,10 +424,3 @@ margin-left: 60px
 }
 }
 /* Medium Desktops (1024px - 1279px) */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .stockresearchanalysispage-table {
-      width: 93%;
-      margin-left: 40px;
-      margin-bottom: 40px;
-  }
-}

@@ -62,7 +62,7 @@ const NiftySectorWeightage = () => {
       </div>
 
       <div className="NiftySectorWeightage-table-wrapper">
-        <table className="NiftySectorWeightage-table"style={{ borderCollapse: 'collapse', width: '100%' }}>
+        <table className="NiftySectorWeightage-table">
           <thead style={{ position: 'sticky', top: 0, backgroundColor: '#f9f9f9', zIndex: 10, boxShadow: '0 4px 6px #24b676' }}>
             <tr>
               <th className="symbol-cell">Sectors</th>

@@ -59,11 +59,11 @@
     font-weight: bold;
   }
   
-  .billinginfohistory-history table {
+  .billinginfohistory-historytable {
     width: 100%;
     border-collapse: collapse;
   }
-  .billinginfohistory-history td {
+  .billinginfohistory-historytable td {
     border-top: 1px solid #ddd;  /* Keep top border */
     border-bottom: 1px solid #ddd; /* Keep bottom border */
     border-left: none; /* Remove left border */
@@ -73,17 +73,17 @@
 }
 
 /* Add left border to the first td in each row */
-.billinginfohistory-history td:first-child {
+.billinginfohistory-historytable td:first-child {
     border-left: 1px solid #ddd;
 }
 
 /* Add right border to the last td in each row */
-.billinginfohistory-history td:last-child {
+.billinginfohistory-historytable td:last-child {
     border-right: 1px solid #ddd;
 }
 
 
-.billinginfohistory-history th {
+.billinginfohistory-historytable th {
   border-top: 2px solid #24b676;  /* Keep top border */
   border-bottom: 2px solid #24b676; /* Keep bottom border */
   border-left: none; /* Remove left border */
@@ -93,12 +93,12 @@
   text-align: left;
 }
 /* Add left border to the first td in each row */
-.billinginfohistory-history th:first-child {
+.billinginfohistory-historytable th:first-child {
   border-left: 2px solid #24b676;
 }
 
 /* Add right border to the last td in each row */
-.billinginfohistory-history th:last-child {
+.billinginfohistory-historytable th:last-child {
   border-right: 2px solid #24b676;
 }
 
@@ -145,4 +145,75 @@
 .billinginfohistory-download:hover,
 .billinginfohistory-view:hover {
     color: #24b676; /* Change color on hover */
+}
+
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .billinginfohistory-container {
+      max-width: 1100px;
+  }
+}
+
+/* Medium Desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .billinginfohistory-container {
+      max-width: 900px;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .billinginfohistory-container {
+      max-width: 700px;
+  }
+  .billinginfohistorycard {
+    height: 234px;
+  }
+}
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 767px) {
+  .billinginfohistory-container {
+      max-width: 100%;
+      padding: 10px;
+  }
+}
+
+/* Extra Small Devices (Below 480px) */
+@media (max-width: 480px) {
+  .billinginfohistory-container {
+    padding: 5px;
+  }
+  .billinginfohistorycard {
+    height: 360px;
+}
+.billinginfohistory-card {
+  height: 360px;
+}
+  .billinginfohistory-history-scroll {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    width: 100%;
+  }
+  .billinginfohistory-historytable {
+    width: 700px; /* Ensures the table doesn’t shrink too much */
+  }
+}
+
+/* Smaller Screens (375px and below) */
+@media (max-width: 375px) {
+  .billinginfohistorycard {
+    height: 400px !important; /* Force override */
+  }
+}
+
+/* Very Small Screens (320px and below) */
+@media (max-width: 320px) {
+  .billinginfohistorycard {
+    height: 435px !important;
+    margin-top: 38px;
+ /* Further reduced height */
+  }
+  .billinginfohistory-card {
+    height: 435px !important;
+  }
 }

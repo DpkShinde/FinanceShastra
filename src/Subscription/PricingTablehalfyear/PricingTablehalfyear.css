@@ -584,4 +584,11 @@ margin-top: 10px;
   .ribbon-price-detail {
     font-size: 12px; /* Smaller font size for details */
   }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .toggle-switch-container {
+    margin-left: 290px;
+}
 }

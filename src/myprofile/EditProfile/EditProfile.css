@@ -141,11 +141,28 @@
 
 }
 
-
 .profile-verify-btn:hover {
   background-color: #24b676;
   color: white;
   /* Darker shade on hover */
+}
+
+/* Verified Button with Change Icon */
+.profile-verify-btn.verified {
+  background-color: #24b676;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-verify-btn.verified:hover {
+  background-color: #62ab8b;
+}
+
+.profile-verify-btn .change-icon {
+  font-size: 14px;
+  color: white;
 }
 
 /* Error text styling */
@@ -192,26 +209,13 @@
   transition: background-color 0.3s;
 }
 
-
-
 .allemailphone {
   display: flex;
-  gap: 50px;
-  /* Adds spacing between the items */
-  /* Distributes items with space in between */
-  align-items: center;
-  /* Aligns items vertically in the center */
-
-}
-
-
-.emailphoneall {
-  display: flex;
-  gap: 10px;
-  /* Adds spacing between the items */
-  /* Distributes items with space in between */
-  align-items: center;
-  /* Aligns items vertically in the center */
+  flex-direction: row;
+  gap: 30px; /* Adjust spacing between email and phone sections */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute space evenly */
+  margin-left: 0; /* Reset margin for proper alignment */
 }
 
 .editalliconnn {
@@ -222,7 +226,6 @@
   align-items: center;
   /* Vertically centers the buttons */
 }
-
 
 .email-section,
 .phone-section {
@@ -297,11 +300,9 @@
   /* Change text color to white on hover */
 }
 
-
 .profilepage-save-btn:hover {
   background-color: #62ab8b;
 }
-
 
 .profilepage-field-income {
   margin-bottom: 20px;
@@ -309,8 +310,6 @@
   display: flex;
   flex-direction: column;
   color: black;
-
-
 }
 
 .profilepage-field-income label {
@@ -399,9 +398,7 @@
   flex-direction: column;
   /* Stack label and select vertically */
   /* Adds spacing between fields */
-
 }
-
 
 .profilepageincome-select {
   margin-bottom: 50px;
@@ -513,7 +510,89 @@
   text-align: center;
 }
 
+.verification-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
 
+.verification-popup .popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.verification-popup .popup-header h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.verification-popup .popup-header .close-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.verification-popup p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.verification-popup .otp-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.verification-popup .otp-input.error-border {
+  border-color: red;
+}
+
+.verification-popup .error-text {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.verification-popup .submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: white;
+  background-color: #24b676;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.verification-popup .submit-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Adjust alignment for labels */
+.emailidlabel,
+.phonenulabel {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: black;
+}
 
 /* Mobile view - 768px */
 @media (max-width: 768px) {
@@ -564,25 +643,35 @@
 
   }
   .profile-email-container {
-    flex-direction: row;
+    flex-direction: column; /* Stack input and buttons vertically */
     align-items: flex-start;
-    width: 300px;
-    margin-left: -40px;
+    width: 100%; /* Ensure full width */
+    margin-left: auto;
     margin-right: auto;
 }
 
   .profile-phone-container {
-    flex-direction: row;
+    flex-direction: column; /* Stack input and buttons vertically */
     align-items: flex-start;
-    width: 300px;
-    margin-left: -40px;
+    width: 100%; /* Ensure full width */
+    margin-left: auto;
     margin-right: auto;
   }
 
-  .profile-email-container,
-  .profile-phone-container {
-    flex-direction: row;
-    align-items: flex-start;
+  .profilepage-email-input,
+  .profilepage-phone-input {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .profilepage-verifyemail-btn,
+  .profile-verify-btn {
+    width: auto; /* Adjust button width for responsiveness */
+    margin-top: 10px; /* Add spacing above buttons */
+  }
+
+  .emailidlabel,
+  .phonenulabel {
+    margin-left: 0; /* Reset margin for smaller screens */
   }
 
   .profilepage-field-income select {
@@ -594,12 +683,9 @@
   }
 
   .allemailphone {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* Adds spacing between the items */
-    /* Distributes items with space in between */
-
+    flex-direction: column; /* Stack email and phone sections vertically */
+    gap: 20px; /* Adjust spacing for vertical layout */
+    align-items: flex-start; /* Align items to the left */
   }
 
   .profilepage-container {
@@ -671,8 +757,6 @@
     padding: 12px;
     font-size: 14px;
   }
-
-  
 
   .modal-content {
     width: 70%;
@@ -755,17 +839,17 @@
   }
 
   .profile-email-container {
-    flex-direction: row;
+    flex-direction: column; /* Stack input and buttons vertically */
     align-items: flex-start;
-    width: 310px;
-    margin-left: -40px;
+    width: 100%; /* Ensure full width */
+    margin-left: auto;
     margin-right: auto;
 }
 
   .profile-phone-container {
-    flex-direction: row;
+    flex-direction: column; /* Stack input and buttons vertically */
     align-items: flex-start;
-    width: 351px;
+    width: 100%; /* Ensure full width */
     margin-left: auto;
     margin-right: auto;
   }

@@ -350,6 +350,82 @@
 
 }
 
+@media(min-width:2000px){
+
+    .allheadd {
+        margin-top: -70px;
+        font-family: 'calibri';
+        max-width: 1536px;
+    }
+    .alldatagraphtop {
+        display: flex;
+        gap: 570px;
+        margin-bottom: 10px;
+    }
+    .time-rangemutual-selectorrniftydashboard {
+        display: flex
+    ;
+        gap: 3px;
+        margin-left: 670px;
+    }
+    
+    .portfoliomutual-containerrniftydashboard {
+        height: 500px;
+        font-family: 'calibri';
+        padding: 20px;
+        color: #333;
+        width: 980px;
+        /* Set a maximum width */
+    
+        /* Add left margin to prevent overlap with sidebar */
+        font-family: 'Calibri';
+        margin-top: 5px;
+        margin-left: 130px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        /* Light grey border */
+        box-shadow: 0px 4px 6px rgba(183, 180, 180, 0.956);
+        /* Soft shadow around the container */
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+        /* Reverse the container's content */
+    
+    }
+  
+    .DashboardMainPagetable-table-container {
+        overflow-x: auto;
+        margin: 20px;
+        width: 150%;
+    }
+    .chartmutual-containerrdashboard {
+        height: 400px;
+        width: 980px;
+
+
+    }
+ 
+    .hompagetopdata {
+        display: flex;
+     gap: 970px;
+        max-width: 100%;
+    }
+    .homepagenewdata-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 16px;
+        background-color: #f9fbfc;
+        box-shadow: 0px 4px 6px rgba(217, 212, 212, 0.925);
+        width: 280px;
+        text-align: center;
+        font-family: 'calibri';
+        height: 50px;
+        margin-top: 210px;
+  margin-right: -600px;
+       
+    }
+}
+
 @media (min-width: 1280px) and (max-width: 1535px){
     .headerdashboardmain {
         margin-left: 170px;
@@ -448,7 +524,7 @@
     
     .hompagetopdata {
         display: flex;
-        gap: 470px;
+        gap: 420px;
         max-width: 100%;
     }
     
@@ -643,6 +719,40 @@
 
 @media (min-width: 1024px) and (max-width: 1279px)  {
     
+    .portfoliomutual-containerrniftydashboard {
+        height: 500px;
+        font-family: 'calibri';
+        padding: 20px;
+        color: #333;
+        width: 350px;
+        /* Set a maximum width */
+    
+        /* Add left margin to prevent overlap with sidebar */
+        font-family: 'Calibri';
+        margin-top: 5px;
+        margin-left: 130px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        /* Light grey border */
+        box-shadow: 0px 4px 6px rgba(183, 180, 180, 0.956);
+        /* Soft shadow around the container */
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-left: 100px;
+        /* Reverse the container's content */
+    
+    }
+    
+    .chartmutual-containerrdashboard {
+        height: 330px;
+        width: 370px;
+    }
+    .alldatagraphtop {
+        display: flex;
+        gap: 70px;
+        margin-bottom: 10px;
+    }
     .allheadd {
         margin-top: -70px;
         font-family: 'calibri';
@@ -681,6 +791,12 @@
     .headerdashboardmain{
         margin-left: 305px;
     }
+    .time-rangemutual-selectorrniftydashboard {
+        display: flex;
+        gap: 3px;
+        margin-left: 50px;
+    }
+    
 }
 
 
@@ -716,7 +832,7 @@ max-width: 90%;
         width: 590px;
         /* Maximum width */
         margin-top: 15px;
-        margin-left: 20px;
+        margin-left:70px;
         /* Left margin adjustment */
         margin-bottom: 20px;
         /* Add extra spacing below the container */
@@ -823,7 +939,7 @@ max-width: 90%;
         padding: 20px;
         padding-bottom: 80px;
         color: #333;
-        width:360px;
+        width:auto;
         margin-top: 5px;
     
         margin-bottom: 5px;
@@ -833,11 +949,13 @@ max-width: 90%;
         border-radius: 5px;
         display: flex;
         flex-direction: column-reverse;
+        margin-left: 30px;
     }
 
     .chartmutual-containerrdashboard {
         height: 200px;
-        width: 400px;
+        width: 110%;
+        max-width: 130%;
 
 
     }
@@ -900,7 +1018,7 @@ max-width: 90%;
         font-family: 'calibri';
         height: 30px;
         margin-top: 240px;
-        margin-left: -270px;
+        margin-left: -250px;
         margin-bottom: 10px;
     }
 
@@ -983,3 +1101,9 @@ max-width: 90%;
 }
 }
  
+@media (min-width: 320px) {
+    .time-rangemutual-button {
+        padding: 4px 3px;
+        font-size: 10px;
+    }
+}

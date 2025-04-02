@@ -1,0 +1,115 @@
+.invoice-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  height: 900px;
+  font-family: 'calibri';
+}
+  
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .invoice-logo {
+    width: 150px;
+  }
+  
+  .invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .invoice-billed,
+  .invoice-payment {
+    width: 45%;
+    font-size: 15px;
+  }
+  .invoice-payment {
+    margin-left: 200px;
+    margin-right: -200px;
+}
+.invoice-plan-title {
+  background: linear-gradient(90deg, #238486, #24b676);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+  
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .invoice-table th, 
+.invoice-table td {
+    border-top: 1px solid #cecece;  /* Keeps the horizontal lines */
+    border-bottom: 2px solid #cecece;
+    border-left: none;  /* Removes vertical lines */
+    border-right: none;
+    padding: 10px;
+    text-align: left;
+}
+  .invoice-table th {
+    background: #24b676;
+    color: white;
+  }
+  
+  .invoice-summary {
+    margin-top: 10px;
+    text-align: right;
+    position: relative;
+    margin-left: 10px;
+  }
+  .invoice-summary p strong {
+    color: #333; /* Normal black color */
+    font-weight: normal; /* Removes extra bold effect */
+}
+  .invoice-summary p {
+    display: flex;
+    gap: 585px; /* Equal space between text and amount */
+   
+    margin-left: 20px;
+    color: #333;
+    margin: 8px 0; /* Adds spacing between lines */
+    padding-bottom: 8px; /* Adds space below each item */
+}
+.invoice-summary p:nth-child(2) { /* Targets Subtotal */
+  border-bottom: 2px solid #cecece; /* Adds a border below Subtotal */
+  padding-bottom: 10px; /* Space between Subtotal and Tax */
+}
+
+  .invoice-paid-image {
+    position: absolute;
+    right: 0;
+    bottom: -80px;
+    width: 120px; /* Adjust size as needed */
+    margin-right: 400px;
+  }
+  
+  .invoice-paid-image img {
+    width: 100%;
+    max-width: 120px;
+    opacity: 0.9; /* Slight transparency effect */
+  }
+  
+  .invoice-paid-stamp {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #15803d;
+    border: 3px solid #15803d;
+    border-radius: 50%;
+    text-transform: uppercase;
+  }
+  

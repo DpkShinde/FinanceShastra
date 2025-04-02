@@ -2,12 +2,18 @@ import React, { useState, useEffect, useContext } from "react";
 import "./OrderTable.css";
 import Cookies from 'js-cookie'
 
+
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 
 import { API_BASE_URL } from "../../config";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
+import ClipLoader from "react-spinners/ClipLoader";
+const override = {
+  display: "block",
+  textAlign: "center",
+};
 /*const ordersData = [
 
   { id: "#7234531", order: "Elite ", date: "08-07-2024", amount: "₹2,000", status: "Completed" },
@@ -30,7 +36,9 @@ const formatDate = (isoString) => {
 const OrderTable = () => {
   const [isLogin, setislogin] = useState(true);
   const [ordersdatastate, setordersData] = useState([]);
+  const [isLoading, setisLoading]= useState(false)
   useEffect(() => {
+    setisLoading(true)
     const fetOrders = async () => {
       const localtoken = Cookies.get("jwtToken");
       if (!localtoken) {
@@ -50,7 +58,7 @@ const OrderTable = () => {
       if (response.ok === true) {
         const data = await response.json();
         console.log("orders Data: ", data);
-        if (data.length != 0) {
+        if (data.length !== 0) {
           const formattedordersData = data.map((e) => ({
             id: e.order_id,
             order: e.order_name,
@@ -62,6 +70,7 @@ const OrderTable = () => {
           setordersData(formattedordersData);
         }
       }
+      setisLoading(false)
     };
     fetOrders();
   }, []);
@@ -81,7 +90,17 @@ const OrderTable = () => {
 
   return (
     <div>
-      <div className="order-table-all">
+    {isLoading? <div className='loader-cont'><ClipLoader
+                      cssOverride={override}
+                      size={35}
+                      data-testid="loader"
+                      loading={isLoading}
+                      speedMultiplier={1}
+                      color="green"
+                    /></div>
+                  : 
+                  <>
+                  <div className="order-table-all">
         <h1 className="profilepage-titleorder">My Orders</h1>
         <div className="profilepage-tabsorder">
           <span
@@ -193,7 +212,10 @@ const OrderTable = () => {
       </div>
       <div className="foooterpagesaupdate">
       <FooterForAllPage />
-      </div>
+      </div></>
+                  }
+    
+      
     </div>
   );
 };

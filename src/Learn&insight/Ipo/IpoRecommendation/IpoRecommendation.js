@@ -12,7 +12,7 @@ const IpoRecommendation = () => {
   return (
     <div className="iporecommendation-container">
       <h2 className="iporecommendation-title">Recommendations</h2>
-      <div className={issubscribed ? "iporecommendation-box" : 'blurclass'}>
+      <div className= "iporecommendation-box">
         {!issubscribed && <div className="iporecommendation-overlay">
           <div className="iporecommendation-lock-icon"
            onClick={handleNavigate} >
@@ -23,7 +23,7 @@ const IpoRecommendation = () => {
           </div>
         </div>}
         
-        <div className="iporecommendation-content">
+        <div className= {issubscribed ? "iporecommendation-content" : 'blurclass'}>
           Sanathan Textiles Ltd. is a prominent player in India’s textile industry, 
           recognized for its robust operational capabilities and an expansive product 
           portfolio catering to both domestic and international markets. While the 

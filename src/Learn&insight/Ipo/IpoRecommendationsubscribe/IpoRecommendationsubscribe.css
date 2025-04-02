@@ -37,7 +37,7 @@
     cursor: pointer;
     font-weight: bold;
   
-    margin-top: 20px;
+    margin-top: 30px;
   }
   
   .avoidiposubss {
@@ -48,6 +48,7 @@
     padding: 10px 15px ;
     border-radius: 5px;
     border: 1px solid white;
+   
   }
   
   .avoidiposubss:hover{

@@ -34,6 +34,15 @@
   .niftykeyindicator-cell:last-child {
     text-align: right;
   }
+
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .niftykeyindicator {
+      width: 330px;
+      height: 370px;
+      margin-left: 15px;
+      margin-top: 20px;
+  }
+}
   /* Mobile View for 768px (Tablet view) */
 @media (max-width: 768px) {
   .niftykeyindicator {

@@ -80,6 +80,8 @@ const UserDetailsupdate = () => {
       ...prevDetails,
       email: userEmail,
     }));
+
+    
  
     const fetchfunc= async ()=>{
       const url= `${API_BASE_URL}/userdetails`
