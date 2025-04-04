@@ -176,8 +176,8 @@ margin-top: 150px;
     }
 
     .time-rangemutual-button {
-        padding: 8px 12px;
-        font-size: 13px;
+        padding: 8px 12px !important;
+        font-size: 13px !important;
     }
 
     .chartmutual-container {
@@ -251,3 +251,9 @@ margin-top: 150px;
         font-size: 0.8rem;
     }
 }
+/* Large Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    .time-rangemutual-button {
+        display: inline-block;
+    }
+  }

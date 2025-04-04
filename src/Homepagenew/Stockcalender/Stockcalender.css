@@ -137,7 +137,7 @@ width: 100%;
 .DashboardMainPagetable-table-container {
   overflow-x: auto;
   margin: 20px;
-  width: 93%;
+  width: 96%;
 }
 .pagination-containercalender {
   display: flex;
@@ -146,17 +146,24 @@ width: 100%;
   margin: 20px 0;
   margin-left: 3px;
 }
-.DashboardMainPagetable-table-containerrrrr{
-  width: 95%;
-  }
-  
+.DashboardMainPagetable-table-containerrrrr {
+  width: 96%;
+  margin-left: 25px;
+}
+.earningquterlyrowalll {
+  margin-left: 20px;
+}
+.DashboardMainPagetable-tablee {
+  margin-left: 20px;
+  width: 93%;
+}
 }
 @media (min-width: 1024px) and (max-width: 1279px)  {
-.DashboardMainPagetable-table-container {
-  overflow-x: auto;
-  margin: 20px;
-  width: 64%;
-  margin-left: -10px;
+  .DashboardMainPagetable-table-container {
+    overflow-x: auto;
+    margin: 20px;
+    width: 63%;
+    margin-left: 0px;
 }
 .DashboardMainPagetable-table-containerrrrr {
   width: 94%;
@@ -204,13 +211,14 @@ font-size: 12px;
     display: flex;
     border: 1px solid rgb(212, 209, 209);
     height: 40px;
-    margin-left: 0px;
+    margin-left: 45px;
     align-self: left;
    padding-right: 10px;
     margin-right: 0px;
     width: 140px;
     border-radius: 5px;
     box-shadow: 0 0 0 2px #efeeee; /* Blue outline when focused */
+    margin-top: -10px;
   }
   
   .DashboardMainPagetable-table-container {
@@ -219,10 +227,10 @@ font-size: 12px;
 }
 
 .DashboardMainPagetable-table-container {
-  overflow-x: auto;
+  overflow-x: hidden;
   margin: 20px;
-  width: 130%;
-  margin-left: -20px;
+  width: 125%;
+  margin-left: -0px;
 }
     .DashboardMainPagetable-headerr{
       display: flex;
@@ -252,13 +260,14 @@ font-size: 12px;
   .DashboardMainPagetable-tablee {
    
     border-collapse: collapse;
-    margin-top: 40px;
+    margin-top: 0px;
  
 } .DashboardMainPagetable-tablee th, .DashboardMainPagetable-tablee td{
 font-size: 12px;
 }
-.DashboardMainPagetable-table-containercalen{
-  width: 140%;
+.DashboardMainPagetable-table-containercalen {
+  width: 145%;
+  margin-left: 10px;
 }
 .pagination-containercalender {
   display: flex;
@@ -277,7 +286,7 @@ font-size: 12px;
         display: flex;
         border: 1px solid rgb(212, 209, 209);
         height: 40px;
-        margin-left: 200px;
+        margin-left: 220px;
         width: 140px;
         border-radius: 5px;
         box-shadow: 0 0 0 2px #efeeee; /* Blue outline when focused */
@@ -323,25 +332,27 @@ font-size: 12px;
         }
         .DashboardMainPagetable-table-container {
           overflow-x: auto;
-        
-     width: 120%;
+          width: 110%;
           height: 300px;
-          margin-left: 10px;
+          margin-left: 25px;
+          overflow-y: hidden;
+          height: 520px;
       }
       .pagination-containercalender {
         display: flex;
       
         justify-content: space-between;
         align-items: center;
-       margin-left: 1px;
+        margin-left: 20px;
     
       }
-      .DashboardMainPagetable-table-containercalen{
+      .DashboardMainPagetable-table-containercalen {
         overflow-x: auto;
-        
-        width: 170%;
-             height: 300px;
-             margin-left: 10px;
-      }
+        width: 155%;
+        height: 300px;
+        margin-left: 30px;
+        overflow-y: hidden;
+        height: 700px;
+    }
       
         }

@@ -125,22 +125,21 @@
 }
 @media (max-width: 768px) {
     .react-datepicker {
-  
         border-radius: 8px;
         overflow: hidden;
         border: 1px solid #ddd;
         background: white;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-        z-index: 9999; /* Ensure it stays on top */
-        position: absolute; /* Positions it properly */
+        z-index: 9999;
+        position: absolute;
         height: 350px;
         padding: 5px;
-        /* Margin Adjustments */
-        margin-top: 1170px;
+        margin-top: 1000px;
         margin-left: auto;
         font-family: 'calibri';
         left: 23%;
-        transform: translateX(-50%); /* Centers it horizontally */
+        transform: translateX(-50%);
+        margin-bottom: 190px;
     }
     
 }

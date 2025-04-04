@@ -9,6 +9,7 @@
   margin-top: -240px;
 
 }
+
 .pagination-containerrsector {
   display: flex;
   gap: 770px;
@@ -16,386 +17,440 @@
   margin: 20px 0;
   margin-left: 20px;
 }
-.DashboardMainPagetable-change{
-font-size: 14px;
+
+.DashboardMainPagetable-change {
+  font-size: 14px;
 
 }
 
 
-body{
+body {
   overflow-x: hidden;
 }
-  /* Header Tabs */
-  .DashboardMainPagetable-header {
+
+/* Header Tabs */
+.DashboardMainPagetable-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.DashboardMainPagetable-card.custom-card-size {
+  width: 115px;
+
+
+}
+
+.DashboardMainPagetable-tab {
+  padding: 10px 15px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  outline: none !important;
+  /* Removes the default focus outline */
+  border: none;
+  box-shadow: none !important;
+  /* Removes any focus shadow */
+  margin-top: 10px;
+}
+
+.DashboardMainPagetable-tab.active {
+  background: #24b676;
+  color: white;
+}
+
+.DashboardMainPagetable-tab:hover {
+  background: #24b676;
+  color: white;
+}
+
+.DashboardMainPagetable-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.DashboardMainPagetable-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100px;
+  max-width: 130px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'calibri';
+}
+
+.DashboardMainPagetable-card-header {
+  display: flex;
+
+
+}
+
+.DashboardMainPagetable-header-left {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.upgraph {
+  display: flex;
+}
+
+.DashboardMainPagetable-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.sector-icon {
+  background-color: #ffcc80;
+  /* Orange for IT */
+  margin-left: 38px;
+  width: 10%;
+  /* Adjust size as needed */
+  height: 28%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-right: 5px;
+
+  /* Centers the icon within the circle */
+
+  /* Adds some spacing inside the circle */
+}
+
+.sectorenergy-icon {
+  background-color: #24b676;
+  /* Yellow for Energy */
+  margin-left: 20px;
+  width: 10%;
+  /* Adjust size as needed */
+  height: 25%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sectorhealth-icon {
+  background-color: #90caf9;
+  /* Blue for Health */
+  margin-left: 20px;
+  width: 10%;
+  /* Adjust size as needed */
+  height: 25%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sectorpower-icon {
+  background-color: rgb(228, 102, 102);
+  /* Red for Power */
+  margin-left: 20px;
+  width: 10%;
+  /* Adjust size as needed */
+  height: 25%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sectortextile-icon {
+  background-color: #ffcc80;
+  /* Purple for Textiles */
+  margin-left: 20px;
+  width: 10%;
+  /* Adjust size as needed */
+  height: 25%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sectorfinance-icon {
+  background-color: #24b676;
+  /* Green for Finance */
+  margin-left: 20px;
+  width: 10%;
+  /* Adjust size as needed */
+  height: 25%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sectortele-icon {
+  background-color: rgb(85, 85, 236);
+  /* Teal for Telecommunication */
+  width: 10%;
+  /* Adjust size as needed */
+  height: 25%;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  display: flex;
+  /* Centers the icon within the circle */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.DashboardMainPagetable-sector {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  margin-left: -5px;
+
+}
+
+.change-up {
+  color: #24b676;
+  /* Green for increase */
+
+}
+
+.change-down {
+  color: red;
+  /* Red for decrease */
+}
+
+
+
+/* Table Section */
+.DashboardMainPagetable-table {
+  width: 88%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.DashboardMainPagetable-table th,
+.DashboardMainPagetable-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+  border-left: none;
+  border-right: none;
+}
+
+.DashboardMainPagetable-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+  border: 1px solid #24b676;
+  border-left: none;
+  border-right: none;
+  box-shadow: 0px 2px 5px #24b676;
+  /* Subtle shadow */
+  font-size: 16px;
+}
+
+.DashboardMainPagetable-table td {
+  font-size: 15px;
+
+}
+
+.DashboardMainPagetable-positive {
+  color: #24b676;
+
+}
+
+.DashboardMainPagetable-clarification-link {
+  color: #007bff;
+  text-decoration: none;
+  /* Ensures the underline is removed */
+  transition: color 0.3s ease;
+}
+
+/* Optional: Add hover effect if you want to change the color when hovering */
+.DashboardMainPagetable-clarification-link:hover {
+  color: #0056b3;
+  /* Adjust the color when hovering */
+}
+
+.clarification-link {
+  color: #24b676;
+  text-decoration: none;
+  /* Ensures the underline is removed */
+  transition: color 0.3s ease;
+}
+
+.DashboardMainPagetable-value {
+  font-size: 14px;
+}
+
+.DashboardMainPagetable-clarification-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Accessibility - Improved visibility */
+.DashboardMainPagetable-table th[aria-sort] {
+  cursor: pointer;
+  background: #e0e0e0;
+}
+
+.DashboardMainPagetable-table th[aria-sort="ascending"],
+.DashboardMainPagetable-table th[aria-sort="descending"] {
+  background: #d3d3d3;
+}
+
+.DashboardMainPagetable-tableeee {
+  width: 89%;
+  border-collapse: collapse;
+  margin-top: 30px;
+
+
+}
+
+.DashboardMainPagetable-tableeee th,
+.DashboardMainPagetable-tableeee td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.DashboardMainPagetable-tableeee th {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.DashboardMainPagetable-tableeee tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.DashboardMainPagetable-tableeee tr:hover {
+  background-color: #ddd;
+}
+
+.DashboardMainPagetable-headerrindexx {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 230px;
+  margin-left: 300px;
+  margin-top: -130px;
+}
+
+
+
+@media(min-width:1536px) {
+  .pagination-containerrsector {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 30px;
+    gap: 821px;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: 20px;
   }
+
   .DashboardMainPagetable-card.custom-card-size {
-    width: 115px;
-   
-   
-   }
-  
-  .DashboardMainPagetable-tab {
-    padding: 10px 15px;
-    background: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    outline: none !important;  /* Removes the default focus outline */
-    border: none;
-    box-shadow: none !important; /* Removes any focus shadow */
-    margin-top: 10px;
+    width: 145px;
   }
-  
-  .DashboardMainPagetable-tab.active {
-    background: #24b676;
-    color:white;
+
+  .pagination-slider {
+    margin-right: -1000px;
   }
-  
-  .DashboardMainPagetable-tab:hover {
-    background: #24b676;
-    color: white;
-  }
-  
-  .DashboardMainPagetable-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
+
   .DashboardMainPagetable-card {
     background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 16px;
-    width: 100px;
-    max-width: 130px;
+
+
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: 'calibri';
   }
-  
-  .DashboardMainPagetable-card-header {
-    display: flex;
-   
 
-  }
-  
-  .DashboardMainPagetable-header-left {
-    display: flex;
-   gap: 5px;
-    align-items: center;
-  }
-  .upgraph{
-    display: flex;
-  }
-  
-  .DashboardMainPagetable-icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    margin-right: 10px;
-    border-radius: 50%;
-  }
-  
-  .sector-icon {
-    background-color: #ffcc80; /* Orange for IT */
-    margin-left: 38px;
-    width: 10%; /* Adjust size as needed */
-    height: 28%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin-right: 5px;
- 
-   /* Centers the icon within the circle */
- 
-   /* Adds some spacing inside the circle */
-  }
-  
-  .sectorenergy-icon{
-    background-color:#24b676; /* Yellow for Energy */
-    margin-left: 20px;
-    width: 10%; /* Adjust size as needed */
-    height: 25%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-    margin-right: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  }
-  
-  .sectorhealth-icon {
-    background-color: #90caf9; /* Blue for Health */
-    margin-left: 20px;
-    width: 10%; /* Adjust size as needed */
-    height: 25%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-    margin-right: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  }
-  
-  .sectorpower-icon{
-    background-color:rgb(228, 102, 102); /* Red for Power */
-    margin-left: 20px;
-    width: 10%; /* Adjust size as needed */
-    height: 25%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-    margin-right: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  }
-  
-  .sectortextile-icon {
-    background-color:#ffcc80; /* Purple for Textiles */
-    margin-left: 20px;
-    width: 10%; /* Adjust size as needed */
-    height: 25%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-    margin-right: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  }
-  
-  .sectorfinance-icon{
-    background-color: #24b676; /* Green for Finance */
-    margin-left: 20px;
-    width: 10%; /* Adjust size as needed */
-    height: 25%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-  margin-right: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  }
-  
-  .sectortele-icon{
-    background-color:rgb(85, 85, 236); /* Teal for Telecommunication */
-    width: 10%; /* Adjust size as needed */
-    height: 25%; /* Adjust size as needed */
-    border-radius: 50%;
-    display: flex; /* Centers the icon within the circle */
-    margin-right: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  }
-  
-  .DashboardMainPagetable-sector {
-    font-size: 12px;
-    font-weight: bold;
-    color: #333;
-    margin-left: -5px;
-   
-  }
-  .change-up {
-    color:#24b676; /* Green for increase */
-
-  }
-  
-  .change-down {
-    color: red; /* Red for decrease */
-  }
-  
-
-  
-  /* Table Section */
-  .DashboardMainPagetable-table {
-    width: 88%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .DashboardMainPagetable-table th,
-  .DashboardMainPagetable-table td {
-    padding: 10px 15px;
-    text-align: left;
-    border: 1px solid #e0e0e0;
-    border-left: none;
-  border-right: none;
-  }
-  
-  .DashboardMainPagetable-table th {
-    background: #f4f4f4;
-    font-weight: bold;
-    border: 1px solid #24b676;
-    border-left: none;
-    border-right: none;
-    box-shadow: 0px 2px 5px #24b676; /* Subtle shadow */
-    font-size: 16px;
-  }
-  
-  .DashboardMainPagetable-table td {
-    font-size: 15px;
-    
-  }
-  
-  .DashboardMainPagetable-positive {
-    color: #24b676;
-    
-  }
-  
-  .DashboardMainPagetable-clarification-link {
-    color: #007bff;
-    text-decoration: none; /* Ensures the underline is removed */
-    transition: color 0.3s ease;
-  }
-  
-  /* Optional: Add hover effect if you want to change the color when hovering */
-  .DashboardMainPagetable-clarification-link:hover {
-    color: #0056b3; /* Adjust the color when hovering */
-  }
-.clarification-link{
-  color: #24b676;
-  text-decoration: none; /* Ensures the underline is removed */
-  transition: color 0.3s ease;
-}  
-  .DashboardMainPagetable-value{
-    font-size: 14px;
-  }
-  
-  .DashboardMainPagetable-clarification-link:hover {
-    text-decoration: underline;
-    color: #0056b3;
-  }
-  
-  /* Accessibility - Improved visibility */
-  .DashboardMainPagetable-table th[aria-sort] {
-    cursor: pointer;
-    background: #e0e0e0;
-  }
-  
-  .DashboardMainPagetable-table th[aria-sort="ascending"],
-  .DashboardMainPagetable-table th[aria-sort="descending"] {
-    background: #d3d3d3;
-  }
-  
   .DashboardMainPagetable-tableeee {
-    width: 89%;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 30px;
-  
-    
-}
-
-.DashboardMainPagetable-tableeee th,
-.DashboardMainPagetable-tableeee td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.DashboardMainPagetable-tableeee th {
-    background-color: #f2f2f2;
-    cursor: pointer;
-}
-
-.DashboardMainPagetable-tableeee tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.DashboardMainPagetable-tableeee tr:hover {
-    background-color: #ddd;
-}
-.DashboardMainPagetable-headerrindexx{
-  display: flex;
-      gap: 10px;
-      margin-bottom: 230px;
- margin-left: 270px;
-      margin-top: -130px;
-}
-
-
-
-  @media(min-width:1536px){
-    .pagination-containerrsector {
-      display: flex;
-      gap: 821px;
-      align-items: center;
-      margin: 20px 0;
-      margin-left: 20px;
-    }
-    .DashboardMainPagetable-card.custom-card-size {
-      width: 145px;
   }
-    .pagination-slider{
-      margin-right: -1000px;
-    }
-    .DashboardMainPagetable-card {
-      background-color: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 16px;
-   
-    
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      font-family: 'calibri';
-    }
-    .DashboardMainPagetable-tableeee {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 30px;
-  }
-  .DashboardMainPagetable-headerrindexx{
+
+  .DashboardMainPagetable-headerrindexx {
     display: flex;
-        gap: 10px;
-        margin-bottom: 230px;
-   margin-left: 270px;
-        margin-top: -105px;
+    gap: 10px;
+    margin-bottom: 230px;
+    margin-left: 300px;
+    margin-top: -135px;
   }
+}
+
+@media(min-width:2000px) {
+  .DashboardMainPagetable-headerrindexx {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 230px;
+    margin-left: 270px;
+    margin-top: -145px;
   }
-  @media(min-width:2000px){
-    .DashboardMainPagetable-headerrindexx{
-      display: flex;
-          gap: 10px;
-          margin-bottom: 230px;
-     margin-left: 270px;
-          margin-top: -145px;
-    }
-    .DashboardMainPagetable-container {
-      padding: 20px;
-      font-family: 'calibri';
-      background: white;
-      width: 1880px;
-      margin-left: 250px;
-      margin-right: 100px;
-      margin-top: -240px;
-    
-    }
-    .DashboardMainPagetable-card {
-      background-color: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 16px;
-      width: 480px;
-    
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      font-family: 'calibri';
-    } 
+
+  .DashboardMainPagetable-container {
+    padding: 20px;
+    font-family: 'calibri';
+    background: white;
+    width: 1880px;
+    margin-left: 250px;
+    margin-right: 100px;
+    margin-top: -240px;
+
+  }
+
+  .DashboardMainPagetable-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    width: 480px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'calibri';
+  }
+
   .DashboardMainPagetable-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     margin-top: 20px;
   }
+
   .pagination-containerrsector {
     display: flex;
     gap: 1321px;
@@ -403,342 +458,380 @@ body{
     margin: 20px 0;
     margin-left: 20px;
   }
-  }
-
-  @media (min-width: 1280px) and (max-width: 1535px){
-    .DashboardMainPagetable-headerrindexx{
-      display: flex;
-          gap: 10px;
-          margin-bottom: 230px;
-     margin-left: 270px;
-          margin-top: 40px;
-    }
-    .pagination-containerrsector {
-      display: flex;
-      gap: 721px;
-      align-items: center;
-      margin: 20px 0;
-      margin-left: 20px;
-    }
-}
-    
-
-
-  @media (min-width: 1024px) and (max-width: 1279px)  {
-    .DashboardMainPagetable-headerrindexx{
-        display: flex;
-            gap: 10px;
-            margin-bottom: 230px;
-       margin-left: 270px;
-            margin-top: 30px;
-      }
-      .DashboardMainPagetable-cards {
-        display: flex
-    ;
-    width:600px;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 20px;
-       align-items: center;
-       margin-left: 120px;
-       
-        
-      
-    }
-    .DashboardMainPagetable-card.custom-card-size {
-      width: 120px;
-      margin-left: 163px;
-    }
-    .pagination-containerrsector {
-      display: flex;
-      gap: 381px;
-      align-items: center;
-      margin: 20px 0;
-      margin-left: -10px;
-     
-    }
 }
 
-
-  @media (max-width: 768px) {
-    /* Main Container */
-    .DashboardMainPagetable-container {
-      padding: 10px; /* Reduced padding for smaller screens */
-      font-family: 'calibri';
-      background: white;
-      width: 90%; /* Full width for mobile screens */
-      margin-left: 0; /* No left margin for mobile */
-      margin-top: -100px; /* Adjust alignment for smaller screens */
-      box-sizing: border-box; /* Include padding in width calculation */
-    }
-  
-    body {
-      overflow-x: hidden; /* Prevent horizontal scrolling of the body */
-    }
-    .DashboardMainPagetable-headerrindexx{
-      display: flex;
-          gap: 10px;
-          margin-bottom: 110px;
-          margin-left: 25px;
-          margin-top: 10px;
-    }
-  
-    .DashboardMainPagetable-header {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 0;
-      margin-top: -100px;
-      margin-left: 20px;
-      overflow-x: auto;
-      white-space: nowrap;
-      max-width: 100%;
-      box-sizing: border-box;
-      scrollbar-width: thick;
-    }
-  
-    /* Scrollbar Styling */
-    .DashboardMainPagetable-header::-webkit-scrollbar {
-      height: 8px; /* Height of the scrollbar */
-    }
-  
-    .DashboardMainPagetable-header::-webkit-scrollbar-thumb {
-      background-color: #ccc; /* Customize scrollbar thumb color */
-      border-radius: 4px; /* Rounded corners for scrollbar thumb */
-    }
-  
-    .DashboardMainPagetable-header::-webkit-scrollbar-track {
-      background-color: #f9f9f9; /* Scrollbar track background color */
-    }
-  
-    .DashboardMainPagetable-container {
-      padding: 10px; /* Reduced padding for smaller screens */
-      font-family: 'calibri';
-      background: white;
-     
-  
-      /* Adjust alignment for smaller screens */
-      align-items: center;
-
-      box-sizing: border-box; /* Include padding in width calculation */
-    }
-    body{
-      overflow-x: hidden;
-    }
-
-
-    .DashboardMainPagetable-tab {
-      padding: 10px 7px;
-      background: #e0e0e0;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      flex-shrink: 0; /* Prevent shrinking */
-      white-space: nowrap; /* Keep tabs in a single line */
-      margin-bottom: 3px;
-    }
-    
-  
-  .DashboardMainPagetable-tab:hover {
-      background: #24b676;
-      color: white; /* Slightly darker shade on hover */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .DashboardMainPagetable-headerrindexx {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 230px;
+    margin-left: 290px;
+    margin-top: -200px;
   }
-  
+
   .DashboardMainPagetable-cards {
-    display: flex
-;
-width:600px;
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
-   align-items: center;
-   margin-left: 90px;
-   
-    
-  
+    margin-left: 20px;
+  }
+
+  .pagination-containerrsector {
+    display: flex;
+    gap: 721px;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: 20px;
+  }
 }
- 
-    
-    .DashboardMainPagetable-tableeee {
-      width: 50%;
-      border-collapse: collapse;
-      margin-top: 30px;
-      overflow-x: auto;
-    }
-    
-    .DashboardMainPagetable-table th,
-    .DashboardMainPagetable-table td {
-      padding: 8px 12px; /* Add padding for spacing */
-      text-align: left; /* Align text to the left */
-      border: 1px solid #ddd; /* Add borders for visibility */
-    }
-    
-    .DashboardMainPagetable-tableeee th {
-      position: sticky;
-      top: 0;
-      background-color: white;
-      font-weight: bold;
-      border-top: 2px solid #24b676;
-      border-bottom: 2px solid #24b676;
-      box-shadow: 4px 4px 5px rgba(36, 182, 118, 0.5);
 
-      z-index: 2; /* Ensure it stays above table content */
-      font-size: 12px;
-    }
-    
-   
-  
-    .DashboardMainPagetable-card.custom-card-size {
-      width: 300px;
-      margin-left: 173px;
-    }
-  
-    /* Sector Icons */
-    .sector-icon,
-    .sectorenergy-icon,
-    .sectorhealth-icon,
-    .sectorpower-icon,
-    .sectortextile-icon,
-    .sectorfinance-icon,
-    .sectortele-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      padding: 10px;
-    }
-  
-    .sector-icon {
-      background-color: #ffcc80;
-      margin-left: 29px;
-      width: 8%;
-      height: 28%;
-    }
-  
-    .sectorenergy-icon {
-      background-color: #24b676;
-      margin-left: 20px;
-      width: 8%;
-      height: 25%;
-    }
-  
-    .sectorhealth-icon {
-      background-color: #90caf9;
-      margin-left: 20px;
-      width: 10%;
-      height: 25%;
-    }
-  
-    .sectorpower-icon {
-      background-color: rgb(228, 102, 102);
-      margin-left: 22px;
-      width: 10%;
-      height: 25%;
-    }
-  
-    .sectortextile-icon {
-      background-color: #ffcc80;
-      margin-left: 22px;
-      width: 10%;
-      height: 25%;
-    }
-  
-    .sectorfinance-icon {
-      background-color: #24b676;
-      margin-left: 20px;
-      width: 10%;
-      height: 25%;
-    }
-  
-    .sectortele-icon {
-      background-color: rgb(85, 85, 236);
-      margin-left: -9px;
-      width: 8%;
-      height: 25%;
-    }
-  
-    .DashboardMainPagetable-change {
-      margin-top: 15px;
-      font-size: 12px;
-    }
-  
-    .DashboardMainPagetable-value {
-      font-size: 12px;
-    }
-  
-    .upgraph {
-      display: flex;
-      margin-left: 0px;
-    }
-  
-   
-  
-    .DashboardMainPagetable-table th,
-    .DashboardMainPagetable-table td {
-      padding: 8px 12px; /* Add padding for spacing */
-      text-align: left; /* Align text to the left */
- 
-    }
-  
-    .pagination-containerrsector {
-      display: flex;
-      gap: 160px;
-      align-items: center;
-      margin: 20px 0;
-      margin-left: 68px;
-    }
-    .FooterForAllPage-footerrr{
-display: none;
-    }
-  
+
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .DashboardMainPagetable-headerrindexx {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 230px;
+    margin-left: 270px;
+    margin-top: -50px;
   }
-  
+
+  .DashboardMainPagetable-cards {
+    width: 60%;
+    justify-content: flex-start;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    padding-bottom: 10px;
+  }
+
+  .DashboardMainPagetable-card.custom-card-size {
+    width: 120px;
+    margin-left: 0px;
+  }
+
+  .pagination-containerrsector {
+    display: flex;
+    gap: 381px;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: -10px;
+
+  }
+}
 
 
+@media (max-width: 768px) {
+
+  /* Main Container */
+  .DashboardMainPagetable-container {
+    padding: 10px;
+    /* Reduced padding for smaller screens */
+    font-family: 'calibri';
+    background: white;
+    width: 90%;
+    /* Full width for mobile screens */
+    margin-left: 0;
+    /* No left margin for mobile */
+    margin-top: -100px;
+    /* Adjust alignment for smaller screens */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
+
+  body {
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling of the body */
+  }
+
+  .DashboardMainPagetable-headerrindexx {
+    display: flex
+;
+    gap: 10px;
+    margin-bottom: 110px;
+    margin-left: 60px;
+    margin-top: -140px;
+}
+
+  .DashboardMainPagetable-header {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 0;
+    margin-top: -100px;
+    margin-left: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    box-sizing: border-box;
+    scrollbar-width: thick;
+  }
+
+  /* Scrollbar Styling */
+  .DashboardMainPagetable-header::-webkit-scrollbar {
+    height: 8px;
+    /* Height of the scrollbar */
+  }
+
+  .DashboardMainPagetable-header::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* Customize scrollbar thumb color */
+    border-radius: 4px;
+    /* Rounded corners for scrollbar thumb */
+  }
+
+  .DashboardMainPagetable-header::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+    /* Scrollbar track background color */
+  }
+
+  .DashboardMainPagetable-container {
+    padding: 10px;
+    /* Reduced padding for smaller screens */
+    font-family: 'calibri';
+    background: white;
 
 
+    /* Adjust alignment for smaller screens */
+    align-items: center;
+
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 
 
+  .DashboardMainPagetable-tab {
+    padding: 10px 7px;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    white-space: nowrap;
+    /* Keep tabs in a single line */
+    margin-bottom: 3px;
+  }
 
 
-
-
-  @media (max-width: 480px) {
-    /* Main Container */
-    .DashboardMainPagetable-container {
-      padding: 10px; /* Reduced padding for smaller screens */
-      font-family: 'calibri';
-      background: white;
-     
-  
-      /* Adjust alignment for smaller screens */
-      align-items: center;
-
-      box-sizing: border-box; /* Include padding in width calculation */
-    }
-    body{
-      overflow-x: hidden;
-    }
-
-
-    .DashboardMainPagetable-tab {
-      padding: 10px 7px;
-      background: #e0e0e0;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      flex-shrink: 0; /* Prevent shrinking */
-      white-space: nowrap; /* Keep tabs in a single line */
-      margin-bottom: 3px;
-    }
-    
-  
   .DashboardMainPagetable-tab:hover {
-      background: #24b676;
-      color: white; /* Slightly darker shade on hover */
+    background: #24b676;
+    color: white;
+    /* Slightly darker shade on hover */
   }
-  
+  .DashboardMainPagetable-cards {
+    display: flex
+;
+    width: 660px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+
+.DashboardMainPagetable-tableeee {
+  /* width: 60%; */
+  border-collapse: collapse;
+  margin-top: 30px;
+  overflow-x: auto;
+  /* margin-left: -50px; */
+}
+  .DashboardMainPagetable-table th,
+  .DashboardMainPagetable-table td {
+    padding: 8px 12px;
+    /* Add padding for spacing */
+    text-align: left;
+    /* Align text to the left */
+    border: 1px solid #ddd;
+    /* Add borders for visibility */
+  }
+
+  .DashboardMainPagetable-tableeee th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    font-weight: bold;
+    border-top: 2px solid #24b676;
+    border-bottom: 2px solid #24b676;
+    box-shadow: 4px 4px 5px rgba(36, 182, 118, 0.5);
+
+    z-index: 2;
+    /* Ensure it stays above table content */
+    font-size: 12px;
+  }
+
+
+
+  .DashboardMainPagetable-card.custom-card-size {
+    width: 300px;
+    margin-left: 0px;
+}
+
+  /* Sector Icons */
+  .sector-icon,
+  .sectorenergy-icon,
+  .sectorhealth-icon,
+  .sectorpower-icon,
+  .sectortextile-icon,
+  .sectorfinance-icon,
+  .sectortele-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .sector-icon {
+    background-color: #ffcc80;
+    margin-left: 29px;
+    width: 8%;
+    height: 28%;
+  }
+
+  .sectorenergy-icon {
+    background-color: #24b676;
+    margin-left: 20px;
+    width: 8%;
+    height: 25%;
+  }
+
+  .sectorhealth-icon {
+    background-color: #90caf9;
+    margin-left: 20px;
+    width: 10%;
+    height: 25%;
+  }
+
+  .sectorpower-icon {
+    background-color: rgb(228, 102, 102);
+    margin-left: 22px;
+    width: 10%;
+    height: 25%;
+  }
+
+  .sectortextile-icon {
+    background-color: #ffcc80;
+    margin-left: 22px;
+    width: 10%;
+    height: 25%;
+  }
+
+  .sectorfinance-icon {
+    background-color: #24b676;
+    margin-left: 20px;
+    width: 10%;
+    height: 25%;
+  }
+
+  .sectortele-icon {
+    background-color: rgb(85, 85, 236);
+    margin-left: -9px;
+    width: 8%;
+    height: 25%;
+  }
+
+  .DashboardMainPagetable-change {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  .DashboardMainPagetable-value {
+    font-size: 12px;
+  }
+
+  .upgraph {
+    display: flex;
+    margin-left: 0px;
+  }
+
+
+
+  .DashboardMainPagetable-table th,
+  .DashboardMainPagetable-table td {
+    padding: 8px 12px;
+    /* Add padding for spacing */
+    text-align: left;
+    /* Align text to the left */
+
+  }
+
+  .pagination-containerrsector {
+    display: flex
+;
+    gap: 210px;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: 40px;
+}
+
+  .FooterForAllPage-footerrr {
+    display: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+
+  /* Main Container */
+  .DashboardMainPagetable-container {
+    padding: 10px;
+    /* Reduced padding for smaller screens */
+    font-family: 'calibri';
+    background: white;
+
+
+    /* Adjust alignment for smaller screens */
+    align-items: center;
+
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+
+  .DashboardMainPagetable-tab {
+    padding: 10px 7px;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    white-space: nowrap;
+    /* Keep tabs in a single line */
+    margin-bottom: 3px;
+  }
+
+
+  .DashboardMainPagetable-tab:hover {
+    background: #24b676;
+    color: white;
+    /* Slightly darker shade on hover */
+  }
+
   .DashboardMainPagetable-cards {
     display: flex;
     width: 125%;
@@ -747,239 +840,285 @@ display: none;
     gap: 10px;
     margin-top: 20px;
     align-items: center;
-    justify-content: center; /* Center align */
+    justify-content: center;
+    /* Center align */
     margin-left: auto;
     margin-right: auto;
   }
-.DashboardMainPagetable-table-container {
-  overflow-x: auto;
-  margin: 20px;
 
-  margin-left: -10px;
-}
-.DashboardMainPagetable-tableeee {
+  .DashboardMainPagetable-table-container {
+    overflow-x: auto;
+    margin: 20px;
+
+    margin-left: -10px;
+  }
+
+  .DashboardMainPagetable-tableeee {
 
 
-  margin-top: 30px;
-}
+    margin-top: 30px;
+  }
 
-.DashboardMainPagetable-card.custom-card-size {
-  width: 220px;
-  margin-left: 100px;
-}
-.DashboardMainPagetable-sector {
-  font-size: 12px;
-  font-weight: bold;
-  color: #000000;
- 
-}
-.DashboardMainPagetable-header-left {
-  display: flex
-;
-  gap: 1px;
-  align-items: center;
-  margin-left: -5px;
-}
-.DashboardMainPagetable-sector {
-  font-size: 11px;
-  font-weight: bold;
-  color: #000000;
-}
-.sector-icon {
-  background-color: #ffcc80; /* Orange for IT */
-  margin-left: 49px;
-  width: 8%; /* Adjust size as needed */
-  height: 28%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
-align-items: center;
-justify-content: center;
-padding: 10px;
+  .DashboardMainPagetable-card.custom-card-size {
+    width: 220px;
+    margin-left: 100px;
+  }
 
- /* Centers the icon within the circle */
+  .DashboardMainPagetable-sector {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
 
- /* Adds some spacing inside the circle */
-}
+  }
 
-.sectorenergy-icon{
-  background-color:#24b676; /* Yellow for Energy */
-  margin-left: 40px;
-  width: 8%; /* Adjust size as needed */
-  height: 25%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
+  .DashboardMainPagetable-header-left {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    margin-left: -5px;
+  }
 
-align-items: center;
-justify-content: center;
-padding: 10px;
-}
+  .DashboardMainPagetable-sector {
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+  }
 
-.sectorhealth-icon {
-  background-color: #90caf9; /* Blue for Health */
-  margin-left: 40px;
-  width: 10%; /* Adjust size as needed */
-  height: 25%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
+  .sector-icon {
+    background-color: #ffcc80;
+    /* Orange for IT */
+    margin-left: 49px;
+    width: 8%;
+    /* Adjust size as needed */
+    height: 28%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 
-align-items: center;
-justify-content: center;
-padding: 10px;
-}
+    /* Centers the icon within the circle */
 
-.sectorpower-icon{
-  background-color:rgb(228, 102, 102); /* Red for Power */
-  margin-left: 42px;
-  width: 10%; /* Adjust size as needed */
-  height: 25%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
+    /* Adds some spacing inside the circle */
+  }
 
-align-items: center;
-justify-content: center;
-padding: 10px;
-}
+  .sectorenergy-icon {
+    background-color: #24b676;
+    /* Yellow for Energy */
+    margin-left: 40px;
+    width: 8%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
 
-.sectortextile-icon {
-  background-color:#ffcc80; /* Purple for Textiles */
-  margin-left: 42px;
-  width: 10%; /* Adjust size as needed */
-  height: 25%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
 
-align-items: center;
-justify-content: center;
-padding: 10px;
-}
+  .sectorhealth-icon {
+    background-color: #90caf9;
+    /* Blue for Health */
+    margin-left: 40px;
+    width: 10%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
 
-.sectorfinance-icon{
-  background-color: #24b676; /* Green for Finance */
-  margin-left: 40px;
-  width: 10%; /* Adjust size as needed */
-  height: 25%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
 
-align-items: center;
-justify-content: center;
-padding: 10px;
-}
+  .sectorpower-icon {
+    background-color: rgb(228, 102, 102);
+    /* Red for Power */
+    margin-left: 42px;
+    width: 10%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
 
-.sectortele-icon{
-  background-color:rgb(85, 85, 236); /* Teal for Telecommunication */
-  width: 8%; /* Adjust size as needed */
-  height: 25%; /* Adjust size as needed */
-  border-radius: 50%;
-  display: flex; /* Centers the icon within the circle */
-margin-left: 1px;
-align-items: center;
-justify-content: center;
-padding: 10px;
-}
-.DashboardMainPagetable-change{
-  margin-top: 15px;
-  font-size: 12px;
-}
-.DashboardMainPagetable-value{
-  font-size: 12px;
-}
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
 
-.upgraph{
-  display: flex;
-  margin-left: -10px;
-}
-.DashboardMainPagetable-table-container {
-  overflow: auto; /* Enables both x and y axis scroll */
-  margin-bottom: 100px;
-  width:135%;/* Ensures it takes full width of the container */
-  height: 400px; /* Set a fixed height for the table container */
-  margin-top: 10px;
-  margin-left: -10px;
-}
+  .sectortextile-icon {
+    background-color: #ffcc80;
+    /* Purple for Textiles */
+    margin-left: 42px;
+    width: 10%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
 
-.DashboardMainPagetable-table-container {
-  overflow-x: auto;
-  margin: 20px;
-  margin-left:-20px;
-}
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
 
-.DashboardMainPagetable-table th {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  font-weight: bold;
-  border-top: 2px solid #24b676;
-  border-bottom: 2px solid #24b676;
-  box-shadow: 4px 4px 5px rgba(36, 182, 118, 0.5);
-  font-size: 15px;
-  z-index: 2; /* Ensure it stays above table content */
-}
-.DashboardMainPagetable-table th,
-.DashboardMainPagetable-table td {
-  padding: 8px 12px; /* Add padding for spacing */
-  text-align: left; /* Align text to the left */
-}
+  .sectorfinance-icon {
+    background-color: #24b676;
+    /* Green for Finance */
+    margin-left: 40px;
+    width: 10%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
 
-.pagination-containerrsector {
-  display: flex;
- margin-left: 10px;
-gap: 20px;
- 
-  
-  
-}
-.FooterForAllPage-footerrr{
-  display: none;
-}
-.DashboardMainPagetable-header{
-  display: flex
-;
-        gap: 2px;
-        margin-bottom: 0;
-      width: 90%;
-        margin-left: 30px;
-        overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .sectortele-icon {
+    background-color: rgb(85, 85, 236);
+    /* Teal for Telecommunication */
+    width: 8%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    display: flex;
+    /* Centers the icon within the circle */
+    margin-left: 1px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .DashboardMainPagetable-change {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  .DashboardMainPagetable-value {
+    font-size: 12px;
+  }
+
+  .upgraph {
+    display: flex;
+    margin-left: -10px;
+  }
+
+  .DashboardMainPagetable-table-container {
+    overflow: auto;
+    /* Enables both x and y axis scroll */
+    margin-bottom: 100px;
+    width: 135%;
+    /* Ensures it takes full width of the container */
+    height: 400px;
+    /* Set a fixed height for the table container */
+    margin-top: 10px;
+    margin-left: -10px;
+  }
+
+  .DashboardMainPagetable-table-container {
+    overflow-x: auto;
+    margin: 20px;
+    margin-left: -20px;
+  }
+
+  .DashboardMainPagetable-table th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    font-weight: bold;
+    border-top: 2px solid #24b676;
+    border-bottom: 2px solid #24b676;
+    box-shadow: 4px 4px 5px rgba(36, 182, 118, 0.5);
+    font-size: 15px;
+    z-index: 2;
+    /* Ensure it stays above table content */
+  }
+
+  .DashboardMainPagetable-table th,
+  .DashboardMainPagetable-table td {
+    padding: 8px 12px;
+    /* Add padding for spacing */
+    text-align: left;
+    /* Align text to the left */
+  }
+
+  .pagination-containerrsector {
+    display: flex;
+    margin-left: 10px;
+    gap: 20px;
+
+
+
+  }
+
+  .FooterForAllPage-footerrr {
+    display: none;
+  }
+
+  .DashboardMainPagetable-header {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 0;
+    width: 90%;
+    margin-left: 30px;
+    overflow-x: auto;
     margin-top: -170px;
-     
-        box-sizing: border-box;
-        scrollbar-width: thick;
-    }
-  
-    .DashboardMainPagetable-headerrindexx{
-      display: flex
-    ;
-            gap: 5px;
-            margin-bottom: 100px;
-  margin-top: 1px;
-            margin-left: 15px;
-            overflow-x: auto;
-            white-space: nowrap;
-    
-      
-            scrollbar-width: thick;
-        }
-        .DashboardMainPagetable-tab-active{
-          padding: 7px 7px;
-        }
-        .DashboardMainPagetable-tab:focus,
-        .DashboardMainPagetable-tab:active {
-            outline: none !important;
-            box-shadow: none !important;
-        }
+
+    box-sizing: border-box;
+    scrollbar-width: thick;
   }
-  @media (max-width: 320px) {
-    .DashboardMainPagetable-cards {
-      display: flex
-  ;
-  width:330px;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-     align-items: center;
-     margin-left: -15px;
-     
-      
-    
+
+  .DashboardMainPagetable-headerrindexx {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 100px;
+    margin-top: 1px;
+    margin-left: 34px;
+    overflow-x: auto;
+    white-space: nowrap;
+
+
+    scrollbar-width: thick;
   }
+
+  .DashboardMainPagetable-tab-active {
+    padding: 7px 7px;
   }
+
+  .DashboardMainPagetable-tab:focus,
+  .DashboardMainPagetable-tab:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .DashboardMainPagetable-cards {
+    display: flex;
+    width: 330px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    margin-left: -15px;
+
+
+
+  }
+}

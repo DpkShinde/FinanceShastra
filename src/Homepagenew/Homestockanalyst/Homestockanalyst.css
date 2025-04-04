@@ -279,7 +279,14 @@ margin-top: 290px;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     margin-bottom: 10px; /* Adds spacing at the bottom */
     padding: 0 10px; /* Optional: Add padding on left and right to create space */
-    width: 100%; /* Ensure the container takes up full width */
-    margin-left: -10px;
+    width: 103%;
+        margin-left: 15px;
     }
+    .pagination-slider {
+      display: flex
+  ;
+      align-items: center;
+      gap: 5px;
+      margin-right: -70px;
+  }
 }

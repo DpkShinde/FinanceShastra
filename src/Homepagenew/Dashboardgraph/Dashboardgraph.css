@@ -430,6 +430,7 @@
     .headerdashboardmain {
         margin-left: 170px;
     }
+    
     .dataquatallniftydata{
         display: flex;
         margin-left: 150px;
@@ -440,23 +441,17 @@
         font-family: 'calibri';
         padding: 20px;
         color: #333;
-        width: 550px;
-        /* Set a maximum width */
-    
-        /* Add left margin to prevent overlap with sidebar */
+        width: 560px;
         font-family: 'Calibri';
         margin-top: 5px;
-        margin-left: 130px;
+        margin-left: 120px;
         background-color: #f9f9f9;
         border: 1px solid #ddd;
-        /* Light grey border */
         box-shadow: 0px 4px 6px rgba(183, 180, 180, 0.956);
-        /* Soft shadow around the container */
         border-radius: 5px;
-        display: flex;
+        display: flex
+;
         flex-direction: column-reverse;
-        /* Reverse the container's content */
-    
     }
     
     .chartmutual-containerrdashboard {
@@ -474,20 +469,19 @@
         font-family: 'calibri';
         margin-left: 310px;
     }
-    
     .homepagenewdata-card {
         border: 1px solid #e0e0e0;
         border-radius: 8px;
         padding: 16px;
         background-color: #f9fbfc;
         box-shadow: 0px 4px 6px rgba(217, 212, 212, 0.925);
-        width: 250px;
+        width: 295px;
         text-align: center;
         font-family: 'calibri';
         height: 50px;
-        margin-top: 210px;
+        margin-top: 190px;
         margin-left: -10px;
-       
+        margin-bottom: 25px;
     }
     
     .homepagenewdata-title {
@@ -629,6 +623,7 @@
         margin-left: 250px;
     }
     
+
     .sidebar {
         width: 210px;
         /* Fixed width for the sidebar */
@@ -647,9 +642,8 @@
     .headernifty50000 {
         margin-left: 310px;
         font-size: 24px;
-        margin-top: 250px;
+        margin-top: 200px;
     }
-    
     .datadisstockdashhh {
         display: flex;
         flex-direction: column;
@@ -724,29 +718,22 @@
         font-family: 'calibri';
         padding: 20px;
         color: #333;
-        width: 350px;
-        /* Set a maximum width */
-    
-        /* Add left margin to prevent overlap with sidebar */
+        width: 360px;
         font-family: 'Calibri';
         margin-top: 5px;
         margin-left: 130px;
         background-color: #f9f9f9;
         border: 1px solid #ddd;
-        /* Light grey border */
         box-shadow: 0px 4px 6px rgba(183, 180, 180, 0.956);
-        /* Soft shadow around the container */
         border-radius: 5px;
-        display: flex;
+        display: flex
+;
         flex-direction: column-reverse;
-        margin-left: 100px;
-        /* Reverse the container's content */
-    
+        margin-left: 165px;
     }
-    
     .chartmutual-containerrdashboard {
-        height: 330px;
-        width: 370px;
+        height: 300px;
+        width: 355px;
     }
     .alldatagraphtop {
         display: flex;
@@ -779,17 +766,19 @@
         font-family: 'calibri';
         height: 50px;
         margin-top: 200px;
-        margin-right: -435px;
+        /* margin-right: 135px; */
         margin-bottom: 20px;
-      
+        margin-left: -5220px;
+        margin-right: 20px;
     }
     .headernifty50000 {
-        margin-left: 305px;
-        font-size: 24px;
-        margin-top: 200px;
+        margin-left: 270px;
+        font-size: 22px;
+        margin-top: 210px;
     }
     .headerdashboardmain{
-        margin-left: 305px;
+        margin-left: 270px;
+        font-size: 16px;
     }
     .time-rangemutual-selectorrniftydashboard {
         display: flex;
@@ -813,12 +802,11 @@ max-width: 90%;
         margin-left: 10px;
         font-size: 12px;
     }
-
     .headernifty50 {
-        margin-left: 10px;
+        margin-left: 43px;
         font-size: 20px;
+        margin-top: -5px;
     }
-
 
     .portfoliomutual-containerrniftydashboard {
         height: 300px;
@@ -832,7 +820,7 @@ max-width: 90%;
         width: 590px;
         /* Maximum width */
         margin-top: 15px;
-        margin-left:70px;
+        margin-left:60px;
         /* Left margin adjustment */
         margin-bottom: 20px;
         /* Add extra spacing below the container */
@@ -888,7 +876,7 @@ max-width: 90%;
     }
 
     .headerdashboardmain {
-        margin-left: 20px;
+        margin-left: 70px;
     }
 
     .alldatagraphtop {
@@ -898,9 +886,9 @@ max-width: 90%;
     }
 
     .headernifty50000 {
-        margin-left: 20px;
-        font-size: 24px;
-        margin-top: 200px;
+        margin-left: 70px;
+        font-size: 17px;
+        margin-top: 150px;
     }
 
     .homepagenewdata-card {
@@ -913,10 +901,10 @@ max-width: 90%;
         text-align: center;
         font-family: 'calibri';
         height: 50px;
-        margin-top: 200px;
-        margin-left: -10px;
+        margin-top: 140px;
+        margin-left: 50px;
+        margin-right: -90px;
     }
-
 
 }
 
@@ -927,8 +915,8 @@ max-width: 90%;
     }
 
     .headernifty50 {
-        margin-left: 10px;
-        font-size: 20px;
+        margin-left: 30px;
+        font-size: 17px;
     }
 
 
@@ -949,7 +937,8 @@ max-width: 90%;
         border-radius: 5px;
         display: flex;
         flex-direction: column-reverse;
-        margin-left: 30px;
+        margin-left: 40px;
+    
     }
 
     .chartmutual-containerrdashboard {
@@ -992,7 +981,7 @@ max-width: 90%;
     }
 
     .headerdashboardmain {
-        margin-left: 10px;
+        margin-left: 30px;
     }
 
     .alldatagraphtop {
@@ -1002,7 +991,7 @@ max-width: 90%;
     }
 
     .headernifty50000 {
-        margin-left: 10px;
+        margin-left: 30px;
         font-size: 14px;
         margin-top: 170px;
     }
@@ -1018,7 +1007,7 @@ max-width: 90%;
         font-family: 'calibri';
         height: 30px;
         margin-top: 240px;
-        margin-left: -250px;
+        margin-left: -267px;
         margin-bottom: 10px;
     }
 
@@ -1075,7 +1064,7 @@ max-width: 90%;
     }
 
     .time-rangemutual-button {
-        padding: 4px 10px;
+        padding: 2px 4px !important;
         font-size: 10px;
     }
     
@@ -1101,9 +1090,3 @@ max-width: 90%;
 }
 }
  
-@media (min-width: 320px) {
-    .time-rangemutual-button {
-        padding: 4px 3px;
-        font-size: 10px;
-    }
-}
