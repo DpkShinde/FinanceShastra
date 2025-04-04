@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 import { API_BASE_URL } from "../../config";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
+import AccountBar from "../AccountBar";
 import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
 import ClipLoader from "react-spinners/ClipLoader";
 const override = {
@@ -54,10 +55,8 @@ const OrderTable = () => {
       const url = `${API_BASE_URL}/orders`;
       // const urllocal = "http://localhost:3000/orders";
       const response = await fetch(url, options);
-      console.log("orders response: ", response);
       if (response.ok === true) {
         const data = await response.json();
-        console.log("orders Data: ", data);
         if (data.length !== 0) {
           const formattedordersData = data.map((e) => ({
             id: e.order_id,
@@ -66,7 +65,6 @@ const OrderTable = () => {
             amount: e.Amount,
             status: e.Status,
           }));
-          console.log("formattedordersData:", formattedordersData);
           setordersData(formattedordersData);
         }
       }
@@ -86,7 +84,6 @@ const OrderTable = () => {
     activeTab === "All orders"
       ? ordersdatastate
       : ordersdatastate.filter((order) => order.status === activeTab);
-  console.log("filteredOrders", filteredOrders);
 
   return (
     <div>
@@ -102,57 +99,7 @@ const OrderTable = () => {
                   <>
                   <div className="order-table-all">
         <h1 className="profilepage-titleorder">My Orders</h1>
-        <div className="profilepage-tabsorder">
-          <span
-            className="profilepage-tabb"
-            onClick={() => navigate("/userDetailsupdate")}
-          >
-            My Account
-          </span>
-          <span
-            className="profilepage-tabb active"
-            onClick={() => navigate("/orderTable")}
-          >
-            Orders
-          </span>
-          <span
-            className="profilepage-tabb "
-            onClick={() => navigate("/billingSubscriptionPages")}
-          >
-            Billing & Subscription
-          </span>
-          <span
-            className="profilepage-tabb"
-            onClick={() => navigate("/riskAnalysisDashboard")}
-          >
-            Risk Profile Report
-          </span>
-          <span
-            className="profilepage-tabb"
-            onClick={() => navigate("/managealert")}
-          >
-            Manage Alert
-          </span>
-
-          <span
-            className="profilepage-tabb"
-            onClick={() => navigate("/accountSettings")}
-          >
-            Password & Security
-          </span>
-          <span
-            className="profilepage-tabb"
-            onClick={() => navigate("/sessionHistory")}
-          >
-            Active Devices
-          </span>
-          <span
-            className="profilepage-tabb"
-            onClick={() => navigate("/myReferalPage")}
-          >
-            My referrals
-          </span>
-        </div>
+        <AccountBar />
         <div className="tabs">
           {["All orders", "Completed", "Pending", "Cancel"].map((tab) => (
             <button

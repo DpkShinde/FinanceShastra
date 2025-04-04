@@ -9,7 +9,7 @@
   background-color: white;
   width: 750px;
   /*gap: 80px; /* Adds spacing between child elements */
-  margin-left: 300px;
+  
   box-shadow: 0px 4px 8px rgb(208, 206, 206); /* Adds a subtle shadow effect */
 }
 .allpersonal {
@@ -23,7 +23,7 @@
   background-color: white;
   width: 750px;
   gap: 20px; /* Adds spacing between child elements */
-  margin-left: 300px;
+  
   box-shadow: 0px 4px 8px rgb(208, 206, 206); /* Adds a subtle shadow effect */
 }
 
@@ -34,6 +34,17 @@
   font-family: 'calibri';
   max-width:1200px ;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.outer-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -48,7 +59,8 @@
   font-size: 20px;
   margin-bottom: 10px;
   color: #24b676;
-  margin-left: 300px;
+  align-self: flex-start;
+  margin-left: 60px;
 }
 
 .detailRow {
@@ -89,7 +101,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  margin-left: 250px;
+  align-self: flex-start;
 }
 
 /* Tabs */
@@ -116,7 +128,6 @@
 }
 .profilepage-tabsorderusers{
 text-align: center;
-margin-left: 240px;
 }
 
 .profileContainer {
@@ -126,7 +137,6 @@ margin-left: 240px;
   border: 1px solid  rgb(208, 206, 206);
   height:150px;
   padding: 20px;
-  margin-left: 300px;
   width: 750px;
   box-shadow: 0px 4px 8px rgb(208, 206, 206);
   border-radius: 8px;

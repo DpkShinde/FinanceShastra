@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import './halfyearlusub.css'
 import { API_BASE_URL } from "../../config";
 import Cookies from 'js-cookie'
+import {jwtDecode} from "jwt-decode";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
@@ -61,13 +62,12 @@ const HalfyearlySubscriptionPages = () => {
   const handlePaymentBillingDetailsPage = async () => {
     if (validateInputs()) {
       // All fields are valid, show the popup
-      const localuserDetails = (Cookies.get("user"))
+      const localuserDetails = (Cookies.get("jwtToken"))
       if (!localuserDetails) {
         setShowPopupforLogin(true)
-        console.log(localuserDetails)
       } else {
-        console.log(localuserDetails)
-        const { email } = JSON.parse(localuserDetails)
+        const decodedToken = jwtDecode(localuserDetails);
+        const {email} = decodedToken; // { id: "123", email: "user@example.com", exp: 1712345678, ... }
         const month = expiryDate.getMonth() + 1
         const year = expiryDate.getFullYear()
         const expiryDateFormated = `${year}-0${month}-01`
@@ -78,7 +78,8 @@ const HalfyearlySubscriptionPages = () => {
           "billingCycle": "half year",
           "paymentMethod": "card",
           "cardNum": cardNumber,
-          "cardExpiryDate": expiryDateFormated
+          "cardExpiryDate": expiryDateFormated,
+          "price": 2000
         }
         const localtoken = Cookies.get('jwtToken')
         console.log(localtoken)
@@ -92,8 +93,7 @@ const HalfyearlySubscriptionPages = () => {
         }
         console.log("stringified:", JSON.stringify(userpaymentDetails))
         const url = `${API_BASE_URL}/userPayment/paymentDetails1`
-        const urllocal= "http://localhost:3000/userPayment/paymentDetails1"
-        const response = await fetch(urllocal, options)
+        const response = await fetch(url, options)
         console.log(response)
         if (response.ok === true) {
           setShowPopup(true);

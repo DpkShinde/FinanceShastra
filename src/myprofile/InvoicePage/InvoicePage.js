@@ -8,9 +8,20 @@ const InvoicePage = () => {
   const queryParams = new URLSearchParams(location.search);
 
   const planName = queryParams.get("plan") || "Premium plan";
-  const purchaseDate = queryParams.get("date") || "18-10-2024";
+  const purchaseDate = queryParams.get("purchase") || "18-10-2024";
   const amount = queryParams.get("amount") || "₹5,999/-";
-  const duration = "6 Months"; // Assuming duration is fixed
+  const username= queryParams.get("username")
+  const address = queryParams.get("address");
+  const city = queryParams.get("city");
+  const state = queryParams.get("state");
+  const country = queryParams.get("country");
+  const number = queryParams.get("number")
+  let duration 
+  if (planName==="Elite half year" || planName === "Premium half year"){
+    duration = "6 Months"
+  }else{
+    duration = "12 Months"
+  }
   const rate = amount; // Assuming rate is the same as amount
 
   return (
@@ -23,10 +34,10 @@ const InvoicePage = () => {
       <div className="invoice-details">
         <div className="invoice-billed">
           <h3>Billed to,</h3>
-          <p>William Robert</p>
-          <p>House no. 6, Mantri Lavendula, Mulshi Rd,</p>
-          <p>Beside Barbacoa, Pranjali Patil Nagar, Bavdhan</p>
-          <p>+91 9875684983</p>
+          <p>{username}</p>
+          <p>{address}</p>
+          <p>{city}, {state}, {country}</p>
+          <p>+91 {number}</p>
         </div>
 
         <div className="invoice-payment">

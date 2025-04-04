@@ -7,6 +7,7 @@ import Billingavailableplan from "../Billingavailableplan/Billingavailableplan";
 import Cookies from 'js-cookie'
 import { API_BASE_URL } from "../../config";
 import ClipLoader from "react-spinners/ClipLoader";
+
 const override = {
   display: "block",
   textAlign: "center",
@@ -16,8 +17,22 @@ const BillingSubscriptionPages = () => {
   const [activepage, setactivepage]= useState('half')
   const [isLoading, setisLoading]= useState(false)
   const [isSubed, setisSubed]= useState(false)
+  const [plan, setPlan]= useState('')
+  const [endingDate, setEndingDate]= useState('')
+  const [payedDate, setpayedDate]= useState('')
+  const [BillingCycle, setBillingCycle]= useState('')
+  
   
  const navigate = useNavigate();
+
+ const formatedDate = (dateString) => {
+  const date = new Date(dateString);
+    return date.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+    });
+};
 
  useEffect(()=>{
   setisLoading(true)
@@ -35,10 +50,23 @@ const BillingSubscriptionPages = () => {
           try {
             const response = await fetch(url, options);
             const data = await response.json(); // Convert response to JSON
+            console.log("data from subscriptio and billing page:", data)
             if (data.length === 0) {
               setisSubed(false);
             } else {
               setisSubed(true);
+              
+              const formatedData= data.map((e)=>({
+                planId: e.plan_id,
+                endingDate: e.ending_date,
+                paymentDate: e.payment_date_time,   
+                billingCycle: e.billing_cycle              
+
+              }))
+              setPlan(formatedData[0].planId === 1 ? "Elite": "Premium")
+              setEndingDate(formatedDate(formatedData[0].endingDate))
+              setpayedDate(formatedDate(formatedData[0].paymentDate))
+              setBillingCycle(formatedData[0].billingCycle)
             }
             setisLoading(false)
           } catch (error) {
@@ -100,22 +128,22 @@ const BillingSubscriptionPages = () => {
                     {isSubed ? <div className="billingSubscriptionContainer">
                     <h2 className="billingSubscriptionTitle">Active Plan</h2>
                     <div className="billingSubscriptionCard">
-                      <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Plan:</strong> Elite <span className="billingSubscriptionType">(half yearly)</span></p>
-                      <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Next Payment:</strong> 02 Feb 2025</p>
-                      <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Next Payment:</strong> 02 September 2025</p>
+                      <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Plan:</strong> {plan} <span className="billingSubscriptionType">({BillingCycle})</span></p>
+                      <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Next Payment:</strong> {endingDate}</p>
+                      <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Next Payment:</strong> {payedDate}</p>
                       <p className="billingSubscriptionNote">
-                      <strong style={{ color: "black" }}>Note:</strong> Your plan will expire on 02 Feb, 2025 12:00 midnight <br/>
+                      <strong style={{ color: "black" }}>Note:</strong> Your plan will expire on {endingDate}, 12:00 midnight <br/>
                         Enter your payment information to start your subscription.
                       </p>
               
                       <p className="billingSubscriptionNote">Your subscription will renew automatically. You can cancel anytime.</p>
                       <p className="billingSubscriptionNote"><strong style={{ color: "black" }}>Enter your billing details</strong> to renew or upgrade your plan.</p>
                       <button
-                    className="billingSubscriptionButton"
-                    onClick={() => navigate("/billingDetailsPage")}
-                  >
-                    Billing Details
-                  </button>
+                      className="billingSubscriptionButton"
+                      onClick={() => navigate("/billingDetailsPage")}
+                      >
+                      Billing Details
+                      </button>
                     </div>
                     
                     <h3 className="billingSubscriptionSubtitle">Available Plans</h3>

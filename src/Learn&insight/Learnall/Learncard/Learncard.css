@@ -156,7 +156,7 @@
       max-width: 1024px;
       margin: 0 auto;
       padding: 20px;
-      margin-left: 23px;
+      margin-left: 0px;
       font-family: 'calibri';
       margin-top: 50px;
       margin-bottom: 100px;
@@ -181,6 +181,12 @@
     position: relative;
     transition: transform 0.3s ease-in-out;
   }
+  .headerlearn-image {
+    width: 41%;
+    max-width: 700px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
   }
   /* Mobile View: 768px */
   @media (min-width: 768px) and (max-width: 1023px) {

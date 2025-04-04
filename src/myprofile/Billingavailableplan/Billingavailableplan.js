@@ -12,6 +12,11 @@ const Billingavailableplan = () => {
     const navigate = useNavigate();
     return (
         <div>
+             <div className="profilepagee-container">
+
+
+
+
             <div className="">
 
                
@@ -132,9 +137,9 @@ const Billingavailableplan = () => {
                 
 
             </div>
-            
         </div>
-
+         
+</div>
     );
 };
 

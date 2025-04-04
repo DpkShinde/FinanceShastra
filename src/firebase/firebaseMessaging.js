@@ -7,13 +7,11 @@ const messaging = getMessaging(app);
 export const requestNotificationPermission = async () => {
   try {
     const permission = await Notification.requestPermission();
-    console.log(permission)
+    
     if (permission === "granted") {
-      console.log(permission)
       const token = await getToken(messaging, {
         vapidKey: process.env.REACT_APP_VAPID_KEY
       });
-      console.log("FCM Token:", token);
       return token;
     } 
     else {
@@ -29,7 +27,6 @@ export const requestNotificationPermission = async () => {
 export const onMessageListener = () =>
   new Promise((resolve) => {
     onMessage(messaging, (payload) => {
-      console.log("Foreground Message Received:", payload);
       resolve(payload);
     });
   });

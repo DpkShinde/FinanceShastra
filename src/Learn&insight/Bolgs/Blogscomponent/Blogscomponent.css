@@ -196,11 +196,10 @@ margin-right: -40px;
  @media (min-width: 1280px) and (max-width: 1535px) {
 
   .blogsGrid {
-
-margin-left: 180px;
-    grid-template-columns:  repeat(3, 1fr);
+    margin-left: 120px;
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 0;
-  }
+}
   .checkAllBlogs {
     background-color: #24b676;
     color: #fff;
@@ -230,10 +229,22 @@ margin-left: 180px;
     height: 320px;
     margin-top: 30px;
   }
-  .tabsContainerblogggs{
+  .tabsContainerblogggs {
     margin-right: auto;
-    margin-left: 10px
-  }
+    margin-left: 150px;
+}
+.blogsTitle {
+  margin-left: 170px; 
+}
+.blogsSubtitle {
+  margin-left: 170px; 
+}
+.blogsTagline {
+  margin-left: 170px;  
+}
+.blogsFeatures {
+  margin-left: 170px;  
+}
 
 }
 
@@ -261,13 +272,12 @@ margin-left: 180px;
     margin-top: 30px;
   }
   .blogsGrid {
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1706px;
-    margin-left: 200px;
-    gap: 20px;
-  }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+}
   .blogImage {
     width: 90%;
     height: 160px;
@@ -283,34 +293,22 @@ margin-left: 180px;
   font-weight: bold;
   margin-left: 70px;
 }
+.tabsContainerblogggs {
+  margin-left: 180px;
+  justify-content: center;
+}
 .tabButtonblogggs {
-  background-color: #f1f1f1;
-  border: 1px solid rgb(185, 178, 178);
-  padding: 10px 8px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  box-shadow: 2px 2px 5px rgba(210, 203, 203, 0.874);
-
-
-  
-
+  padding: 5px 7px;
+  margin: 3px;
+  font-size: 14px;
 }
 .tabButtonblogggs:hover{
   background-color: #24b676;
 }
 /* Tabs Section */
-.tabsContainerblogggs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 20px 0;
-  margin-left: 150px;
-  margin-right: -80px;
-}
-.checkAllBlogs{
-margin-left: 280px;
+
+.checkAllBlogs {
+  margin-left: -30px;
 }
 }
 

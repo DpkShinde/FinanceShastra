@@ -94,7 +94,6 @@ const Beststock = () => {
   useEffect(() => {
     const fetchfun = async () => {
       const url = `${API_BASE_URL}/stocks/nifty100`;
-      console.log("url:", url);
       const response = await fetch(url);
       if (response.ok === true) {
         const data = await response.json();
@@ -2314,7 +2313,6 @@ const Beststock = () => {
                   </button>
                 </th>
               </tr>
-              {console.log(currentData)}
             </thead>
             <tbody>
               {currentData.map((stock, index) => (

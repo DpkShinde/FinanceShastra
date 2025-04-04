@@ -186,7 +186,7 @@ const RiskProfileForm = () => {
       const handleSubmit = async (e) => {
            
             e.preventDefault(); // Prevent the default form submission behavior
-            navigate("/profileRiskReportInvestment");
+            //navigate("/profileRiskReportInvestment");
             window.scrollTo(0, 0); // Correct syntax
 
             const filteredData = Object.keys(formData)
@@ -221,9 +221,13 @@ const RiskProfileForm = () => {
             const url= `${API_BASE_URL}/riskanalysis/qanda`
             const response= await fetch(url, options)
             console.log("response:", response)
-            if (response.ok){
+            
+            if (response.status === 400){
+                  return alert('Please answer all fields')
+                  
+            }else if (response.status === 200){
                   alert('Form Submitted successfully');
-                  navigate("/profileRiskReportInvestment");
+                  //navigate("/profileRiskReportInvestment");
                   window.scrollTo(0, 0); // Correct syntax
             }
             
@@ -240,11 +244,14 @@ const RiskProfileForm = () => {
             const url= `${API_BASE_URL}/riskanalysis/updaterisk`
             const putresponse= await fetch(url, options)
             console.log("putresponse:", putresponse)
-            if (putresponse.ok) {
-                  alert("Form Submitted successfully");
-                  navigate("/profileRiskReportInvestment");
-                  window.scrollTo(0, 0); 
-              }
+            if (putresponse.status === 400){
+                  return alert('Please answer all fields')
+                  
+            }else if (putresponse.status=== 200){
+                  alert('Form Submitted successfully');
+                  //navigate("/profileRiskReportInvestment");
+                  window.scrollTo(0, 0); // Correct syntax
+            }
               
             
             }

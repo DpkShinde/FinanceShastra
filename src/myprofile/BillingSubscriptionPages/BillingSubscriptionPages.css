@@ -46,10 +46,7 @@
     background: #218838;
   }
   
- .profilepagee-container{
-  margin-top: 130px;
-  margin-left: 10px;
- }
+ 
   
   .billingSubscriptionToggleInactive {
     background: #ddd;
@@ -202,5 +199,8 @@
       width: 40%;
       padding: 12px;
     }
+    .billingSubscriptionPlanButton {
+      margin-top: 25px;
+  }
   }
   

@@ -9,6 +9,7 @@ import { API_BASE_URL } from '../../../config';
 import ProfileRiskReportInvestment from '../InvestmentGuide/InvestmentGuide';
 import Cookies from 'js-cookie'
 import ClipLoader from "react-spinners/ClipLoader";
+import AccountBar from '../../AccountBar';
 const override = {
   display: "block",
   textAlign: "center",
@@ -58,39 +59,8 @@ const RiskAnalysisDashboard = () => {
                   <div>
         <div className="riskreportprofile-container">
                     <h1 className="profilepage-titlesession">Risk Profile Report</h1>
-      <div className="profilepage-tabsorderuserss">
-        <span className="profilepage-tabb"
-        onClick={() => navigate("/userDetailsupdate")}>My Account</span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/orderTable")}
-        >
-          Orders
-        </span>
-        <span className="profilepage-tabb" onClick={() => navigate("/billingSubscriptionPages")}>Billing & Subscription</span>
-        <span className="profilepage-tabb" onClick={() => navigate("/riskAnalysisDashboard")}style={{
-            borderBottom: "2px solid #24b676",
-            fontWeight: "bold",
-            color: "#24b676",
-          }}>Risk Profile Report</span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/managealert")}
-        >
-          Manage Alert
-        </span>
-
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/accountSettings")}
-        >
-          Password & Security
-        </span>
-        <span className="profilepage-tabb"
->Active Devices</span>
-        <span className="profilepage-tabb" onClick={() => navigate("/myReferalPage")}>My referrals</span>
-      </div>
-      {datalenght=== 0 ? <>
+      <AccountBar/>
+      {datalenght === 0 ? <>
             <h1>Risk Analysis Dashboard</h1>
             <p>Your investment strategy and the returns you can expect are majorly dependent on your Risk Profile.</p>
 

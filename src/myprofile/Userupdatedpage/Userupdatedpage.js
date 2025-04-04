@@ -9,13 +9,20 @@ import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import { API_BASE_URL } from "../../config";
 import { UserProfileContext } from "../../Portfoilo/context/UserProfileContext";
 import Cookies from 'js-cookie'
+import {jwtDecode} from "jwt-decode";
+import ClipLoader from "react-spinners/ClipLoader";
+import AccountBar from "../AccountBar";
+
+const override = {
+  display: "block",
+  textAlign: "center",
+};
 
 const UserDetailsupdate = () => {
   const navigate = useNavigate();
   const location = useLocation();
  
   const {userEmail} = useContext(UserProfileContext)
-  console.log('email from userupdated page:', userEmail)
   const {token}= useContext(UserProfileContext)
 
   // Initial state (can be overwritten by updated data passed through location.state)
@@ -26,10 +33,9 @@ const UserDetailsupdate = () => {
    
     firstName: "-",
     lastName: "-",
-    email: userEmail,
+    email: "",
     gender: "-",
     dob: "-",
-    ageGroup: "25 - 35",
     country: "India",
    
     state: "-",
@@ -56,6 +62,7 @@ const UserDetailsupdate = () => {
  
   const [showPopupforLogin, setShowPopupforLogin]= useState(false)
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setisLoading]= useState(false)
   const [modalData, setModalData] = useState({ ...investmentDetails });
  
   const formatDate = (dob) => {
@@ -63,22 +70,23 @@ const UserDetailsupdate = () => {
     if (isNaN(date)) return "Invalid Date"; // Handle invalid date cases
     return date.toISOString().split("T")[0];
   };
+
+  const decodingtoken=(token)=>{
+    return  jwtDecode(token)
+  }
  
   // Update state when new data is passed from EditProfile
   useEffect(() => {
+    setisLoading(true)
     const cookietoken= Cookies.get('jwtToken')
+
     if (!Cookies.get("jwtToken")){
       setShowPopupforLogin(true)
-    }else if(token){
-      //const localStore= localStorage.getItem("user")
-      //const localtoken= localStorage.getItem('token')
-      //console.log('token: ', localtoken)
-      //const parsed = (JSON.parse(localStore))
-      //console.log(userEmail)
-      //setEmail(userEmail)
+    }else if(cookietoken){
+      const {email}=  decodingtoken(cookietoken)
       setPersonalDetails((prevDetails) => ({
       ...prevDetails,
-      email: userEmail,
+      email: email,
     }));
 
     
@@ -95,19 +103,19 @@ const UserDetailsupdate = () => {
       }
       
       const response= await fetch(url, options)
-      console.log(response)
       if (response.ok=== true){
+        const decode= decodingtoken(cookietoken)
+      const {email}= decode
         const data= await response.json()
         const formatedDate= formatDate(data[0].dob)
         let dataupdated= {
           personal: {
             firstName: data[0].first_name,
             lastName: data[0].last_name,
-            email: userEmail,
+            email: email,
             gender: data[0].gender,
             dob: formatedDate,
-            ageGroup: data[0].age_group,
-            country: data[0].country,
+            country: "India",
             state: data[0].state,
             city: data[0].city,
             address: data[0].address,
@@ -121,13 +129,12 @@ const UserDetailsupdate = () => {
             incomeRange: data[0].income,
           }
         }
-        console.log(dataupdated)
         setPersonalDetails((prev) => ({ ...prev, ...dataupdated.personal }));
        
         setProfessionalDetails((prev) => ({ ...prev, ...dataupdated.professional }));
        
         setInvestmentDetails((prev) => ({ ...prev, ...dataupdated.investment }));
-       
+        setisLoading(false)
       }
      
     }
@@ -221,202 +228,183 @@ const UserDetailsupdate = () => {
 
 
   return (
-    <div>
-    <div className="userDetailss">
-      <h1 className="profilepage-title">My profile</h1>
-      <div className="profilepage-tabsorderusers">
-        <span className="profilepage-tabb"
-        style={{
-          borderBottom: "2px solid #24b676",
-          fontWeight: "bold",
-          color: "#24b676",
-        }}>My Account</span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/orderTable")}
-        >
-          Orders
-        </span>
-        <span className="profilepage-tabb" onClick={() => navigate("/billingSubscriptionPages")} >Billing & Subscription</span>
-        <span className="profilepage-tabb"onClick={() => navigate("/riskAnalysisDashboard")}>Risk Profile Report</span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/managealert")}
-        >
-          Manage Alert
-        </span>
- 
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/accountSettings")}
-        >
-          Password & Security
-        </span>
-        <span className="profilepage-tabb" onClick={() => navigate('/sessionHistory')}>Active Devices</span>
-        <span className="profilepage-tabb" onClick={() => navigate('/myReferalPage')}>My referrals</span>
-      </div>
- 
- 
-      <div className="profileContainer">
-        <div className="userwilliamimg">
-          <img src={profileImage} alt="William Rober" className="profileImage" />
-          <MdOutlineEdit
-            className="editIcon"
-            onClick={() => document.getElementById("fileInput").click()}
-          />
-          <input
-            type="file"
-            id="fileInput"
-            accept="image/*"
-            style={{ display: "none" }}
-            onChange={(e) => {
-              uploadImage(e)
-            }}
-          />
+    <div className="outer-cont">{isLoading? <div className='loader-cont'><ClipLoader
+      cssOverride={override}
+      size={35}
+      data-testid="loader"
+      loading={isLoading}
+      speedMultiplier={1}
+      color="green"
+    /></div>
+  : <>
+      <div className="userDetailss">
+        <h1 className="profilepage-title">My profile</h1>
+
+        <AccountBar />
+   
+   
+        <div className="profileContainer">
+          <div className="userwilliamimg">
+            <img src={profileImage} alt="William Rober" className="profileImage" />
+            <MdOutlineEdit
+              className="editIcon"
+              onClick={() => document.getElementById("fileInput").click()}
+            />
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={(e) => {
+                uploadImage(e)
+              }}
+            />
+          </div>
+          <div className="profileInfo">
+            <h1 className="profileName"> {personalDetails.firstName} {personalDetails.lastName}</h1>
+            <p className="profileOccupation">{professionalDetails.occupation}</p>
+          </div>
         </div>
-        <div className="profileInfo">
-          <h1 className="profileName"> {personalDetails.firstName} {personalDetails.lastName}</h1>
-          <p className="profileOccupation">{professionalDetails.occupation}</p>
-        </div>
-      </div>
- 
-      {/* Personal Details Section */}
-      <h2 className="sectionTitle">Personal Details</h2>
-      <div className="allpersonal">
-        <div className="personalDetailAll">
-          {Object.entries(personalDetails).map(([key, value]) => (
-            <p key={key} className="detailRow">
-              <strong className="labelprofiledetail">
-                {key
-                  .replace(/([A-Z])/g, " $1")
-                  .replace(/^./, (str) => str.toUpperCase())}:
-              </strong>
-              <span className="value">{value}</span>
-            </p>
-          ))}
-        </div>
-        <div className="editiconprofile" onClick={() => handleNavigation("Personal")}>
-          <BiSolidEdit />
-        </div>
-      </div>
- 
-      {/* Professional Details Section */}
-      <h2 className="sectionTitle">Professional Details</h2>
-      <div className="allpersonall">
-        <div className="personalDetailAll">
-          {Object.entries(professionalDetails).map(([key, value]) => (
-            <p key={key} className="detailRow">
-              <strong className="labelprofiledetail">
-                {key
-                  .replace(/([A-Z])/g, " $1")
-                  .replace(/^./, (str) => str.toUpperCase())}:
-              </strong>
-              <span className="value">{value}</span>
-            </p>
-          ))}
-        </div>
-        <div className="editiconprofileee" onClick={() => handleNavigation("Professional")}>
-          <BiSolidEdit />
-        </div>
-      </div>
- 
-      {/* Investment Details Section */}
-      <h2 className="sectionTitle">Investment Details</h2>
+   
+        {/* Personal Details Section */}
+        <h2 className="sectionTitle">Personal Details</h2>
         <div className="allpersonal">
           <div className="personalDetailAll">
-            {Object.entries(investmentDetails).map(([key, value]) => (
+            {Object.entries(personalDetails).map(([key, value]) => (
               <p key={key} className="detailRow">
                 <strong className="labelprofiledetail">
-                  {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}:
+                  {key
+                    .replace(/([A-Z])/g, " $1")
+                    .replace(/^./, (str) => str.toUpperCase())}:
                 </strong>
                 <span className="value">{value}</span>
               </p>
             ))}
           </div>
-          <div className="editiconprofilee" onClick={handleEditInvestment}>
+          <div className="editiconprofile" onClick={() => handleNavigation("Personal")}>
             <BiSolidEdit />
           </div>
-      </div>
-     
-
-               
-              
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-contentuserupdate">
-          
-            <div className="modal-body">
-            <label>Household Savings per month*</label>
-<input 
-  type="text" 
-  name="householdSavings" 
-  value={modalData.householdSavings} 
-  onChange={handleFinancialChange} 
-/>
-
-<label>Term Insurance*</label>
-<input 
-  type="text" 
-  name="termInsurance" 
-  value={modalData.termInsurance} 
-  onChange={handleFinancialChange} 
-/>
-
-<label>Health Insurance*</label>
-<input 
-  type="text" 
-  name="healthInsurance" 
-  value={modalData.healthInsurance} 
-  onChange={handleFinancialChange} 
-/>
-
-<label>Major Current Investments*</label>
-<input 
-  type="text" 
-  name="currentInvestments" 
-  value={modalData.currentInvestments} 
-  onChange={handleFinancialChange} 
-/>
-              <label>Interested to invest in*</label>
-              <div className="investment-optionsalluser">
-              <div className="investment-itemalluser">
-  <span>Stocks</span>
-  <input
-    type="number"
-    name="stocks"
-    value={modalData.stocks}
-    onChange={handleChange}
-    placeholder="%"
-  />
-</div>
-
-<div className="investment-itemalluser">
-  <span>Mutual Fund</span>
-  <input
-    type="number"
-    name="mutualfund"
-    value={modalData.mutualfund}
-    onChange={handleChange}
-    placeholder="%"
-  />
-</div>
-
-</div>
-               
-              
-            </div>
-            <div className="modal-footer">
-              <button className="save-btnuserrr" onClick={handleSave}>Save & Update</button>
-              <button className="cancel-btnuserrrr" onClick={() => setShowModal(false)}>Cancel</button>
-            </div>
+        </div>
+   
+        {/* Professional Details Section */}
+        <h2 className="sectionTitle">Professional Details</h2>
+        <div className="allpersonall">
+          <div className="personalDetailAll">
+            {Object.entries(professionalDetails).map(([key, value]) => (
+              <p key={key} className="detailRow">
+                <strong className="labelprofiledetail">
+                  {key
+                    .replace(/([A-Z])/g, " $1")
+                    .replace(/^./, (str) => str.toUpperCase())}:
+                </strong>
+                <span className="value">{value}</span>
+              </p>
+            ))}
+          </div>
+          <div className="editiconprofileee" onClick={() => handleNavigation("Professional")}>
+            <BiSolidEdit />
           </div>
         </div>
-      )}
-      <Navbar />
-    </div>
-    <div className="foooterpagesaupdate">
-    <FooterForAllPage/>
+   
+        {/* Investment Details Section */}
+        <h2 className="sectionTitle">Investment Details</h2>
+          <div className="allpersonal">
+            <div className="personalDetailAll">
+              {Object.entries(investmentDetails).map(([key, value]) => (
+                <p key={key} className="detailRow">
+                  <strong className="labelprofiledetail">
+                    {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}:
+                  </strong>
+                  <span className="value">{value}</span>
+                </p>
+              ))}
+            </div>
+            <div className="editiconprofilee" onClick={handleEditInvestment}>
+              <BiSolidEdit />
+            </div>
+        </div>
+       
+  
+                 
+                
+        {showModal && (
+          <div className="modal-overlay">
+            <div className="modal-contentuserupdate">
+            
+              <div className="modal-body">
+              <label>Household Savings per month*</label>
+  <input 
+    type="text" 
+    name="householdSavings" 
+    value={modalData.householdSavings} 
+    onChange={handleFinancialChange} 
+  />
+  
+  <label>Term Insurance*</label>
+  <input 
+    type="text" 
+    name="termInsurance" 
+    value={modalData.termInsurance} 
+    onChange={handleFinancialChange} 
+  />
+  
+  <label>Health Insurance*</label>
+  <input 
+    type="text" 
+    name="healthInsurance" 
+    value={modalData.healthInsurance} 
+    onChange={handleFinancialChange} 
+  />
+  
+  <label>Major Current Investments*</label>
+  <input 
+    type="text" 
+    name="currentInvestments" 
+    value={modalData.currentInvestments} 
+    onChange={handleFinancialChange} 
+  />
+                <label>Interested to invest in*</label>
+                <div className="investment-optionsalluser">
+                <div className="investment-itemalluser">
+    <span>Stocks</span>
+    <input
+      type="number"
+      name="stocks"
+      value={modalData.stocks}
+      onChange={handleChange}
+      placeholder="%"
+    />
   </div>
+  
+  <div className="investment-itemalluser">
+    <span>Mutual Fund</span>
+    <input
+      type="number"
+      name="mutualfund"
+      value={modalData.mutualfund}
+      onChange={handleChange}
+      placeholder="%"
+    />
+  </div>
+  
+  </div>
+                 
+                
+              </div>
+              <div className="modal-footer">
+                <button className="save-btnuserrr" onClick={handleSave}>Save & Update</button>
+                <button className="cancel-btnuserrrr" onClick={() => setShowModal(false)}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
+        <Navbar />
+      </div>
+      <div className="foooterpagesaupdate">
+      <FooterForAllPage/>
+    </div></>
+    }
+      
   {showPopupforLogin && (
         <div className="payment-popup">
           <div className="payment-popup-content">

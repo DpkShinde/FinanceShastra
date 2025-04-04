@@ -165,6 +165,23 @@
   color: white;
 }
 
+/* Verified Button */
+.profile-verify-btn.verified {
+  background-color: #24b676;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: default;
+  display: inline-block;
+  text-align: center;
+}
+
+.profile-verify-btn.verified:hover {
+  background-color: #24b676; /* No hover effect for verified button */
+}
+
 /* Error text styling */
 .error-text {
   color: red;
@@ -592,6 +609,22 @@
   margin-bottom: 5px;
   font-size: 14px;
   color: black;
+}
+
+/* Separate Edit Button */
+.profilepage-editemail-btn {
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profilepage-editemail-btn:hover {
+  background-color: #e0e0e0;
 }
 
 /* Mobile view - 768px */

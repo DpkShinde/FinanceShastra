@@ -296,13 +296,14 @@ const Landingnavbar = () => {
     learn: false,
   });
 
+  const [storedName, setUsername]= useState('')
+
   const [searchInputText, setSearchInputText] = useState("");
   const [filterData, setFilterData] = useState([]);
   const [isLogedin, setIsLogedin] = useState(false);
     const userDropdownRef = useRef(null);
     const [userDropdownOpen, setUserDropdownOpen] = useState(false);
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-    const { user } = useContext(UserProfileContext);
     const dropdownRef = useRef(null); // Reference for dropdown
      const [isOpen, setIsOpen] = useState(false);
      const [notifications, setNotifications] = useState([]);
@@ -347,7 +348,6 @@ const Landingnavbar = () => {
   };
 
   // Debounced search function
-  console.log(getDataFromStore);
   const debounceSearch = useCallback(
     debounce((searchText) => {
       if (searchText) {
@@ -386,6 +386,10 @@ const Landingnavbar = () => {
 
   // Get all data on component mount
   useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
     const token = Cookies.get("jwtToken");
     const isTokenExpired = (token) => {
       if (!token) return true; // If no token, consider it expired
@@ -419,6 +423,7 @@ const Landingnavbar = () => {
     debounceSearch(searchInputText);
     return () => debounceSearch.cancel();
   }, [searchInputText, debounceSearch]);
+
   const fetchNotifications = async () => {
       try {
         const response = await fetch(`${API_BASE_URL}/notifications`, {
@@ -481,6 +486,7 @@ const Landingnavbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  
   const toggleUserDropdown = () => {
     setUserDropdownOpen(!userDropdownOpen);
   };
@@ -705,7 +711,7 @@ const Landingnavbar = () => {
                                   />
                                 </Link>
                                 <span className={darkMode ? "willamnamedarkmode" : "willamname"}>
-                                  {user}
+                                  {storedName}
                                 </span>
                                 {userDropdownOpen && renderUserDropdown()}
                               </li>

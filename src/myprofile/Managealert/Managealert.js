@@ -5,6 +5,7 @@ import { IoIosClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import FooterForAllPage from "../../FooterForAllPage/FooterForAllPage";
 import { SubscriptionContext } from "../../Portfoilo/context/SubscriptionContext";
+import AccountBar from "../AccountBar";
 
 const Managealert = () => {
   const navigate = useNavigate();
@@ -59,57 +60,7 @@ const Managealert = () => {
     <div>
     <div className="managealertalldata">
       <h1 className="profilepage-titleorder">Manage Alert</h1>
-      <div className="profilepage-tabsorder">
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/userDetailsupdate")}
-        >
-          My Account
-        </span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/orderTable")}
-        >
-          Orders
-        </span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/billingSubscriptionPages")}
-        >
-          Billing & Subscription
-        </span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/riskAnalysisDashboard")}
-        >
-          Risk Profile Report
-        </span>
-        <span
-          className="profilepage-tabbbactive"
-          onClick={() => navigate("/managealert")}
-        >
-          Manage Alert
-        </span>
-
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/accountSettings")}
-        >
-          Password & Security
-        </span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/sessionHistory")}
-        >
-          Active Devices
-        </span>
-        <span
-          className="profilepage-tabb"
-          onClick={() => navigate("/myReferalPage")}
-        >
-          My referrals
-        </span>
-      </div>
+      <AccountBar/>
       <p className="descriptionnalert">
         You may unsubscribe from any Email/SMS alerts' category by clicking on
         the <br />

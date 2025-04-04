@@ -61,18 +61,18 @@ function Login() {
     let hasError = false;
 
     if (!email.trim()) {
-      setEmailError("Please enter Email Address");
+      setEmailError("Please enter Email Address*");
       hasError = true;
     } else if (!validateEmail(email)) {
-      setEmailError("Invalid email address");
+      setEmailError("Invalid email address*");
       hasError = true;
     }
 
     if (!password.trim()) {
-      setPasswordError("Please enter Password");
+      setPasswordError("Please enter Password*");
       hasError = true;
     } else if (!validatePassword(password)) {
-      setPasswordError("Password must be at least 8 characters");
+      setPasswordError("Password must be at least 8 characters*");
       hasError = true;
     }
 
@@ -99,9 +99,7 @@ function Login() {
       };
 
       const response = await fetch(url, options);
-      console.log("🚀 ~ handleSubmit ~ response:", response);
       const data = await response.json();
-      console.log("login data:", data);
 
       /*if (!response.ok) {
         throw new Error(data.message || "Login Failed");
@@ -118,18 +116,19 @@ function Login() {
         });
         navigate("/home");
       }
+
       if (response.status === 404) {
-        setEmailError("Invalid email address");
+        setEmailError("Invalid email address*");
       }
-      if (response.status === 400) {
-        setPasswordError("Incorrect Password, please try again");
+      if (response.status === 400){
+        setPasswordError("Incorrect Password, please try again*")
       }
-      if (response.status === 429) {
-        alert("Too many failed attempts, please try again later.");
+      if (response.status === 429){
+         alert("Too many failed attempts, please try again later.")
       }
     } catch (error) {
       console.error("Error during login:", error);
-      setPasswordError(error.message || "Invalid email or password");
+      setPasswordError(error.message || "Invalid email or password*");
     } finally {
       setIsLoading(false);
     }
@@ -151,10 +150,10 @@ function Login() {
         setIsResetPasswordStep(true);
         setEmailError("");
       } else {
-        setEmailError("Email not found. Please register.");
+        setEmailError("Email not found. Please register.*");
       }
     } else {
-      setEmailError("Enter a valid email address.");
+      setEmailError("Enter a valid email address.*");
     }
   };
 
@@ -162,7 +161,7 @@ function Login() {
     e.preventDefault();
     if (!validatePassword(newPassword)) {
       setPasswordError(
-        "Password must be at least 8 characters, contain 1 uppercase letter, 1 number, and 1 symbol."
+        "Password must be at least 8 characters, contain 1 uppercase letter, 1 number, and 1 symbol.*"
       );
       return;
     }
@@ -181,11 +180,10 @@ function Login() {
   };
 
   const handleSuccess = async (response) => {
-    console.log("Google Login Success:", response);
     const token = response.credential; // Extract token from Google response
 
     if (!token) {
-      console.error("Token not received from Google!");
+      console.error("Token not received from Google!*");
       return;
     }
 
@@ -197,7 +195,6 @@ function Login() {
       });
 
       const data = await res.json();
-      console.log("Backend Response:", data);
 
       if (res.ok) {
         // Store JWT token in cookies
@@ -209,7 +206,6 @@ function Login() {
 
         // Store user details in local storage for quick access
 
-        console.log(data.message); // Log success message from backend
         navigate("/home");
       } else {
         console.error("Authentication failed:", data.error);

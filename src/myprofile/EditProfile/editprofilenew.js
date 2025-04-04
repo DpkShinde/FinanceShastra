@@ -33,11 +33,14 @@ const VerificationPopup = ({
   return (
     <div className="verification-popup">
       <div className="popup-header">
-        <h3>Account Verification</h3>
+        <h3>
+          {type === "email" ? "Email Verification" : "Mobile Verification"}
+        </h3>
         <FaTimes className="close-icon" onClick={onClose} />
       </div>
       <p>
-        Enter the confirmation code sent to your {type}: <strong>{value}</strong>.
+        Enter the confirmation code sent to your {type}:{" "}
+        <strong>{value}</strong>.
       </p>
       <input
         type="text"
@@ -61,7 +64,6 @@ const VerificationPopup = ({
 
 const EditProfile = () => {
   const { userEmail } = useContext(UserProfileContext);
-  const { token } = useContext(UserProfileContext);
   const [personalDetails, setPersonalDetails] = useState({});
   const [professionalDetails, setProfessionalDetails] = useState({});
   const [investmentDetails, setInvestmentDetails] = useState({});
@@ -76,7 +78,7 @@ const EditProfile = () => {
     email: personalDetails.email,
     phoneNumber: personalDetails.phoneNumber,
     address: personalDetails.address,
-    country: personalDetails.country,
+    country: "India",
     address: personalDetails.address,
     state: personalDetails.state,
     city: personalDetails.city,
@@ -88,11 +90,11 @@ const EditProfile = () => {
 
   const [errors, setErrors] = useState({}); // For validation errors
   const [otpStep, setOtpStep] = useState(false); // Define otpStep and setOtpStep
+  const [isMobileVerified, setIsMobileVerified] = useState(false); // Add this state
 
   const navigate = useNavigate();
 
   const profilePageCancel = () => {
-    console.log("Form data cleared");
     setFormData({
       firstName: "",
       lastName: "",
@@ -123,8 +125,13 @@ const EditProfile = () => {
       "state",
       "city",
       "pincode",
+      "occupation",
+      "income",
+      "industry",
     ];
     let validationErrors = {};
+
+    const CookieToken= Cookies.get('jwtToken')
 
     requiredFields.forEach((field) => {
       if (!formData[field]) {
@@ -141,7 +148,7 @@ const EditProfile = () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Token for authentication
+          Authorization: `Bearer ${CookieToken}`, // Token for authentication
         },
         body: JSON.stringify(formData), // Sending form data
       };
@@ -150,6 +157,9 @@ const EditProfile = () => {
         const response = await fetch(url, options);
         console.log("Form data sent to API:", formData);
         if (response.ok) {
+          const username= formData.firstName + formData.lastName
+          localStorage.setItem("username", username)
+          console.log(username)
           setIsPopupVisible(true);
         } else {
           console.error("Failed to save user details:", response.statusText);
@@ -187,6 +197,49 @@ const EditProfile = () => {
     });
 
     return () => unsubscribe(); // Cleanup the listener
+  }, []);
+
+  useEffect(() => {
+    // Fetch user details and check if mobile is verified
+    const fetchUserDetails = async () => {
+      try {
+        const token = Cookies.get("jwtToken");
+        if (!token) {
+          console.error("Token is missing. Ensure the user is logged in.");
+          return;
+        }
+
+        const response = await fetch(`${API_BASE_URL}/userdetails`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        console.log("🚀 ~ fetchUserDetails ~ response:", response);
+        if (response.ok) {
+          const data = await response.json();
+          console.log("User details fetched:", data); // Debugging: Log the entire response
+
+          // Check if isMobileVerified exists in the response
+          setIsMobileVerified(
+            data[0].isMobileVerified === 1 || data[0].isMobileVerified === true
+          );
+
+          // Update formData with phone number if it exists
+          setFormData((prevFormData) => ({
+            ...prevFormData,
+            phoneNumber: data.phone_number || prevFormData.phoneNumber,
+          }));
+        } else {
+          console.error("Failed to fetch user details:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching user details:", error);
+      }
+    };
+
+    fetchUserDetails();
   }, []);
 
   const closePopup = () => {
@@ -411,10 +464,6 @@ const EditProfile = () => {
         }
       } else if (verificationType === "mobile") {
         console.log("Verifying mobile OTP...");
-        console.log(
-          "🚀 ~ handleOtpSubmit ~ phoneNumber:",
-          formData.phoneNumber
-        ); // Debug log
         // Call the API to verify the mobile OTP
         const response = await fetch(`${API_BASE_URL}/otp/verify`, {
           method: "POST",
@@ -422,7 +471,7 @@ const EditProfile = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            phoneNumber: `${formData.phoneNumber}`, // Ensure phoneNumber is included
+            phoneNumber: `+91${formData.phoneNumber}`,
             otp,
           }),
         });
@@ -431,13 +480,9 @@ const EditProfile = () => {
           console.log("Mobile OTP verified successfully.");
           setIsVerified(true);
           setShowVerificationPopup(false);
-          alert("Mobile OTP verified successfully.");
         } else {
           console.error("Failed to verify mobile OTP.");
           setIsOtpValid(false);
-          if (response.status === 404) {
-            alert("User not found!");
-          }
         }
       }
     } catch (error) {
@@ -743,11 +788,13 @@ const EditProfile = () => {
 
   const handleStateChange = (e) => {
     const selectedState = e.target.value;
+    console.log(selectedState)
     setFormData((prev) => ({ ...prev, state: selectedState, city: "" }));
   };
 
   const handleCountryChange = (e) => {
     const selectedCountry = e.target.value;
+    console.log(selectedCountry)
     setFormData((prev) => ({ ...prev, country: selectedCountry }));
   };
 
@@ -938,29 +985,28 @@ const EditProfile = () => {
               >
                 <label className="phonenulabel">Phone Number*</label>
                 <div className="profile-phone-container">
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handlemobileChange}
-                    onBlur={(e) => validatePhoneNumber(e.target.value)}
-                    placeholder="Enter 10-digit phone number"
-                    className="profile-phone-input"
-                    disabled={isVerified} // Disable if verified
-                  />
-                  {isVerified ? (
-                    <button className="profile-verify-btn verified">
-                      <span>Verified</span>
-                      <FaRegEdit className="change-icon" />
-                    </button>
-                  ) : (
-                    <button
-                      className="profilepage-verify-btn"
-                      onClick={() => handleVerificationClick("mobile")}
-                    >
-                      Verify
-                    </button>
-                  )}
+                  <div>
+                    <input
+                      type="tel"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handlemobileChange}
+                      onBlur={(e) => validatePhoneNumber(e.target.value)}
+                      placeholder="Enter 10-digit phone number"
+                      className="profile-phone-input"
+                      disabled={isVerified} // Disable if verified
+                    />
+                    {isVerified ? (
+                      <span style={{ color: "#24b676" }}>Verified</span>
+                    ) : (
+                      <button
+                        className="profilepage-verify-btn"
+                        onClick={() => handleVerificationClick("mobile")}
+                      >
+                        Verify
+                      </button>
+                    )}
+                  </div>
                 </div>
                 {errors.phoneNumber && (
                   <span className="error-text">{errors.phoneNumber}</span>
@@ -1071,6 +1117,11 @@ const EditProfile = () => {
             )}
           </div>
           <div className="profilepage-field">
+          <div
+            className={`profilepage-field pincode-field ${
+              errors.occupation ? "error" : ""
+            }`}
+          >
             <label>Occupation</label>
             <select
               name="occupation"
@@ -1086,10 +1137,17 @@ const EditProfile = () => {
               <option value="Self-employed">Proffesional</option>
               <option value="Other">Other</option>
             </select>
+            {errors.occupation && (
+              <span className="error-text">This field is required</span>
+            )}
+            </div>
           </div>
         </div>
         <div className="profilepage-rowss">
-          <div className="profilepage-field">
+          <div className={`profilepage-field  ${
+              errors.income ? "error" : ""
+            }`}>
+          
             <label>Annual Income</label>
             <select
               name="income"
@@ -1104,8 +1162,14 @@ const EditProfile = () => {
               <option value="15L-20L">15 Lacs to 20 Lacs</option>
               <option value="20L+">More than 20 Lacs</option>
             </select>
+            {errors.income && (
+              <span className="error-text">This field is required</span>
+            )}
           </div>
           <div className="profilepage-field">
+          <div className={`profilepage-field  ${
+              errors.industry ? "error" : ""
+            }`}>
             <label>Industry</label>
             <select
               name="industry"
@@ -1136,6 +1200,10 @@ const EditProfile = () => {
               <option value="Travel and Tourism">Travel and Tourism</option>
               <option value="Others">Others</option>
             </select>
+            {errors.industry && (
+              <span className="error-text">This field is required</span>
+            )}
+          </div>
           </div>
         </div>
 

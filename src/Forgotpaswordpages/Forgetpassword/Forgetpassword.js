@@ -58,11 +58,11 @@ function Forgetpassword() {
   const handleForgotPasswordEmailSubmit = async (e) => {
     e.preventDefault();
     if (!email.trim()) {
-      setEmailError("Email is required");
+      setEmailError("*Email is required");
       return;
     }
     if (!validateEmail(email)) {
-      setEmailError("Enter a valid email address");
+      setEmailError("*Enter a valid email address");
       return;
     }
     setIsLoading(true);

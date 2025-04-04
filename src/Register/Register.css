@@ -48,10 +48,11 @@
     border: 1px solid red;
 }
 
-.error-text {
+.error-text-registration {
     color: red;
-    font-size: 0.9rem;
+    font-size: 11px;
     margin-top: 5px;
+    margin-left: 40px;
 }
 
 

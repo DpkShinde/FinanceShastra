@@ -16,12 +16,20 @@
   .billinginfohistory-wide {
     flex: 1;
   }
+  .profilepagee-container{
+    margin-top: 100px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
   
   .billinginfohistory-card {
     border: 2px solid #24b676;
     padding: 15px;
     border-radius: 8px;
     background: #ffff;
+    height: 210px;
   }
   .billinginfohistorycard {
     border: 2px solid #24b676;
@@ -150,14 +158,14 @@
 /* Large Desktops (1280px - 1535px) */
 @media (min-width: 1280px) and (max-width: 1535px) {
   .billinginfohistory-container {
-      max-width: 1100px;
+      width: 95%;
   }
 }
 
 /* Medium Desktops (1024px - 1279px) */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .billinginfohistory-container {
-      max-width: 900px;
+    width: 95%;
   }
 }
 

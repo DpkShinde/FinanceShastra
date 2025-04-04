@@ -101,7 +101,10 @@ function Register() {
       if (response.status === 200) {
         alert(data.message);
         navigate("/");
-      } else {
+      }else if(response.status === 400){
+        setEmailError("*User already Exists, Please Login.")
+      }
+       else {
         alert(data.message);
       }
     } catch (error) {
@@ -189,7 +192,7 @@ function Register() {
                 required
                 className={emailError ? "input-error" : ""}
               />
-              {emailError && <span className="error-text">{emailError}</span>}
+              {emailError && <span className="error-text-registration">{emailError}</span>}
             </div>
             <div className="input-container">
               <label>Password*</label>
@@ -223,7 +226,7 @@ function Register() {
                 
               </div>
               {passwordError && (
-                <span className="error-text">{passwordError}</span>
+                <span className="error-text-registration">{passwordError}</span>
               )}
             </div>
             <button type="submit" className="sign-in-btn">

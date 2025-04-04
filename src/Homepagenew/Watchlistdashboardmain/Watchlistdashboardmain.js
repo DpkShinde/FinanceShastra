@@ -41,7 +41,6 @@ const Watchlistdashboardmain = () => {
       }
 
       const data = await response.json();
-      console.log(data[0].watchlist_id)
       setWatchlistState(data[0].watchlist_id);
     } catch (error) {
       //alert(error.message || "Failed to fetch watchlists.");
@@ -65,7 +64,6 @@ const Watchlistdashboardmain = () => {
       }
 
       const data = await response.json();
-      console.log(data)
       setWatchlistData(data);
     } catch (error) {
       //alert(error.message || "Failed to fetch watchlist assets.");

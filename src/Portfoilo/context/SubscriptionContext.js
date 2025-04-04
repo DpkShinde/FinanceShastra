@@ -22,13 +22,11 @@ export const SubscriptionProvider = ({ children }) => {
         try {
           const response = await fetch(url, options);
           const data = await response.json(); // Convert response to JSON
-          console.log(data.length);
+          
           if (data.length === 0) {
             setisSubed(false);
-            console.log("issubed in context:", false)
           } else {
             setisSubed(true);
-            console.log("issubed in context:", true)
           }
         } catch (error) {
           console.error("Error fetching user payment details:", error);
